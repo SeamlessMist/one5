@@ -1,5 +1,5 @@
 /* =========================================
-   1. CORE & BACKGROUND
+   1. BACKGROUND (Darkened for contrast)
    ========================================= */
 .material-symbols-outlined {
     font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -7,9 +7,9 @@
 }
 
 body .main-bg {
-    background-color: #0c0e11 !important;
+    background-color: #050608 !important; /* Abyssal Black */
     background-image: 
-        linear-gradient(rgba(12, 14, 17, 0.1), rgba(12, 14, 17, 0.2)),
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), /* Darker overlay */
         url('luffy-bg.jpg') !important; 
     background-size: cover !important;
     background-position: center 20% !important;
@@ -17,86 +17,123 @@ body .main-bg {
 }
 
 /* =========================================
-   2. THE FROSTED GLASS FIX (FORCED)
+   2. FROSTED GLASS UI (THE "DROPBOX" LOOK)
    ========================================= */
 
-/* This targets the Daily Tab, Guesses Bar, and Search Bar specifically */
+/* targets Daily Tab, Guesses Bar, and Search Bar */
 body .glass-panel, 
-body #search-module div.glass-panel,
-body #search-module .relative {
-    background: rgba(255, 255, 255, 0.5) !important; /* Lighter white tint */
-    backdrop-filter: blur(25px) !important;
-    -webkit-backdrop-filter: blur(25px) !important;
-    border: 1px solid rgba(255, 255, 255, 0.6) !important;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15) !important;
+body #search-module .glass-panel {
+    background: rgba(255, 255, 255, 0.25) !important; /* Thinner white tint */
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
 }
 
-/* Force all text inside these light bars to be BLACK */
+/* Text inside the Light Glass Bars */
 body #btn-daily, 
 body #btn-unlimited, 
 body #guesses-left-text,
 body .font-label,
 body #guess-input {
-    color: #000000 !important;
+    color: #000000 !important; /* PURE BLACK TEXT */
     font-weight: 800 !important;
-    opacity: 1 !important;
+    text-transform: uppercase;
 }
 
-/* Typing text in search bar */
+/* Search bar text fix */
 body #guess-input {
     color: #000000 !important;
-    text-shadow: none !important;
 }
-
-/* Placeholder text ("SEARCH CHARACTER...") */
 body #guess-input::placeholder {
     color: rgba(0, 0, 0, 0.4) !important;
 }
 
-/* Active Gold Text (made darker to read on white glass) */
-body .text-secondary-fixed, 
-body #guesses-left-text,
-body #btn-daily span {
-    color: #a38900 !important; 
+/* Active State Colors (Darkened for visibility on white glass) */
+body #btn-daily span.material-symbols-outlined {
+    color: #8b7500 !important;
 }
-
-/* Inactive button text */
-body .text-white\/40, 
-body #btn-unlimited span {
-    color: rgba(0, 0, 0, 0.3) !important;
+body #guesses-left-text {
+    color: #8b7500 !important;
 }
 
 /* =========================================
-   3. DROPDOWN (STAYS THE SAME)
+   3. DROPDOWN (FROSTED GLASS)
    ========================================= */
 body #autocomplete-list {
-    background: rgba(255, 255, 255, 0.6) !important; 
+    background: rgba(255, 255, 255, 0.5) !important; 
     backdrop-filter: blur(30px) !important;
-    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
     border-radius: 20px !important;
+    margin-top: 10px;
     scrollbar-width: none !important; 
 }
 
 body .search-item {
     color: #000000 !important; 
     font-weight: 800 !important;
+    padding: 15px 20px !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+body .search-item:hover {
+    background: rgba(0, 0, 0, 0.05) !important;
 }
 
 /* =========================================
-   4. GAME TILES (KEEP SOLID COLORS)
+   4. GAME TILES (SOLID COLORS - NO TRANSPARENCY)
    ========================================= */
+
 .modular-unit {
-    background: rgba(0, 0, 0, 0.92) !important;
+    background: rgba(0, 0, 0, 0.95) !important; /* Neutral Name box is Dark */
     border-radius: 12px;
     min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
-.glow-yellow { background-color: #f7e600 !important; }
+/* YELLOW = CORRECT */
+.glow-yellow { 
+    background-color: #f7e600 !important; 
+    border: none !important;
+}
 .glow-yellow * { color: #000000 !important; text-shadow: none !important; }
 
-.glow-green { background-color: #22c55e !important; }
+/* GREEN = PARTIAL */
+.glow-green { 
+    background-color: #22c55e !important; 
+    border: none !important;
+}
 .glow-green * { color: #000000 !important; text-shadow: none !important; }
 
-.glow-red { background-color: #ef4444 !important; }
+/* RED = WRONG */
+.glow-red { 
+    background-color: #ef4444 !important; 
+    border: none !important;
+}
 .glow-red * { color: #ffffff !important; }
+
+/* --- TILE FONTS --- */
+.tile-value {
+    font-family: 'Space Grotesk', sans-serif !important;
+    font-size: 0.85rem !important;
+    font-weight: 800 !important;
+}
+.font-label-style {
+    font-family: 'Manrope', sans-serif !important;
+    font-size: 9px !important;
+    font-weight: 700;
+}
+
+/* =========================================
+   5. ANIMATIONS
+   ========================================= */
+.flip-in {
+    opacity: 0;
+    transform: rotateX(90deg);
+    animation: flipIn 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+@keyframes flipIn { to { transform: rotateX(0deg); opacity: 1; } }
