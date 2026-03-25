@@ -3,49 +3,43 @@ let targetCharacter = null;
 let currentMode = 'daily';
 let guessCount = 0;
 
-// SOUNDS (Direct Links)
-const winSound = new Audio("https://raw.githubusercontent.com/ArshAnson/One-Piece-Dle-Assets/main/luffy-laugh.mp3");
-const loseSound = new Audio("https://raw.githubusercontent.com/ArshAnson/One-Piece-Dle-Assets/main/doffy-laugh.mp3");
-
-// Fixed Audio Unlock: No .then() to prevent "No supported sources" error crash
-function unlockAudio() {
-    winSound.load();
-    loseSound.load();
-    document.removeEventListener('click', unlockAudio);
-}
-document.addEventListener('click', unlockAudio);
-
 const arcOrder = ["Romance Dawn", "Orange Town", "Syrup Village", "Baratie", "Arlong Park", "Loguetown", "Reverse Mountain", "Whiskey Peak", "Little Garden", "Drum Island", "Alabasta", "Jaya", "Skypiea", "Long Ring Long Land", "Water 7", "Enies Lobby", "Thriller Bark", "Sabaody Archipelago", "Amazon Lily", "Impel Down", "Marineford", "Fish-Man Island", "Punk Hazard", "Dressrosa", "Zou", "Whole Cake Island", "Reverie", "Wano", "Egghead"];
+
+// SOUND FIX: Wake up engine on click
+function initAudio() {
+    const win = document.getElementById('sound-win');
+    const lose = document.getElementById('sound-lose');
+    win.play().then(() => { win.pause(); win.currentTime = 0; });
+    lose.play().then(() => { lose.pause(); lose.currentTime = 0; });
+    document.removeEventListener('click', initAudio);
+}
+document.addEventListener('click', initAudio);
 
 window.onload = async () => {
     try {
-        const response = await fetch('characters.json');
-        characters = await response.json();
+        const res = await fetch('characters.json');
+        characters = await res.json();
         setupAutocomplete();
         
-        // Setup Mode Buttons
         document.getElementById('btn-daily').onclick = () => setMode('daily');
         document.getElementById('btn-unlimited').onclick = () => setMode('unlimited');
         document.getElementById('btn-play-again').onclick = () => resetGame();
         
         setMode('daily');
-    } catch (e) { console.error("Loading Error:", e); }
+    } catch (e) { console.error("Data error", e); }
 };
 
 function setMode(mode) {
     currentMode = mode;
     const indicator = document.getElementById('mode-indicator');
-    const dBtn = document.getElementById('btn-daily');
-    const uBtn = document.getElementById('btn-unlimited');
+    const dBtn = document.getElementById('btn-daily'), uBtn = document.getElementById('btn-unlimited');
 
     if (mode === 'daily') {
         indicator.style.transform = 'translateX(0)';
-        dBtn.classList.add('mode-active');
-        uBtn.classList.remove('mode-active');
+        dBtn.style.opacity = "1"; uBtn.style.opacity = "0.4";
     } else {
-        indicator.style.transform = 'translateX(calc(100% - 2px))'; // Precise translation
-        uBtn.classList.add('mode-active');
-        dBtn.classList.remove('mode-active');
+        indicator.style.transform = 'translateX(100%)';
+        uBtn.style.opacity = "1"; dBtn.style.opacity = "0.4";
     }
     resetGame();
 }
@@ -62,8 +56,7 @@ function resetGame() {
 function getDaily() {
     const d = new Date();
     const seed = d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate();
-    const index = Math.floor((Math.abs(Math.sin(seed) * 10000) % 1) * characters.length);
-    return characters[index];
+    return characters[Math.floor((Math.abs(Math.sin(seed) * 10000) % 1) * characters.length)];
 }
 
 function setupAutocomplete() {
@@ -75,7 +68,7 @@ function setupAutocomplete() {
         const matches = characters.filter(c => c.name.toLowerCase().includes(val));
         if(matches.length) {
             list.classList.remove('hidden');
-            matches.slice(0, 10).forEach(m => {
+            matches.slice(0,10).forEach(m => {
                 const d = document.createElement('div');
                 d.className = 'search-item cursor-pointer';
                 d.innerText = m.name;
@@ -87,16 +80,15 @@ function setupAutocomplete() {
 }
 
 function submitGuess() {
-    const input = document.getElementById('guess-input');
-    const name = input.value.trim();
-    const char = characters.find(c => c.name === name);
+    const val = document.getElementById('guess-input').value.trim();
+    const char = characters.find(c => c.name === val);
     if (!char) return;
-    input.value = '';
+    document.getElementById('guess-input').value = '';
     guessCount++;
     document.getElementById('guesses-left-text').innerText = `${10 - guessCount} / 10`;
     renderRow(char);
-    if(char.name === targetCharacter.name) endGame(true);
-    else if(guessCount >= 10) endGame(false);
+    if (char.name === targetCharacter.name) endGame(true);
+    else if (guessCount >= 10) endGame(false);
 }
 
 function renderRow(g) {
@@ -127,7 +119,7 @@ function createTile(l, v, type, isN) {
     return `<div class="modular-unit flip-in ${cls}">${!isN ? `<span class="font-label-style">${l}</span>`:''}<span class="tile-value">${v}${arrow}</span></div>`;
 }
 
-function formatHaki(h) { return h[0]==="None" ? "NONE" : h.map(x=>x.substring(0,3)).join('/').toUpperCase(); }
+function formatHaki(h) { return (!h || h[0]==="None") ? "NONE" : h.map(x=>x.substring(0,3)).join('/').toUpperCase(); }
 function compareHaki(g, t) { return JSON.stringify(g)===JSON.stringify(t) ? 'match-exact' : g.some(x=>t.includes(x)) ? 'match-partial' : 'match-none'; }
 function compareStat(g, t) { if(g===t) return 'match-exact'; return g < t ? 'match-none ▲' : 'match-none ▼'; }
 function parseB(b) { return parseInt(b.toString().replace(/[^0-9]/g, '')) || 0; }
@@ -135,9 +127,11 @@ function formatB(b) { let n = parseB(b); if(n>=1e9) return (n/1e9).toFixed(1)+'B
 function compareArc(g, t) { if(g===t) return 'match-exact'; return arcOrder.indexOf(g) < arcOrder.indexOf(t) ? 'match-none ▲' : 'match-none ▼'; }
 
 function endGame(win) {
-    win ? winSound.play() : loseSound.play();
+    const sound = document.getElementById(win ? 'sound-win' : 'sound-lose');
+    sound.currentTime = 0; sound.play();
     const o = document.getElementById('end-overlay');
-    o.classList.remove('hidden'); o.classList.add('flex', 'opacity-100');
+    o.classList.remove('hidden'); o.classList.add('flex');
+    setTimeout(()=>o.classList.add('opacity-100'), 10);
     document.getElementById('card-title').innerText = win ? "BOUNTY CLAIMED" : "WALK THE PLANK";
     document.getElementById('card-subtitle').innerText = win ? `Identified: ${targetCharacter.name}` : `It was: ${targetCharacter.name}`;
 }
