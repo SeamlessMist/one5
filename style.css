@@ -1,59 +1,139 @@
-/* BACKGROUND */
-body.main-bg {
-    background-color: #0c0e11 !important;
-    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url('luffy-bg.jpg') !important;
-    background-size: cover !important;
-    background-position: center 20% !important;
-    background-attachment: fixed !important;
+/* =========================================
+   1. GLOBAL & BACKGROUND
+   ========================================= */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background-color: #0c0e11;
+    font-family: 'Space Grotesk', sans-serif;
 }
 
-/* TOP UI (Black Text) */
-.glass-panel {
-    background: rgba(255, 255, 255, 0.45) !important;
-    backdrop-filter: blur(25px) !important;
-    -webkit-backdrop-filter: blur(25px) !important;
-    border: 1px solid rgba(255, 255, 255, 0.5) !important;
-}
-#btn-daily, #btn-unlimited, #guesses-left-text, #guess-input {
-    color: #000000 !important;
-    font-weight: 800 !important;
+#bg-layer {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0;
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('luffy-bg.jpg');
+    background-size: cover;
+    background-position: center 20%;
+    pointer-events: none;
 }
 
-/* GAME TILES BASE (White Text) */
-.modular-unit {
-    background: rgba(0, 0, 0, 0.9) !important;
-    min-height: 120px;
+/* =========================================
+   2. FROSTED GLASS UI
+   ========================================= */
+.glass-ui {
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.glass-dropdown {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Scrollbar Hiding Utility */
+.hide-scroll { scrollbar-width: none; -ms-overflow-style: none; }
+.hide-scroll::-webkit-scrollbar { display: none; }
+#dropdown::-webkit-scrollbar { display: none; }
+
+/* =========================================
+   3. TOGGLE BAR LOGIC
+   ========================================= */
+.mode-text {
+    color: rgba(0, 0, 0, 0.4);
+    font-family: 'Manrope', sans-serif;
+    transition: color 0.3s ease;
+}
+.mode-text.active { color: #000000; }
+.mode-text.active span { color: #a38900; } /* Gold Icon */
+
+/* The Sliding Pill */
+#mode-pill { left: 4px; } /* Default Left */
+.daily-active #mode-pill { transform: translateX(0); }
+.unlim-active #mode-pill { transform: translateX(calc(100% + 4px)); }
+
+/* =========================================
+   4. DROPDOWN ITEMS
+   ========================================= */
+.dropdown-item {
+    color: #000;
+    font-weight: 800;
+    padding: 16px 24px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: background 0.1s ease;
+}
+.dropdown-item:hover, .dropdown-item.selected {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* =========================================
+   5. GAME TILES & COLORS
+   ========================================= */
+.tile {
+    background: rgba(0, 0, 0, 0.85); /* Default Dark */
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 12px;
-    display: flex; flex-direction: column; justify-content: center; align-items: center;
-    border: 1px solid rgba(255,255,255,0.1) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    text-align: center;
+    min-height: 100px;
+    
+    /* Text settings */
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.2;
+    word-break: break-word;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
 }
-.modular-unit .tile-value {
-    color: #ffffff !important; /* Force White for Name box */
-    font-family: 'Space Grotesk', sans-serif !important;
-    font-size: 0.75rem !important;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
-.modular-unit .font-label-style {
-    color: rgba(255,255,255,0.5) !important;
-    font-family: 'Manrope', sans-serif !important;
+
+/* EXACT MATCH (YELLOW) */
+.tile.match-exact {
+    background: #fde047; /* Bright Tailwind Yellow */
+    border: none;
+    color: #000000;
+    text-shadow: none;
 }
 
-/* SOLID COLOR OVERRIDES */
-/* Yellow Correct */
-.glow-yellow { background-color: #f7e600 !important; border: none !important; }
-.glow-yellow * { color: #000000 !important; text-shadow: none !important; }
+/* PARTIAL MATCH (GREEN) */
+.tile.match-partial {
+    background: #4ade80; /* Bright Tailwind Green */
+    border: none;
+    color: #000000;
+    text-shadow: none;
+}
 
-/* Green Partial */
-.glow-green { background-color: #22c55e !important; border: none !important; }
-.glow-green * { color: #000000 !important; text-shadow: none !important; }
+/* WRONG MATCH (RED) */
+.tile.match-none {
+    background: #ef4444; /* Tailwind Red */
+    border: none;
+    color: #ffffff;
+}
 
-/* Red Wrong */
-.glow-red { background-color: #ef4444 !important; border: none !important; }
-.glow-red * { color: #ffffff !important; text-shadow: 1px 1px 2px rgba(0,0,0,0.5) !important; }
+/* Custom Name Tile formatting */
+.tile-name {
+    font-size: 0.85rem;
+    font-weight: 800;
+}
 
-/* MISC */
-#autocomplete-list { background: rgba(255,255,255,0.6) !important; backdrop-filter: blur(30px) !important; scrollbar-width: none; }
-.search-item { color: #000 !important; font-weight: 800; padding: 15px 20px; border-bottom: 1px solid rgba(0,0,0,0.05); }
-#mode-indicator { background: rgba(255, 255, 255, 0.5) !important; }
-.flip-in { opacity: 0; transform: rotateX(90deg); animation: flipIn 0.5s ease-out forwards; }
-@keyframes flipIn { to { transform: rotateX(0deg); opacity: 1; } }
+/* =========================================
+   6. ANIMATIONS
+   ========================================= */
+.flip-in {
+    opacity: 0;
+    transform: rotateX(90deg);
+    animation: flipIn 0.5s ease-out forwards;
+}
+
+@keyframes flipIn {
+    0% { transform: rotateX(90deg); opacity: 0; }
+    100% { transform: rotateX(0deg); opacity: 1; }
+}
