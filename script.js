@@ -119,12 +119,22 @@ function renderGuess(guess) {
 }
 
 function createTile(label, value, type, isName = false) {
-    let cls = 'border-white/10';
-    let txtCls = 'text-white';
-    if (type.includes('match-exact')) { cls = 'glow-yellow'; txtCls = 'text-yellow-400'; }
-    else if (type.includes('match-partial')) { cls = 'glow-green'; txtCls = 'text-green-400'; }
-    else if (type.includes('match-none')) { cls = 'glow-red'; txtCls = 'text-red-500'; }
-    
+    let cls = '';
+    let txtCls = 'text-white'; // Default for neutral name box
+
+    if (type.includes('match-exact')) { 
+        cls = 'glow-yellow'; 
+        txtCls = ''; // CSS handles color
+    }
+    else if (type.includes('match-partial')) { 
+        cls = 'glow-green'; 
+        txtCls = ''; // CSS handles color
+    }
+    else if (type.includes('match-none')) { 
+        cls = 'glow-red'; 
+        txtCls = ''; // CSS handles color
+    }
+
     let display = value;
     if (type.includes('▲')) display += ' ▲';
     if (type.includes('▼')) display += ' ▼';
@@ -135,7 +145,6 @@ function createTile(label, value, type, isName = false) {
         <span class="tile-value ${txtCls}">${display}</span>
     </div>`;
 }
-
 // Helpers
 function formatHaki(h) { return (!h || h[0] === "None") ? "NONE" : h.map(x => x.substring(0,3)).join('/').toUpperCase(); }
 function compareHaki(g, t) {
