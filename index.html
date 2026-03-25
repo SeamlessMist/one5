@@ -5,109 +5,86 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>One Piece Dle | Grand Line Archive</title>
     
-    <!-- Safety for Browser Favicon -->
     <link rel="icon" href="data:,">
-
-    <!-- 1. External Assets -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800;900&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
     
-    <!-- 2. Custom Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=600">
-
-    <!-- Tailwind Config for Font Support -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        "headline": ["Space Grotesk", "sans-serif"],
-                        "body": ["Manrope", "sans-serif"]
-                    }
-                }
-            }
-        }
-    </script>
+    <link rel="stylesheet" href="style.css?v=200">
 </head>
-<body class="bg-black min-h-screen relative overflow-x-hidden">
-
-    <!-- Background Image Layer (Managed via style.css) -->
+<body>
+    <!-- Background Layer -->
     <div id="bg-layer"></div>
 
-    <main class="relative z-10 w-full max-w-7xl mx-auto px-4 flex flex-col items-center pt-10 pb-24">
+    <!-- Audio Assets -->
+    <audio id="sfx-win" src="https://raw.githubusercontent.com/ArshAnson/One-Piece-Dle-Assets/main/luffy-laugh.mp3" preload="auto"></audio>
+    <audio id="sfx-lose" src="https://raw.githubusercontent.com/ArshAnson/One-Piece-Dle-Assets/main/doffy-laugh.mp3" preload="auto"></audio>
+
+    <main class="relative z-10 w-full max-w-7xl mx-auto px-4 flex flex-col items-center pt-8 pb-24">
         
-        <!-- THE INTERFACE STACK: Centered and Equal Width -->
-        <div class="w-full max-w-[650px] flex flex-col gap-5">
+        <!-- HEADER UI: Fixed 650px Width -->
+        <div class="w-full max-w-[650px] flex flex-col gap-4">
             
-            <!-- ROW 1: TOGGLES & STATS -->
-            <div class="grid grid-cols-2 gap-4 h-[55px]">
+            <!-- Row 1: Toggles & Stats -->
+            <div class="grid grid-cols-2 gap-4 h-[56px]">
                 
-                <!-- Mode Selection -->
-                <div class="glass-ui relative flex items-center p-1 rounded-full overflow-hidden">
-                    <!-- Sliding Pill -->
-                    <div id="mode-pill" class="absolute top-1 bottom-1 w-[calc(50%-4px)] bg-white/40 rounded-full transition-all duration-500 z-0"></div>
+                <!-- Mode Toggle -->
+                <div class="glass-ui relative flex items-center p-1 rounded-full">
+                    <div id="mode-pill" class="absolute top-1 bottom-1 w-[calc(50%-4px)] bg-white/40 rounded-full transition-all duration-300"></div>
                     
                     <button id="btn-daily" class="relative z-10 flex-1 h-full flex items-center justify-center gap-2 mode-text active">
                         <span class="material-symbols-outlined text-lg">calendar_today</span>
-                        <span class="tracking-widest uppercase font-bold text-[10px]">Daily</span>
+                        <span class="tracking-widest uppercase font-bold text-[11px]">Daily</span>
                     </button>
                     
                     <button id="btn-unlimited" class="relative z-10 flex-1 h-full flex items-center justify-center gap-2 mode-text">
                         <span class="material-symbols-outlined text-lg">all_inclusive</span>
-                        <span class="tracking-widest uppercase font-bold text-[10px]">Unlimited</span>
+                        <span class="tracking-widest uppercase font-bold text-[11px]">Unlimited</span>
                     </button>
                 </div>
                 
-                <!-- Guesses Left Counter -->
+                <!-- Guesses Left -->
                 <div class="glass-ui flex items-center justify-center gap-3 rounded-full">
-                    <span class="text-[10px] uppercase font-bold text-black opacity-60">Remaining:</span>
+                    <span class="text-[11px] uppercase font-bold text-black/60">Guesses:</span>
                     <span id="guess-counter" class="text-xl font-bold text-black tracking-widest">10</span>
                 </div>
             </div>
 
-            <!-- ROW 2: SEARCH MODULE -->
-            <div id="search-module" class="relative z-50">
+            <!-- Row 2: Search Bar -->
+            <div class="relative w-full z-50">
                 <div class="glass-ui flex items-center rounded-full h-[60px] px-6 shadow-2xl">
-                    <span class="material-symbols-outlined text-2xl text-black/40 mr-3">search</span>
-                    <input id="search-input" 
-                           class="w-full bg-transparent border-none focus:ring-0 text-black text-lg uppercase font-bold placeholder:text-black/30 outline-none" 
-                           placeholder="SEARCH CHARACTER..." 
-                           type="text" 
-                           autocomplete="off"/>
+                    <span class="material-symbols-outlined text-2xl text-black/50 mr-3">search</span>
+                    <input id="search-input" class="w-full bg-transparent border-none focus:ring-0 text-black text-lg uppercase font-bold placeholder:text-black/30" placeholder="SEARCH CHARACTER..." type="text" autocomplete="off"/>
                 </div>
                 
-                <!-- Autocomplete Dropdown (Black text on Glass) -->
+                <!-- Autocomplete Dropdown -->
                 <div id="dropdown" class="absolute top-[calc(100%+12px)] left-0 w-full glass-dropdown rounded-2xl shadow-2xl hidden max-h-[300px] overflow-y-auto"></div>
             </div>
         </div>
 
-        <!-- GAME BOARD: Horizontal scroll enabled for smaller screens -->
-        <div class="w-full mt-12 overflow-x-auto pb-8 hide-scroll">
-            <div id="game-board" class="min-w-[1100px] flex flex-col gap-3 items-center">
-                <!-- Column Headers are generated by script.js but initialized here for layout -->
+        <!-- GAME BOARD: Wrapped for horizontal scrolling on small screens -->
+        <div class="w-full mt-10 overflow-x-auto pb-8 hide-scroll">
+            <div id="game-board" class="min-w-[1000px] flex flex-col gap-3 items-center">
+                <!-- Column Headers -->
                 <div class="w-full grid grid-cols-11 gap-2 mb-2 px-2 text-center text-white/50 text-[10px] font-bold uppercase tracking-wider">
                     <div>Character</div><div>Gender</div><div>Species</div><div>Calling</div>
                     <div>Affiliation</div><div>Fruit</div><div>Haki</div><div>Height</div>
                     <div>Bounty</div><div>Origin</div><div>Debut</div>
                 </div>
-                <!-- Guess rows will be prepended here -->
+                <!-- Rows injected here -->
             </div>
         </div>
     </main>
 
-    <!-- POST-GAME OVERLAY -->
-    <div id="end-overlay" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/85 backdrop-blur-md opacity-0 transition-opacity duration-500">
+    <!-- END GAME OVERLAY -->
+    <div id="end-overlay" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/80 backdrop-blur-md opacity-0 transition-opacity duration-500">
         <div class="glass-ui border-2 rounded-3xl p-10 max-w-md w-full text-center shadow-2xl transform scale-95 transition-transform duration-500" id="end-modal">
-            <h2 id="end-title" class="text-4xl font-black mb-3 uppercase italic leading-none"></h2>
-            <p id="end-subtitle" class="text-lg font-bold text-black/70 mb-8 leading-tight"></p>
-            <button id="btn-replay" class="w-full py-5 rounded-2xl bg-black text-white font-black tracking-[0.2em] uppercase hover:scale-105 active:scale-95 transition-all shadow-xl">
-                Set Sail Again
-            </button>
+            <h2 id="end-title" class="text-4xl font-black mb-2 uppercase italic text-black"></h2>
+            <p id="end-subtitle" class="text-lg font-bold text-black/70 mb-8"></p>
+            <button id="btn-replay" class="w-full py-4 rounded-xl bg-black text-white font-bold tracking-widest uppercase hover:scale-105 active:scale-95 transition-all shadow-xl">Play Again</button>
         </div>
     </div>
 
-    <!-- 3. Master Script Link -->
-    <script src="script.js?v=600"></script>
+    <script src="script.js?v=200"></script>
 </body>
 </html>
