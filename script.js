@@ -3,7 +3,6 @@ let targetCharacter = null;
 let currentMode = 'daily';
 let guessCount = 0;
 
-// SOUNDS
 const winSound = new Audio("https://raw.githubusercontent.com/ArshAnson/One-Piece-Dle-Assets/main/luffy-laugh.mp3");
 const loseSound = new Audio("https://raw.githubusercontent.com/ArshAnson/One-Piece-Dle-Assets/main/doffy-laugh.mp3");
 
@@ -16,16 +15,14 @@ document.addEventListener('click', unlockAudio);
 
 const arcOrder = ["Romance Dawn", "Orange Town", "Syrup Village", "Baratie", "Arlong Park", "Loguetown", "Reverse Mountain", "Whiskey Peak", "Little Garden", "Drum Island", "Alabasta", "Jaya", "Skypiea", "Long Ring Long Land", "Water 7", "Enies Lobby", "Thriller Bark", "Sabaody Archipelago", "Amazon Lily", "Impel Down", "Marineford", "Fish-Man Island", "Punk Hazard", "Dressrosa", "Zou", "Whole Cake Island", "Reverie", "Wano", "Egghead"];
 
-document.addEventListener("DOMContentLoaded", async () => {
-    document.getElementById('btn-daily').onclick = () => setMode('daily');
-    document.getElementById('btn-unlimited').onclick = () => setMode('unlimited');
-    document.getElementById('btn-play-again').onclick = () => resetGame();
-
-    const response = await fetch('characters.json');
-    characters = await response.json();
-    setupAutocomplete();
-    setMode('daily');
-});
+window.onload = async () => {
+    try {
+        const response = await fetch('characters.json');
+        characters = await response.json();
+        setupAutocomplete();
+        setMode('daily');
+    } catch (e) { console.error("Error loading characters:", e); }
+};
 
 function setMode(mode) {
     currentMode = mode;
@@ -38,26 +35,26 @@ function setMode(mode) {
         dBtn.classList.add('mode-active');
         uBtn.classList.remove('mode-active');
     } else {
-        // Move by exactly 100% of the indicator's width
         indicator.style.transform = 'translateX(calc(100% + 4px))';
         uBtn.classList.add('mode-active');
         dBtn.classList.remove('mode-active');
     }
     resetGame();
 }
+
 function resetGame() {
     guessCount = 0;
     document.getElementById('guesses-left-text').innerText = `10 / 10`;
     document.getElementById('game-board').innerHTML = '';
     document.getElementById('end-overlay').classList.add('hidden');
     document.getElementById('search-module').classList.remove('hidden');
-    targetCharacter = currentMode === 'daily' ? getDaily() : characters[Math.floor(Math.random()*characters.length)];
+    targetCharacter = currentMode === 'daily' ? getDaily() : characters[Math.floor(Math.random() * characters.length)];
 }
 
 function getDaily() {
     const d = new Date();
     const seed = d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate();
-    return characters[Math.floor((Math.sin(seed)*10000 % 1 + 1) % 1 * characters.length)];
+    return characters[Math.floor((Math.abs(Math.sin(seed) * 10000) % 1) * characters.length)];
 }
 
 function setupAutocomplete() {
@@ -65,9 +62,9 @@ function setupAutocomplete() {
     input.oninput = () => {
         const val = input.value.toLowerCase();
         list.innerHTML = '';
-        if(!val) { list.classList.add('hidden'); return; }
+        if (!val) { list.classList.add('hidden'); return; }
         const matches = characters.filter(c => c.name.toLowerCase().includes(val));
-        if(matches.length) {
+        if (matches.length) {
             list.classList.remove('hidden');
             matches.forEach(m => {
                 const d = document.createElement('div');
@@ -83,13 +80,13 @@ function setupAutocomplete() {
 function submitGuess() {
     const name = document.getElementById('guess-input').value;
     const char = characters.find(c => c.name === name);
-    if(!char) return;
+    if (!char) return;
     document.getElementById('guess-input').value = '';
     guessCount++;
     document.getElementById('guesses-left-text').innerText = `${10 - guessCount} / 10`;
     renderRow(char);
-    if(char.name === targetCharacter.name) endGame(true);
-    else if(guessCount >= 10) endGame(false);
+    if (char.name === targetCharacter.name) endGame(true);
+    else if (guessCount >= 10) endGame(false);
 }
 
 function renderRow(g) {
