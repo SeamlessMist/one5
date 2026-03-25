@@ -4,29 +4,25 @@ let availableNames = [];
 let currentMode = 'daily';
 let guessCount = 0;
 
-// AUDIO SETUP
-const SFX = {
-    win: "https://cdn.pixabay.com/audio/2021/08/04/audio_062534f31c.mp3", // Replace with your Luffy .mp3
-    wrong: "https://cdn.pixabay.com/audio/2022/03/15/audio_73060f089f.mp3" // Replace with your Doffy .mp3
-};
+// --- 1. THE SOUND FIX: GLOBAL OBJECTS ---
+// These are direct links to raw audio files on GitHub
+const winAudio = new Audio("https://raw.githubusercontent.com/ArshAnson/One-Piece-Dle-Assets/main/luffy-laugh.mp3");
+const loseAudio = new Audio("https://raw.githubusercontent.com/ArshAnson/One-Piece-Dle-Assets/main/doffy-laugh.mp3");
 
-// 1. Audio Unlocker Logic (Crucial for Browsers)
-function unlockAudio() {
-    const a1 = new Audio(SFX.win);
-    const a2 = new Audio(SFX.wrong);
-    a1.play().then(() => { a1.pause(); });
-    a2.play().then(() => { a2.pause(); });
-    document.removeEventListener('click', unlockAudio);
-    console.log("Audio engine ready.");
+// Force pre-loading
+winAudio.load();
+loseAudio.load();
+
+// This "Wakes up" the browser audio engine on the first click
+function initAudio() {
+    winAudio.play().then(() => { winAudio.pause(); winAudio.currentTime = 0; });
+    loseAudio.play().then(() => { loseAudio.pause(); loseAudio.currentTime = 0; });
+    document.removeEventListener('click', initAudio);
+    console.log("Audio Unlocked");
 }
-document.addEventListener('click', unlockAudio);
+document.addEventListener('click', initAudio);
 
-function playSound(type) {
-    const audio = new Audio(SFX[type]);
-    audio.volume = 0.4;
-    audio.play().catch(e => console.log("Sound blocked. Click page first."));
-}
-
+// --- 2. GAME SETUP ---
 const arcOrder = ["Romance Dawn", "Orange Town", "Syrup Village", "Baratie", "Arlong Park", "Loguetown", "Reverse Mountain", "Whiskey Peak", "Little Garden", "Drum Island", "Alabasta", "Jaya", "Skypiea", "Long Ring Long Land", "Water 7", "Enies Lobby", "Thriller Bark", "Sabaody Archipelago", "Amazon Lily", "Impel Down", "Marineford", "Fish-Man Island", "Punk Hazard", "Dressrosa", "Zou", "Whole Cake Island", "Reverie", "Wano", "Egghead"];
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -76,7 +72,7 @@ function setupAutocomplete() {
             list.classList.remove("hidden");
             matches.forEach(m => {
                 const d = document.createElement("div");
-                d.className = "search-item cursor-pointer uppercase text-xs";
+                d.className = "search-item cursor-pointer"; // Matches CSS
                 d.innerText = m;
                 d.onclick = () => { input.value = m; list.classList.add("hidden"); submitGuess(); };
                 list.appendChild(d);
@@ -102,9 +98,11 @@ function submitGuess() {
 function renderGuess(guess) {
     const board = document.getElementById('game-board');
     const row = document.createElement('div');
-    row.className = 'w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-11 gap-2 mb-3';
+    row.className = 'w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-11 gap-2 mb-4';
+    const isTarget = guess.name === targetCharacter.name;
+
     const tiles = [
-        createTile('NAME', guess.name, guess.name === targetCharacter.name ? 'match-exact' : 'none', true),
+        createTile('NAME', guess.name, isTarget ? 'match-exact' : 'none', true),
         createTile('SEX', guess.gender, guess.gender === targetCharacter.gender ? 'match-exact' : 'match-none'),
         createTile('RACE', guess.species, guess.species === targetCharacter.species ? 'match-exact' : 'match-none'),
         createTile('ROLE', guess.calling, guess.calling === targetCharacter.calling ? 'match-exact' : 'match-none'),
@@ -117,17 +115,16 @@ function renderGuess(guess) {
         createTile('DEBUT', guess.firstArc, compareArc(guess.firstArc, targetCharacter.firstArc))
     ];
     row.innerHTML = tiles.join('');
-    board.prepend(row);
+    board.prepend(row); // Latest at top
 }
 
 function createTile(label, value, type, isName = false) {
     let cls = 'border-white/10';
     let txtCls = 'text-white';
-
     if (type.includes('match-exact')) { cls = 'glow-yellow'; txtCls = 'text-yellow-400'; }
     else if (type.includes('match-partial')) { cls = 'glow-green'; txtCls = 'text-green-400'; }
     else if (type.includes('match-none')) { cls = 'glow-red'; txtCls = 'text-red-500'; }
-
+    
     let display = value;
     if (type.includes('▲')) display += ' ▲';
     if (type.includes('▼')) display += ' ▼';
@@ -139,6 +136,7 @@ function createTile(label, value, type, isName = false) {
     </div>`;
 }
 
+// Helpers
 function formatHaki(h) { return (!h || h[0] === "None") ? "NONE" : h.map(x => x.substring(0,3)).join('/').toUpperCase(); }
 function compareHaki(g, t) {
     if (JSON.stringify(g) === JSON.stringify(t)) return 'match-exact';
@@ -161,7 +159,10 @@ function compareArc(g, t) {
 }
 
 function endGame(win) {
-    playSound(win ? 'win' : 'wrong');
+    // PLAY GLOBAL AUDIO OBJECTS
+    if (win) { winAudio.play(); } 
+    else { loseAudio.play(); }
+
     document.getElementById('search-module').classList.add('hidden');
     const o = document.getElementById('end-overlay');
     o.classList.remove('hidden'); o.classList.add('flex');
