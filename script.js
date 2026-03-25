@@ -3,6 +3,7 @@ let targetCharacter = null;
 let currentMode = 'daily';
 let guessCount = 0;
 
+// 1. SOUNDS
 const winSound = new Audio("https://raw.githubusercontent.com/ArshAnson/One-Piece-Dle-Assets/main/luffy-laugh.mp3");
 const loseSound = new Audio("https://raw.githubusercontent.com/ArshAnson/One-Piece-Dle-Assets/main/doffy-laugh.mp3");
 
@@ -15,13 +16,20 @@ document.addEventListener('click', unlockAudio);
 
 const arcOrder = ["Romance Dawn", "Orange Town", "Syrup Village", "Baratie", "Arlong Park", "Loguetown", "Reverse Mountain", "Whiskey Peak", "Little Garden", "Drum Island", "Alabasta", "Jaya", "Skypiea", "Long Ring Long Land", "Water 7", "Enies Lobby", "Thriller Bark", "Sabaody Archipelago", "Amazon Lily", "Impel Down", "Marineford", "Fish-Man Island", "Punk Hazard", "Dressrosa", "Zou", "Whole Cake Island", "Reverie", "Wano", "Egghead"];
 
+// 2. DATA LOADING
 window.onload = async () => {
     try {
         const response = await fetch('characters.json');
+        if (!response.ok) throw new Error("JSON file not found");
         characters = await response.json();
+        console.log("Characters Loaded:", characters.length);
+        
         setupAutocomplete();
         setMode('daily');
-    } catch (e) { console.error("Error loading characters:", e); }
+    } catch (e) { 
+        console.error(e);
+        alert("ERROR: characters.json not found! Make sure the file is in the same folder as index.html"); 
+    }
 };
 
 function setMode(mode) {
@@ -48,52 +56,82 @@ function resetGame() {
     document.getElementById('game-board').innerHTML = '';
     document.getElementById('end-overlay').classList.add('hidden');
     document.getElementById('search-module').classList.remove('hidden');
-    targetCharacter = currentMode === 'daily' ? getDaily() : characters[Math.floor(Math.random() * characters.length)];
+    
+    if (characters.length > 0) {
+        targetCharacter = currentMode === 'daily' ? getDaily() : characters[Math.floor(Math.random() * characters.length)];
+    }
 }
 
 function getDaily() {
     const d = new Date();
     const seed = d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate();
-    return characters[Math.floor((Math.abs(Math.sin(seed) * 10000) % 1) * characters.length)];
+    const index = Math.floor((Math.abs(Math.sin(seed) * 10000) % 1) * characters.length);
+    return characters[index];
 }
 
+// 3. AUTOCOMPLETE LOGIC (FIXED)
 function setupAutocomplete() {
-    const input = document.getElementById("guess-input"), list = document.getElementById("autocomplete-list");
+    const input = document.getElementById("guess-input");
+    const list = document.getElementById("autocomplete-list");
+
     input.oninput = () => {
-        const val = input.value.toLowerCase();
+        const val = input.value.trim().toLowerCase();
         list.innerHTML = '';
-        if (!val) { list.classList.add('hidden'); return; }
+        
+        if (!val) {
+            list.classList.add('hidden');
+            return;
+        }
+
+        // Filter names that include the typed text
         const matches = characters.filter(c => c.name.toLowerCase().includes(val));
-        if (matches.length) {
+
+        if (matches.length > 0) {
             list.classList.remove('hidden');
-            matches.forEach(m => {
+            matches.slice(0, 10).forEach(m => { // Limit to 10 results for speed
                 const d = document.createElement('div');
                 d.className = 'search-item cursor-pointer';
                 d.innerText = m.name;
-                d.onclick = () => { input.value = m.name; list.classList.add('hidden'); submitGuess(); };
+                d.onclick = () => {
+                    input.value = m.name;
+                    list.classList.add('hidden');
+                    submitGuess();
+                };
                 list.appendChild(d);
             });
+        } else {
+            list.classList.add('hidden');
         }
     };
 }
 
 function submitGuess() {
-    const name = document.getElementById('guess-input').value;
+    const input = document.getElementById('guess-input');
+    const name = input.value.trim();
     const char = characters.find(c => c.name === name);
+    
     if (!char) return;
-    document.getElementById('guess-input').value = '';
+    
+    input.value = '';
     guessCount++;
     document.getElementById('guesses-left-text').innerText = `${10 - guessCount} / 10`;
+    
     renderRow(char);
-    if (char.name === targetCharacter.name) endGame(true);
-    else if (guessCount >= 10) endGame(false);
+    
+    if (char.name === targetCharacter.name) {
+        endGame(true);
+    } else if (guessCount >= 10) {
+        endGame(false);
+    }
 }
 
+// 4. RENDERING & HELPERS
 function renderRow(g) {
     const row = document.createElement('div');
     row.className = 'w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-11 gap-2 mb-4';
+    
     const isT = g.name === targetCharacter.name;
-    const t = [
+    const tiles = [
         createTile('NAME', g.name, isT ? 'match-exact' : 'none', true),
         createTile('SEX', g.gender, g.gender === targetCharacter.gender ? 'match-exact' : 'match-none'),
         createTile('RACE', g.species, g.species === targetCharacter.species ? 'match-exact' : 'match-none'),
@@ -106,7 +144,8 @@ function renderRow(g) {
         createTile('ORIGIN', g.seaOfBirth, g.seaOfBirth === targetCharacter.seaOfBirth ? 'match-exact' : 'match-none'),
         createTile('DEBUT', g.firstArc, compareArc(g.firstArc, targetCharacter.firstArc))
     ];
-    row.innerHTML = t.join('');
+    
+    row.innerHTML = tiles.join('');
     document.getElementById('game-board').prepend(row);
 }
 
@@ -118,16 +157,17 @@ function createTile(l, v, type, isN) {
 
 function formatHaki(h) { return h[0]==="None" ? "NONE" : h.map(x=>x.substring(0,3)).join('/').toUpperCase(); }
 function compareHaki(g, t) { return JSON.stringify(g)===JSON.stringify(t) ? 'match-exact' : g.some(x=>t.includes(x)) ? 'match-partial' : 'match-none'; }
-function compareStat(g, t) { return g===t ? 'match-exact' : g < t ? 'match-none ▲' : 'match-none ▼'; }
+function compareStat(g, t) { if(g===t) return 'match-exact'; return g < t ? 'match-none ▲' : 'match-none ▼'; }
 function parseB(b) { return parseInt(b.toString().replace(/[^0-9]/g, '')) || 0; }
 function formatB(b) { let n = parseB(b); if(n>=1e9) return (n/1e9).toFixed(1)+'B'; if(n>=1e6) return (n/1e6).toFixed(1)+'M'; return n>0?n.toLocaleString():"NONE"; }
-function compareArc(g, t) { return g===t ? 'match-exact' : arcOrder.indexOf(g) < arcOrder.indexOf(t) ? 'match-none ▲' : 'match-none ▼'; }
+function compareArc(g, t) { if(g===t) return 'match-exact'; return arcOrder.indexOf(g) < arcOrder.indexOf(t) ? 'match-none ▲' : 'match-none ▼'; }
 
 function endGame(win) {
     win ? winSound.play() : loseSound.play();
-    document.getElementById('end-overlay').classList.remove('hidden');
-    document.getElementById('end-overlay').classList.add('flex');
-    setTimeout(()=>document.getElementById('end-overlay').classList.add('opacity-100'), 10);
+    const o = document.getElementById('end-overlay');
+    o.classList.remove('hidden');
+    o.classList.add('flex');
+    setTimeout(()=>o.classList.add('opacity-100'), 10);
     document.getElementById('card-title').innerText = win ? "BOUNTY CLAIMED" : "WALK THE PLANK";
     document.getElementById('card-title').style.color = win ? "#f7e600" : "#ef4444";
     document.getElementById('card-subtitle').innerText = win ? `Identified: ${targetCharacter.name}` : `It was: ${targetCharacter.name}`;
