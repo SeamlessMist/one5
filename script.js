@@ -29,26 +29,22 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 function setMode(mode) {
     currentMode = mode;
-    const dailyBtn = document.getElementById('btn-daily');
-    const unlimitedBtn = document.getElementById('btn-unlimited');
     const indicator = document.getElementById('mode-indicator');
+    const dBtn = document.getElementById('btn-daily');
+    const uBtn = document.getElementById('btn-unlimited');
 
     if (mode === 'daily') {
-        // Move pill to the left
         indicator.style.transform = 'translateX(0)';
-        // Swap active classes
-        dailyBtn.classList.add('mode-active');
-        unlimitedBtn.classList.remove('mode-active');
+        dBtn.classList.add('mode-active');
+        uBtn.classList.remove('mode-active');
     } else {
-        // Move pill to the right (100% of its width)
-        indicator.style.transform = 'translateX(100%)';
-        // Swap active classes
-        unlimitedBtn.classList.add('mode-active');
-        dailyBtn.classList.remove('mode-active');
+        // Move by exactly 100% of the indicator's width
+        indicator.style.transform = 'translateX(calc(100% + 4px))';
+        uBtn.classList.add('mode-active');
+        dBtn.classList.remove('mode-active');
     }
     resetGame();
 }
-
 function resetGame() {
     guessCount = 0;
     document.getElementById('guesses-left-text').innerText = `10 / 10`;
