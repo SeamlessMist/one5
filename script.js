@@ -5,6 +5,7 @@ let currentMode = 'daily';
 let guessCount = 0;
 const MAX_GUESSES = 10;
 
+// Exact Chronological Order of One Piece Arcs
 const arcOrder = [
     "Romance Dawn", "Orange Town", "Syrup Village", "Baratie", "Arlong Park", "Loguetown",
     "Reverse Mountain", "Whiskey Peak", "Little Garden", "Drum Island", "Alabasta",
@@ -16,7 +17,7 @@ const arcOrder = [
 document.addEventListener("DOMContentLoaded", async () => {
     document.getElementById('btn-daily').addEventListener('click', () => setMode('daily'));
     document.getElementById('btn-unlimited').addEventListener('click', () => setMode('unlimited'));
-    document.getElementById('btn-play-again').addEventListener('click', resetGame);
+    document.getElementById('btn-play-again').addEventListener('click', () => resetGame());
 
     try {
         const response = await fetch('characters.json');
@@ -26,15 +27,20 @@ document.addEventListener("DOMContentLoaded", async () => {
     } catch (e) { console.error("Data load error", e); }
 });
 
+function playSound(id) {
+    const audio = document.getElementById(id);
+    if(audio) { audio.currentTime = 0; audio.play().catch(()=>{}); }
+}
+
 function setMode(mode) {
     currentMode = mode;
     const d = document.getElementById('btn-daily'), u = document.getElementById('btn-unlimited');
     if(mode === 'daily') {
-        d.classList.add('text-primary-container'); d.classList.remove('text-outline/60');
-        u.classList.add('text-outline/60'); u.classList.remove('text-primary-container');
+        d.classList.add('text-secondary-fixed'); d.classList.remove('text-white/40');
+        u.classList.add('text-white/40'); u.classList.remove('text-secondary-fixed');
     } else {
-        u.classList.add('text-primary-container'); u.classList.remove('text-outline/60');
-        d.classList.add('text-outline/60'); d.classList.remove('text-primary-container');
+        u.classList.add('text-secondary-fixed'); u.classList.remove('text-white/40');
+        d.classList.add('text-white/40'); d.classList.remove('text-secondary-fixed');
     }
     resetGame();
 }
@@ -43,15 +49,22 @@ function resetGame() {
     guessCount = 0;
     updateTracker();
     availableNames = characters.map(c => c.name).sort();
-    document.getElementById('end-overlay').classList.add('hidden');
+    
+    const o = document.getElementById('end-overlay');
+    o.classList.add('hidden');
+    o.classList.remove('flex', 'opacity-100');
+    document.getElementById('end-modal').classList.remove('victory-active');
+    
     document.getElementById('search-module').classList.remove('hidden');
     document.getElementById('guess-input').value = '';
     document.getElementById('game-board').innerHTML = '';
+    
     targetCharacter = currentMode === 'daily' ? getDailyCharacter() : characters[Math.floor(Math.random() * characters.length)];
 }
 
 function getDailyCharacter() {
-    const seed = new Date().getFullYear() * 10000 + (new Date().getMonth() + 1) * 100 + new Date().getDate();
+    const today = new Date();
+    const seed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
     const x = Math.sin(seed) * 10000;
     return characters[Math.floor((x - Math.floor(x)) * characters.length)];
 }
@@ -67,7 +80,7 @@ function setupAutocomplete() {
             list.classList.remove("hidden");
             matches.forEach(m => {
                 const d = document.createElement("div");
-                d.className = "px-6 py-3 cursor-pointer border-b border-outline-variant/10 hover:bg-primary-container/10 text-xs uppercase";
+                d.className = "px-6 py-3 cursor-pointer search-item hover:bg-black/5 transition-colors text-sm uppercase";
                 d.innerText = m;
                 d.onclick = () => { input.value = m; list.classList.add("hidden"); submitGuess(); };
                 list.appendChild(d);
@@ -97,7 +110,7 @@ function updateTracker() {
 function renderGuess(guess) {
     const board = document.getElementById('game-board');
     const row = document.createElement('div');
-    row.className = 'w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-11 gap-2 mb-4';
+    row.className = 'w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-11 gap-3 mb-4';
 
     const tiles = [
         createTile('NAME', guess.name, guess.name === targetCharacter.name ? 'match-exact' : 'none', true),
@@ -114,61 +127,62 @@ function renderGuess(guess) {
     ];
 
     row.innerHTML = tiles.join('');
-    
-    // THE FIX: PREPEND puts the newest guess at the top
-    board.prepend(row);
+    board.prepend(row); // PREPEND puts latest at the top
 
     row.querySelectorAll('.flip-in').forEach((t, i) => t.style.animationDelay = (i * 0.05) + 's');
 }
 
-// Replace your existing createTile function
 function createTile(label, value, type, isName = false) {
     let cls = 'border-outline-variant/20';
-    let txtCls = 'text-white'; // Default text color
+    let txtCls = 'text-white';
 
-    // RIGID COLOR LOGIC
-    if (type === 'match-exact') { 
-        cls = 'glow-yellow'; // Correct = Yellow
-        txtCls = 'text-yellow-400'; 
-    }
-    else if (type === 'match-partial') { 
-        cls = 'glow-green'; // Partial = Green
-        txtCls = 'text-green-400'; 
-    }
-    else if (type === 'match-none') { 
-        cls = 'glow-red'; // Wrong = Red
-        txtCls = 'text-red-400'; 
-    }
+    // COLOR LOGIC: Yellow = Correct, Green = Partial, Red = Wrong
+    if (type === 'match-exact') { cls = 'glow-yellow'; txtCls = 'text-yellow-400'; }
+    else if (type.startsWith('match-partial')) { cls = 'glow-green'; txtCls = 'text-green-400'; }
+    else if (type.startsWith('match-none')) { cls = 'glow-red'; txtCls = 'text-red-400'; }
+
+    // If it's the wrong answer but has an arrow (e.g., match-none ▲)
+    let displayValue = value;
+    if (type.includes('▲')) displayValue += ' ▲';
+    if (type.includes('▼')) displayValue += ' ▼';
 
     return `
     <div class="modular-unit glass-panel rounded-xl flip-in ${cls}">
-        ${!isName ? `<span class="text-[9px] font-label uppercase mb-1 tracking-tighter opacity-60">${label}</span>` : ''}
-        <span class="tile-value font-bold uppercase ${txtCls}">${value}</span>
+        ${!isName ? `<span class="text-[9px] font-label uppercase mb-1 tracking-tighter opacity-40">${label}</span>` : ''}
+        <span class="tile-value font-bold uppercase ${txtCls}">${displayValue}</span>
     </div>`;
 }
 
-// Update the setupAutocomplete to set black text
-function setupAutocomplete() {
-    const input = document.getElementById("guess-input"), list = document.getElementById("autocomplete-list");
-    input.addEventListener("input", () => {
-        const val = input.value.trim().toLowerCase();
-        list.innerHTML = '';
-        if (!val) { list.classList.add("hidden"); return; }
-        const matches = availableNames.filter(n => n.toLowerCase().includes(val));
-        if (matches.length) {
-            list.classList.remove("hidden");
-            matches.forEach(m => {
-                const d = document.createElement("div");
-                d.className = "px-6 py-3 cursor-pointer search-item hover:bg-black/5 transition-colors text-sm uppercase";
-                d.innerText = m;
-                d.onclick = () => { input.value = m; list.classList.add("hidden"); submitGuess(); };
-                list.appendChild(d);
-            });
-        } else list.classList.add("hidden");
-    });
+// HELPER FUNCTIONS
+function formatHaki(h) { 
+    if (!h || h.length === 0 || h[0] === "None") return "NONE"; 
+    return h.map(x => x.substring(0,3)).join('/').toUpperCase(); 
 }
 
-// Improved Victory EndGame
+function compareHaki(g, t) {
+    if (JSON.stringify(g) === JSON.stringify(t)) return 'match-exact';
+    return g.some(x => t.includes(x)) ? 'match-partial' : 'match-none';
+}
+
+function compareStat(g, t) { 
+    if (g === t) return 'match-exact';
+    return g < t ? 'match-none ▲' : 'match-none ▼';
+}
+
+function parseBounty(b) { return parseInt(b.toString().replace(/[^0-9]/g, '')) || 0; }
+
+function formatBounty(b) {
+    let n = parseBounty(b);
+    if (n >= 1e9) return (n/1e9).toFixed(1) + 'B';
+    if (n >= 1e6) return (n/1e6).toFixed(1) + 'M';
+    return n > 0 ? n.toLocaleString() : "NONE";
+}
+
+function compareArc(g, t) {
+    if (g === t) return 'match-exact';
+    return arcOrder.indexOf(g) < arcOrder.indexOf(t) ? 'match-none ▲' : 'match-none ▼';
+}
+
 function endGame(win) {
     const o = document.getElementById('end-overlay');
     const modal = document.getElementById('end-modal');
@@ -178,58 +192,17 @@ function endGame(win) {
     o.classList.add('flex');
 
     if (win) {
-        playSound('sfx-win'); // Luffy Laugh
+        playSound('sfx-win');
         modal.classList.add('victory-active');
         document.getElementById('card-title').innerText = "KING OF THE PIRATES!";
-        document.getElementById('card-title').classList.add('text-yellow-400');
-        document.getElementById('card-subtitle').innerText = `You found ${targetCharacter.name}!`;
-        
-        // Simple visual flair: toggle background flash
-        let flash = setInterval(() => {
-            o.style.backgroundColor = o.style.backgroundColor === 'rgba(247, 230, 0, 0.1)' ? 'transparent' : 'rgba(247, 230, 0, 0.1)';
-        }, 500);
-        setTimeout(() => clearInterval(flash), 5000);
+        document.getElementById('card-title').style.color = "#f7e600";
+        document.getElementById('card-subtitle').innerText = `Amazing! It was indeed ${targetCharacter.name}.`;
     } else {
-        playSound('sfx-wrong'); // Doffy Laugh
+        playSound('sfx-wrong');
         document.getElementById('card-title').innerText = "WALK THE PLANK...";
-        document.getElementById('card-title').classList.add('text-red-500');
-        document.getElementById('card-subtitle').innerText = `It was ${targetCharacter.name}.`;
+        document.getElementById('card-title').style.color = "#ef4444";
+        document.getElementById('card-subtitle').innerText = `You failed to find them. It was ${targetCharacter.name}.`;
     }
 
-    setTimeout(() => {
-        o.classList.remove('opacity-0');
-        o.classList.add('opacity-100');
-    }, 10);
-}
-
-// Ensure helper logic matches tiles (Compare functions)
-function compareStat(g, t) { 
-    if (g === t) return 'match-exact'; // Correct -> Yellow
-    let arrow = g < t ? ' ▲' : ' ▼';
-    return 'match-none' + arrow; // Wrong -> Red
-}
-
-function compareHaki(g, t) {
-    if (JSON.stringify(g) === JSON.stringify(t)) return 'match-exact'; // Correct -> Yellow
-    return g.some(x => t.includes(x)) ? 'match-partial' : 'match-none'; // Partial -> Green, Wrong -> Red
-}
-function compareStat(g, t) { 
-    if (g === t) return 'match-exact';
-    // Logic for showing arrows even on wrong answers
-    let arrow = g < t ? ' ▲' : ' ▼';
-    return 'match-none' + arrow; 
-}
-
-function compareArc(g, t) {
-    if (g === t) return 'match-exact';
-    let arrow = arcOrder.indexOf(g) < arcOrder.indexOf(t) ? ' ▲' : ' ▼';
-    return 'match-none' + arrow;
-}
-
-function endGame(win) {
-    document.getElementById('search-module').classList.add('hidden');
-    const o = document.getElementById('end-overlay');
-    o.classList.remove('hidden');
-    document.getElementById('card-title').innerText = win ? "BOUNTY CLAIMED" : "LOST AT SEA";
-    document.getElementById('card-subtitle').innerText = win ? `You identified ${targetCharacter.name}!` : `It was ${targetCharacter.name}.`;
+    setTimeout(() => o.classList.add('opacity-100'), 10);
 }
