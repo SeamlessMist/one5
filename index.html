@@ -4,52 +4,45 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Grand Line Archive | One Piece Dle</title>
-    
-    <!-- Safety for Browser Favicon -->
     <link rel="icon" href="data:,">
-
-    <!-- Fonts & Icons -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Manrope:wght@500;800&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-    
-    <!-- Link to CSS with cache-buster -->
-    <link rel="stylesheet" href="style.css?v=99">
+    <link rel="stylesheet" href="style.css?v=101">
 </head>
-
 <body class="main-bg bg-black min-h-screen relative overflow-x-hidden">
 
-    <!-- Audio (Direct Raw Links) -->
-    <audio id="sfx-wrong" src="https://raw.githubusercontent.com/ArshAnson/One-Piece-Dle-Assets/main/doffy-laugh.mp3" preload="auto"></audio>
-    <audio id="sfx-win" src="https://raw.githubusercontent.com/ArshAnson/One-Piece-Dle-Assets/main/luffy-laugh.mp3" preload="auto"></audio>
+    <!-- AUDIO ELEMENTS (More reliable than JS objects) -->
+    <audio id="sound-win" preload="auto">
+        <source src="https://raw.githubusercontent.com/ArshAnson/One-Piece-Dle-Assets/main/luffy-laugh.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="sound-lose" preload="auto">
+        <source src="https://raw.githubusercontent.com/ArshAnson/One-Piece-Dle-Assets/main/doffy-laugh.mp3" type="audio/mpeg">
+    </audio>
 
     <main class="relative z-10 w-full max-w-7xl mx-auto px-4 flex flex-col items-center pt-10 pb-24">
         
-        <!-- TOP INTERFACE: EQUAL WIDTH BARS -->
         <div class="w-full max-w-[650px] flex flex-col gap-4">
-            
+            <!-- TOP BARS -->
             <div class="grid grid-cols-2 gap-4">
-                <!-- Mode Selection -->
                 <div class="relative flex items-center glass-panel p-1 rounded-full border h-[55px] overflow-hidden">
                     <div id="mode-indicator" class="absolute top-1 bottom-1 left-1 w-[calc(50%-4px)] bg-white/40 rounded-full transition-all duration-500 z-0"></div>
-                    <button id="btn-daily" class="relative z-10 w-1/2 h-full flex items-center justify-center gap-2 transition-all duration-300 mode-active">
+                    <button id="btn-daily" class="relative z-10 w-1/2 h-full flex items-center justify-center gap-2 mode-active">
                         <span class="material-symbols-outlined text-lg">calendar_today</span>
                         <span class="font-label text-[10px] tracking-widest uppercase font-bold">Daily</span>
                     </button>
-                    <button id="btn-unlimited" class="relative z-10 w-1/2 h-full flex items-center justify-center gap-2 transition-all duration-300">
+                    <button id="btn-unlimited" class="relative z-10 w-1/2 h-full flex items-center justify-center gap-2">
                         <span class="material-symbols-outlined text-lg">all_inclusive</span>
                         <span class="font-label text-[10px] tracking-widest uppercase font-bold">Unlimited</span>
                     </button>
                 </div>
-                
-                <!-- Guesses Left -->
                 <div class="glass-panel flex items-center justify-center gap-3 rounded-full border h-[55px]">
                     <span class="text-[10px] uppercase font-bold text-black opacity-60">Guesses Left:</span>
                     <span id="guesses-left-text" class="font-headline text-lg font-bold text-[#a38900]">10 / 10</span>
                 </div>
             </div>
 
-            <!-- SEARCH MODULE -->
+            <!-- SEARCH -->
             <div id="search-module" class="relative group">
                 <div class="relative flex items-center glass-panel border rounded-full overflow-hidden shadow-2xl z-40 h-[55px]">
                     <div class="pl-6 text-black/40">
@@ -57,16 +50,13 @@
                     </div>
                     <input id="guess-input" class="w-full bg-transparent border-none focus:ring-0 py-4 px-4 font-headline text-lg uppercase outline-none text-black placeholder:text-black/30" placeholder="SEARCH CHARACTER..." type="text" autocomplete="off"/>
                 </div>
-                <!-- Dropdown List -->
                 <div id="autocomplete-list" class="absolute top-[calc(100%+10px)] left-0 w-full rounded-2xl shadow-2xl z-50 hidden max-h-64 overflow-y-auto"></div>
             </div>
         </div>
 
-        <!-- GAME BOARD -->
         <section id="game-board" class="w-full mt-12 flex flex-col gap-3 items-center"></section>
     </main>
 
-    <!-- END MODAL -->
     <div id="end-overlay" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/80 backdrop-blur-sm opacity-0 transition-all duration-700">
         <div id="end-modal" class="glass-panel border-2 rounded-3xl p-10 max-w-md w-full text-center transform scale-90 transition-all duration-500">
             <h2 id="card-title" class="font-headline text-4xl font-black mb-4 uppercase italic"></h2>
@@ -75,7 +65,6 @@
         </div>
     </div>
 
-    <!-- Script Link -->
-    <script src="script.js?v=99"></script>
+    <script src="script.js?v=101"></script>
 </body>
 </html>
