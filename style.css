@@ -3,14 +3,13 @@
    ========================================= */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-body { 
+body {
     background-color: #0c0e11;
     font-family: 'Space Grotesk', sans-serif;
 }
 
 #bg-layer {
     position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0;
-    /* Reverted: Background is clear/not dimmed */
     background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('luffy-bg.jpg');
     background-size: cover;
     background-position: center 20%;
@@ -18,7 +17,7 @@ body {
 }
 
 /* =========================================
-   2. FROSTED GLASS UI (REVERTED TO LIGHT)
+   2. FROSTED GLASS UI
    ========================================= */
 .glass-ui {
     background: rgba(255, 255, 255, 0.45);
@@ -42,15 +41,14 @@ body {
 /* =========================================
    3. CATEGORY FIELDS (FORCED TO BLACK)
    ========================================= */
-/* This targets the "Character, Gender, Species..." text labels */
 #game-board > div:first-child {
-    color: #000000 !important; /* Forces the category names to Black */
+    color: #000000 !important; 
     font-weight: 800 !important;
     opacity: 1 !important;
 }
 
 /* =========================================
-   4. TOGGLE BAR & SEARCH INPUT
+   4. TOGGLE BAR & SEARCH
    ========================================= */
 .mode-text {
     color: rgba(0, 0, 0, 0.4);
@@ -68,14 +66,11 @@ body {
 #search-input {
     background: transparent !important;
     border: none !important;
-    outline: none !important;      /* Removes the "Black Box" outline */
-    box-shadow: none !important;    /* Removes Tailwind focus ring */
+    outline: none !important;      
+    box-shadow: none !important;    
     color: #000 !important;
 }
-
-#search-input::placeholder {
-    color: rgba(0, 0, 0, 0.3) !important;
-}
+#search-input::placeholder { color: rgba(0, 0, 0, 0.3) !important; }
 
 /* =========================================
    5. DROPDOWN ITEMS
@@ -90,9 +85,7 @@ body {
     font-size: 0.9rem;
     transition: background 0.1s ease;
 }
-.dropdown-item:hover, .dropdown-item.selected {
-    background: rgba(0, 0, 0, 0.1);
-}
+.dropdown-item:hover, .dropdown-item.selected { background: rgba(0, 0, 0, 0.1); }
 
 /* =========================================
    6. GAME TILES & COLORS
@@ -119,11 +112,48 @@ body {
 .tile.match-exact { background: #fde047; border: none; color: #000000; text-shadow: none; }
 .tile.match-partial { background: #4ade80; border: none; color: #000000; text-shadow: none; }
 .tile.match-none { background: #ef4444; border: none; color: #ffffff; }
-
 .tile-name { font-size: 0.85rem; font-weight: 800; }
 
 /* =========================================
-   7. ANIMATIONS
+   7. MODAL PROFILE STYLING
+   ========================================= */
+#modal-profile {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.modal-stat-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    padding: 8px 4px;
+    border-radius: 12px;
+}
+
+.modal-stat-label {
+    font-family: 'Manrope', sans-serif;
+    font-size: 8px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.4);
+    margin-bottom: 2px;
+}
+
+.modal-stat-value {
+    font-size: 10px;
+    font-weight: 700;
+    color: #000000;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.1;
+}
+
+/* =========================================
+   8. ANIMATIONS
    ========================================= */
 .flip-in {
     opacity: 0;
