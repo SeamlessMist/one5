@@ -5,7 +5,6 @@ let currentMode = 'daily';
 let guessCount = 0;
 const MAX_GUESSES = 10;
 
-// Exact Chronological Order of One Piece Arcs
 const arcOrder = [
     "Romance Dawn", "Orange Town", "Syrup Village", "Baratie", "Arlong Park", "Loguetown",
     "Reverse Mountain", "Whiskey Peak", "Little Garden", "Drum Island", "Alabasta",
@@ -13,6 +12,12 @@ const arcOrder = [
     "Sabaody Archipelago", "Amazon Lily", "Impel Down", "Marineford", "Fish-Man Island",
     "Punk Hazard", "Dressrosa", "Zou", "Whole Cake Island", "Reverie", "Wano", "Egghead"
 ];
+
+// Reliable Direct Audio Links
+const SFX = {
+    win: "https://raw.githubusercontent.com/ArshAnson/One-Piece-Dle-Assets/main/luffy-laugh.mp3",
+    wrong: "https://raw.githubusercontent.com/ArshAnson/One-Piece-Dle-Assets/main/doffy-laugh.mp3"
+};
 
 document.addEventListener("DOMContentLoaded", async () => {
     document.getElementById('btn-daily').addEventListener('click', () => setMode('daily'));
@@ -27,44 +32,31 @@ document.addEventListener("DOMContentLoaded", async () => {
     } catch (e) { console.error("Data load error", e); }
 });
 
-function playSound(id) {
-    const audio = document.getElementById(id);
-    if(audio) { audio.currentTime = 0; audio.play().catch(()=>{}); }
+function playSound(type) {
+    const audio = new Audio(SFX[type]);
+    audio.volume = 0.6;
+    audio.play().catch(e => console.log("Audio blocked by browser. Click anywhere first."));
 }
 
 function setMode(mode) {
     currentMode = mode;
-    const d = document.getElementById('btn-daily'), u = document.getElementById('btn-unlimited');
-    if(mode === 'daily') {
-        d.classList.add('text-secondary-fixed'); d.classList.remove('text-white/40');
-        u.classList.add('text-white/40'); u.classList.remove('text-secondary-fixed');
-    } else {
-        u.classList.add('text-secondary-fixed'); u.classList.remove('text-white/40');
-        d.classList.add('text-white/40'); d.classList.remove('text-secondary-fixed');
-    }
     resetGame();
 }
 
 function resetGame() {
     guessCount = 0;
-    updateTracker();
+    document.getElementById('guesses-left-text').innerText = `10 / 10`;
     availableNames = characters.map(c => c.name).sort();
-    
-    const o = document.getElementById('end-overlay');
-    o.classList.add('hidden');
-    o.classList.remove('flex', 'opacity-100');
-    document.getElementById('end-modal').classList.remove('victory-active');
-    
+    document.getElementById('end-overlay').classList.add('hidden');
+    document.getElementById('end-overlay').classList.remove('flex', 'opacity-100');
     document.getElementById('search-module').classList.remove('hidden');
-    document.getElementById('guess-input').value = '';
     document.getElementById('game-board').innerHTML = '';
-    
     targetCharacter = currentMode === 'daily' ? getDailyCharacter() : characters[Math.floor(Math.random() * characters.length)];
 }
 
 function getDailyCharacter() {
-    const today = new Date();
-    const seed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
+    const d = new Date();
+    const seed = d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate();
     const x = Math.sin(seed) * 10000;
     return characters[Math.floor((x - Math.floor(x)) * characters.length)];
 }
@@ -80,7 +72,7 @@ function setupAutocomplete() {
             list.classList.remove("hidden");
             matches.forEach(m => {
                 const d = document.createElement("div");
-                d.className = "px-6 py-3 cursor-pointer search-item hover:bg-black/5 transition-colors text-sm uppercase";
+                d.className = "px-6 py-3 cursor-pointer search-item hover:bg-gray-200 border-b border-gray-100 uppercase text-xs";
                 d.innerText = m;
                 d.onclick = () => { input.value = m; list.classList.add("hidden"); submitGuess(); };
                 list.appendChild(d);
@@ -97,20 +89,16 @@ function submitGuess() {
     availableNames = availableNames.filter(n => n !== name);
     input.value = '';
     guessCount++;
-    updateTracker();
+    document.getElementById('guesses-left-text').innerText = `${(10 - guessCount).toString().padStart(2, '0')} / 10`;
     renderGuess(char);
-    if (char.name === targetCharacter.name) setTimeout(() => endGame(true), 1000);
-    else if (guessCount >= MAX_GUESSES) setTimeout(() => endGame(false), 1000);
-}
-
-function updateTracker() {
-    document.getElementById('guesses-left-text').innerText = `${(MAX_GUESSES - guessCount).toString().padStart(2, '0')} / ${MAX_GUESSES}`;
+    if (char.name === targetCharacter.name) setTimeout(() => endGame(true), 1200);
+    else if (guessCount >= MAX_GUESSES) setTimeout(() => endGame(false), 1200);
 }
 
 function renderGuess(guess) {
     const board = document.getElementById('game-board');
     const row = document.createElement('div');
-    row.className = 'w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-11 gap-3 mb-4';
+    row.className = 'w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-11 gap-2 mb-3';
 
     const tiles = [
         createTile('NAME', guess.name, guess.name === targetCharacter.name ? 'match-exact' : 'none', true),
@@ -127,82 +115,61 @@ function renderGuess(guess) {
     ];
 
     row.innerHTML = tiles.join('');
-    board.prepend(row); // PREPEND puts latest at the top
-
+    board.prepend(row);
     row.querySelectorAll('.flip-in').forEach((t, i) => t.style.animationDelay = (i * 0.05) + 's');
 }
 
 function createTile(label, value, type, isName = false) {
-    let cls = 'border-outline-variant/20';
+    let cls = 'border-white/10';
     let txtCls = 'text-white';
 
-    // COLOR LOGIC: Yellow = Correct, Green = Partial, Red = Wrong
-    if (type === 'match-exact') { cls = 'glow-yellow'; txtCls = 'text-yellow-400'; }
-    else if (type.startsWith('match-partial')) { cls = 'glow-green'; txtCls = 'text-green-400'; }
-    else if (type.startsWith('match-none')) { cls = 'glow-red'; txtCls = 'text-red-400'; }
+    if (type.includes('match-exact')) { cls = 'glow-yellow'; txtCls = 'text-yellow-400'; }
+    else if (type.includes('match-partial')) { cls = 'glow-green'; txtCls = 'text-green-400'; }
+    else if (type.includes('match-none')) { cls = 'glow-red'; txtCls = 'text-red-500'; }
 
-    // If it's the wrong answer but has an arrow (e.g., match-none ▲)
-    let displayValue = value;
-    if (type.includes('▲')) displayValue += ' ▲';
-    if (type.includes('▼')) displayValue += ' ▼';
+    let display = value;
+    if (type.includes('▲')) display += ' ▲';
+    if (type.includes('▼')) display += ' ▼';
 
     return `
-    <div class="modular-unit glass-panel rounded-xl flip-in ${cls}">
-        ${!isName ? `<span class="text-[9px] font-label uppercase mb-1 tracking-tighter opacity-40">${label}</span>` : ''}
-        <span class="tile-value font-bold uppercase ${txtCls}">${displayValue}</span>
+    <div class="modular-unit flip-in ${cls}">
+        ${!isName ? `<span class="text-[9px] uppercase mb-1 opacity-50 text-white font-label">${label}</span>` : ''}
+        <span class="tile-value ${txtCls}">${display}</span>
     </div>`;
 }
 
-// HELPER FUNCTIONS
-function formatHaki(h) { 
-    if (!h || h.length === 0 || h[0] === "None") return "NONE"; 
-    return h.map(x => x.substring(0,3)).join('/').toUpperCase(); 
-}
-
+// Helpers
+function formatHaki(h) { return (!h || h[0] === "None") ? "NONE" : h.map(x => x.substring(0,3)).join('/').toUpperCase(); }
 function compareHaki(g, t) {
     if (JSON.stringify(g) === JSON.stringify(t)) return 'match-exact';
     return g.some(x => t.includes(x)) ? 'match-partial' : 'match-none';
 }
-
 function compareStat(g, t) { 
     if (g === t) return 'match-exact';
-    return g < t ? 'match-none ▲' : 'match-none ▼';
+    return 'match-none' + (g < t ? ' ▲' : ' ▼');
 }
-
 function parseBounty(b) { return parseInt(b.toString().replace(/[^0-9]/g, '')) || 0; }
-
 function formatBounty(b) {
     let n = parseBounty(b);
     if (n >= 1e9) return (n/1e9).toFixed(1) + 'B';
     if (n >= 1e6) return (n/1e6).toFixed(1) + 'M';
     return n > 0 ? n.toLocaleString() : "NONE";
 }
-
 function compareArc(g, t) {
     if (g === t) return 'match-exact';
     return arcOrder.indexOf(g) < arcOrder.indexOf(t) ? 'match-none ▲' : 'match-none ▼';
 }
 
 function endGame(win) {
-    const o = document.getElementById('end-overlay');
-    const modal = document.getElementById('end-modal');
-    
+    playSound(win ? 'win' : 'wrong');
     document.getElementById('search-module').classList.add('hidden');
+    const o = document.getElementById('end-overlay');
     o.classList.remove('hidden');
     o.classList.add('flex');
-
-    if (win) {
-        playSound('sfx-win');
-        modal.classList.add('victory-active');
-        document.getElementById('card-title').innerText = "KING OF THE PIRATES!";
-        document.getElementById('card-title').style.color = "#f7e600";
-        document.getElementById('card-subtitle').innerText = `Amazing! It was indeed ${targetCharacter.name}.`;
-    } else {
-        playSound('sfx-wrong');
-        document.getElementById('card-title').innerText = "WALK THE PLANK...";
-        document.getElementById('card-title').style.color = "#ef4444";
-        document.getElementById('card-subtitle').innerText = `You failed to find them. It was ${targetCharacter.name}.`;
-    }
-
     setTimeout(() => o.classList.add('opacity-100'), 10);
+    
+    document.getElementById('card-title').innerText = win ? "KING OF THE PIRATES" : "WALK THE PLANK";
+    document.getElementById('card-title').style.color = win ? "#f7e600" : "#ef4444";
+    document.getElementById('card-subtitle').innerText = win ? `You found ${targetCharacter.name}!` : `It was ${targetCharacter.name}.`;
+    if(win) document.getElementById('end-modal').classList.add('victory-active');
 }
