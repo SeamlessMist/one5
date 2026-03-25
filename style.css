@@ -94,4 +94,76 @@ body.main-bg {
     border: 1px solid rgba(255, 255, 255, 0.4);
     transform: translateX(0); /* Default position */
 }
+/* --- UI REFINEMENT --- */
+body.main-bg {
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url('luffy-bg.jpg') !important;
+    background-size: cover !important;
+    background-attachment: fixed !important;
+}
 
+.glass-panel {
+    background: rgba(255, 255, 255, 0.4) !important;
+    backdrop-filter: blur(25px) !important;
+    -webkit-backdrop-filter: blur(25px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+}
+
+/* --- BOX SPILLAGE FIX --- */
+.modular-unit {
+    background: rgba(0, 0, 0, 0.9) !important;
+    min-height: 110px;
+    border-radius: 12px;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    padding: 6px !important;
+    overflow: hidden; /* Prevent spillage */
+}
+
+.tile-value {
+    font-family: 'Space Grotesk', sans-serif !important;
+    font-size: 0.7rem !important; /* Shrunk slightly to fit */
+    font-weight: 700 !important;
+    text-align: center;
+    line-height: 1.1;
+    word-break: break-word; /* Forces long names to wrap */
+    hyphens: auto;
+}
+
+.font-label-style {
+    font-family: 'Manrope', sans-serif !important;
+    font-size: 8px !important;
+    font-weight: 800;
+    opacity: 0.6;
+    margin-bottom: 4px;
+}
+
+/* --- TOGGLE INDICATOR --- */
+#mode-indicator {
+    background: rgba(255, 255, 255, 0.5) !important;
+    transform: translateX(0);
+}
+
+#btn-daily, #btn-unlimited {
+    color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.mode-active {
+    color: #000000 !important;
+}
+
+.mode-active span {
+    color: #a38900 !important;
+}
+
+/* --- SOLID COLORS --- */
+.glow-yellow { background-color: #f7e600 !important; color: #000 !important; border: none !important; }
+.glow-yellow * { color: #000 !important; text-shadow: none !important; }
+
+.glow-green { background-color: #22c55e !important; color: #000 !important; border: none !important; }
+.glow-green * { color: #000 !important; text-shadow: none !important; }
+
+.glow-red { background-color: #ef4444 !important; color: #fff !important; border: none !important; }
+.glow-red * { color: #fff !important; }
+
+/* Scrollbar Hide */
+#autocomplete-list { scrollbar-width: none; }
+#autocomplete-list::-webkit-scrollbar { display: none; }
