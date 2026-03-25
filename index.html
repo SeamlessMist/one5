@@ -1,44 +1,85 @@
-<!-- Main Content Canvas -->
-<main class="relative z-10 w-full max-w-7xl mx-auto px-4 flex flex-col items-center pt-10 pb-24">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>One Piece Dle | Grand Line Archive</title>
     
-    <!-- THE INTERFACE STACK: Forces Symmetry -->
-    <div class="w-full max-w-[650px] flex flex-col gap-4">
+    <link rel="icon" href="data:,">
+
+    <!-- 1. Google Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Manrope:wght@500;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <!-- 2. Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- 3. Local Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="main-bg min-h-screen relative overflow-x-hidden">
+
+    <main class="relative z-10 w-full max-w-7xl mx-auto px-4 flex flex-col items-center pt-10 pb-24">
         
-        <!-- ROW 1: EQUAL TOP BARS -->
-        <div class="grid grid-cols-2 gap-4">
-            <!-- Mode Toggle -->
-            <div class="relative flex items-center glass-panel p-1 rounded-full border h-[52px] overflow-hidden">
-                <div id="mode-indicator" class="absolute top-1 bottom-1 left-1 w-[calc(50%-4px)] bg-white/40 rounded-full transition-all duration-500 z-0"></div>
-                <button id="btn-daily" class="relative z-10 w-1/2 h-full flex items-center justify-center gap-2 transition-all duration-300 mode-active">
-                    <span class="material-symbols-outlined text-lg">calendar_today</span>
-                    <span class="font-label text-[10px] tracking-widest uppercase font-bold">Daily</span>
-                </button>
-                <button id="btn-unlimited" class="relative z-10 w-1/2 h-full flex items-center justify-center gap-2 transition-all duration-300">
-                    <span class="material-symbols-outlined text-lg">all_inclusive</span>
-                    <span class="font-label text-[10px] tracking-widest uppercase font-bold">Unlimited</span>
-                </button>
-            </div>
+        <!-- INTERFACE STACK: FORCES EQUAL WIDTHS -->
+        <div class="w-full max-w-[650px] flex flex-col gap-4">
             
-            <!-- Guesses Left -->
-            <div class="glass-panel flex items-center justify-center gap-3 rounded-full border h-[52px]">
-                <span class="text-[10px] uppercase font-bold text-black opacity-60">Guesses Left:</span>
-                <span id="guesses-left-text" class="font-headline text-sm font-bold text-[#a38900]">10 / 10</span>
-            </div>
-        </div>
-
-        <!-- ROW 2: SEARCH BAR (Matches Width) -->
-        <div id="search-module" class="relative group">
-            <div class="relative flex items-center glass-panel border rounded-full overflow-hidden shadow-2xl z-40 h-[52px]">
-                <div class="pl-6 text-black/40">
-                    <span class="material-symbols-outlined text-xl">search</span>
+            <!-- TOP BARS -->
+            <div class="grid grid-cols-2 gap-4">
+                <!-- Mode Selection -->
+                <div class="relative flex items-center glass-panel p-1 rounded-full border h-[55px] overflow-hidden">
+                    <div id="mode-indicator" class="absolute top-1 bottom-1 left-1 w-[calc(50%-4px)] bg-white/40 rounded-full transition-all duration-500 z-0"></div>
+                    
+                    <button id="btn-daily" class="relative z-10 w-1/2 h-full flex items-center justify-center gap-2 transition-all duration-300 mode-active" onclick="setMode('daily')">
+                        <span class="material-symbols-outlined text-lg">calendar_today</span>
+                        <span class="font-label text-[10px] tracking-widest uppercase font-bold">Daily</span>
+                    </button>
+                    
+                    <button id="btn-unlimited" class="relative z-10 w-1/2 h-full flex items-center justify-center gap-2 transition-all duration-300" onclick="setMode('unlimited')">
+                        <span class="material-symbols-outlined text-lg">all_inclusive</span>
+                        <span class="font-label text-[10px] tracking-widest uppercase font-bold">Unlimited</span>
+                    </button>
                 </div>
-                <input id="guess-input" class="w-full bg-transparent border-none focus:ring-0 py-4 px-4 font-headline text-lg uppercase outline-none text-black placeholder:text-black/30" placeholder="SEARCH CHARACTER..." type="text" autocomplete="off"/>
+                
+                <!-- Guesses Left -->
+                <div class="glass-panel flex items-center justify-center gap-3 rounded-full border h-[55px]">
+                    <span class="text-[10px] uppercase font-bold text-black opacity-60">Guesses Left:</span>
+                    <span id="guesses-left-text" class="font-headline text-lg font-bold text-[#a38900]">10 / 10</span>
+                </div>
             </div>
-            <div id="autocomplete-list" class="absolute top-[calc(100%+10px)] left-0 w-full rounded-2xl shadow-2xl z-50 hidden max-h-64 overflow-y-auto"></div>
+
+            <!-- SEARCH BAR -->
+            <div id="search-module" class="relative">
+                <div class="relative flex items-center glass-panel border rounded-full overflow-hidden shadow-2xl z-40 h-[55px]">
+                    <div class="pl-6 text-black/40">
+                        <span class="material-symbols-outlined text-xl">search</span>
+                    </div>
+                    <input id="guess-input" class="w-full bg-transparent border-none focus:ring-0 py-4 px-4 font-headline text-lg uppercase outline-none text-black placeholder:text-black/30" placeholder="SEARCH CHARACTER..." type="text" autocomplete="off"/>
+                </div>
+                <div id="autocomplete-list" class="absolute top-[calc(100%+10px)] left-0 w-full rounded-2xl shadow-2xl z-50 hidden max-h-64 overflow-y-auto"></div>
+            </div>
         </div>
 
-    </div> <!-- End of Stack -->
+        <!-- GAME BOARD -->
+        <section id="game-board" class="w-full mt-12 flex flex-col gap-3 items-center"></section>
+    </main>
 
-    <!-- GAME BOARD -->
-    <section id="game-board" class="w-full mt-10 flex flex-col gap-3 items-center"></section>
-</main>
+    <!-- END MODAL -->
+    <div id="end-overlay" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/80 backdrop-blur-sm opacity-0 transition-all duration-700">
+        <div id="end-modal" class="glass-panel border-2 rounded-3xl p-10 max-w-md w-full text-center transform scale-90 transition-all duration-500">
+            <h2 id="card-title" class="font-headline text-4xl font-black mb-4 uppercase italic"></h2>
+            <p id="card-subtitle" class="font-body text-lg font-medium text-black/70 mb-8"></p>
+            <button id=
