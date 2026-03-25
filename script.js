@@ -29,16 +29,20 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 function setMode(mode) {
     currentMode = mode;
-    const indicator = document.getElementById('mode-indicator');
     const dailyBtn = document.getElementById('btn-daily');
     const unlimitedBtn = document.getElementById('btn-unlimited');
+    const indicator = document.getElementById('mode-indicator');
 
     if (mode === 'daily') {
+        // Move pill to the left
         indicator.style.transform = 'translateX(0)';
+        // Swap active classes
         dailyBtn.classList.add('mode-active');
         unlimitedBtn.classList.remove('mode-active');
     } else {
+        // Move pill to the right (100% of its width)
         indicator.style.transform = 'translateX(100%)';
+        // Swap active classes
         unlimitedBtn.classList.add('mode-active');
         dailyBtn.classList.remove('mode-active');
     }
