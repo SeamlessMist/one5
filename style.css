@@ -1,16 +1,15 @@
 /* =========================================
-   1. CORE STYLING & FONTS
+   1. CORE STYLING & BACKGROUND
    ========================================= */
 .material-symbols-outlined {
     font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
     vertical-align: middle;
 }
 
-/* Background: Luffy Gear 5 is clearly visible */
 .main-bg {
     background-color: #0c0e11;
     background-image: 
-        linear-gradient(rgba(12, 14, 17, 0.2), rgba(12, 14, 17, 0.4)),
+        linear-gradient(rgba(12, 14, 17, 0.1), rgba(12, 14, 17, 0.3)),
         url('luffy-bg.jpg'); 
     background-size: cover;
     background-position: center 20%;
@@ -18,26 +17,44 @@
 }
 
 /* =========================================
-   2. TOP UI CONTROLS (Daily, Unlimited, Guesses)
+   2. FROSTED GLASS UI (THE "DROPBOX" LOOK)
    ========================================= */
 
-/* Boosted visibility for the Glass Panels */
-.glass-panel {
-    background: rgba(15, 18, 22, 0.95) !important; /* Darker & More Solid */
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+/* Applied to Daily Tab, Guesses Bar, and Search Bar */
+.glass-panel, 
+#search-module .glass-panel {
+    background: rgba(255, 255, 255, 0.45) !important; /* Light Frosted Tint */
+    backdrop-filter: blur(25px) !important;
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2) !important;
+    border-radius: 9999px; /* Rounded pill style */
 }
 
-/* Make inactive text more visible */
-#btn-daily.text-white\/40, 
-#btn-unlimited.text-white\/40,
-.text-white\/40 {
-    color: rgba(255, 255, 255, 0.7) !important; /* Was 0.4, now 0.7 for visibility */
+/* Text colors for the Light Glass Bars */
+#btn-daily, #btn-unlimited, 
+.font-label, 
+#guesses-left-text {
+    color: #000000 !important; /* Base text is now black to match dropdown style */
+    font-weight: 800 !important;
+}
+
+/* Specific highlight for Active States and Numbers */
+.text-secondary-fixed, 
+#guesses-left-text,
+#btn-daily.text-secondary-fixed {
+    color: #b89a00 !important; /* Slightly darker gold for readability on light glass */
+    text-shadow: none !important;
+}
+
+/* Inactive button state (Lightened black) */
+.text-white\/40, 
+#btn-unlimited.text-white\/40 {
+    color: rgba(0, 0, 0, 0.4) !important;
 }
 
 /* =========================================
-   3. SEARCH BAR (MATCHING THE TABS)
+   3. SEARCH INPUT & DROPDOWN
    ========================================= */
 
 #search-module {
@@ -45,134 +62,82 @@
     margin: 0 auto;
 }
 
-/* Matching the "Daily/Unlimited" tab style */
-#search-module .glass-panel {
-    background: rgba(15, 18, 22, 0.8) !important; /* Transparent but visible */
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    backdrop-filter: blur(15px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3) !important;
-}
-
 #guess-input {
     background: transparent !important;
-    color: white !important;
+    color: #000000 !important; /* Black text while typing */
     font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
 }
 
-/* =========================================
-   4. DROPDOWN (GLASS STYLE)
-   ========================================= */
+#guess-input::placeholder {
+    color: rgba(0, 0, 0, 0.3) !important;
+}
 
 #autocomplete-list {
     background: rgba(255, 255, 255, 0.5) !important; 
     backdrop-filter: blur(25px) !important;
-    border: 1px solid rgba(255, 255, 255, 0.3) !important;
-    border-radius: 15px;
-    margin-top: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    border-radius: 20px;
+    margin-top: 10px;
     scrollbar-width: none; 
 }
-#autocomplete-list::-webkit-scrollbar { display: none; }
 
 .search-item {
     color: #000000 !important; 
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 800;
     padding: 14px 20px !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.search-item:hover {
+    background: rgba(0, 0, 0, 0.05) !important;
 }
 
 /* =========================================
-   5. GAME BOARD & SOLID COLOR TILES
+   4. GAME TILES (SOLID COLORS)
    ========================================= */
 
 .modular-unit {
-    background: rgba(0, 0, 0, 0.9) !important; /* Neutral Name box */
+    background: rgba(0, 0, 0, 0.9) !important;
     border-radius: 12px;
     min-height: 120px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0.5rem !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
-/* --- TILE FONTS --- */
 .tile-value {
     font-family: 'Space Grotesk', sans-serif !important;
     font-size: 0.85rem !important;
     font-weight: 800 !important;
     text-transform: uppercase;
     text-align: center;
-    line-height: 1.1;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
-.font-label-style {
-    font-family: 'Manrope', sans-serif !important;
-    font-size: 9px !important;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-bottom: 6px;
-    opacity: 0.8;
-}
+.glow-yellow { background-color: #f7e600 !important; border: none !important; }
+.glow-yellow .tile-value, .glow-yellow .font-label-style { color: #000000 !important; text-shadow: none !important; }
 
-/* --- SOLID BACKGROUND COLORS (STRICT OVERRIDE) --- */
+.glow-green { background-color: #22c55e !important; border: none !important; }
+.glow-green .tile-value, .glow-green .font-label-style { color: #000000 !important; text-shadow: none !important; }
 
-/* YELLOW = CORRECT (Black Text) */
-.glow-yellow { 
-    background-color: #f7e600 !important; 
-    border: none !important;
-    box-shadow: 0 0 15px rgba(247, 230, 0, 0.3);
-}
-.glow-yellow .tile-value, 
-.glow-yellow .font-label-style {
-    color: #000000 !important;
-    text-shadow: none !important;
-}
-
-/* GREEN = PARTIAL (Black Text) */
-.glow-green { 
-    background-color: #22c55e !important; 
-    border: none !important;
-    box-shadow: 0 0 15px rgba(34, 197, 94, 0.3);
-}
-.glow-green .tile-value, 
-.glow-green .font-label-style {
-    color: #000000 !important;
-    text-shadow: none !important;
-}
-
-/* RED = WRONG (White Text) */
-.glow-red { 
-    background-color: #ef4444 !important; 
-    border: none !important;
-}
-.glow-red .tile-value, 
-.glow-red .font-label-style {
-    color: #ffffff !important;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5) !important;
-}
+.glow-red { background-color: #ef4444 !important; border: none !important; }
+.glow-red .tile-value, .glow-red .font-label-style { color: #ffffff !important; }
 
 /* =========================================
-   6. ANIMATIONS
+   5. ANIMATIONS
    ========================================= */
-
 .flip-in {
     opacity: 0;
     transform: rotateX(90deg);
     animation: flipIn 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
-
-@keyframes flipIn {
-    to { transform: rotateX(0deg); opacity: 1; }
-}
+@keyframes flipIn { to { transform: rotateX(0deg); opacity: 1; } }
 
 .victory-active {
     animation: victoryPulse 2s infinite ease-in-out;
     border: 3px solid #f7e600 !important;
 }
-
-@keyframes victoryPulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-}
+@keyframes victoryPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
