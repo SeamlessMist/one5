@@ -1,62 +1,4 @@
-/* Core Styling */
-.material-symbols-outlined {
-    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-    vertical-align: middle;
-}
-
-/* Background - Dimmed slightly more for text contrast */
-.main-bg {
-    background-color: #0c0e11;
-    background-image: 
-        linear-gradient(rgba(12, 14, 17, 0.4), rgba(12, 14, 17, 0.6)),
-        url('luffy-bg.jpg'); 
-    background-size: cover;
-    background-position: center 20%;
-    background-attachment: fixed;
-}
-
-/* SEARCH BAR FIX */
-#search-module .glass-panel {
-    background: rgba(0, 0, 0, 0.8) !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-}
-
-/* TILE READABILITY FIX */
-.modular-unit {
-    transition: all 0.3s ease;
-    min-height: 110px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0.5rem !important;
-    /* DARKER BACKGROUND FOR TILES */
-    background: rgba(0, 0, 0, 0.85) !important; 
-    backdrop-filter: blur(8px);
-    border-radius: 12px;
-}
-
-.tile-value {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 0.75rem !important;
-    font-weight: 900 !important;
-    line-height: 1.2 !important;
-    word-break: break-word;
-    text-align: center;
-    /* TEXT SHADOW MAKES IT READABLE ON ANY BG */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1), 0 0 10px rgba(0,0,0,0.5);
-    display: block;
-    width: 100%;
-}
-
-/* COLOR LOGIC */
-.glow-yellow { border: 2px solid #f7e600 !important; box-shadow: 0 0 15px rgba(247, 230, 0, 0.4); }
-.glow-green { border: 2px solid #22c55e !important; box-shadow: 0 0 15px rgba(34, 197, 94, 0.4); }
-.glow-red { border: 2px solid #ef4444 !important; }
-
-/* Hidden Scrollbar for Results */
-/* --- Background: Clear Luffy Gear 5 --- */
+/* --- Background & Core --- */
 .main-bg {
     background-color: #0c0e11;
     background-image: 
@@ -67,37 +9,72 @@
     background-attachment: fixed;
 }
 
-/* --- Glassmorphism Dropdown with Black Text --- */
-#autocomplete-list {
-    /* Frosted glass effect (light-ish but transparent) */
-    background: rgba(255, 255, 255, 0.4) !important; 
-    backdrop-filter: blur(20px) !important;
-    -webkit-backdrop-filter: blur(20px);
-    
-    border: 1px solid rgba(255, 255, 255, 0.3) !important;
-    border-radius: 15px;
-    margin-top: 8px;
-    overflow-y: auto;
-    
-    /* Hide Scrollbar */
-    scrollbar-width: none; 
+/* --- TILE FONTS & READABILITY (RESTORING PREVIOUS FONT) --- */
+.modular-unit {
+    background: rgba(0, 0, 0, 0.85) !important; 
+    border-radius: 12px;
+    min-height: 120px; /* Big boxes */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-#autocomplete-list::-webkit-scrollbar {
-    display: none;
-}
-
-.search-item {
-    color: #000000 !important; /* FORCED BLACK TEXT */
-    font-weight: 800; /* Extra bold for readability */
-    padding: 14px 20px !important;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    transition: all 0.2s ease;
+/* Restore Space Grotesk for the values */
+.tile-value {
+    font-family: 'Space Grotesk', sans-serif !important;
+    font-size: 0.85rem !important; /* Slightly bigger for Space Grotesk */
+    font-weight: 700 !important;
     text-transform: uppercase;
+    text-align: center;
+    line-height: 1.1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     letter-spacing: 0.05em;
 }
 
-.search-item:hover {
-    background: rgba(0, 0, 0, 0.1) !important; /* Subtle dark hover */
-    color: #000000 !important;
+/* Restore Manrope for the small labels */
+.font-label-style {
+    font-family: 'Manrope', sans-serif !important;
+    font-size: 9px !important;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    letter-spacing: 0.1em;
+    opacity: 0.5;
+}
+
+/* --- COLOR LOGIC --- */
+.glow-yellow { border: 2px solid #f7e600 !important; box-shadow: 0 0 15px rgba(247, 230, 0, 0.4); }
+.glow-green { border: 2px solid #22c55e !important; box-shadow: 0 0 15px rgba(34, 197, 94, 0.4); }
+.glow-red { border: 2px solid #ef4444 !important; }
+
+/* --- GLASS DROP-DOWN (TRANSPARENT + BLACK TEXT) --- */
+#autocomplete-list {
+    background: rgba(255, 255, 255, 0.5) !important; 
+    backdrop-filter: blur(25px) !important;
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 15px;
+    margin-top: 8px;
+    scrollbar-width: none;
+}
+#autocomplete-list::-webkit-scrollbar { display: none; }
+
+.search-item {
+    color: #000000 !important; /* Black text */
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 800;
+    padding: 14px 20px !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    text-transform: uppercase;
+}
+.search-item:hover { background: rgba(0, 0, 0, 0.1) !important; }
+
+/* --- Search Bar Transparent Style --- */
+#search-module .glass-panel {
+    background: rgba(0, 0, 0, 0.7) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    backdrop-filter: blur(10px);
 }
