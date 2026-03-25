@@ -6,34 +6,32 @@
 body {
     background-color: #0c0e11;
     font-family: 'Space Grotesk', sans-serif;
-} 
+}
 
 #bg-layer {
     position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0;
-    /* Darkened the overlay slightly so the Luffy image looks better with dark bars */
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('luffy-bg.jpg');
+    /* Reverted: Background is clear/not dimmed */
+    background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('luffy-bg.jpg');
     background-size: cover;
     background-position: center 20%;
     pointer-events: none;
 }
 
 /* =========================================
-   2. GLASS UI - CHANGED TO BLACK
+   2. FROSTED GLASS UI (REVERTED TO LIGHT)
    ========================================= */
 .glass-ui {
-    /* Changed from white to Dark Transparent Black */
-    background: rgba(0, 0, 0, 0.8) !important;
+    background: rgba(255, 255, 255, 0.45);
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
-    /* Changed border to a faint white so it defines the shape on dark bg */
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 .glass-dropdown {
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 /* Scrollbar Hiding Utility */
@@ -42,69 +40,65 @@ body {
 #dropdown::-webkit-scrollbar { display: none; }
 
 /* =========================================
-   3. TOGGLE BAR & SEARCH TEXT FIXES
+   3. CATEGORY FIELDS (FORCED TO BLACK)
    ========================================= */
-.mode-text {
-    /* Changed to white/grey for dark background */
-    color: rgba(255, 255, 255, 0.5) !important;
-    font-family: 'Manrope', sans-serif;
-    transition: color 0.3s ease;
-}
-.mode-text.active { color: #ffffff !important; }
-.mode-text.active span { color: #fde047 !important; } /* Bright Yellow Icon */
-
-/* Sliding Pill for dark theme */
-#mode-pill { 
-    left: 4px; 
-    background: rgba(255, 255, 255, 0.1) !important; 
-}
-
-/* Force Guesses counter to be white */
-#guess-counter {
-    color: white !important;
-}
-
-/* SEARCH INPUT - REMOVED THE BLACK BOX/OUTLINE */
-#search-input {
-    background: transparent !important;
-    border: none !important;      /* Removes internal border */
-    outline: none !important;     /* Removes the "Black Box" outline when clicking */
-    box-shadow: none !important;   /* Removes any glow/shadow boxes */
-    color: white !important;       /* Text you type is now white */
-    font-family: 'Space Grotesk', sans-serif;
-}
-
-#search-input::placeholder {
-    color: rgba(255, 255, 255, 0.3) !important;
-}
-
-/* Fix for Search Icon color */
-#search-module .material-symbols-outlined {
-    color: rgba(255, 255, 255, 0.5) !important;
+/* This targets the "Character, Gender, Species..." text labels */
+#game-board > div:first-child {
+    color: #000000 !important; /* Forces the category names to Black */
+    font-weight: 800 !important;
+    opacity: 1 !important;
 }
 
 /* =========================================
-   4. DROPDOWN ITEMS
+   4. TOGGLE BAR & SEARCH INPUT
+   ========================================= */
+.mode-text {
+    color: rgba(0, 0, 0, 0.4);
+    font-family: 'Manrope', sans-serif;
+    transition: color 0.3s ease;
+}
+.mode-text.active { color: #000000; }
+.mode-text.active span { color: #a38900; }
+
+#mode-pill { left: 4px; }
+.daily-active #mode-pill { transform: translateX(0); }
+.unlim-active #mode-pill { transform: translateX(calc(100% + 4px)); }
+
+/* SEARCH INPUT - REMOVED INTERNAL BLACK BOX */
+#search-input {
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;      /* Removes the "Black Box" outline */
+    box-shadow: none !important;    /* Removes Tailwind focus ring */
+    color: #000 !important;
+}
+
+#search-input::placeholder {
+    color: rgba(0, 0, 0, 0.3) !important;
+}
+
+/* =========================================
+   5. DROPDOWN ITEMS
    ========================================= */
 .dropdown-item {
-    color: #fff; /* Changed to white text for dark dropdown */
+    color: #000;
     font-weight: 800;
     padding: 16px 24px;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
     cursor: pointer;
     text-transform: uppercase;
     font-size: 0.9rem;
     transition: background 0.1s ease;
 }
 .dropdown-item:hover, .dropdown-item.selected {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.1);
 }
 
 /* =========================================
-   5. GAME TILES & COLORS
+   6. GAME TILES & COLORS
    ========================================= */
 .tile {
-    background: rgba(0, 0, 0, 0.85); /* Default Dark */
+    background: rgba(0, 0, 0, 0.85); 
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 12px;
     display: flex;
@@ -113,8 +107,6 @@ body {
     padding: 8px;
     text-align: center;
     min-height: 100px;
-    
-    /* Text settings */
     color: #ffffff;
     font-size: 0.75rem;
     font-weight: 700;
@@ -124,43 +116,20 @@ body {
     text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
 }
 
-/* EXACT MATCH (YELLOW) */
-.tile.match-exact {
-    background: #fde047; 
-    border: none;
-    color: #000000;
-    text-shadow: none;
-}
+.tile.match-exact { background: #fde047; border: none; color: #000000; text-shadow: none; }
+.tile.match-partial { background: #4ade80; border: none; color: #000000; text-shadow: none; }
+.tile.match-none { background: #ef4444; border: none; color: #ffffff; }
 
-/* PARTIAL MATCH (GREEN) */
-.tile.match-partial {
-    background: #4ade80; 
-    border: none;
-    color: #000000;
-    text-shadow: none;
-}
-
-/* WRONG MATCH (RED) */
-.tile.match-none {
-    background: #ef4444; 
-    border: none;
-    color: #ffffff;
-}
-
-.tile-name {
-    font-size: 0.85rem;
-    font-weight: 800;
-}
+.tile-name { font-size: 0.85rem; font-weight: 800; }
 
 /* =========================================
-   6. ANIMATIONS
+   7. ANIMATIONS
    ========================================= */
 .flip-in {
     opacity: 0;
     transform: rotateX(90deg);
     animation: flipIn 0.5s ease-out forwards;
 }
-
 @keyframes flipIn {
     0% { transform: rotateX(90deg); opacity: 0; }
     100% { transform: rotateX(0deg); opacity: 1; }
