@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
     
-    <!-- Link to our Custom Stylesheet -->
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 
     <!-- Tailwind Configuration -->
@@ -20,17 +20,13 @@
             theme: {
                 extend: {
                     colors: {
-                        "primary-container": "#00e5ff",
-                        "secondary-fixed": "#f7e600",
-                        "error": "#ffb4ab",
-                        "error-container": "#93000a",
-                        "surface-container-lowest": "#0c0e11",
-                        "surface": "#111317",
-                        "outline-variant": "#3b494c",
-                        "outline": "#849396",
-                        "on-surface": "#e2e2e6",
-                        "background": "#111317",
-                        "on-primary": "#00363d"
+                        "primary-container": "#22c55e", // Green for Partial
+                        "secondary-fixed": "#f7e600",   // Yellow for Correct
+                        "error": "#ef4444",             // Red for Wrong
+                        "surface-container-lowest": "rgba(255, 255, 255, 0.05)",
+                        "background": "#0c0e11",
+                        "on-surface": "#ffffff",
+                        "outline-variant": "rgba(255, 255, 255, 0.2)"
                     },
                     fontFamily: {
                         "headline": ["Space Grotesk"],
@@ -42,76 +38,87 @@
         }
     </script>
 </head>
-<body class="main-bg text-on-surface font-body selection:bg-primary-container selection:text-on-primary min-h-screen relative overflow-x-hidden">
+<body class="main-bg text-on-surface font-body selection:bg-secondary-fixed selection:text-black min-h-screen relative overflow-x-hidden">
 
     <!-- Audio SFX -->
-<audio id="sfx-wrong" src="https://www.myinstants.com/media/sounds/doflamingo-laugh.mp3" preload="auto"></audio>
-<audio id="sfx-win" src="https://www.myinstants.com/media/sounds/luffy-laugh-one-piece.mp3" preload="auto"></audio>
+    <!-- Make sure these filenames match your local files or URLs -->
+    <audio id="sfx-wrong" src="https://www.myinstants.com/media/sounds/doflamingo-laugh.mp3" preload="auto"></audio>
+    <audio id="sfx-win" src="https://www.myinstants.com/media/sounds/luffy-laugh-one-piece.mp3" preload="auto"></audio>
 
     <!-- Tactical Overlay Grid -->
     <div class="fixed inset-0 pointer-events-none z-[5] opacity-[0.05] overflow-hidden">
-        <div class="absolute inset-0" style="background-image: radial-gradient(circle, #00E5FF 0.5px, transparent 0.5px); background-size: 30px 30px;"></div>
+        <div class="absolute inset-0" style="background-image: radial-gradient(circle, #ffffff 0.5px, transparent 0.5px); background-size: 30px 30px;"></div>
     </div>
 
     <!-- Main Content Canvas -->
     <main class="relative z-10 w-full max-w-7xl mx-auto px-4 flex flex-col items-center pt-12 pb-24">
         
         <!-- Central Interaction Cluster -->
-        <div class="w-full max-w-5xl flex flex-col items-center gap-8 mb-8">
+        <div class="w-full max-w-5xl flex flex-col items-center gap-8 mb-12">
             
             <!-- Top Controls Row -->
             <div class="flex flex-wrap items-center justify-center gap-4">
                 <!-- Mode Selection -->
-                <div class="flex items-center gap-6 glass-panel py-3 px-6 rounded-full border border-outline-variant/20 shadow-xl">
-                    <button id="btn-daily" class="flex items-center gap-2 text-primary-container hover:text-white transition-colors group">
-                        <span class="material-symbols-outlined text-lg drop-shadow-[0_0_8px_rgba(0,229,255,0.4)]">calendar_today</span>
-                        <span class="font-label text-[10px] tracking-[0.2em] uppercase font-bold text-primary-container group-hover:text-white">Daily</span>
+                <div class="flex items-center gap-6 glass-panel py-3 px-6 rounded-full border border-outline-variant shadow-xl">
+                    <button id="btn-daily" class="flex items-center gap-2 text-secondary-fixed hover:text-white transition-colors group">
+                        <span class="material-symbols-outlined text-lg drop-shadow-[0_0_8px_rgba(247,230,0,0.4)]">calendar_today</span>
+                        <span class="font-label text-[10px] tracking-[0.2em] uppercase font-bold group-hover:text-white">Daily</span>
                     </button>
-                    <div class="w-px h-4 bg-outline-variant/30"></div>
-                    <button id="btn-unlimited" class="flex items-center gap-2 text-outline/60 hover:text-white transition-colors group">
+                    <div class="w-px h-4 bg-outline-variant"></div>
+                    <button id="btn-unlimited" class="flex items-center gap-2 text-white/40 hover:text-white transition-colors group">
                         <span class="material-symbols-outlined text-lg">all_inclusive</span>
                         <span class="font-label text-[10px] tracking-[0.2em] uppercase font-bold group-hover:text-white">Unlimited</span>
                     </button>
                 </div>
                 
                 <!-- Guesses Remaining Indicator -->
-                <div class="glass-panel py-3 px-6 rounded-full border border-outline-variant/20 shadow-xl flex items-center gap-3">
-                    <span class="text-[10px] font-label tracking-[0.2em] uppercase font-bold text-outline/60">Guesses Left:</span>
-                    <span id="guesses-left-text" class="font-headline text-sm font-bold text-primary-container drop-shadow-[0_0_8px_rgba(0,229,255,0.4)]">10 / 10</span>
+                <div class="glass-panel py-3 px-6 rounded-full border border-outline-variant shadow-xl flex items-center gap-3">
+                    <span class="text-[10px] font-label tracking-[0.2em] uppercase font-bold text-white/40">Guesses Left:</span>
+                    <span id="guesses-left-text" class="font-headline text-sm font-bold text-secondary-fixed drop-shadow-[0_0_8px_rgba(247,230,0,0.4)]">10 / 10</span>
                 </div>
             </div>
 
-            <!-- Search Tactical Module -->
-            <div id="search-module" class="w-full max-w-2xl relative group">
-                <div class="absolute -inset-1 bg-gradient-to-r from-primary-container/20 to-transparent rounded-full blur-lg opacity-30 group-hover:opacity-60 transition duration-700"></div>
-                <div class="relative flex items-center bg-surface-container-lowest glass-panel border border-outline-variant/40 rounded-full overflow-hidden shadow-2xl neomorphic-inset z-40">
-                    <div class="pl-8 text-outline">
-                        <span class="material-symbols-outlined text-2xl">search</span>
+            <!-- Search Tactical Module (SHRUNK TO 450px) -->
+            <div id="search-module" class="w-full max-w-[450px] relative group">
+                <div class="relative flex items-center bg-surface-container-lowest glass-panel border border-outline-variant rounded-full overflow-hidden shadow-2xl z-40">
+                    <div class="pl-6 text-white/40">
+                        <span class="material-symbols-outlined text-xl">search</span>
                     </div>
-                    <input id="guess-input" class="w-full bg-transparent border-none focus:ring-0 py-6 px-6 font-headline text-xl tracking-[0.2em] text-on-surface placeholder:text-outline/20 uppercase outline-none" placeholder="ENTER CHARACTER NAME..." type="text" autocomplete="off"/>
+                    <input id="guess-input" 
+                           class="w-full bg-transparent border-none focus:ring-0 py-4 px-4 font-headline text-lg tracking-[0.15em] text-white placeholder:text-white/20 uppercase outline-none" 
+                           placeholder="SEARCH CHARACTER..." 
+                           type="text" 
+                           autocomplete="off"/>
                 </div>
                 
-                <!-- Autocomplete List -->
-                <div id="autocomplete-list" class="absolute top-[calc(100%+15px)] left-0 w-full glass-panel border border-outline-variant/40 rounded-2xl shadow-2xl z-50 hidden max-h-64 overflow-y-auto neomorphic-flat"></div>
+                <!-- Autocomplete List (BLACK TEXT, NO SCROLLBAR) -->
+                <div id="autocomplete-list" class="absolute top-[calc(100%+10px)] left-0 w-full rounded-2xl shadow-2xl z-50 hidden max-h-64 overflow-y-auto">
+                    <!-- Items injected by JS -->
+                </div>
             </div>
         </div>
 
-        <!-- Guessed History Tactical Display (Game Board) -->
+        <!-- Game Board (NEW GUESSES APPEAR AT TOP) -->
         <section id="game-board" class="w-full flex flex-col gap-4 items-center"></section>
-<div id="victory-confetti" class="fixed inset-0 pointer-events-none z-[60]"></div>
 
     </main>
 
-    <!-- Post-Game Tactical Overlay -->
-    <div id="end-overlay" class="fixed inset-0 z-50 hidden items-center justify-center bg-background/90 backdrop-blur-md opacity-0 transition-opacity duration-500">
-        <div id="end-modal" class="glass-panel neomorphic-flat border border-outline-variant/40 rounded-2xl p-10 max-w-md w-full text-center transform scale-95 transition-transform duration-500">
-            <h2 id="card-title" class="font-headline text-4xl font-bold mb-3 tracking-widest uppercase"></h2>
-            <p id="card-subtitle" class="font-body text-[15px] font-medium text-outline mb-8"></p>
-            <button id="btn-play-again" class="w-full py-4 rounded-xl bg-primary-container text-on-primary font-label font-bold tracking-[0.2em] uppercase hover:brightness-110 transition-all shadow-[0_0_20px_rgba(0,229,255,0.3)]">Play Again</button>
+    <!-- Post-Game Tactical Overlay (VICTORY/DEFEAT CELEBRATION) -->
+    <div id="end-overlay" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/80 backdrop-blur-sm opacity-0 transition-all duration-700">
+        <div id="end-modal" class="glass-panel border-2 border-outline-variant rounded-3xl p-12 max-w-md w-full text-center transform scale-90 transition-all duration-500 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
+            
+            <h2 id="card-title" class="font-headline text-4xl font-black mb-4 tracking-tighter uppercase italic"></h2>
+            
+            <p id="card-subtitle" class="font-body text-lg font-medium text-white/70 mb-10 leading-relaxed"></p>
+            
+            <button id="btn-play-again" class="w-full py-5 rounded-2xl bg-white text-black font-label font-black tracking-[0.3em] uppercase hover:bg-secondary-fixed hover:scale-105 transition-all active:scale-95 shadow-xl">
+                Try Again
+            </button>
+            
         </div>
     </div>
 
-    <!-- Link to our Custom JS Script -->
+    <!-- Script Entry -->
     <script src="script.js"></script>
 </body>
 </html>
