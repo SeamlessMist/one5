@@ -1,143 +1,102 @@
 /* =========================================
-   1. CORE STYLING & BACKGROUND
+   1. CORE & BACKGROUND
    ========================================= */
 .material-symbols-outlined {
     font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
     vertical-align: middle;
 }
 
-.main-bg {
-    background-color: #0c0e11;
+body .main-bg {
+    background-color: #0c0e11 !important;
     background-image: 
-        linear-gradient(rgba(12, 14, 17, 0.1), rgba(12, 14, 17, 0.3)),
-        url('luffy-bg.jpg'); 
-    background-size: cover;
-    background-position: center 20%;
-    background-attachment: fixed;
+        linear-gradient(rgba(12, 14, 17, 0.1), rgba(12, 14, 17, 0.2)),
+        url('luffy-bg.jpg') !important; 
+    background-size: cover !important;
+    background-position: center 20% !important;
+    background-attachment: fixed !important;
 }
 
 /* =========================================
-   2. FROSTED GLASS UI (THE "DROPBOX" LOOK)
+   2. THE FROSTED GLASS FIX (FORCED)
    ========================================= */
 
-/* Applied to Daily Tab, Guesses Bar, and Search Bar */
-.glass-panel, 
-#search-module .glass-panel {
-    background: rgba(255, 255, 255, 0.45) !important; /* Light Frosted Tint */
+/* This targets the Daily Tab, Guesses Bar, and Search Bar specifically */
+body .glass-panel, 
+body #search-module div.glass-panel,
+body #search-module .relative {
+    background: rgba(255, 255, 255, 0.5) !important; /* Lighter white tint */
     backdrop-filter: blur(25px) !important;
-    -webkit-backdrop-filter: blur(25px);
-    border: 1px solid rgba(255, 255, 255, 0.5) !important;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2) !important;
-    border-radius: 9999px; /* Rounded pill style */
+    -webkit-backdrop-filter: blur(25px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.6) !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15) !important;
 }
 
-/* Text colors for the Light Glass Bars */
-#btn-daily, #btn-unlimited, 
-.font-label, 
-#guesses-left-text {
-    color: #000000 !important; /* Base text is now black to match dropdown style */
+/* Force all text inside these light bars to be BLACK */
+body #btn-daily, 
+body #btn-unlimited, 
+body #guesses-left-text,
+body .font-label,
+body #guess-input {
+    color: #000000 !important;
     font-weight: 800 !important;
+    opacity: 1 !important;
 }
 
-/* Specific highlight for Active States and Numbers */
-.text-secondary-fixed, 
-#guesses-left-text,
-#btn-daily.text-secondary-fixed {
-    color: #b89a00 !important; /* Slightly darker gold for readability on light glass */
+/* Typing text in search bar */
+body #guess-input {
+    color: #000000 !important;
     text-shadow: none !important;
 }
 
-/* Inactive button state (Lightened black) */
-.text-white\/40, 
-#btn-unlimited.text-white\/40 {
+/* Placeholder text ("SEARCH CHARACTER...") */
+body #guess-input::placeholder {
     color: rgba(0, 0, 0, 0.4) !important;
 }
 
-/* =========================================
-   3. SEARCH INPUT & DROPDOWN
-   ========================================= */
-
-#search-module {
-    max-width: 450px !important;
-    margin: 0 auto;
+/* Active Gold Text (made darker to read on white glass) */
+body .text-secondary-fixed, 
+body #guesses-left-text,
+body #btn-daily span {
+    color: #a38900 !important; 
 }
 
-#guess-input {
-    background: transparent !important;
-    color: #000000 !important; /* Black text while typing */
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
-}
-
-#guess-input::placeholder {
+/* Inactive button text */
+body .text-white\/40, 
+body #btn-unlimited span {
     color: rgba(0, 0, 0, 0.3) !important;
 }
 
-#autocomplete-list {
-    background: rgba(255, 255, 255, 0.5) !important; 
-    backdrop-filter: blur(25px) !important;
-    border: 1px solid rgba(255, 255, 255, 0.4) !important;
-    border-radius: 20px;
-    margin-top: 10px;
-    scrollbar-width: none; 
+/* =========================================
+   3. DROPDOWN (STAYS THE SAME)
+   ========================================= */
+body #autocomplete-list {
+    background: rgba(255, 255, 255, 0.6) !important; 
+    backdrop-filter: blur(30px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    border-radius: 20px !important;
+    scrollbar-width: none !important; 
 }
 
-.search-item {
+body .search-item {
     color: #000000 !important; 
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 800;
-    padding: 14px 20px !important;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.search-item:hover {
-    background: rgba(0, 0, 0, 0.05) !important;
+    font-weight: 800 !important;
 }
 
 /* =========================================
-   4. GAME TILES (SOLID COLORS)
+   4. GAME TILES (KEEP SOLID COLORS)
    ========================================= */
-
 .modular-unit {
-    background: rgba(0, 0, 0, 0.9) !important;
+    background: rgba(0, 0, 0, 0.92) !important;
     border-radius: 12px;
     min-height: 120px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
-.tile-value {
-    font-family: 'Space Grotesk', sans-serif !important;
-    font-size: 0.85rem !important;
-    font-weight: 800 !important;
-    text-transform: uppercase;
-    text-align: center;
-}
+.glow-yellow { background-color: #f7e600 !important; }
+.glow-yellow * { color: #000000 !important; text-shadow: none !important; }
 
-.glow-yellow { background-color: #f7e600 !important; border: none !important; }
-.glow-yellow .tile-value, .glow-yellow .font-label-style { color: #000000 !important; text-shadow: none !important; }
+.glow-green { background-color: #22c55e !important; }
+.glow-green * { color: #000000 !important; text-shadow: none !important; }
 
-.glow-green { background-color: #22c55e !important; border: none !important; }
-.glow-green .tile-value, .glow-green .font-label-style { color: #000000 !important; text-shadow: none !important; }
-
-.glow-red { background-color: #ef4444 !important; border: none !important; }
-.glow-red .tile-value, .glow-red .font-label-style { color: #ffffff !important; }
-
-/* =========================================
-   5. ANIMATIONS
-   ========================================= */
-.flip-in {
-    opacity: 0;
-    transform: rotateX(90deg);
-    animation: flipIn 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-}
-@keyframes flipIn { to { transform: rotateX(0deg); opacity: 1; } }
-
-.victory-active {
-    animation: victoryPulse 2s infinite ease-in-out;
-    border: 3px solid #f7e600 !important;
-}
-@keyframes victoryPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+.glow-red { background-color: #ef4444 !important; }
+.glow-red * { color: #ffffff !important; }
