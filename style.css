@@ -67,44 +67,37 @@
     background-attachment: fixed;
 }
 
-/* --- Transparent Glass Dropdown --- */
+/* --- Glassmorphism Dropdown with Black Text --- */
 #autocomplete-list {
-    background: rgba(0, 0, 0, 0.7) !important; /* Dark transparent */
-    backdrop-filter: blur(15px) !important;    /* Glass blur */
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    /* Frosted glass effect (light-ish but transparent) */
+    background: rgba(255, 255, 255, 0.4) !important; 
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px);
+    
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
     border-radius: 15px;
     margin-top: 8px;
     overflow-y: auto;
-    scrollbar-width: none; /* Hide scrollbar Firefox */
+    
+    /* Hide Scrollbar */
+    scrollbar-width: none; 
 }
 
 #autocomplete-list::-webkit-scrollbar {
-    display: none; /* Hide scrollbar Chrome/Safari */
+    display: none;
 }
 
 .search-item {
-    color: white !important; /* White text for glass look */
-    font-weight: 600;
+    color: #000000 !important; /* FORCED BLACK TEXT */
+    font-weight: 800; /* Extra bold for readability */
     padding: 14px 20px !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    transition: background 0.2s ease;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .search-item:hover {
-    background: rgba(255, 255, 255, 0.1) !important;
-    color: #f7e600 !important; /* Highlight text yellow on hover */
-}
-
-/* --- Box Spillage & Readability Fix --- */
-.modular-unit {
-    background: rgba(0, 0, 0, 0.85) !important; 
-    border-radius: 12px;
-    min-height: 115px;
-}
-
-.tile-value {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
-    font-size: 0.75rem !important;
-    font-weight: 800 !important;
+    background: rgba(0, 0, 0, 0.1) !important; /* Subtle dark hover */
+    color: #000000 !important;
 }
