@@ -71,3 +71,27 @@ body.main-bg {
 
 .flip-in { opacity: 0; transform: rotateX(90deg); animation: flipIn 0.5s ease-out forwards; }
 @keyframes flipIn { to { transform: rotateX(0deg); opacity: 1; } }
+
+/* --- Mode Toggle Indicator Logic --- */
+#btn-daily, #btn-unlimited {
+    color: rgba(0, 0, 0, 0.4) !important; /* Inactive text color */
+    transition: color 0.3s ease;
+}
+
+/* Specific highlight when active */
+.mode-active {
+    color: #000000 !important; /* Active text is solid black */
+}
+
+.mode-active span.material-symbols-outlined {
+    color: #a38900 !important; /* Active icon turns gold */
+}
+
+/* The Sliding Pill */
+#mode-indicator {
+    background: rgba(255, 255, 255, 0.5) !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transform: translateX(0); /* Default position */
+}
+
