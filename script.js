@@ -126,37 +126,47 @@ function createTile(label, value, type, isName = false) {
     let txtCls = 'text-on-surface';
     let lblCls = 'text-outline/40';
 
-    if (type === 'match-exact') { cls = 'glow-cyan'; txtCls = 'text-primary-container'; lblCls = 'text-primary-container/40'; }
-    else if (type === 'match-partial') { cls = 'glow-yellow'; txtCls = 'text-secondary-fixed'; lblCls = 'text-secondary-fixed/40'; }
-    else if (type === 'match-none') { cls = 'glow-red'; txtCls = 'text-error'; lblCls = 'text-error/40'; }
+    // NEW LOGIC: Yellow = Correct, Green = Partial, Red = Wrong
+    if (type === 'match-exact') { 
+        cls = 'glow-yellow'; 
+        txtCls = 'text-secondary-fixed'; // Tailwind Yellow
+        lblCls = 'text-secondary-fixed/40'; 
+    }
+    else if (type === 'match-partial') { 
+        cls = 'glow-green'; 
+        txtCls = 'text-primary-container'; // Using Cyan/Greenish for partial
+        lblCls = 'text-primary-container/40'; 
+    }
+    else if (type === 'match-none') { 
+        cls = 'glow-red'; 
+        txtCls = 'text-error'; 
+        lblCls = 'text-error/40'; 
+    }
 
     return `
     <div class="modular-unit glass-panel rounded-xl flip-in ${cls}">
-        ${!isName ? `<span class="text-[8px] font-label uppercase mb-1 tracking-tighter ${lblCls}">${label}</span>` : ''}
-        <span class="tile-value font-bold uppercase ${txtCls} ${isName ? 'name-text' : ''}">${value}</span>
+        ${!isName ? `<span class="text-[9px] font-label uppercase mb-1 tracking-tighter ${lblCls}">${label}</span>` : ''}
+        <span class="tile-value font-bold uppercase ${txtCls}">${value}</span>
     </div>`;
 }
 
-// Helpers
-function formatHaki(h) { return (!h || h[0] === "None") ? "NONE" : h.map(x => x.substring(0,3)).join('/').toUpperCase(); }
+// Ensure helpers return the correct keys for the colors
 function compareHaki(g, t) {
     if (JSON.stringify(g) === JSON.stringify(t)) return 'match-exact';
     return g.some(x => t.includes(x)) ? 'match-partial' : 'match-none';
 }
+
 function compareStat(g, t) { 
     if (g === t) return 'match-exact';
-    return 'match-none' + (g < t ? ' ▲' : ' ▼'); // Note: Arrows are handled as text here for simplicity
+    // Logic for showing arrows even on wrong answers
+    let arrow = g < t ? ' ▲' : ' ▼';
+    return 'match-none' + arrow; 
 }
-function parseBounty(b) { return parseInt(b.replace(/[^0-9]/g, '')) || 0; }
-function formatBounty(b) {
-    let n = parseBounty(b);
-    if (n >= 1e9) return (n/1e9).toFixed(1) + 'B';
-    if (n >= 1e6) return (n/1e6).toFixed(1) + 'M';
-    return n > 0 ? n.toLocaleString() : "NONE";
-}
+
 function compareArc(g, t) {
     if (g === t) return 'match-exact';
-    return arcOrder.indexOf(g) < arcOrder.indexOf(t) ? 'match-none ▲' : 'match-none ▼';
+    let arrow = arcOrder.indexOf(g) < arcOrder.indexOf(t) ? ' ▲' : ' ▼';
+    return 'match-none' + arrow;
 }
 
 function endGame(win) {
