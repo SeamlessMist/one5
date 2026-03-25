@@ -6,13 +6,13 @@
 
 /* Background Configuration integrating Luffy Image + Deep Sea Overlay */
 .main-bg {
-    background-color: #;
-    background-image: 
-        linear-gradient(rgba(17, 19, 23, 0.70), rgba(17, 19, 23, 0.80)),
+    background-color: #111317;
+    background-image:
+        linear-gradient(rgba(17, 19, 23, 0.94), rgba(17, 19, 23, 0.98)),
         url('luffy-bg.jpg'); /* Replace with your actual Luffy image filename */
     background-size: cover;
     background-position: center top;
-    background-attachment: fixed;
+    background-attachment: fixed; /* Added this line if it was missing */
 }
 
 /* Depth & Textures (from DESIGN.md) */
@@ -70,3 +70,8 @@
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: #3b494c; border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: #849396; }
+
+/* Adjustment for multiline text within tiles */
+.font-headline.text-xs.font-bold.uppercase.text-center.leading-tight {
+    line-height: 1.2; /* Adjust as needed for better wrapping */
+}
