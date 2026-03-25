@@ -269,18 +269,36 @@ function compArc(g, t) {
 
 // --- 8. END GAME ---
 function triggerEnd(win) {
-    playLaugh(win);
-    
+    // ... keep your existing playSound logic ...
+
     document.getElementById('end-title').innerText = win ? "BOUNTY CLAIMED!" : "WALK THE PLANK!";
-    document.getElementById('end-title').style.color = win ? "#f7e600" : "#ef4444";
-    document.getElementById('end-subtitle').innerText = win ? `You identified ${targetChar.name}.` : `The character was ${targetChar.name}.`;
-    
+    document.getElementById('end-title').style.color = win ? "#a38900" : "#ef4444";
+    document.getElementById('end-subtitle').innerText = `The character was ${targetChar.name}.`;
+
+    // POPULATE THE PROFILE
+    const profileContainer = document.getElementById('modal-profile');
+    const stats = [
+        { l: 'Gender', v: targetChar.gender },
+        { l: 'Species', v: targetChar.species },
+        { l: 'Role', v: targetChar.calling },
+        { l: 'Group', v: targetChar.affiliation },
+        { l: 'Fruit', v: targetChar.devilFruitType },
+        { l: 'Haki', v: formatHaki(targetChar.haki) },
+        { l: 'Height', v: targetChar.heightCm + 'cm' },
+        { l: 'Bounty', v: formatBounty(targetChar.bounty) },
+        { l: 'Origin', v: targetChar.seaOfBirth },
+        { l: 'Debut', v: targetChar.firstArc }
+    ];
+
+    profileContainer.innerHTML = stats.map(s => `
+        <div class="modal-stat-box">
+            <span class="modal-stat-label">${s.l}</span>
+            <span class="modal-stat-value">${s.v}</span>
+        </div>
+    `).join('');
+
     const overlay = document.getElementById('end-overlay');
     overlay.classList.remove('hidden');
     overlay.classList.add('flex');
-    
-    setTimeout(() => {
-        overlay.classList.add('opacity-100');
-        document.getElementById('end-modal').classList.add('scale-100');
-    }, 50);
+    setTimeout(() => { overlay.classList.add('opacity-100'); }, 50);
 }
