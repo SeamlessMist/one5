@@ -121,41 +121,98 @@ function renderGuess(guess) {
     row.querySelectorAll('.flip-in').forEach((t, i) => t.style.animationDelay = (i * 0.05) + 's');
 }
 
+// Replace your existing createTile function
 function createTile(label, value, type, isName = false) {
     let cls = 'border-outline-variant/20';
-    let txtCls = 'text-on-surface';
-    let lblCls = 'text-outline/40';
+    let txtCls = 'text-white'; // Default text color
 
-    // NEW LOGIC: Yellow = Correct, Green = Partial, Red = Wrong
+    // RIGID COLOR LOGIC
     if (type === 'match-exact') { 
-        cls = 'glow-yellow'; 
-        txtCls = 'text-secondary-fixed'; // Tailwind Yellow
-        lblCls = 'text-secondary-fixed/40'; 
+        cls = 'glow-yellow'; // Correct = Yellow
+        txtCls = 'text-yellow-400'; 
     }
     else if (type === 'match-partial') { 
-        cls = 'glow-green'; 
-        txtCls = 'text-primary-container'; // Using Cyan/Greenish for partial
-        lblCls = 'text-primary-container/40'; 
+        cls = 'glow-green'; // Partial = Green
+        txtCls = 'text-green-400'; 
     }
     else if (type === 'match-none') { 
-        cls = 'glow-red'; 
-        txtCls = 'text-error'; 
-        lblCls = 'text-error/40'; 
+        cls = 'glow-red'; // Wrong = Red
+        txtCls = 'text-red-400'; 
     }
 
     return `
     <div class="modular-unit glass-panel rounded-xl flip-in ${cls}">
-        ${!isName ? `<span class="text-[9px] font-label uppercase mb-1 tracking-tighter ${lblCls}">${label}</span>` : ''}
+        ${!isName ? `<span class="text-[9px] font-label uppercase mb-1 tracking-tighter opacity-60">${label}</span>` : ''}
         <span class="tile-value font-bold uppercase ${txtCls}">${value}</span>
     </div>`;
 }
 
-// Ensure helpers return the correct keys for the colors
-function compareHaki(g, t) {
-    if (JSON.stringify(g) === JSON.stringify(t)) return 'match-exact';
-    return g.some(x => t.includes(x)) ? 'match-partial' : 'match-none';
+// Update the setupAutocomplete to set black text
+function setupAutocomplete() {
+    const input = document.getElementById("guess-input"), list = document.getElementById("autocomplete-list");
+    input.addEventListener("input", () => {
+        const val = input.value.trim().toLowerCase();
+        list.innerHTML = '';
+        if (!val) { list.classList.add("hidden"); return; }
+        const matches = availableNames.filter(n => n.toLowerCase().includes(val));
+        if (matches.length) {
+            list.classList.remove("hidden");
+            matches.forEach(m => {
+                const d = document.createElement("div");
+                d.className = "px-6 py-3 cursor-pointer search-item hover:bg-black/5 transition-colors text-sm uppercase";
+                d.innerText = m;
+                d.onclick = () => { input.value = m; list.classList.add("hidden"); submitGuess(); };
+                list.appendChild(d);
+            });
+        } else list.classList.add("hidden");
+    });
 }
 
+// Improved Victory EndGame
+function endGame(win) {
+    const o = document.getElementById('end-overlay');
+    const modal = document.getElementById('end-modal');
+    
+    document.getElementById('search-module').classList.add('hidden');
+    o.classList.remove('hidden');
+    o.classList.add('flex');
+
+    if (win) {
+        playSound('sfx-win'); // Luffy Laugh
+        modal.classList.add('victory-active');
+        document.getElementById('card-title').innerText = "KING OF THE PIRATES!";
+        document.getElementById('card-title').classList.add('text-yellow-400');
+        document.getElementById('card-subtitle').innerText = `You found ${targetCharacter.name}!`;
+        
+        // Simple visual flair: toggle background flash
+        let flash = setInterval(() => {
+            o.style.backgroundColor = o.style.backgroundColor === 'rgba(247, 230, 0, 0.1)' ? 'transparent' : 'rgba(247, 230, 0, 0.1)';
+        }, 500);
+        setTimeout(() => clearInterval(flash), 5000);
+    } else {
+        playSound('sfx-wrong'); // Doffy Laugh
+        document.getElementById('card-title').innerText = "WALK THE PLANK...";
+        document.getElementById('card-title').classList.add('text-red-500');
+        document.getElementById('card-subtitle').innerText = `It was ${targetCharacter.name}.`;
+    }
+
+    setTimeout(() => {
+        o.classList.remove('opacity-0');
+        o.classList.add('opacity-100');
+    }, 10);
+}
+
+// Ensure helper logic matches tiles (Compare functions)
+function compareStat(g, t) { 
+    if (g === t) return 'match-exact'; // Correct -> Yellow
+    let arrow = g < t ? ' ▲' : ' ▼';
+    return 'match-none' + arrow; // Wrong -> Red
+}
+
+function compareHaki(g, t) {
+    if (JSON.stringify(g) === JSON.stringify(t)) return 'match-exact'; // Correct -> Yellow
+    return g.some(x => t.includes(x)) ? 'match-partial' : 'match-none'; // Partial -> Green, Wrong -> Red
+}
 function compareStat(g, t) { 
     if (g === t) return 'match-exact';
     // Logic for showing arrows even on wrong answers
