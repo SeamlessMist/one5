@@ -1,11 +1,4 @@
-/* =========================================
-   1. BACKGROUND & UI BASICS
-   ========================================= */
-.material-symbols-outlined {
-    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-    vertical-align: middle;
-}
-
+/* BACKGROUND */
 body.main-bg {
     background-color: #0c0e11 !important;
     background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url('luffy-bg.jpg') !important;
@@ -14,73 +7,53 @@ body.main-bg {
     background-attachment: fixed !important;
 }
 
-/* FROSTED GLASS FOR HEADER BARS */
+/* TOP UI (Black Text) */
 .glass-panel {
     background: rgba(255, 255, 255, 0.45) !important;
     backdrop-filter: blur(25px) !important;
     -webkit-backdrop-filter: blur(25px) !important;
     border: 1px solid rgba(255, 255, 255, 0.5) !important;
 }
-
-/* SCOPED BLACK TEXT: Only for the top bars/search */
-#btn-daily, #btn-unlimited, #guesses-left-text, .font-label, #guess-input {
+#btn-daily, #btn-unlimited, #guesses-left-text, #guess-input {
     color: #000000 !important;
-    font-family: 'Manrope', sans-serif !important;
     font-weight: 800 !important;
 }
 
-/* =========================================
-   2. GAME TILES & COLOR LOGIC (SOLID BOXES)
-   ========================================= */
+/* GAME TILES BASE (White Text) */
 .modular-unit {
-    background: rgba(0, 0, 0, 0.9) !important; /* Neutral Name Box */
-    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.9) !important;
     min-height: 120px;
+    border-radius: 12px;
     display: flex; flex-direction: column; justify-content: center; align-items: center;
-    padding: 6px !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
 }
-
-/* Name tile specifically needs white text */
 .modular-unit .tile-value {
-    color: #ffffff !important;
+    color: #ffffff !important; /* Force White for Name box */
     font-family: 'Space Grotesk', sans-serif !important;
-    font-size: 0.8rem !important;
-    font-weight: 700 !important;
+    font-size: 0.75rem !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+.modular-unit .font-label-style {
+    color: rgba(255,255,255,0.5) !important;
+    font-family: 'Manrope', sans-serif !important;
 }
 
 /* SOLID COLOR OVERRIDES */
-/* Yellow & Green = Black Text */
-.glow-yellow, .glow-green { border: none !important; }
-.glow-yellow { background-color: #f7e600 !important; }
-.glow-green { background-color: #22c55e !important; }
+/* Yellow Correct */
+.glow-yellow { background-color: #f7e600 !important; border: none !important; }
+.glow-yellow * { color: #000000 !important; text-shadow: none !important; }
 
-.glow-yellow *, .glow-green * {
-    color: #000000 !important;
-    text-shadow: none !important;
-}
+/* Green Partial */
+.glow-green { background-color: #22c55e !important; border: none !important; }
+.glow-green * { color: #000000 !important; text-shadow: none !important; }
 
-/* Red = White Text */
+/* Red Wrong */
 .glow-red { background-color: #ef4444 !important; border: none !important; }
-.glow-red * {
-    color: #ffffff !important;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5) !important;
-}
+.glow-red * { color: #ffffff !important; text-shadow: 1px 1px 2px rgba(0,0,0,0.5) !important; }
 
-/* =========================================
-   3. SEARCH & TOGGLE
-   ========================================= */
-#autocomplete-list {
-    background: rgba(255, 255, 255, 0.6) !important;
-    backdrop-filter: blur(30px) !important;
-    scrollbar-width: none;
-    z-index: 9999;
-}
+/* MISC */
+#autocomplete-list { background: rgba(255,255,255,0.6) !important; backdrop-filter: blur(30px) !important; scrollbar-width: none; }
 .search-item { color: #000 !important; font-weight: 800; padding: 15px 20px; border-bottom: 1px solid rgba(0,0,0,0.05); }
-
 #mode-indicator { background: rgba(255, 255, 255, 0.5) !important; }
-.mode-active span { color: #a38900 !important; } /* Gold Icon */
-#btn-unlimited:not(.mode-active), #btn-daily:not(.mode-active) { opacity: 0.4; }
-
 .flip-in { opacity: 0; transform: rotateX(90deg); animation: flipIn 0.5s ease-out forwards; }
 @keyframes flipIn { to { transform: rotateX(0deg); opacity: 1; } }
