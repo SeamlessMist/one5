@@ -1,7 +1,7 @@
 /**
  * ONE PIECE DLE - MASTER SCRIPT
  * Features: Local Audio Integration, 11-Column Grid, 
- * Keyboard Navigable Search, Daily/Unlimited Modes.
+ * Keyboard Navigable Search, Daily/Unlimited Modes, Character Profile Modal.
  */
 
 // --- 1. STATE & DATA ---
@@ -26,21 +26,23 @@ const winSound = new Audio('luffy.mp3');
 const loseSound = new Audio('doffy.mp3');
 let audioUnlocked = false;
 
-// Unlock audio engine on first user interaction
+// Unlock audio engine on first user interaction (Crucial for Browsers)
 function unlockAudio() {
     if (audioUnlocked) return;
+    // Play and immediately pause to "warm up" the audio engine
     winSound.play().then(() => { winSound.pause(); winSound.currentTime = 0; }).catch(() => {});
     loseSound.play().then(() => { loseSound.pause(); loseSound.currentTime = 0; }).catch(() => {});
     audioUnlocked = true;
     document.removeEventListener('pointerdown', unlockAudio);
+    console.log("Audio Engine Unlocked");
 }
 document.addEventListener('pointerdown', unlockAudio);
 
 function playLaugh(isWin) {
     const sound = isWin ? winSound : loseSound;
-    sound.currentTime = 0;
+    sound.currentTime = 0; // Reset to start
     sound.volume = 0.5;
-    sound.play().catch(e => console.warn("Audio blocked or file missing."));
+    sound.play().catch(e => console.warn("Audio blocked or file missing. Ensure luffy.mp3 and doffy.mp3 exist."));
 }
 
 // --- 3. INITIALIZATION ---
@@ -108,7 +110,6 @@ function resetGame() {
     if (mode === 'daily') {
         const d = new Date();
         const seed = d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate();
-        // Simple deterministic pseudo-random for daily mode
         const index = Math.floor((Math.abs(Math.sin(seed) * 10000) % 1) * characters.length);
         targetChar = characters[index];
     } else {
@@ -257,8 +258,8 @@ function parseBounty(b) { return parseInt(b.toString().replace(/[^0-9]/g, '')) |
 
 function formatBounty(b) {
     let n = parseBounty(b);
-    if (n >= 1e9) return (n / 1e9).toFixed(1) + 'B';
-    if (n >= 1e6) return (n / 1e6).toFixed(1) + 'M';
+    if (n >= 1e9) return parseFloat((n / 1e9).toFixed(1)) + 'B';
+    if (n >= 1e6) return parseFloat((n / 1e6).toFixed(1)) + 'M';
     return n > 0 ? n.toLocaleString() : "NONE";
 }
 
@@ -267,15 +268,17 @@ function compArc(g, t) {
     return arcOrder.indexOf(g) < arcOrder.indexOf(t) ? 'match-none ▲' : 'match-none ▼';
 }
 
-// --- 8. END GAME ---
+// --- 8. END GAME (WITH LAUGH & PROFILE) ---
 function triggerEnd(win) {
-    // ... keep your existing playSound logic ...
-
+    // 1. Play the correct laugh sound
+    playLaugh(win);
+    
+    // 2. Set titles
     document.getElementById('end-title').innerText = win ? "BOUNTY CLAIMED!" : "WALK THE PLANK!";
     document.getElementById('end-title').style.color = win ? "#a38900" : "#ef4444";
     document.getElementById('end-subtitle').innerText = `The character was ${targetChar.name}.`;
 
-    // POPULATE THE PROFILE
+    // 3. Populate the Profile injection
     const profileContainer = document.getElementById('modal-profile');
     const stats = [
         { l: 'Gender', v: targetChar.gender },
@@ -297,6 +300,7 @@ function triggerEnd(win) {
         </div>
     `).join('');
 
+    // 4. Show modal
     const overlay = document.getElementById('end-overlay');
     overlay.classList.remove('hidden');
     overlay.classList.add('flex');
