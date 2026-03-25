@@ -6,7 +6,7 @@
     vertical-align: middle;
 }
 
-/* Background: Luffy Gear 5 is clearly visible (0.2 - 0.4 opacity) */
+/* Background: Luffy Gear 5 is clearly visible */
 .main-bg {
     background-color: #0c0e11;
     background-image: 
@@ -17,28 +17,40 @@
     background-attachment: fixed;
 }
 
-/* Glassmorphism utility */
+/* =========================================
+   2. TOP UI CONTROLS (Daily, Unlimited, Guesses)
+   ========================================= */
+
+/* Boosted visibility for the Glass Panels */
 .glass-panel {
-    background: rgba(15, 18, 22, 0.8);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(15, 18, 22, 0.95) !important; /* Darker & More Solid */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Make inactive text more visible */
+#btn-daily.text-white\/40, 
+#btn-unlimited.text-white\/40,
+.text-white\/40 {
+    color: rgba(255, 255, 255, 0.7) !important; /* Was 0.4, now 0.7 for visibility */
 }
 
 /* =========================================
-   2. SEARCH BAR & DROPDOWN (GHOST STYLE)
+   3. SEARCH BAR (MATCHING THE TABS)
    ========================================= */
 
-/* Smaller Search Bar (450px) */
 #search-module {
     max-width: 450px !important;
     margin: 0 auto;
 }
 
-/* Transparent Ghost Search Bar */
+/* Matching the "Daily/Unlimited" tab style */
 #search-module .glass-panel {
-    background: rgba(0, 0, 0, 0.6) !important;
+    background: rgba(15, 18, 22, 0.8) !important; /* Transparent but visible */
     border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3) !important;
 }
 
 #guess-input {
@@ -47,43 +59,33 @@
     font-family: 'Space Grotesk', sans-serif;
 }
 
-/* Glass Dropdown with BLACK TEXT */
+/* =========================================
+   4. DROPDOWN (GLASS STYLE)
+   ========================================= */
+
 #autocomplete-list {
-    background: rgba(255, 255, 255, 0.4) !important; 
+    background: rgba(255, 255, 255, 0.5) !important; 
     backdrop-filter: blur(25px) !important;
-    -webkit-backdrop-filter: blur(25px);
     border: 1px solid rgba(255, 255, 255, 0.3) !important;
     border-radius: 15px;
     margin-top: 8px;
-    overflow-y: auto;
-    /* Invisible Scrollbar */
     scrollbar-width: none; 
 }
-#autocomplete-list::-webkit-scrollbar {
-    display: none;
-}
+#autocomplete-list::-webkit-scrollbar { display: none; }
 
 .search-item {
-    color: #000000 !important; /* Forced Black Text */
+    color: #000000 !important; 
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 800;
     padding: 14px 20px !important;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    transition: background 0.2s ease;
-}
-
-.search-item:hover {
-    background: rgba(0, 0, 0, 0.1) !important;
 }
 
 /* =========================================
-   3. GAME BOARD & SOLID COLOR TILES
+   5. GAME BOARD & SOLID COLOR TILES
    ========================================= */
 
 .modular-unit {
-    background: rgba(0, 0, 0, 0.85); /* Neutral/Name box background */
+    background: rgba(0, 0, 0, 0.9) !important; /* Neutral Name box */
     border-radius: 12px;
     min-height: 120px;
     display: flex;
@@ -91,9 +93,7 @@
     justify-content: center;
     align-items: center;
     padding: 0.5rem !important;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
 /* --- TILE FONTS --- */
@@ -104,8 +104,7 @@
     text-transform: uppercase;
     text-align: center;
     line-height: 1.1;
-    letter-spacing: 0.02em;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Shadow for neutral/red boxes */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .font-label-style {
@@ -114,34 +113,33 @@
     font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 6px;
-    letter-spacing: 0.05em;
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
-/* --- SOLID COLOR LOGIC (REPLACES BORDERS) --- */
+/* --- SOLID BACKGROUND COLORS (STRICT OVERRIDE) --- */
 
 /* YELLOW = CORRECT (Black Text) */
 .glow-yellow { 
     background-color: #f7e600 !important; 
     border: none !important;
+    box-shadow: 0 0 15px rgba(247, 230, 0, 0.3);
 }
 .glow-yellow .tile-value, 
 .glow-yellow .font-label-style {
-    color: #0c0e11 !important;
-    text-shadow: none !important; /* Clean black text on yellow */
-    opacity: 1;
+    color: #000000 !important;
+    text-shadow: none !important;
 }
 
 /* GREEN = PARTIAL (Black Text) */
 .glow-green { 
     background-color: #22c55e !important; 
     border: none !important;
+    box-shadow: 0 0 15px rgba(34, 197, 94, 0.3);
 }
 .glow-green .tile-value, 
 .glow-green .font-label-style {
-    color: #0c0e11 !important;
+    color: #000000 !important;
     text-shadow: none !important;
-    opacity: 1;
 }
 
 /* RED = WRONG (White Text) */
@@ -152,12 +150,11 @@
 .glow-red .tile-value, 
 .glow-red .font-label-style {
     color: #ffffff !important;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
-    opacity: 1;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5) !important;
 }
 
 /* =========================================
-   4. ANIMATIONS & CELEBRATION
+   6. ANIMATIONS
    ========================================= */
 
 .flip-in {
@@ -170,28 +167,12 @@
     to { transform: rotateX(0deg); opacity: 1; }
 }
 
-/* Victory Pulsing for the End Modal */
-@keyframes victoryPulse {
-    0% { transform: scale(1); box-shadow: 0 0 20px rgba(247, 230, 0, 0.2); }
-    50% { transform: scale(1.05); box-shadow: 0 0 50px rgba(247, 230, 0, 0.5); }
-    100% { transform: scale(1); box-shadow: 0 0 20px rgba(247, 230, 0, 0.2); }
-}
-
 .victory-active {
     animation: victoryPulse 2s infinite ease-in-out;
     border: 3px solid #f7e600 !important;
 }
 
-/* Post-game Modal styling */
-#end-modal {
-    background: rgba(12, 14, 17, 0.95) !important;
-    backdrop-filter: blur(20px);
-}
-
-/* =========================================
-   5. RESPONSIVENESS
-   ========================================= */
-@media (max-width: 1280px) {
-    .modular-unit { min-height: 100px; padding: 4px !important; }
-    .tile-value { font-size: 0.7rem !important; }
+@keyframes victoryPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
 }
