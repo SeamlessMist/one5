@@ -123,13 +123,20 @@ function renderGuess(guess) {
 function createTile(label, value, type, isName = false) {
     let cls = 'border-white/10';
     let txtCls = 'text-white';
+
     if (type.includes('match-exact')) { cls = 'glow-yellow'; txtCls = 'text-yellow-400'; }
     else if (type.includes('match-partial')) { cls = 'glow-green'; txtCls = 'text-green-400'; }
     else if (type.includes('match-none')) { cls = 'glow-red'; txtCls = 'text-red-500'; }
+
     let display = value;
     if (type.includes('▲')) display += ' ▲';
     if (type.includes('▼')) display += ' ▼';
-    return `<div class="modular-unit flip-in ${cls}">${!isName ? `<span class="text-[9px] uppercase mb-1 opacity-50 text-white font-label">${label}</span>` : ''}<span class="tile-value ${txtCls}">${display}</span></div>`;
+
+    return `
+    <div class="modular-unit flip-in ${cls}">
+        ${!isName ? `<span class="font-label-style ${txtCls}">${label}</span>` : ''}
+        <span class="tile-value ${txtCls}">${display}</span>
+    </div>`;
 }
 
 function formatHaki(h) { return (!h || h[0] === "None") ? "NONE" : h.map(x => x.substring(0,3)).join('/').toUpperCase(); }
