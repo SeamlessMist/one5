@@ -1,5 +1,5 @@
 /* 1. BACKGROUND */
-.main-bg {
+body.main-bg {
     background-color: #0c0e11 !important;
     background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url('luffy-bg.jpg') !important;
     background-size: cover !important;
@@ -8,68 +8,15 @@
     background-repeat: no-repeat !important;
 }
 
-/* 2. FROSTED GLASS PANELS */
+/* 2. FROSTED GLASS UI */
 .glass-panel {
-    background: rgba(255, 255, 255, 0.4) !important;
+    background: rgba(255, 255, 255, 0.45) !important;
     backdrop-filter: blur(25px) !important;
     -webkit-backdrop-filter: blur(25px) !important;
     border: 1px solid rgba(255, 255, 255, 0.5) !important;
 }
 
-/* 3. TOGGLE INDICATORS */
-#btn-daily, #btn-unlimited {
-    color: rgba(0, 0, 0, 0.4) !important;
-    transition: all 0.3s ease;
-}
-.mode-active {
-    color: #000000 !important;
-}
-.mode-active span {
-    color: #a38900 !important;
-}
-#mode-indicator {
-    background: rgba(255, 255, 255, 0.5) !important;
-    transform: translateX(0);
-}
-
-/* 4. GAME TILES & FONTS */
-.modular-unit {
-    background: rgba(0, 0, 0, 0.92) !important;
-    min-height: 115px;
-    border-radius: 12px;
-    display: flex; flex-direction: column; justify-content: center; align-items: center;
-    padding: 6px !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-}
-.tile-value {
-    font-family: 'Space Grotesk', sans-serif !important;
-    font-size: 0.75rem !important;
-    font-weight: 700 !important;
-    text-transform: uppercase;
-    text-align: center;
-    line-height: 1.1;
-    word-break: break-word;
-}
-.font-label-style {
-    font-family: 'Manrope', sans-serif !important;
-    font-size: 8px !important;
-    font-weight: 800;
-    text-transform: uppercase;
-    opacity: 0.6;
-    margin-bottom: 4px;
-}
-
-/* 5. SOLID COLORS */
-.glow-yellow { background-color: #f7e600 !important; border: none !important; }
-.glow-yellow * { color: #000 !important; text-shadow: none !important; }
-
-.glow-green { background-color: #22c55e !important; border: none !important; }
-.glow-green * { color: #000 !important; text-shadow: none !important; }
-
-.glow-red { background-color: #ef4444 !important; border: none !important; }
-.glow-red * { color: #fff !important; }
-
-/* 6. SEARCH DROPDOWN */
+/* 3. SEARCH DROPDOWN (GLASS + BLACK TEXT) */
 #autocomplete-list {
     background: rgba(255, 255, 255, 0.6) !important;
     backdrop-filter: blur(30px) !important;
@@ -83,6 +30,44 @@
     padding: 15px 20px;
     border-bottom: 1px solid rgba(0,0,0,0.05);
 }
+
+/* 4. TILE DESIGN & FONTS */
+.modular-unit {
+    background: rgba(0,0,0,0.92) !important;
+    min-height: 115px;
+    border-radius: 12px;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    padding: 6px !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+}
+.tile-value {
+    font-family: 'Space Grotesk', sans-serif !important;
+    font-size: 0.75rem !important; font-weight: 700 !important;
+    text-transform: uppercase; text-align: center; line-height: 1.1; word-break: break-word;
+}
+.font-label-style {
+    font-family: 'Manrope', sans-serif !important;
+    font-size: 8px !important; font-weight: 800; opacity: 0.6;
+}
+
+/* 5. SOLID COLORS LOGIC */
+/* YELLOW = Correct */
+.glow-yellow { background-color: #f7e600 !important; border: none !important; }
+.glow-yellow * { color: #000 !important; text-shadow: none !important; }
+
+/* GREEN = Partial */
+.glow-green { background-color: #22c55e !important; border: none !important; }
+.glow-green * { color: #000 !important; text-shadow: none !important; }
+
+/* RED = Wrong */
+.glow-red { background-color: #ef4444 !important; border: none !important; }
+.glow-red * { color: #fff !important; }
+
+/* 6. UI LOGIC */
+#btn-daily, #btn-unlimited { color: rgba(0,0,0,0.4) !important; }
+.mode-active { color: #000 !important; }
+.mode-active span { color: #a38900 !important; }
+#mode-indicator { background: rgba(255, 255, 255, 0.5) !important; }
 
 .flip-in { opacity: 0; transform: rotateX(90deg); animation: flipIn 0.5s ease-out forwards; }
 @keyframes flipIn { to { transform: rotateX(0deg); opacity: 1; } }
