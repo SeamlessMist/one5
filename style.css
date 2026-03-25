@@ -4,65 +4,77 @@
     vertical-align: middle;
 }
 
-/* Background - MADE LIGHTER (0.6 opacity) so Luffy is visible */
+/* Background - Very light overlay (0.3) for maximum Luffy visibility */
 .main-bg {
     background-color: #0c0e11;
     background-image: 
-        linear-gradient(rgba(12, 14, 17, 0.6), rgba(12, 14, 17, 0.8)),
+        linear-gradient(rgba(12, 14, 17, 0.3), rgba(12, 14, 17, 0.5)),
         url('luffy-bg.jpg'); 
     background-size: cover;
     background-position: center 20%;
     background-attachment: fixed;
 }
 
-/* Depth & Textures */
-.neomorphic-inset {
-    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.8), inset -1px -1px 2px rgba(255, 255, 255, 0.05);
+/* Search Bar Transparent Fix */
+#search-module .glass-panel {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: none !important;
 }
 
-.glass-panel {
-    background: rgba(15, 18, 22, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+#guess-input {
+    background: transparent !important;
 }
 
-/* TILE SPILLAGE FIXES */
+/* BOXES BIGGER & TILE LOGIC */
 .modular-unit {
     transition: all 0.3s ease;
-    min-height: 90px;
+    min-height: 120px; /* Increased from 90px */
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0.5rem !important;
-    overflow: hidden; /* Prevent visual spill */
+    padding: 0.75rem !important; /* More breathing room */
+    overflow: hidden;
 }
 
-/* Force text to wrap and shrink if too long */
 .tile-value {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 0.65rem; /* Smaller base font */
-    line-height: 1.1;
-    word-break: break-word; /* Wrap long words like names */
-    overflow-wrap: anywhere;
+    font-size: 0.75rem !important; /* Slightly bigger font to match bigger boxes */
+    line-height: 1.2 !important;
+    word-break: break-word;
     text-align: center;
     display: block;
     width: 100%;
 }
 
-/* Specific fix for the Name tile (First column) */
-.name-text {
-    font-size: 0.7rem;
-    letter-spacing: 0.05em;
+/* NEW COLOR LOGIC */
+/* Yellow = Correct */
+.glow-yellow { 
+    border: 1px solid rgba(247, 230, 0, 0.8) !important; 
+    box-shadow: 0 0 15px rgba(247, 230, 0, 0.2); 
+    background: rgba(247, 230, 0, 0.05) !important;
+}
+/* Green = Partial */
+.glow-green { 
+    border: 1px solid rgba(0, 255, 128, 0.6) !important; 
+    box-shadow: 0 0 15px rgba(0, 255, 128, 0.15); 
+    background: rgba(0, 255, 128, 0.05) !important;
+}
+/* Red = Wrong */
+.glow-red { 
+    border: 1px solid rgba(255, 50, 50, 0.5) !important; 
+    box-shadow: 0 0 10px rgba(255, 50, 50, 0.1); 
+    background: rgba(255, 50, 50, 0.05) !important;
 }
 
-/* Contextual Borders */
-.glow-cyan { border: 1px solid rgba(0, 229, 255, 0.5); box-shadow: 0 0 10px rgba(0, 229, 255, 0.15); }
-.glow-yellow { border: 1px solid rgba(247, 230, 0, 0.5); box-shadow: 0 0 10px rgba(247, 230, 0, 0.15); }
-.glow-red { border: 1px solid rgba(255, 180, 171, 0.4); box-shadow: 0 0 10px rgba(255, 180, 171, 0.1); }
+.glass-panel {
+    background: rgba(15, 18, 22, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
 
-/* Animation */
 .flip-in {
     opacity: 0;
     transform: rotateX(90deg);
@@ -71,11 +83,4 @@
 
 @keyframes flipIn {
     to { transform: rotateX(0deg); opacity: 1; }
-}
-
-/* Mobile Responsiveness for the 11-column grid */
-@media (max-width: 1200px) {
-    #game-board > div {
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    }
 }
