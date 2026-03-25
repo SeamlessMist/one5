@@ -4,83 +4,77 @@
     vertical-align: middle;
 }
 
-/* Background - Very light overlay (0.3) for maximum Luffy visibility */
+/* Background - Dimmed slightly more for text contrast */
 .main-bg {
     background-color: #0c0e11;
     background-image: 
-        linear-gradient(rgba(12, 14, 17, 0.3), rgba(12, 14, 17, 0.5)),
+        linear-gradient(rgba(12, 14, 17, 0.4), rgba(12, 14, 17, 0.6)),
         url('luffy-bg.jpg'); 
     background-size: cover;
     background-position: center 20%;
     background-attachment: fixed;
 }
 
-/* Search Bar Transparent Fix */
+/* SEARCH BAR FIX */
 #search-module .glass-panel {
-    background: rgba(255, 255, 255, 0.05) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    box-shadow: none !important;
+    background: rgba(0, 0, 0, 0.8) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
 }
 
-#guess-input {
-    background: transparent !important;
-}
-
-/* BOXES BIGGER & TILE LOGIC */
+/* TILE READABILITY FIX */
 .modular-unit {
     transition: all 0.3s ease;
-    min-height: 120px; /* Increased from 90px */
+    min-height: 110px;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0.75rem !important; /* More breathing room */
-    overflow: hidden;
+    padding: 0.5rem !important;
+    /* DARKER BACKGROUND FOR TILES */
+    background: rgba(0, 0, 0, 0.85) !important; 
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
 }
 
 .tile-value {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 0.75rem !important; /* Slightly bigger font to match bigger boxes */
+    font-size: 0.75rem !important;
+    font-weight: 900 !important;
     line-height: 1.2 !important;
     word-break: break-word;
     text-align: center;
+    /* TEXT SHADOW MAKES IT READABLE ON ANY BG */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1), 0 0 10px rgba(0,0,0,0.5);
     display: block;
     width: 100%;
 }
 
-/* NEW COLOR LOGIC */
-/* Yellow = Correct */
-.glow-yellow { 
-    border: 1px solid rgba(247, 230, 0, 0.8) !important; 
-    box-shadow: 0 0 15px rgba(247, 230, 0, 0.2); 
-    background: rgba(247, 230, 0, 0.05) !important;
-}
-/* Green = Partial */
-.glow-green { 
-    border: 1px solid rgba(0, 255, 128, 0.6) !important; 
-    box-shadow: 0 0 15px rgba(0, 255, 128, 0.15); 
-    background: rgba(0, 255, 128, 0.05) !important;
-}
-/* Red = Wrong */
-.glow-red { 
-    border: 1px solid rgba(255, 50, 50, 0.5) !important; 
-    box-shadow: 0 0 10px rgba(255, 50, 50, 0.1); 
-    background: rgba(255, 50, 50, 0.05) !important;
-}
+/* COLOR LOGIC */
+.glow-yellow { border: 2px solid #f7e600 !important; box-shadow: 0 0 15px rgba(247, 230, 0, 0.4); }
+.glow-green { border: 2px solid #22c55e !important; box-shadow: 0 0 15px rgba(34, 197, 94, 0.4); }
+.glow-red { border: 2px solid #ef4444 !important; }
 
-.glass-panel {
-    background: rgba(15, 18, 22, 0.8);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+/* Hidden Scrollbar for Results */
+#autocomplete-list {
+    background: white !important;
+    scrollbar-width: none;
 }
+#autocomplete-list::-webkit-scrollbar { display: none; }
+
+.search-item { color: black !important; font-weight: 800; }
 
 .flip-in {
     opacity: 0;
     transform: rotateX(90deg);
     animation: flipIn 0.4s ease-out forwards;
 }
+@keyframes flipIn { to { transform: rotateX(0deg); opacity: 1; } }
 
-@keyframes flipIn {
-    to { transform: rotateX(0deg); opacity: 1; }
+/* Victory Animation */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
 }
+.victory-active { animation: pulse 2s infinite; border-color: #f7e600 !important; }
