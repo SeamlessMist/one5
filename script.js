@@ -5,6 +5,7 @@ let guesses = 0;
 const MAX_GUESSES = 10;
 let filteredNames = [];
 
+// --- 1. AUDIO ---
 const winSound = new Audio('luffy.mp3');
 const loseSound = new Audio('doffy.mp3');
 let audioUnlocked = false;
@@ -22,9 +23,10 @@ function playLaugh(isWin) {
     if (!audioUnlocked) return;
     const sound = isWin ? winSound : loseSound;
     sound.currentTime = 0;
-    sound.play().catch(e => console.warn("Audio file missing or blocked."));
+    sound.play().catch(e => console.warn("Audio blocked."));
 }
 
+// --- 2. INIT ---
 window.onload = async () => {
     try {
         const res = await fetch('characters.json');
@@ -44,19 +46,12 @@ function initUI() {
 function setMode(newMode) {
     mode = newMode;
     const toggleContainer = document.getElementById('btn-daily').parentElement;
-    const dBtn = document.getElementById('btn-daily');
-    const uBtn = document.getElementById('btn-unlimited');
-
     if (mode === 'daily') {
         toggleContainer.classList.add('daily-active');
         toggleContainer.classList.remove('unlim-active');
-        dBtn.classList.add('active');
-        uBtn.classList.remove('active');
     } else {
         toggleContainer.classList.add('unlim-active');
         toggleContainer.classList.remove('daily-active');
-        uBtn.classList.add('active');
-        dBtn.classList.remove('active');
     }
     resetGame();
 }
@@ -84,6 +79,7 @@ function resetGame() {
     }
 }
 
+// --- 3. SEARCH (DROPDOWN FIX) ---
 function setupSearch() {
     const input = document.getElementById('search-input');
     const dropdown = document.getElementById('dropdown');
@@ -92,26 +88,47 @@ function setupSearch() {
         const val = e.target.value.trim().toLowerCase();
         dropdown.innerHTML = '';
         if (!val) { dropdown.classList.add('hidden'); return; }
-        const matches = characters.filter(c => c.name.toLowerCase().includes(val) && filteredNames.includes(c.name));
+        
+        const matches = characters.filter(c => 
+            c.name.toLowerCase().includes(val) && filteredNames.includes(c.name)
+        );
+
         if (matches.length > 0) {
             dropdown.classList.remove('hidden');
             matches.slice(0, 10).forEach(char => {
                 const div = document.createElement('div');
                 div.className = 'dropdown-item';
-                div.innerHTML = `<img src="${char.image || 'placeholder.png'}"> <span>${char.name}</span>`;
-                div.onclick = () => { input.value = char.name; executeGuess(); };
+                div.innerHTML = `<img src="${char.image}" loading="lazy"> <span>${char.name}</span>`;
+                div.onclick = () => {
+                    input.value = char.name;
+                    dropdown.classList.add('hidden'); // IMMEDIATELY HIDE
+                    dropdown.innerHTML = '';          // CLEAR ITEMS
+                    executeGuess();
+                };
                 dropdown.appendChild(div);
             });
+        } else {
+            dropdown.classList.add('hidden');
+        }
+    });
+
+    // Close on click outside
+    document.addEventListener('click', (e) => {
+        if (!document.getElementById('search-module').contains(e.target)) {
+            dropdown.classList.add('hidden');
         }
     });
 }
 
 function executeGuess() {
     const input = document.getElementById('search-input');
+    const dropdown = document.getElementById('dropdown');
     const name = input.value.trim();
     const char = characters.find(c => c.name === name);
+    
     if (!char || !filteredNames.includes(name)) return;
 
+    dropdown.classList.add('hidden'); // Double check it hides
     input.value = '';
     filteredNames = filteredNames.filter(n => n !== name);
     guesses++;
@@ -133,16 +150,21 @@ function renderRow(g) {
 
     const compareStat = (gu, ta) => gu === ta ? 'match-exact' : gu < ta ? 'match-none ▲' : 'match-none ▼';
     const compareArc = (gu, ta) => gu === ta ? 'match-exact' : arcOrder.indexOf(gu) < arcOrder.indexOf(ta) ? 'match-none ▲' : 'match-none ▼';
-    const parseB = (b) => parseInt(b.toString().replace(/[^0-9]/g, '')) || 0;
+    
+    const parseB = (b) => {
+        if (!b || b === "NONE") return 0;
+        return parseInt(b.toString().replace(/[^0-9]/g, '')) || 0;
+    };
+    
     const formatB = (b) => {
         let n = parseB(b);
-        if(n>=1e9) return (n/1e9).toFixed(1)+'B';
-        if(n>=1e6) return (n/1e6).toFixed(1)+'M';
-        return n>0 ? n.toLocaleString() : "NONE";
+        if (n >= 1e9) return (n/1e9).toFixed(1) + 'B';
+        if (n >= 1e6) return (n/1e6).toFixed(1) + 'M';
+        return n > 0 ? n.toLocaleString() : "NONE";
     };
 
     const tilesHTML = [
-        `<div class="tile tile-portrait ${isT ? 'match-exact' : 'match-none'} flip-in"><img src="${g.image || 'placeholder.png'}"></div>`,
+        `<div class="tile tile-portrait ${isT ? 'match-exact' : 'match-none'} flip-in"><img src="${g.image}" onload="this.classList.add('loaded')"></div>`,
         getTileHTML(g.gender, g.gender === targetChar.gender ? 'match-exact' : 'match-none'),
         getTileHTML(g.species, g.species === targetChar.species ? 'match-exact' : 'match-none'),
         getTileHTML(g.calling, g.calling === targetChar.calling ? 'match-exact' : 'match-none'),
@@ -187,16 +209,16 @@ function triggerEnd(win) {
         </div>
     `).join('');
 
-    // Inject Character Image into Modal Header
     const titleNode = document.getElementById('end-title');
-    if (!document.querySelector('.modal-portrait')) {
-        const img = document.createElement('img');
+    let img = document.querySelector('.modal-portrait');
+    if (!img) {
+        img = document.createElement('img');
         img.className = 'modal-portrait';
-        img.src = targetChar.image || 'placeholder.png';
         titleNode.after(img);
-    } else {
-        document.querySelector('.modal-portrait').src = targetChar.image || 'placeholder.png';
     }
+    img.src = targetChar.image;
+    img.classList.remove('loaded');
+    img.onload = () => img.classList.add('loaded');
 
     const overlay = document.getElementById('end-overlay');
     overlay.classList.remove('hidden');
