@@ -162,3 +162,25 @@ body {
     animation: flipIn 0.5s ease-out forwards;
 }
 @keyframes flipIn { to { transform: rotateX(0deg); opacity: 1; } }
+/* Add this to your index.css to handle images inside the tiles */
+.tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Force the header container to stay centered */
+#game-board {
+    margin: 0 auto;
+}
+
+/* Modal text color override for the stat values to match the neon theme */
+.modal-stat-value {
+    color: #00f2ff !important;
+}
+
+/* Active mode button highlight */
+.text-neon-cyan {
+    color: #00f2ff !important;
+}
