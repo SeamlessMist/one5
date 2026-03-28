@@ -12,7 +12,7 @@ body {
     position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0;
     background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('luffy-bg.jpg');
     background-size: cover;
-    background-position: center 20%;
+    background-position: center 20%; 
     pointer-events: none;
 }
 
