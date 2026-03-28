@@ -1,186 +1,86 @@
-/* =========================================
-   1. GLOBAL & BACKGROUND
-   ========================================= */
-* { box-sizing: border-box; margin: 0; padding: 0; }
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --color-neon-cyan: #00f2ff;
+  --color-neon-yellow: #fde047;
+  --color-neon-red: #ff4444;
+  --color-neon-green: #4ade80;
+}
 
 body {
-    background-color: #0c0e11;
-    font-family: 'Space Grotesk', sans-serif;
+  background-color: #050505;
+  background-image: linear-gradient(rgba(5, 5, 5, 0.8), rgba(5, 5, 5, 0.9)), url('https://images.alphacoders.com/131/1316530.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #ffffff;
+  font-family: var(--font-sans);
 }
 
-#bg-layer {
-    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0;
-    background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('luffy-bg.jpg');
-    background-size: cover;
-    background-position: center 20%; 
-    pointer-events: none;
-}
-
-/* =========================================
-   2. FROSTED GLASS UI
-   ========================================= */
 .glass-ui {
-    background: rgba(255, 255, 255, 0.45);
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
-    border: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(20, 20, 20, 0.7) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .glass-dropdown {
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(30px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-}
-
-.hide-scroll { scrollbar-width: none; -ms-overflow-style: none; }
-.hide-scroll::-webkit-scrollbar { display: none; }
-#dropdown::-webkit-scrollbar { display: none; }
-
-/* =========================================
-   3. TOGGLE BAR & SEARCH
-   ========================================= */
-.mode-text {
-    color: rgba(0, 0, 0, 0.4);
-    font-family: 'Manrope', sans-serif;
-    transition: color 0.3s ease;
-}
-.mode-text.active { color: #000000; }
-.mode-text.active span { color: #a38900; }
-
-#mode-pill { left: 4px; }
-.daily-active #mode-pill { transform: translateX(0); }
-.unlim-active #mode-pill { transform: translateX(calc(100% + 4px)); }
-
-#search-input {
-    background: transparent !important;
-    border: none !important;
-    outline: none !important;      
-    box-shadow: none !important;    
-    color: #000 !important;
-}
-
-/* =========================================
-   4. DROPDOWN ITEMS (With Images)
-   ========================================= */
-.dropdown-item {
-    color: #000;
-    font-weight: 800;
-    padding: 10px 20px;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-    cursor: pointer;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-.dropdown-item img {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 1px solid rgba(0,0,0,0.1);
-}
-
-/* =========================================
-   5. GAME TILES & COLORS
-   ========================================= */
-#game-board > div:first-child {
-    color: #000000 !important; 
-    font-weight: 800 !important;
-    opacity: 1 !important;
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .tile {
-    background: rgba(0, 0, 0, 0.85); 
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8px;
-    text-align: center;
-    min-height: 100px;
-    color: #ffffff;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    line-height: 1.2;
-    word-break: break-word;
+  background: rgba(15, 15, 15, 0.9); 
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  text-align: center;
+  min-height: 105px;
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 1.2;
+  word-break: break-word;
 }
 
-/* Character Portrait Tile */
-.tile-portrait {
-    padding: 0 !important;
-    overflow: hidden;
+/* Match States using your Theme Colors */
+.tile.match-exact { 
+  background: rgba(0, 242, 255, 0.2) !important; 
+  border: 1px solid #00f2ff !important; 
+  color: #00f2ff !important; 
 }
-.tile-portrait img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.tile.match-partial { 
+  background: rgba(74, 222, 128, 0.2) !important; 
+  border: 1px solid #4ade80 !important; 
+  color: #4ade80 !important;
 }
-
-.tile.match-exact { background: #fde047; border: none; color: #000000; }
-.tile.match-partial { background: #4ade80; border: none; color: #000000; }
-.tile.match-none { background: #ef4444; border: none; color: #ffffff; }
-
-/* =========================================
-   6. MODAL PROFILE & IMAGE
-   ========================================= */
-.modal-portrait {
-    width: 150px;
-    height: 150px;
-    border-radius: 20px;
-    object-fit: cover;
-    margin: 0 auto 15px;
-    border: 4px solid #fff;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    display: block;
+.tile.match-none { 
+  background: rgba(255, 68, 68, 0.05) !important; 
+  border: 1px solid rgba(255, 68, 68, 0.3) !important; 
+  color: #ff4444 !important; 
 }
 
-#modal-profile {
-    background: rgba(0, 0, 0, 0.05);
-    padding: 12px;
-    border-radius: 20px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-}
+.tile img { width: 100%; height: 100%; object-fit: cover; border-radius: 4px; }
 
+.hide-scroll { scrollbar-width: none; -ms-overflow-style: none; }
+.hide-scroll::-webkit-scrollbar { display: none; }
+
+/* Modal Stats */
 .modal-stat-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: white;
-    padding: 8px 4px;
-    border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex; flex-direction: column; align-items: center;
 }
-
-.modal-stat-label { font-size: 8px; font-weight: 800; color: rgba(0, 0, 0, 0.4); text-transform: uppercase; }
-.modal-stat-value { font-size: 10px; font-weight: 700; color: #000; text-transform: uppercase; text-align: center; }
-
-.flip-in {
-    opacity: 0;
-    transform: rotateX(90deg);
-    animation: flipIn 0.5s ease-out forwards;
-}
-@keyframes flipIn { to { transform: rotateX(0deg); opacity: 1; } }
-/* Add this to your index.css to handle images inside the tiles */
-.tile img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-/* Force the header container to stay centered */
-#game-board {
-    margin: 0 auto;
-}
-
-/* Modal text color override for the stat values to match the neon theme */
-.modal-stat-value {
-    color: #00f2ff !important;
-}
-
-/* Active mode button highlight */
-.text-neon-cyan {
-    color: #00f2ff !important;
-}
+.modal-stat-label { font-family: var(--font-mono); font-size: 8px; color: rgba(255,255,255,0.4); text-transform: uppercase; }
+.modal-stat-value { font-family: var(--font-mono); font-size: 10px; color: #00f2ff; text-transform: uppercase; margin-top: 2px; text-align: center;}
