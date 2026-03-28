@@ -1,59 +1,77 @@
+/**
+ * ONE PIECE DLE - PORTRAIT VERSION
+ */
+
 let characters = [];
 let targetChar = null;
 let mode = 'daily';
 let guesses = 0;
+const MAX_GUESSES = 10;
 let filteredNames = [];
 
+// --- 1. AUDIO ---
 const winSound = new Audio('luffy.mp3');
 const loseSound = new Audio('doffy.mp3');
+let audioUnlocked = false;
 
-document.addEventListener('pointerdown', () => {
-    winSound.play().then(() => winSound.pause());
-    loseSound.play().then(() => loseSound.pause()); 
-}, { once: true });
+function unlockAudio() {
+    if (audioUnlocked) return;
+    winSound.play().then(() => { winSound.pause(); winSound.currentTime = 0; }).catch(()=>{});
+    loseSound.play().then(() => { loseSound.pause(); loseSound.currentTime = 0; }).catch(()=>{});
+    audioUnlocked = true;
+    document.removeEventListener('pointerdown', unlockAudio);
+}
+document.addEventListener('pointerdown', unlockAudio);
 
-const arcOrder = ["Romance Dawn", "Orange Town", "Syrup Village", "Baratie", "Arlong Park", "Loguetown", "Reverse Mountain", "Whiskey Peak", "Little Garden", "Drum Island", "Alabasta", "Jaya", "Skypiea", "Long Ring Long Land", "Water 7", "Enies Lobby", "Thriller Bark", "Sabaody Archipelago", "Amazon Lily", "Impel Down", "Marineford", "Fish-Man Island", "Punk Hazard", "Dressrosa", "Zou", "Whole Cake Island", "Reverie", "Wano", "Egghead"];
+function playLaugh(isWin) {
+    if (!audioUnlocked) return;
+    const sound = isWin ? winSound : loseSound;
+    sound.currentTime = 0;
+    sound.play().catch(e => console.warn("Audio blocked."));
+}
 
+// --- 2. INIT ---
 window.onload = async () => {
     try {
-        const res = await fetch('./characters.json');
-        if (!res.ok) throw new Error("Fetch failed");
+        const res = await fetch('characters.json');
         characters = await res.json();
         initUI();
-    } catch (e) { console.error("Could not load characters.json"); }
+        setMode('daily');
+    } catch (e) { console.error("JSON missing"); }
 };
 
 function initUI() {
     document.getElementById('btn-daily').onclick = () => setMode('daily');
     document.getElementById('btn-unlimited').onclick = () => setMode('unlimited');
-    document.getElementById('btn-play-again').onclick = () => resetGame();
+    document.getElementById('btn-replay').onclick = () => resetGame();
     setupSearch();
-    setMode('daily');
 }
 
-function setMode(m) {
-    mode = m;
-    const pill = document.getElementById('mode-pill');
-    if(m === 'daily') {
-        pill.style.transform = 'translateX(0)';
-        document.getElementById('btn-daily').classList.add('mode-active');
-        document.getElementById('btn-unlimited').classList.remove('mode-active');
+function setMode(newMode) {
+    mode = newMode;
+    const toggleContainer = document.getElementById('btn-daily').parentElement;
+    if (mode === 'daily') {
+        toggleContainer.classList.add('daily-active');
+        toggleContainer.classList.remove('unlim-active');
     } else {
-        pill.style.transform = 'translateX(100%)';
-        document.getElementById('btn-unlimited').classList.add('mode-active');
-        document.getElementById('btn-daily').classList.remove('mode-active');
+        toggleContainer.classList.add('unlim-active');
+        toggleContainer.classList.remove('daily-active');
     }
     resetGame();
 }
 
 function resetGame() {
     guesses = 0;
-    document.getElementById('guesses-left-text').innerText = `10 / 10`;
-    const board = document.getElementById('game-board');
-    const header = board.querySelector('.category-row');
-    board.innerHTML = ''; board.appendChild(header);
+    document.getElementById('guess-counter').innerText = MAX_GUESSES;
+    document.getElementById('game-board').innerHTML = `
+        <div class="w-full grid grid-cols-11 gap-2 mb-2 px-2 text-center text-[10px] font-bold uppercase tracking-wider">
+            <div>Character</div><div>Gender</div><div>Species</div><div>Calling</div>
+            <div>Affiliation</div><div>Fruit</div><div>Haki</div><div>Height</div>
+            <div>Bounty</div><div>Origin</div><div>Debut</div>
+        </div>`;
     document.getElementById('end-overlay').classList.add('hidden');
-    document.getElementById('guess-input').value = '';
+    document.getElementById('search-input').disabled = false;
+    document.getElementById('search-input').value = '';
     filteredNames = characters.map(c => c.name);
     
     if (mode === 'daily') {
@@ -65,72 +83,159 @@ function resetGame() {
     }
 }
 
+// --- 3. SEARCH ---
 function setupSearch() {
-    const input = document.getElementById('guess-input');
-    const list = document.getElementById('autocomplete-list');
-    input.oninput = () => {
-        const val = input.value.toLowerCase().trim();
-        list.innerHTML = '';
-        if(!val) { list.classList.add('hidden'); return; }
-        const matches = characters.filter(c => c.name.toLowerCase().includes(val) && filteredNames.includes(c.name));
-        if(matches.length) {
-            list.classList.remove('hidden');
-            matches.slice(0, 10).forEach(m => {
-                const d = document.createElement('div');
-                d.className = 'search-item';
-                d.innerHTML = `<img src="${m.image}" style="width:30px;height:30px;border-radius:4px"> ${m.name}`;
-                d.onclick = () => { input.value = m.name; list.classList.add('hidden'); submitGuess(); };
-                list.appendChild(d);
+    const input = document.getElementById('search-input');
+    const dropdown = document.getElementById('dropdown');
+
+    input.addEventListener('input', (e) => {
+        const val = e.target.value.trim().toLowerCase();
+        dropdown.innerHTML = '';
+        if (!val) { dropdown.classList.add('hidden'); return; }
+        
+        const matches = characters.filter(c => 
+            c.name.toLowerCase().includes(val) && filteredNames.includes(c.name)
+        );
+
+        if (matches.length > 0) {
+            dropdown.classList.remove('hidden');
+            matches.slice(0, 10).forEach(char => {
+                const div = document.createElement('div');
+                div.className = 'dropdown-item';
+                div.innerHTML = `<img src="${char.image}"> <span>${char.name}</span>`;
+                div.onclick = () => {
+                    input.value = char.name;
+                    dropdown.classList.add('hidden');
+                    executeGuess();
+                };
+                dropdown.appendChild(div);
             });
+        } else {
+            dropdown.classList.add('hidden');
         }
-    };
+    });
 }
 
-function submitGuess() {
-    const name = document.getElementById('guess-input').value;
+function executeGuess() {
+    const input = document.getElementById('search-input');
+    const name = input.value.trim();
     const char = characters.find(c => c.name === name);
-    if(!char || !filteredNames.includes(name)) return;
-    document.getElementById('guess-input').value = '';
+    
+    if (!char || !filteredNames.includes(name)) return;
+
+    input.value = '';
     filteredNames = filteredNames.filter(n => n !== name);
     guesses++;
-    document.getElementById('guesses-left-text').innerText = `${10 - guesses} / 10`;
+    document.getElementById('guess-counter').innerText = MAX_GUESSES - guesses;
+    
     renderRow(char);
-    if(char.name === targetChar.name) endGame(true);
-    else if(guesses >= 10) endGame(false);
+
+    if (char.name === targetChar.name) setTimeout(() => triggerEnd(true), 1000);
+    else if (guesses >= MAX_GUESSES) setTimeout(() => triggerEnd(false), 1000);
 }
 
+// --- 4. DATA HELPERS ---
+function formatHaki(h) { 
+    if (!h || h.length === 0 || h[0] === "None") return "NONE"; 
+    // This maps "Conquerors" or "Conqueror" to "CON"
+    return h.map(x => {
+        if (x.toLowerCase().includes('conq')) return 'CON';
+        if (x.toLowerCase().includes('arm')) return 'ARM';
+        if (x.toLowerCase().includes('obs')) return 'OBS';
+        return x.substring(0,3).toUpperCase();
+    }).join('/'); 
+}
+
+function compHaki(g, t) { 
+    if (JSON.stringify(g) === JSON.stringify(t)) return 'match-exact'; 
+    return g.some(x => t.includes(x)) ? 'match-partial' : 'match-none'; 
+}
+
+function compStat(g, t) { if (g === t) return 'match-exact'; return g < t ? 'match-none ▲' : 'match-none ▼'; }
+
+function parseBounty(b) { 
+    if (!b || b === "NONE") return 0;
+    return parseInt(b.toString().replace(/[^0-9]/g, '')) || 0; 
+}
+
+function formatBounty(b) {
+    let n = parseBounty(b);
+    if (n >= 1e9) return (n/1e9).toFixed(1) + 'B';
+    if (n >= 1e6) return (n/1e6).toFixed(1) + 'M';
+    return n > 0 ? n.toLocaleString() : "NONE";
+}
+
+function compArc(g, t) {
+    const arcOrder = ["Romance Dawn", "Orange Town", "Syrup Village", "Baratie", "Arlong Park", "Loguetown", "Reverse Mountain", "Whiskey Peak", "Little Garden", "Drum Island", "Alabasta", "Jaya", "Skypiea", "Long Ring Long Land", "Water 7", "Enies Lobby", "Thriller Bark", "Sabaody Archipelago", "Amazon Lily", "Impel Down", "Marineford", "Fish-Man Island", "Punk Hazard", "Dressrosa", "Zou", "Whole Cake Island", "Reverie", "Wano", "Egghead"];
+    if (g === t) return 'match-exact';
+    return arcOrder.indexOf(g) < arcOrder.indexOf(t) ? 'match-none ▲' : 'match-none ▼';
+}
+
+// --- 5. RENDER ---
 function renderRow(g) {
     const board = document.getElementById('game-board');
     const row = document.createElement('div');
-    row.className = 'w-full grid grid-cols-11 gap-2 px-2 mb-2';
+    row.className = 'w-full grid grid-cols-11 gap-2 mb-2 px-2';
     
     const isT = g.name === targetChar.name;
-    const getArrow = (gu, ta) => gu === ta ? '' : (gu < ta ? ' ▲' : ' ▼');
-    const parseB = (b) => parseInt(b.toString().replace(/[^0-9]/g, '')) || 0;
 
-    row.innerHTML = [
-        `<div class="tile ${isT ? 'match-exact' : 'match-none'} p-0"><img src="${g.image}"></div>`,
-        `<div class="tile ${g.gender === targetChar.gender ? 'match-exact' : 'match-none'}">${g.gender}</div>`,
-        `<div class="tile ${g.species === targetChar.species ? 'match-exact' : 'match-none'}">${g.species}</div>`,
-        `<div class="tile ${g.calling === targetChar.calling ? 'match-exact' : 'match-none'}">${g.calling}</div>`,
-        `<div class="tile ${g.affiliation === targetChar.affiliation ? 'match-exact' : 'match-none'}">${g.affiliation}</div>`,
-        `<div class="tile ${g.devilFruitType === targetChar.devilFruitType ? 'match-exact' : 'match-none'}">${g.devilFruitType}</div>`,
-        `<div class="tile ${JSON.stringify(g.haki) === JSON.stringify(targetChar.haki) ? 'match-exact' : (g.haki.some(x => targetChar.haki.includes(x)) ? 'match-partial' : 'match-none')}">${g.haki.map(x => x.substring(0,3)).join('/').toUpperCase()}</div>`,
-        `<div class="tile ${g.heightCm === targetChar.heightCm ? 'match-exact' : 'match-none'}">${g.heightCm}cm${getArrow(g.heightCm, targetChar.heightCm)}</div>`,
-        `<div class="tile ${parseB(g.bounty) === parseB(targetChar.bounty) ? 'match-exact' : 'match-none'}">${g.bounty}${getArrow(parseB(g.bounty), parseB(targetChar.bounty))}</div>`,
-        `<div class="tile ${g.seaOfBirth === targetChar.seaOfBirth ? 'match-exact' : 'match-none'}">${g.seaOfBirth}</div>`,
-        `<div class="tile ${g.firstArc === targetChar.firstArc ? 'match-exact' : 'match-none'}">${g.firstArc}${getArrow(arcOrder.indexOf(g.firstArc), arcOrder.indexOf(targetChar.firstArc))}</div>`
+    const tilesHTML = [
+        `<div class="tile tile-portrait ${isT ? 'match-exact' : 'match-none'} flip-in"><img src="${g.image}"></div>`,
+        getTileHTML(g.gender, g.gender === targetChar.gender ? 'match-exact' : 'match-none'),
+        getTileHTML(g.species, g.species === targetChar.species ? 'match-exact' : 'match-none'),
+        getTileHTML(g.calling, g.calling === targetChar.calling ? 'match-exact' : 'match-none'),
+        getTileHTML(g.affiliation, g.affiliation === targetChar.affiliation ? 'match-exact' : 'match-none'),
+        getTileHTML(g.devilFruitType, g.devilFruitType === targetChar.devilFruitType ? 'match-exact' : 'match-none'),
+        getTileHTML(formatHaki(g.haki), compHaki(g.haki, targetChar.haki)),
+        getTileHTML(g.heightCm + 'cm', compStat(g.heightCm, targetChar.heightCm)),
+        getTileHTML(formatBounty(g.bounty), compStat(parseBounty(g.bounty), parseBounty(targetChar.bounty))),
+        getTileHTML(g.seaOfBirth, g.seaOfBirth === targetChar.seaOfBirth ? 'match-exact' : 'match-none'),
+        getTileHTML(g.firstArc, compArc(g.firstArc, targetChar.firstArc))
     ].join('');
+
+    row.innerHTML = tilesHTML;
     board.insertBefore(row, board.children[1]);
 }
 
-function endGame(win) {
-    win ? winSound.play() : loseSound.play();
-    document.getElementById('end-overlay').classList.remove('hidden');
-    document.getElementById('end-overlay').classList.add('flex');
-    document.getElementById('card-title').innerText = win ? "DATA SYNCHRONIZED" : "LOST SIGNAL";
-    document.getElementById('card-title').style.color = win ? "#00f2ff" : "#ff4444";
-    const stats = [{l:'Sex',v:targetChar.gender},{l:'Race',v:targetChar.species},{l:'Role',v:targetChar.calling},{l:'Group',v:targetChar.affiliation},{l:'Fruit',v:targetChar.devilFruitType},{l:'Haki',v:targetChar.haki.join(', ')},{l:'Size',v:targetChar.heightCm+'cm'},{l:'Value',v:targetChar.bounty},{l:'Origin',v:targetChar.seaOfBirth},{l:'Debut',v:targetChar.firstArc}];
-    document.getElementById('modal-profile').innerHTML = stats.map(s => `<div class="modal-stat-box"><span class="modal-stat-label">${s.l}</span><span class="modal-stat-value">${s.v}</span></div>`).join('');
-    setTimeout(() => document.getElementById('end-overlay').classList.add('opacity-100'), 50);
+function getTileHTML(val, type) {
+    const baseClass = type.split(' ')[0];
+    const arrow = type.includes('▲') ? ' ▲' : type.includes('▼') ? ' ▼' : '';
+    return `<div class="tile ${baseClass} flip-in">${val}${arrow}</div>`;
+}
+
+function triggerEnd(win) {
+    playLaugh(win);
+    document.getElementById('end-title').innerText = win ? "BOUNTY CLAIMED!" : "WALK THE PLANK!";
+    document.getElementById('end-title').style.color = win ? "#a38900" : "#ef4444";
+    document.getElementById('end-subtitle').innerText = `The character was ${targetChar.name}.`;
+
+    const profileContainer = document.getElementById('modal-profile');
+    const stats = [
+        { l: 'Gender', v: targetChar.gender }, { l: 'Species', v: targetChar.species },
+        { l: 'Role', v: targetChar.calling }, { l: 'Group', v: targetChar.affiliation },
+        { l: 'Fruit', v: targetChar.devilFruitType }, { l: 'Haki', v: targetChar.haki.join(', ') },
+        { l: 'Height', v: targetChar.heightCm + 'cm' }, { l: 'Bounty', v: formatBounty(targetChar.bounty) },
+        { l: 'Origin', v: targetChar.seaOfBirth }, { l: 'Debut', v: targetChar.firstArc }
+    ];
+
+    profileContainer.innerHTML = stats.map(s => `
+        <div class="modal-stat-box">
+            <span class="modal-stat-label">${s.l}</span>
+            <span class="modal-stat-value">${s.v}</span>
+        </div>
+    `).join('');
+
+    const titleNode = document.getElementById('end-title');
+    let img = document.querySelector('.modal-portrait');
+    if (!img) {
+        img = document.createElement('img');
+        img.className = 'modal-portrait';
+        titleNode.after(img);
+    }
+    img.src = targetChar.image;
+
+    const overlay = document.getElementById('end-overlay');
+    overlay.classList.remove('hidden');
+    overlay.classList.add('flex');
+    setTimeout(() => { overlay.classList.add('opacity-100'); }, 50);
 }
