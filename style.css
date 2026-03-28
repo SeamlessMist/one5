@@ -8,7 +8,7 @@ body {
     font-family: 'Space Grotesk', sans-serif;
 }
 
-#bg-layer { 
+#bg-layer {
     position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0;
     background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('luffy-bg.jpg');
     background-size: cover;
@@ -29,26 +29,15 @@ body {
 .glass-dropdown {
     background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
     border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-/* Scrollbar Hiding Utility */
 .hide-scroll { scrollbar-width: none; -ms-overflow-style: none; }
 .hide-scroll::-webkit-scrollbar { display: none; }
 #dropdown::-webkit-scrollbar { display: none; }
 
 /* =========================================
-   3. CATEGORY FIELDS (FORCED TO BLACK)
-   ========================================= */
-#game-board > div:first-child {
-    color: #000000 !important; 
-    font-weight: 800 !important;
-    opacity: 1 !important;
-}
-
-/* =========================================
-   4. TOGGLE BAR & SEARCH
+   3. TOGGLE BAR & SEARCH
    ========================================= */
 .mode-text {
     color: rgba(0, 0, 0, 0.4);
@@ -62,7 +51,6 @@ body {
 .daily-active #mode-pill { transform: translateX(0); }
 .unlim-active #mode-pill { transform: translateX(calc(100% + 4px)); }
 
-/* SEARCH INPUT - REMOVED INTERNAL BLACK BOX */
 #search-input {
     background: transparent !important;
     border: none !important;
@@ -70,26 +58,38 @@ body {
     box-shadow: none !important;    
     color: #000 !important;
 }
-#search-input::placeholder { color: rgba(0, 0, 0, 0.3) !important; }
 
 /* =========================================
-   5. DROPDOWN ITEMS
+   4. DROPDOWN ITEMS (With Images)
    ========================================= */
 .dropdown-item {
     color: #000;
     font-weight: 800;
-    padding: 16px 24px;
+    padding: 10px 20px;
     border-bottom: 1px solid rgba(0,0,0,0.05);
     cursor: pointer;
     text-transform: uppercase;
-    font-size: 0.9rem;
-    transition: background 0.1s ease;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
-.dropdown-item:hover, .dropdown-item.selected { background: rgba(0, 0, 0, 0.1); }
+.dropdown-item img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid rgba(0,0,0,0.1);
+}
 
 /* =========================================
-   6. GAME TILES & COLORS
+   5. GAME TILES & COLORS
    ========================================= */
+#game-board > div:first-child {
+    color: #000000 !important; 
+    font-weight: 800 !important;
+    opacity: 1 !important;
+}
+
 .tile {
     background: rgba(0, 0, 0, 0.85); 
     border: 1px solid rgba(255, 255, 255, 0.15);
@@ -106,17 +106,37 @@ body {
     text-transform: uppercase;
     line-height: 1.2;
     word-break: break-word;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
 }
 
-.tile.match-exact { background: #fde047; border: none; color: #000000; text-shadow: none; }
-.tile.match-partial { background: #4ade80; border: none; color: #000000; text-shadow: none; }
+/* Character Portrait Tile */
+.tile-portrait {
+    padding: 0 !important;
+    overflow: hidden;
+}
+.tile-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tile.match-exact { background: #fde047; border: none; color: #000000; }
+.tile.match-partial { background: #4ade80; border: none; color: #000000; }
 .tile.match-none { background: #ef4444; border: none; color: #ffffff; }
-.tile-name { font-size: 0.85rem; font-weight: 800; }
 
 /* =========================================
-   7. MODAL PROFILE STYLING
+   6. MODAL PROFILE & IMAGE
    ========================================= */
+.modal-portrait {
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+    object-fit: cover;
+    margin: 0 auto 15px;
+    border: 4px solid #fff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    display: block;
+}
+
 #modal-profile {
     background: rgba(0, 0, 0, 0.05);
     padding: 12px;
@@ -128,39 +148,17 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     background: white;
     padding: 8px 4px;
     border-radius: 12px;
 }
 
-.modal-stat-label {
-    font-family: 'Manrope', sans-serif;
-    font-size: 8px;
-    font-weight: 800;
-    text-transform: uppercase;
-    color: rgba(0, 0, 0, 0.4);
-    margin-bottom: 2px;
-}
+.modal-stat-label { font-size: 8px; font-weight: 800; color: rgba(0, 0, 0, 0.4); text-transform: uppercase; }
+.modal-stat-value { font-size: 10px; font-weight: 700; color: #000; text-transform: uppercase; text-align: center; }
 
-.modal-stat-value {
-    font-size: 10px;
-    font-weight: 700;
-    color: #000000;
-    text-transform: uppercase;
-    text-align: center;
-    line-height: 1.1;
-}
-
-/* =========================================
-   8. ANIMATIONS
-   ========================================= */
 .flip-in {
     opacity: 0;
     transform: rotateX(90deg);
     animation: flipIn 0.5s ease-out forwards;
 }
-@keyframes flipIn {
-    0% { transform: rotateX(90deg); opacity: 0; }
-    100% { transform: rotateX(0deg); opacity: 1; }
-}
+@keyframes flipIn { to { transform: rotateX(0deg); opacity: 1; } }
