@@ -14,7 +14,7 @@ const arcOrder =[
     "Punk Hazard", "Dressrosa", "Zou", "Whole Cake Island", "Reverie", "Wano", "Egghead"
 ];
 
-// --- 2. LOCAL AUDIO ENGINE ---
+// --- 2. LOCAL AUDIO ENGINE --- 
 const winSound = new Audio('luffy.mp3');
 const loseSound = new Audio('doffy.mp3');
 let audioUnlocked = false;
