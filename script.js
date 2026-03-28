@@ -1,3 +1,7 @@
+/**
+ * ONE PIECE DLE - PORTRAIT VERSION
+ */
+
 let characters = [];
 let targetChar = null;
 let mode = 'daily';
@@ -79,7 +83,7 @@ function resetGame() {
     }
 }
 
-// --- 3. SEARCH (DROPDOWN FIX) ---
+// --- 3. SEARCH ---
 function setupSearch() {
     const input = document.getElementById('search-input');
     const dropdown = document.getElementById('dropdown');
@@ -98,11 +102,10 @@ function setupSearch() {
             matches.slice(0, 10).forEach(char => {
                 const div = document.createElement('div');
                 div.className = 'dropdown-item';
-                div.innerHTML = `<img src="${char.image}" loading="lazy"> <span>${char.name}</span>`;
+                div.innerHTML = `<img src="${char.image}"> <span>${char.name}</span>`;
                 div.onclick = () => {
                     input.value = char.name;
-                    dropdown.classList.add('hidden'); // IMMEDIATELY HIDE
-                    dropdown.innerHTML = '';          // CLEAR ITEMS
+                    dropdown.classList.add('hidden');
                     executeGuess();
                 };
                 dropdown.appendChild(div);
@@ -111,24 +114,15 @@ function setupSearch() {
             dropdown.classList.add('hidden');
         }
     });
-
-    // Close on click outside
-    document.addEventListener('click', (e) => {
-        if (!document.getElementById('search-module').contains(e.target)) {
-            dropdown.classList.add('hidden');
-        }
-    });
 }
 
 function executeGuess() {
     const input = document.getElementById('search-input');
-    const dropdown = document.getElementById('dropdown');
     const name = input.value.trim();
     const char = characters.find(c => c.name === name);
     
     if (!char || !filteredNames.includes(name)) return;
 
-    dropdown.classList.add('hidden'); // Double check it hides
     input.value = '';
     filteredNames = filteredNames.filter(n => n !== name);
     guesses++;
@@ -140,41 +134,63 @@ function executeGuess() {
     else if (guesses >= MAX_GUESSES) setTimeout(() => triggerEnd(false), 1000);
 }
 
+// --- 4. DATA HELPERS ---
+function formatHaki(h) { 
+    if (!h || h.length === 0 || h[0] === "None") return "NONE"; 
+    // This maps "Conquerors" or "Conqueror" to "CON"
+    return h.map(x => {
+        if (x.toLowerCase().includes('conq')) return 'CON';
+        if (x.toLowerCase().includes('arm')) return 'ARM';
+        if (x.toLowerCase().includes('obs')) return 'OBS';
+        return x.substring(0,3).toUpperCase();
+    }).join('/'); 
+}
+
+function compHaki(g, t) { 
+    if (JSON.stringify(g) === JSON.stringify(t)) return 'match-exact'; 
+    return g.some(x => t.includes(x)) ? 'match-partial' : 'match-none'; 
+}
+
+function compStat(g, t) { if (g === t) return 'match-exact'; return g < t ? 'match-none ▲' : 'match-none ▼'; }
+
+function parseBounty(b) { 
+    if (!b || b === "NONE") return 0;
+    return parseInt(b.toString().replace(/[^0-9]/g, '')) || 0; 
+}
+
+function formatBounty(b) {
+    let n = parseBounty(b);
+    if (n >= 1e9) return (n/1e9).toFixed(1) + 'B';
+    if (n >= 1e6) return (n/1e6).toFixed(1) + 'M';
+    return n > 0 ? n.toLocaleString() : "NONE";
+}
+
+function compArc(g, t) {
+    const arcOrder = ["Romance Dawn", "Orange Town", "Syrup Village", "Baratie", "Arlong Park", "Loguetown", "Reverse Mountain", "Whiskey Peak", "Little Garden", "Drum Island", "Alabasta", "Jaya", "Skypiea", "Long Ring Long Land", "Water 7", "Enies Lobby", "Thriller Bark", "Sabaody Archipelago", "Amazon Lily", "Impel Down", "Marineford", "Fish-Man Island", "Punk Hazard", "Dressrosa", "Zou", "Whole Cake Island", "Reverie", "Wano", "Egghead"];
+    if (g === t) return 'match-exact';
+    return arcOrder.indexOf(g) < arcOrder.indexOf(t) ? 'match-none ▲' : 'match-none ▼';
+}
+
+// --- 5. RENDER ---
 function renderRow(g) {
     const board = document.getElementById('game-board');
     const row = document.createElement('div');
     row.className = 'w-full grid grid-cols-11 gap-2 mb-2 px-2';
     
     const isT = g.name === targetChar.name;
-    const arcOrder = ["Romance Dawn", "Orange Town", "Syrup Village", "Baratie", "Arlong Park", "Loguetown", "Reverse Mountain", "Whiskey Peak", "Little Garden", "Drum Island", "Alabasta", "Jaya", "Skypiea", "Long Ring Long Land", "Water 7", "Enies Lobby", "Thriller Bark", "Sabaody Archipelago", "Amazon Lily", "Impel Down", "Marineford", "Fish-Man Island", "Punk Hazard", "Dressrosa", "Zou", "Whole Cake Island", "Reverie", "Wano", "Egghead"];
-
-    const compareStat = (gu, ta) => gu === ta ? 'match-exact' : gu < ta ? 'match-none ▲' : 'match-none ▼';
-    const compareArc = (gu, ta) => gu === ta ? 'match-exact' : arcOrder.indexOf(gu) < arcOrder.indexOf(ta) ? 'match-none ▲' : 'match-none ▼';
-    
-    const parseB = (b) => {
-        if (!b || b === "NONE") return 0;
-        return parseInt(b.toString().replace(/[^0-9]/g, '')) || 0;
-    };
-    
-    const formatB = (b) => {
-        let n = parseB(b);
-        if (n >= 1e9) return (n/1e9).toFixed(1) + 'B';
-        if (n >= 1e6) return (n/1e6).toFixed(1) + 'M';
-        return n > 0 ? n.toLocaleString() : "NONE";
-    };
 
     const tilesHTML = [
-        `<div class="tile tile-portrait ${isT ? 'match-exact' : 'match-none'} flip-in"><img src="${g.image}" onload="this.classList.add('loaded')"></div>`,
+        `<div class="tile tile-portrait ${isT ? 'match-exact' : 'match-none'} flip-in"><img src="${g.image}"></div>`,
         getTileHTML(g.gender, g.gender === targetChar.gender ? 'match-exact' : 'match-none'),
         getTileHTML(g.species, g.species === targetChar.species ? 'match-exact' : 'match-none'),
         getTileHTML(g.calling, g.calling === targetChar.calling ? 'match-exact' : 'match-none'),
         getTileHTML(g.affiliation, g.affiliation === targetChar.affiliation ? 'match-exact' : 'match-none'),
         getTileHTML(g.devilFruitType, g.devilFruitType === targetChar.devilFruitType ? 'match-exact' : 'match-none'),
-        getTileHTML(g.haki.map(x=>x.substring(0,3)).join('/').toUpperCase(), (JSON.stringify(g.haki) === JSON.stringify(targetChar.haki) ? 'match-exact' : (g.haki.some(x=>targetChar.haki.includes(x)) ? 'match-partial' : 'match-none'))),
-        getTileHTML(g.heightCm + 'cm', compareStat(g.heightCm, targetChar.heightCm)),
-        getTileHTML(formatB(g.bounty), compareStat(parseB(g.bounty), parseB(targetChar.bounty))),
+        getTileHTML(formatHaki(g.haki), compHaki(g.haki, targetChar.haki)),
+        getTileHTML(g.heightCm + 'cm', compStat(g.heightCm, targetChar.heightCm)),
+        getTileHTML(formatBounty(g.bounty), compStat(parseBounty(g.bounty), parseBounty(targetChar.bounty))),
         getTileHTML(g.seaOfBirth, g.seaOfBirth === targetChar.seaOfBirth ? 'match-exact' : 'match-none'),
-        getTileHTML(g.firstArc, compareArc(g.firstArc, targetChar.firstArc))
+        getTileHTML(g.firstArc, compArc(g.firstArc, targetChar.firstArc))
     ].join('');
 
     row.innerHTML = tilesHTML;
@@ -198,7 +214,7 @@ function triggerEnd(win) {
         { l: 'Gender', v: targetChar.gender }, { l: 'Species', v: targetChar.species },
         { l: 'Role', v: targetChar.calling }, { l: 'Group', v: targetChar.affiliation },
         { l: 'Fruit', v: targetChar.devilFruitType }, { l: 'Haki', v: targetChar.haki.join(', ') },
-        { l: 'Height', v: targetChar.heightCm + 'cm' }, { l: 'Bounty', v: targetChar.bounty },
+        { l: 'Height', v: targetChar.heightCm + 'cm' }, { l: 'Bounty', v: formatBounty(targetChar.bounty) },
         { l: 'Origin', v: targetChar.seaOfBirth }, { l: 'Debut', v: targetChar.firstArc }
     ];
 
@@ -217,8 +233,6 @@ function triggerEnd(win) {
         titleNode.after(img);
     }
     img.src = targetChar.image;
-    img.classList.remove('loaded');
-    img.onload = () => img.classList.add('loaded');
 
     const overlay = document.getElementById('end-overlay');
     overlay.classList.remove('hidden');
