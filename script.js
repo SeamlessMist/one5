@@ -9,7 +9,7 @@ const loseSound = new Audio('doffy.mp3');
 
 document.addEventListener('pointerdown', () => {
     winSound.play().then(() => winSound.pause());
-    loseSound.play().then(() => loseSound.pause());
+    loseSound.play().then(() => loseSound.pause()); 
 }, { once: true });
 
 const arcOrder = ["Romance Dawn", "Orange Town", "Syrup Village", "Baratie", "Arlong Park", "Loguetown", "Reverse Mountain", "Whiskey Peak", "Little Garden", "Drum Island", "Alabasta", "Jaya", "Skypiea", "Long Ring Long Land", "Water 7", "Enies Lobby", "Thriller Bark", "Sabaody Archipelago", "Amazon Lily", "Impel Down", "Marineford", "Fish-Man Island", "Punk Hazard", "Dressrosa", "Zou", "Whole Cake Island", "Reverie", "Wano", "Egghead"];
