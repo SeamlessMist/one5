@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Anime Dle | Choose Your World</title>
+    <link rel="icon" href="data:,">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet"/>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --op-color: #f97316;
+            --op-glow: rgba(249, 115, 22, 0.5);
+            --naruto-color: #f59e0b;
+            --naruto-glow: rgba(245, 158, 11, 0.5);
+        }
+
+        body {
+            background: #080a0d;
+            font-family: 'Manrope', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* Animated background grid */
+        .bg-grid {
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            z-index: 0;
+            animation: gridDrift 20s linear infinite;
+        }
+        @keyframes gridDrift {
+            from { background-position: 0 0; }
+            to   { background-position: 60px 60px; }
+        }
+
+        /* Radial vignette over grid */
+        .bg-vignette {
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(ellipse at center, transparent 30%, #080a0d 100%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Main wrapper */
+        .wrapper {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 56px;
+            padding: 24px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            animation: fadeDown 0.7s ease both;
+        }
+        .header-eyebrow {
+            font-family: 'Manrope', sans-serif;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.3);
+            margin-bottom: 10px;
+        }
+        .header-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(56px, 10vw, 96px);
+            line-height: 0.9;
+            color: #fff;
+            letter-spacing: 0.05em;
+        }
+        .header-title span {
+            background: linear-gradient(90deg, var(--op-color), var(--naruto-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .header-sub {
+            margin-top: 14px;
+            font-size: 13px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.35);
+            letter-spacing: 0.05em;
+        }
+
+        /* Cards row */
+        .cards {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* Individual game card */
+        .card {
+            position: relative;
+            width: 280px;
+            border-radius: 24px;
+            overflow: hidden;
+            cursor: pointer;
+            text-decoration: none;
+            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.04);
+            backdrop-filter: blur(20px);
+            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+                        border-color 0.3s ease,
+                        box-shadow 0.3s ease;
+            animation: fadeUp 0.7s ease both;
+        }
+        .card:nth-child(1) { animation-delay: 0.15s; }
+        .card:nth-child(2) { animation-delay: 0.28s; }
+
+        .card:hover {
+            transform: translateY(-8px) scale(1.02);
+        }
+        .card.op:hover  {
+            border-color: var(--op-color);
+            box-shadow: 0 20px 60px var(--op-glow), 0 0 0 1px var(--op-color);
+        }
+        .card.naruto:hover {
+            border-color: var(--naruto-color);
+            box-shadow: 0 20px 60px var(--naruto-glow), 0 0 0 1px var(--naruto-color);
+        }
+
+        /* Card accent bar at top */
+        .card-bar {
+            height: 4px;
+            width: 100%;
+        }
+        .card.op     .card-bar { background: linear-gradient(90deg, #f97316, #fb923c); }
+        .card.naruto .card-bar { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
+
+        /* Card inner padding */
+        .card-body {
+            padding: 28px 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        /* Emoji icon */
+        .card-icon {
+            font-size: 48px;
+            line-height: 1;
+            filter: drop-shadow(0 4px 16px rgba(0,0,0,0.5));
+        }
+
+        /* Card text */
+        .card-label {
+            font-family: 'Manrope', sans-serif;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.35);
+        }
+        .card-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 42px;
+            letter-spacing: 0.06em;
+            line-height: 1;
+            color: #fff;
+            margin-top: 2px;
+        }
+        .card.op     .card-title { color: #fb923c; }
+        .card.naruto .card-title { color: #fbbf24; }
+
+        .card-desc {
+            font-size: 12px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.4);
+            line-height: 1.5;
+        }
+
+        /* Play button */
+        .card-btn {
+            margin-top: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 18px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            transition: opacity 0.2s ease;
+        }
+        .card:hover .card-btn { opacity: 0.9; }
+        .card.op     .card-btn { background: var(--op-color);     color: #fff; }
+        .card.naruto .card-btn { background: var(--naruto-color); color: #000; }
+
+        .card-btn-arrow {
+            font-size: 18px;
+            font-weight: 900;
+            transition: transform 0.2s ease;
+        }
+        .card:hover .card-btn-arrow { transform: translateX(4px); }
+
+        /* Footer */
+        .footer {
+            font-size: 11px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.18);
+            letter-spacing: 0.1em;
+            animation: fadeUp 0.7s 0.45s ease both;
+        }
+
+        /* Keyframes */
+        @keyframes fadeDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Mobile */
+        @media (max-width: 620px) {
+            .cards { flex-direction: column; align-items: center; }
+            .card  { width: 100%; max-width: 340px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-grid"></div>
+    <div class="bg-vignette"></div>
+
+    <div class="wrapper">
+
+        <div class="header">
+            <p class="header-eyebrow">Guess the character</p>
+            <h1 class="header-title">ANIME<br><span>DLE</span></h1>
+            <p class="header-sub">Pick a universe and start guessing</p>
+        </div>
+
+        <div class="cards">
+
+            <!-- One Piece -->
+            <a href="./onepiece/" class="card op">
+                <div class="card-bar"></div>
+                <div class="card-body">
+                    <div class="card-icon">🏴‍☠️</div>
+                    <div>
+                        <p class="card-label">Universe 01</p>
+                        <h2 class="card-title">ONE PIECE</h2>
+                    </div>
+                    <p class="card-desc">Guess the pirate from the Grand Line. Daily & unlimited modes.</p>
+                    <div class="card-btn">
+                        <span>Play Now</span>
+                        <span class="card-btn-arrow">→</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Naruto -->
+            <a href="./naruto/" class="card naruto">
+                <div class="card-bar"></div>
+                <div class="card-body">
+                    <div class="card-icon">🍥</div>
+                    <div>
+                        <p class="card-label">Universe 02</p>
+                        <h2 class="card-title">NARUTO</h2>
+                    </div>
+                    <p class="card-desc">Guess the shinobi from the Hidden Villages. Daily & unlimited modes.</p>
+                    <div class="card-btn">
+                        <span>Play Now</span>
+                        <span class="card-btn-arrow">→</span>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+
+        <p class="footer">ANIME DLE &nbsp;·&nbsp; DAILY CHALLENGES</p>
+
+    </div>
+
+</body>
+</html>
