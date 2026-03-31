@@ -1,1 +1,167 @@
+/* =========================================
+   1. GLOBAL & BACKGROUND
+   ========================================= */
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
+body {
+    background-color: #0c0e11;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+#bg-layer {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0;
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url('naruto-bg.jpg');
+    background-size: cover;
+    background-position: center 20%;
+    pointer-events: none;
+}
+
+/* =========================================
+   2. FROSTED GLASS UI
+   ========================================= */
+.glass-ui {
+    background: rgba(255, 255, 255, 0.45) !important;
+    backdrop-filter: blur(25px) !important;
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.6) !important;
+}
+
+.glass-dropdown {
+    background: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(30px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+}
+
+.hide-scroll { scrollbar-width: none; -ms-overflow-style: none; }
+.hide-scroll::-webkit-scrollbar { display: none; }
+#dropdown::-webkit-scrollbar { display: none; }
+
+/* =========================================
+   3. CATEGORY FIELDS (FORCED TO BLACK)
+   ========================================= */
+#game-board > div:first-child {
+    color: #000000 !important; 
+    font-weight: 800 !important;
+    opacity: 1 !important;
+}
+
+/* =========================================
+   4. TOGGLE BAR & SEARCH
+   ========================================= */
+.mode-text { color: rgba(0, 0, 0, 0.4); font-family: 'Manrope', sans-serif; transition: color 0.3s ease; }
+.mode-text.active { color: #000000; }
+.mode-text.active span { color: #a38900; }
+#mode-pill { left: 4px; background: rgba(255, 255, 255, 0.5) !important; }
+.daily-active #mode-pill { transform: translateX(0); }
+.unlim-active #mode-pill { transform: translateX(calc(100% + 4px)); }
+
+#search-input {
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;      
+    box-shadow: none !important;    
+    color: #000 !important;
+}
+
+/* =========================================
+   5. DROPDOWN ITEMS
+   ========================================= */
+.dropdown-item {
+    color: #000;
+    font-weight: 800;
+    padding: 10px 20px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    cursor: pointer;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.dropdown-item img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #eee;
+}
+
+/* =========================================
+   6. GAME TILES & PORTRAITS
+   ========================================= */
+.tile {
+    background: rgba(0, 0, 0, 0.92) !important; 
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    text-align: center;
+    min-height: 110px;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.1;
+    word-break: break-word;
+}
+
+/* Specific styling for the Portrait tile on the board */
+.tile-portrait {
+    padding: 0 !important;
+    overflow: hidden;
+}
+.tile-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.tile.match-exact   { background: #fde047 !important; border: none !important; color: #000000 !important; }
+.tile.match-partial { background: #4ade80 !important; border: none !important; color: #000000 !important; }
+.tile.match-none    { background: #ef4444 !important; border: none !important; color: #ffffff !important; }
+
+/* =========================================
+   7. MODAL PROFILE
+   ========================================= */
+.modal-portrait {
+    width: 140px;
+    height: 140px;
+    border-radius: 20px;
+    object-fit: cover;
+    margin: 0 auto 15px;
+    border: 4px solid white;
+    display: block;
+}
+
+#modal-profile {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+}
+
+.modal-stat-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    padding: 6px 2px;
+    border-radius: 10px;
+}
+
+.modal-stat-label { font-size: 7px; font-weight: 800; color: rgba(0, 0, 0, 0.4); text-transform: uppercase; }
+.modal-stat-value { font-size: 9px; font-weight: 700; color: #000; text-transform: uppercase; text-align: center; }
+
+/* =========================================
+   8. FLIP ANIMATION
+   ========================================= */
+.flip-in {
+    opacity: 0;
+    transform: rotateX(90deg);
+    animation: flipIn 0.5s ease-out forwards;
+}
+@keyframes flipIn { to { transform: rotateX(0deg); opacity: 1; } }
