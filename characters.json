@@ -2609,23 +2609,6 @@
     "firstArc": "Little Garden"
   },
   {
-    "name": "Wapol",
-    "image": "https://static.wikia.nocookie.net/onepiece/images/3/33/Wapol_Anime_Post_Timeskip_Infobox.png/revision/latest/scale-to-width-down/448?cb=20190519090502",
-    "gender": "Male",
-    "species": "Human",
-    "calling": "Pirate",
-    "affiliation": "Bliking Pirates",
-    "devilFruitType": "Paramecia",
-    "haki": [
-      "None"
-    ],
-    "heightFt": "6'9\"",
-    "heightCm": 207,
-    "bounty": "None",
-    "seaOfBirth": "Grand Line",
-    "firstArc": "Drum Island"
-  },
-  {
     "name": "Kureha",
     "image": "https://static.wikia.nocookie.net/onepiece/images/1/1b/Kureha_Anime_Infobox.png/revision/latest/scale-to-width-down/248?cb=20150819163116",
     "gender": "Female",
@@ -2643,23 +2626,6 @@
     "firstArc": "Drum Island"
   },
   {
-    "name": "Conis",
-    "image": "https://static.wikia.nocookie.net/onepiece/images/9/9f/Conis_Anime_Post_Timeskip_Infobox.png/revision/latest/scale-to-width-down/226?cb=20251207162322",
-    "gender": "Female",
-    "species": "Skypiean",
-    "calling": "Musician",
-    "affiliation": "Pumpkin Cafe",
-    "devilFruitType": "None",
-    "haki": [
-      "None"
-    ],
-    "heightFt": "5'9\"",
-    "heightCm": 176,
-    "bounty": "None",
-    "seaOfBirth": "Grand Line",
-    "firstArc": "Skypiea"
-  },
-  {
     "name": "Aisa",
     "image": "https://static.wikia.nocookie.net/onepiece/images/4/4e/Aisa_Anime_Post_Timeskip_Infobox.png/revision/latest/scale-to-width-down/347?cb=20251207162352",
     "gender": "Female",
@@ -2674,23 +2640,6 @@
     "heightCm": 140,
     "bounty": "None",
     "seaOfBirth": "Sky Island",
-    "firstArc": "Skypiea"
-  },
-  {
-    "name": "Pagaya",
-    "image": "https://static.wikia.nocookie.net/onepiece/images/5/5d/Pagaya_Anime_Infobox.png/revision/latest?cb=20140829001259",
-    "gender": "Male",
-    "species": "Skypiean",
-    "calling": "Dial Boat Engineer",
-    "affiliation": "Unknown",
-    "devilFruitType": "None",
-    "haki": [
-      "None"
-    ],
-    "heightFt": "5'10\"",
-    "heightCm": 179,
-    "bounty": "None",
-    "seaOfBirth": "Grand Line",
     "firstArc": "Skypiea"
   },
   {
@@ -4156,40 +4105,6 @@
     "bounty": "None",
     "seaOfBirth": "Grand Line",
     "firstArc": "Reverse Mountain"
-  },
-  {
-    "name": "Kuromarimo",
-    "image": "https://static.wikia.nocookie.net/onepiece/images/3/3c/Kuromarimo_Anime_Infobox.png/revision/latest/scale-to-width-down/490?cb=20230419163155",
-    "gender": "Male",
-    "species": "Human",
-    "calling": "Pirate",
-    "affiliation": "Bliking Pirates",
-    "devilFruitType": "None",
-    "haki": [
-      "None"
-    ],
-    "heightFt": "6'1\"",
-    "heightCm": 186,
-    "bounty": "None",
-    "seaOfBirth": "Grand Line",
-    "firstArc": "Drum Island"
-  },
-  {
-    "name": "Chess",
-    "image": "https://static.wikia.nocookie.net/onepiece/images/6/66/Chess_Anime_Infobox.png/revision/latest/scale-to-width-down/246?cb=20221003172343",
-    "gender": "Male",
-    "species": "Human",
-    "calling": "Pirate",
-    "affiliation": "Bliking Pirates",
-    "devilFruitType": "None",
-    "haki": [
-      "None"
-    ],
-    "heightFt": "6'4\"",
-    "heightCm": 194,
-    "bounty": "None",
-    "seaOfBirth": "Grand Line",
-    "firstArc": "Drum Island"
   },
   {
     "name": "Bellamy",
