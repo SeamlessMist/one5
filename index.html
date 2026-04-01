@@ -14,6 +14,9 @@
             --op-glow: rgba(249, 115, 22, 0.5);
             --naruto-color: #f59e0b;
             --naruto-glow: rgba(245, 158, 11, 0.5);
+            /* NEW: MHA Colors */
+            --mha-color: #22d3ee; 
+            --mha-glow: rgba(34, 211, 238, 0.5);
         }
 
         body {
@@ -43,7 +46,6 @@
             to   { background-position: 60px 60px; }
         }
 
-        /* Radial vignette over grid */
         .bg-vignette {
             position: fixed;
             inset: 0;
@@ -52,7 +54,6 @@
             pointer-events: none;
         }
 
-        /* Main wrapper */
         .wrapper {
             position: relative;
             z-index: 10;
@@ -63,7 +64,6 @@
             padding: 24px;
         }
 
-        /* Header */
         .header {
             text-align: center;
             animation: fadeDown 0.7s ease both;
@@ -98,7 +98,6 @@
             letter-spacing: 0.05em;
         }
 
-        /* Cards row */
         .cards {
             display: flex;
             gap: 20px;
@@ -106,7 +105,6 @@
             justify-content: center;
         }
 
-        /* Individual game card */
         .card {
             position: relative;
             width: 280px;
@@ -122,8 +120,11 @@
                         box-shadow 0.3s ease;
             animation: fadeUp 0.7s ease both;
         }
+        
+        /* Staggered Entrance Animations */
         .card:nth-child(1) { animation-delay: 0.15s; }
         .card:nth-child(2) { animation-delay: 0.28s; }
+        .card:nth-child(3) { animation-delay: 0.41s; } /* NEW: Delay for 3rd card */
 
         .card:hover {
             transform: translateY(-8px) scale(1.02);
@@ -136,16 +137,21 @@
             border-color: var(--naruto-color);
             box-shadow: 0 20px 60px var(--naruto-glow), 0 0 0 1px var(--naruto-color);
         }
+        /* NEW: MHA Hover */
+        .card.mha:hover {
+            border-color: var(--mha-color);
+            box-shadow: 0 20px 60px var(--mha-glow), 0 0 0 1px var(--mha-color);
+        }
 
-        /* Card accent bar at top */
         .card-bar {
             height: 4px;
             width: 100%;
         }
         .card.op     .card-bar { background: linear-gradient(90deg, #f97316, #fb923c); }
         .card.naruto .card-bar { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
+        /* NEW: MHA Bar */
+        .card.mha    .card-bar { background: linear-gradient(90deg, #22d3ee, #818cf8); }
 
-        /* Card inner padding */
         .card-body {
             padding: 28px 28px 32px;
             display: flex;
@@ -153,14 +159,12 @@
             gap: 16px;
         }
 
-        /* Emoji icon */
         .card-icon {
             font-size: 48px;
             line-height: 1;
             filter: drop-shadow(0 4px 16px rgba(0,0,0,0.5));
         }
 
-        /* Card text */
         .card-label {
             font-family: 'Manrope', sans-serif;
             font-size: 10px;
@@ -179,6 +183,8 @@
         }
         .card.op     .card-title { color: #fb923c; }
         .card.naruto .card-title { color: #fbbf24; }
+        /* NEW: MHA Title Color */
+        .card.mha    .card-title { color: #22d3ee; }
 
         .card-desc {
             font-size: 12px;
@@ -187,7 +193,6 @@
             line-height: 1.5;
         }
 
-        /* Play button */
         .card-btn {
             margin-top: 8px;
             display: flex;
@@ -204,6 +209,8 @@
         .card:hover .card-btn { opacity: 0.9; }
         .card.op     .card-btn { background: var(--op-color);     color: #fff; }
         .card.naruto .card-btn { background: var(--naruto-color); color: #000; }
+        /* NEW: MHA Button */
+        .card.mha    .card-btn { background: var(--mha-color);    color: #000; }
 
         .card-btn-arrow {
             font-size: 18px;
@@ -212,7 +219,6 @@
         }
         .card:hover .card-btn-arrow { transform: translateX(4px); }
 
-        /* Footer */
         .footer {
             font-size: 11px;
             font-weight: 600;
@@ -221,7 +227,6 @@
             animation: fadeUp 0.7s 0.45s ease both;
         }
 
-        /* Keyframes */
         @keyframes fadeDown {
             from { opacity: 0; transform: translateY(-20px); }
             to   { opacity: 1; transform: translateY(0); }
@@ -231,7 +236,6 @@
             to   { opacity: 1; transform: translateY(0); }
         }
 
-        /* Mobile */
         @media (max-width: 620px) {
             .cards { flex-direction: column; align-items: center; }
             .card  { width: 100%; max-width: 340px; }
@@ -253,7 +257,6 @@
 
         <div class="cards">
 
-            <!-- One Piece -->
             <a href="./Onepiece/" class="card op">
                 <div class="card-bar"></div>
                 <div class="card-body">
@@ -270,7 +273,6 @@
                 </div>
             </a>
 
-            <!-- Naruto -->
             <a href="./Naruto/" class="card naruto">
                 <div class="card-bar"></div>
                 <div class="card-body">
@@ -287,7 +289,6 @@
                 </div>
             </a>
 
-             <!-- MHA -->
             <a href="./MHA/" class="card mha">
                 <div class="card-bar"></div>
                 <div class="card-body">
@@ -303,8 +304,6 @@
                     </div>
                 </div>
             </a>
-
-            
 
         </div>
 
