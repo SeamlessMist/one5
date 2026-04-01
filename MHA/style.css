@@ -1,9 +1,9 @@
-/* --- BASE CONFIG --- */
+/* --- FUNDAMENTALS --- */
 :root {
-    --correct: #fde047; /* UA Yellow */
-    --wrong: #ef4444;   /* Villain Red */
-    --glass-fill: rgba(255, 255, 255, 0.04);
-    --glass-border: rgba(255, 255, 255, 0.1);
+    --correct: #fde047; /* Yellow */
+    --wrong: #ef4444;   /* Red */
+    --glass-fill: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.12);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -20,13 +20,13 @@ body {
 /* --- BACKGROUND --- */
 #bg-layer {
     position: fixed; inset: 0; z-index: 0;
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('mha.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('mha.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
 
-/* --- GLASS UI ELEMENTS --- */
+/* --- GLASS UI --- */
 .glass-ui {
     background: var(--glass-fill);
     backdrop-filter: blur(30px) saturate(150%);
@@ -34,26 +34,8 @@ body {
     border: 1px solid var(--glass-border);
 }
 
-.glass-dropdown {
-    background: rgba(15, 23, 42, 0.9);
-    backdrop-filter: blur(40px);
-    border: 1px solid rgba(255,255,255,0.08);
-}
-
-.dropdown-item {
-    color: white !important;
-    display: flex; align-items: center; gap: 14px;
-    padding: 12px 20px; border-bottom: 1px solid rgba(255,255,255,0.03);
-    font-weight: 700; text-transform: uppercase; cursor: pointer;
-}
-.dropdown-item:hover { background: rgba(255,255,255,0.08); }
-
-/* --- NAVIGATION & TOGGLES --- */
-.nav-btn-glass {
-    display: flex; align-items: center; color: white;
-    font-weight: 800; font-size: 11px; text-transform: uppercase;
-    transition: 0.3s;
-}
+/* --- NAVIGATION ROW --- */
+.nav-btn-glass { display: flex; align-items: center; color: white; font-weight: 800; font-size: 11px; text-transform: uppercase; transition: 0.3s; }
 .nav-btn-glass:hover { color: var(--correct); }
 
 .mode-btn { color: rgba(255,255,255,0.3); transition: 0.3s; }
@@ -61,14 +43,50 @@ body {
 .daily-active #mode-pill { transform: translateX(0); }
 .unlim-active #mode-pill { transform: translateX(calc(100% + 4px)); }
 
+/* --- SEARCH BAR & PULSE --- */
+#search-input:focus {
+    animation: input-pulse 1s ease-out;
+}
+
+@keyframes input-pulse {
+    0% { box-shadow: 0 0 0px rgba(255, 255, 255, 0); }
+    50% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.4); }
+    100% { box-shadow: 0 0 0px rgba(255, 255, 255, 0); }
+}
+
+/* --- DROPDOWN (Fixed Shifting) --- */
+#dropdown {
+    position: absolute; /* Floating over content */
+    top: calc(100% + 8px);
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background: rgba(10, 15, 25, 0.95);
+    backdrop-filter: blur(40px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+.dropdown-item {
+    color: white !important;
+    padding: 14px 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    cursor: pointer;
+}
+.dropdown-item:hover { background: rgba(255,255,255,0.1); }
+
 /* --- NEON SWIRL TILES --- */
 .tile {
     position: relative;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.6);
     border-radius: 18px;
     display: flex; align-items: center; justify-content: center;
-    min-height: 110px; padding: 12px;
-    text-align: center; font-weight: 800; font-size: 13px;
+    min-height: 100px; padding: 10px;
+    text-align: center; font-weight: 800; font-size: 12px;
     text-transform: uppercase; z-index: 1;
 }
 
@@ -79,73 +97,64 @@ body {
     mask-composite: exclude;
 }
 
-/* Yellow Swirl (Correct) */
 .tile.match-exact::before {
     background: conic-gradient(from var(--angle), transparent 60%, var(--correct));
     animation: rotateSwirl 2s linear infinite;
 }
-.tile.match-exact { color: var(--correct); text-shadow: 0 0 10px rgba(253, 224, 71, 0.4); }
+.tile.match-exact { color: var(--correct); }
 
-/* Red Swirl (Incorrect) */
 .tile.match-none::before {
     background: conic-gradient(from var(--angle), transparent 60%, var(--wrong));
     animation: rotateSwirl 2s linear infinite;
 }
-.tile.match-none { color: rgba(255,255,255,0.4); }
+.tile.match-none { color: rgba(255, 255, 255, 0.4); }
 
 @property --angle { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
 @keyframes rotateSwirl { to { --angle: 360deg; } }
 
-/* --- MODAL TEXT FIX --- */
+/* --- WIN/LOSS MODAL FIXES --- */
 .modal-box {
-    background: rgba(0, 0, 0, 0.8) !important; /* Darker base for the modal */
-    backdrop-filter: blur(40px);
+    background: rgba(5, 5, 10, 0.98) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15);
     color: white !important;
+    box-shadow: 0 0 50px rgba(0,0,0,0.9);
 }
 
 #modal-profile {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
-    gap: 8px;
-    margin-top: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+    margin-top: 25px;
 }
 
 .modal-stat-box {
-    background: rgba(0, 0, 0, 0.4) !important; /* Dark tint behind the text */
+    background: rgba(255, 255, 255, 0.05) !important; /* Internal tint */
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
     border-radius: 12px;
-    padding: 8px 4px;
+    padding: 10px 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 55px;
+    min-height: 60px;
 }
 
 .modal-stat-label {
-    color: rgba(255, 255, 255, 0.5) !important; /* Dimmer white for labels */
+    color: rgba(255, 255, 255, 0.4) !important;
     font-size: 8px !important;
-    font-weight: 800;
+    font-weight: 900;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    margin-bottom: 4px;
 }
 
 .modal-stat-value {
-    color: #ffffff !important; /* Pure white for the actual data */
+    color: #ffffff !important;
     font-size: 11px !important;
     font-weight: 700;
-    text-transform: uppercase;
     text-align: center;
     word-break: break-word;
 }
-
-#end-subtitle {
-    color: rgba(255, 255, 255, 0.7) !important;
-}
-
 
 /* --- UTILS --- */
 .hide-scroll::-webkit-scrollbar { display: none; }
 #dropdown::-webkit-scrollbar { width: 5px; }
 #dropdown::-webkit-scrollbar-thumb { background: var(--correct); border-radius: 10px; }
-.flip-in { opacity: 0; transform: translateY(10px); animation: reveal 0.4s ease forwards; }
-@keyframes reveal { to { opacity: 1; transform: translateY(0); } }
