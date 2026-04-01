@@ -1,1 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta name="referrer" content="no-referrer" />
+    <title>MHA Dle | UA Academy Archives</title>
+    
+    <link rel="icon" href="data:,">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="bg-layer"></div>
+    <div class="neon-glow"></div>
 
+    <main class="relative z-10 w-full max-w-7xl mx-auto px-4 flex flex-col items-center pt-6 pb-24">
+        
+        <div class="w-full max-w-[650px] flex flex-col gap-4">
+            <div class="flex justify-between items-center px-2">
+                <a href="../index.html" class="home-btn">
+                    <span class="material-symbols-outlined">home</span>
+                    <span>Home</span>
+                </a>
+                <div class="guess-pill">
+                    <span class="label">Guesses:</span>
+                    <span id="guess-counter" class="count">10</span>
+                </div>
+            </div>
+
+            <div class="glass-ui relative flex items-center p-1 rounded-full h-[56px] mode-container daily-active">
+                <div id="mode-pill" class="absolute top-1 bottom-1 w-[calc(50%-4px)] bg-white/20 rounded-full transition-all duration-300"></div>
+                
+                <button id="btn-daily" class="relative z-10 flex-1 h-full flex items-center justify-center gap-2 mode-text active">
+                    <span class="material-symbols-outlined text-lg">event</span>
+                    <span class="tracking-widest uppercase font-bold text-[11px]">Daily</span>
+                </button>
+                
+                <button id="btn-unlimited" class="relative z-10 flex-1 h-full flex items-center justify-center gap-2 mode-text">
+                    <span class="material-symbols-outlined text-lg">bolt</span>
+                    <span class="tracking-widest uppercase font-bold text-[11px]">Unlimited</span>
+                </button>
+            </div>
+
+            <div class="relative w-full z-50 mt-2">
+                <div class="glass-ui search-wrapper flex items-center rounded-2xl h-[64px] px-6">
+                    <span class="material-symbols-outlined text-2xl text-white/50 mr-3">search</span>
+                    <input id="search-input" class="w-full bg-transparent border-none focus:ring-0 text-white text-lg uppercase font-bold placeholder:text-white/20" placeholder="Guess a Hero/Villain..." type="text" autocomplete="off"/>
+                </div>
+                <div id="dropdown" class="absolute top-[calc(100%+8px)] left-0 w-full glass-dropdown rounded-2xl hidden max-h-[350px] overflow-y-auto shadow-2xl"></div>
+            </div>
+        </div>
+
+        <div class="w-full mt-12 overflow-x-auto pb-8 hide-scroll">
+            <div id="game-board" class="min-w-[1000px] flex flex-col gap-4 items-center">
+                <div class="w-full grid grid-cols-7 gap-3 mb-2 px-2 text-center text-white/40 text-[11px] font-black uppercase tracking-[0.2em]">
+                    <div>Character</div><div>Gender</div><div>Quirk Type</div><div>Calling</div>
+                    <div>Affiliation</div><div>Height</div><div>Debut</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="end-overlay" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/90 backdrop-blur-xl opacity-0 transition-opacity duration-500">
+        <div class="glass-ui end-modal border-t border-white/20 rounded-[40px] p-10 max-w-md w-full text-center shadow-2xl scale-95 transition-transform duration-500" id="end-modal">
+            <h2 id="end-title" class="bebas text-5xl mb-4 italic tracking-tighter"></h2>
+            <div id="modal-profile" class="grid grid-cols-3 gap-2 my-6"></div>
+            <p id="end-subtitle" class="text-white/60 font-bold mb-8"></p>
+            <button id="btn-replay" class="w-full py-4 rounded-2xl bg-cyan-500 text-black font-black tracking-widest uppercase hover:brightness-110 active:scale-95 transition-all shadow-lg shadow-cyan-500/20">Go Again</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
