@@ -1412,6 +1412,23 @@
     "debut": "Sasuke Recovery Mission"
   },
   {
+    "name": "Fuu",
+    "image": "https://static.wikia.nocookie.net/naruto/images/f/f6/Fu.png/revision/latest/scale-to-width-down/300?cb=20220205122040",
+    "gender": "Female",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Takigakure",
+    "affiliation": "Takigakure",
+    "chakraNature": [
+      "💨"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Chunin",
+    "height": "162 cm",
+    "debut": "Fourth Shinobi World War: Confrontation"
+  },
+  {
     "name": "Tayuya",
     "image": "https://static.wikia.nocookie.net/naruto/images/7/78/Tayuya_Shot.png/revision/latest/scale-to-width-down/300?cb=20151216000321",
     "gender": "Female",
