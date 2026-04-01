@@ -1,12 +1,16 @@
-/* --- 1. CORE CONFIG --- */
-:root {
-    --correct: #fde047; /* Yellow */
-    --wrong: #ef4444;   /* Red */
-    --glass-fill: rgba(255, 255, 255, 0.05);
-    --glass-border: rgba(255, 255, 255, 0.12);
+/* --- 1. RESET & SHADOW FIX --- */
+* { 
+    box-sizing: border-box; 
+    margin: 0; padding: 0; 
+    outline: none !important; /* Kills the white shadow/ring on top row */
+    box-shadow: none !important; 
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; outline: none !important; } /* Removed all outlines/shadows */
+:root {
+    --correct: #fde047;
+    --wrong: #ef4444;
+    --glass: rgba(255, 255, 255, 0.05);
+}
 
 body {
     background-color: #020617;
@@ -18,126 +22,106 @@ body {
 
 .bebas { font-family: 'Bebas Neue', cursive; }
 
-/* --- 2. BACKGROUND --- */
 #bg-layer {
     position: fixed; inset: 0; z-index: 0;
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('mha.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('mha.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
 }
 
-/* --- 3. GLASS UI & NAVIGATION --- */
+/* --- 2. NAVIGATION & SEARCH (No Shifting) --- */
 .glass-ui {
-    background: var(--glass-fill);
-    backdrop-filter: blur(30px) saturate(150%);
-    -webkit-backdrop-filter: blur(30px) saturate(150%);
-    border: 1px solid var(--glass-border);
+    background: var(--glass);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
-.nav-btn-glass { display: flex; align-items: center; color: white; font-weight: 800; font-size: 11px; text-transform: uppercase; text-decoration: none; }
-.nav-btn-glass:hover { color: var(--correct); }
-
-.mode-btn { color: rgba(255,255,255,0.3); transition: 0.3s; background: none; border: none; cursor: pointer; }
-.mode-btn.active { color: white; }
-.daily-active #mode-pill { transform: translateX(0); }
-.unlim-active #mode-pill { transform: translateX(calc(100% + 4px)); }
-
-/* --- 4. SEARCH & DROPDOWN (Fixed Shifting) --- */
 #search-input {
-    box-shadow: none !important; /* Removes the white shadow you were seeing */
+    background: transparent !important;
     border: none !important;
+    color: white !important;
 }
 
 #dropdown {
-    position: absolute;
-    top: calc(100% + 8px);
-    left: 0;
-    width: 100%;
+    position: absolute; /* Floating prevents shifting */
+    top: 100%; left: 0; width: 100%;
     z-index: 999;
-    background: rgba(10, 15, 25, 0.98);
+    background: rgba(10, 10, 15, 0.98);
     backdrop-filter: blur(50px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    max-height: 350px;
+    border-radius: 15px;
+    max-height: 300px;
     overflow-y: auto;
 }
 
 .dropdown-item {
     color: white !important;
-    padding: 14px 20px;
-    font-weight: 700;
-    text-transform: uppercase;
+    padding: 12px 20px;
     border-bottom: 1px solid rgba(255,255,255,0.05);
     cursor: pointer;
 }
-.dropdown-item:hover { background: rgba(255,255,255,0.1); }
 
-/* --- 5. GAME BOARD & NEON TILES --- */
+/* --- 3. NEON TILES --- */
 .tile {
     position: relative;
     background: rgba(0, 0, 0, 0.7);
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100px;
-    padding: 8px;
-    text-align: center;
-    font-weight: 800;
-    font-size: 11px; /* Slightly smaller for 11 columns */
-    text-transform: uppercase;
-    z-index: 1;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    min-height: 90px; padding: 5px;
+    text-align: center; font-weight: 800; font-size: 10px;
+    text-transform: uppercase; z-index: 1;
 }
 
 .tile::before {
-    content: ''; position: absolute; inset: -2px;
-    border-radius: 18px; z-index: -1;
+    content: ''; position: absolute; inset: -2px; border-radius: 14px; z-index: -1;
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask-composite: exclude;
 }
 
 .tile.match-exact::before {
     background: conic-gradient(from var(--angle), transparent 60%, var(--correct));
-    animation: rotateSwirl 2s linear infinite;
+    animation: rotate 2s linear infinite;
 }
 .tile.match-exact { color: var(--correct); }
 
 .tile.match-none::before {
     background: conic-gradient(from var(--angle), transparent 60%, var(--wrong));
-    animation: rotateSwirl 2s linear infinite;
+    animation: rotate 2s linear infinite;
 }
-.tile.match-none { color: rgba(255, 255, 255, 0.3); }
+.tile.match-none { color: rgba(255,255,255,0.3); }
 
 @property --angle { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
-@keyframes rotateSwirl { to { --angle: 360deg; } }
+@keyframes rotate { to { --angle: 360deg; } }
 
-/* --- 6. WIN/LOSS CARD (The Fix) --- */
+/* --- 4. THE WIN/LOSS CARD (Fixed Layout) --- */
 .modal-box {
-    background: rgba(5, 5, 10, 0.98) !important;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: #0a0a0c !important; /* Dark solid background for text contrast */
+    border: 2px solid rgba(255, 255, 255, 0.1);
     color: white !important;
+    max-width: 600px !important;
+    width: 90%;
     padding: 30px !important;
+    border-radius: 30px;
 }
 
 #modal-profile {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(85px, 1fr)); /* Better wrapping */
+    display: flex;
+    flex-wrap: wrap; /* Allows items to jump to next line instead of squishing */
+    justify-content: center;
     gap: 8px;
     margin-top: 20px;
-    width: 100%;
 }
 
 .modal-stat-box {
-    background: rgba(255, 255, 255, 0.08) !important; /* Tint for visibility */
+    background: rgba(255, 255, 255, 0.05) !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
     border-radius: 10px;
-    padding: 8px 4px;
+    width: 100px; /* Fixed width prevents size jumping */
+    height: 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 55px;
 }
 
 .modal-stat-label {
@@ -145,8 +129,6 @@ body {
     font-size: 7px !important;
     font-weight: 900;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 2px;
 }
 
 .modal-stat-value {
@@ -154,13 +136,5 @@ body {
     font-size: 10px !important;
     font-weight: 700;
     text-align: center;
-    line-height: 1.1;
-    word-break: break-word;
+    word-break: break-all;
 }
-
-/* --- 7. UTILS --- */
-.hide-scroll::-webkit-scrollbar { display: none; }
-#dropdown::-webkit-scrollbar { width: 4px; }
-#dropdown::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 10px; }
-.flip-in { opacity: 0; transform: translateY(10px); animation: reveal 0.4s ease forwards; }
-@keyframes reveal { to { opacity: 1; transform: translateY(0); } }
