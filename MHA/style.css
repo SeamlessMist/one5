@@ -1,9 +1,9 @@
-/* --- FUNDAMENTALS --- */
+/* --- BASE CONFIG --- */
 :root {
-    --cyan: #22d3ee;
-    --red: #f43f5e;
-    --glass-fill: rgba(255, 255, 255, 0.03);
-    --glass-border: rgba(255, 255, 255, 0.08);
+    --correct: #fde047; /* UA Yellow */
+    --wrong: #ef4444;   /* Villain Red */
+    --glass-fill: rgba(255, 255, 255, 0.04);
+    --glass-border: rgba(255, 255, 255, 0.1);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -17,121 +17,100 @@ body {
 
 .bebas { font-family: 'Bebas Neue', cursive; }
 
-/* --- BACKGROUND DESIGN --- */
+/* --- BACKGROUND --- */
 #bg-layer {
-    position: fixed; 
-    inset: 0; 
-    z-index: 0;
-    /* Use your image here */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('mha.jpg');
+    position: fixed; inset: 0; z-index: 0;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('mha.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
-.neon-glow-top {
-    position: fixed; top: 0; left: 50%; transform: translateX(-50%);
-    width: 80%; height: 400px;
-    background: radial-gradient(circle at 50% 0%, rgba(34, 211, 238, 0.1), transparent 70%);
-    pointer-events: none; z-index: 1;
-}
 
-/* --- GLASSMORPHIC COMPONENTS --- */
-.glass-container {
+/* --- GLASS UI ELEMENTS --- */
+.glass-ui {
     background: var(--glass-fill);
-    backdrop-filter: blur(25px) saturate(160%);
-    -webkit-backdrop-filter: blur(25px) saturate(160%);
+    backdrop-filter: blur(30px) saturate(150%);
+    -webkit-backdrop-filter: blur(30px) saturate(150%);
     border: 1px solid var(--glass-border);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
 }
 
 .glass-dropdown {
-    background: rgba(15, 23, 42, 0.98);
+    background: rgba(15, 23, 42, 0.9);
     backdrop-filter: blur(40px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255,255,255,0.08);
 }
 
-/* --- NAVIGATION & PILLS --- */
-.nav-btn {
-    display: flex; align-items: center; gap: 8px;
-    padding: 10px 20px; border-radius: 100px;
+.dropdown-item {
+    color: white !important;
+    display: flex; align-items: center; gap: 14px;
+    padding: 12px 20px; border-bottom: 1px solid rgba(255,255,255,0.03);
+    font-weight: 700; text-transform: uppercase; cursor: pointer;
+}
+.dropdown-item:hover { background: rgba(255,255,255,0.08); }
+
+/* --- NAVIGATION & TOGGLES --- */
+.nav-btn-glass {
+    display: flex; align-items: center; color: white;
     font-weight: 800; font-size: 11px; text-transform: uppercase;
-    color: var(--cyan); border: 1px solid rgba(34, 211, 238, 0.3);
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
-.nav-btn:hover { background: var(--cyan); color: black; box-shadow: 0 0 20px rgba(34, 211, 238, 0.4); }
+.nav-btn-glass:hover { color: var(--correct); }
 
-.guess-pill {
-    display: flex; align-items: center; gap: 10px;
-    background: rgba(255, 255, 255, 0.03);
-    padding: 8px 18px; border-radius: 100px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
-.pill-label { font-size: 10px; font-weight: 800; color: rgba(255, 255, 255, 0.3); text-transform: uppercase; }
-.pill-value { font-size: 18px; font-weight: 900; color: var(--cyan); font-family: 'Bebas Neue'; }
+.mode-btn { color: rgba(255,255,255,0.3); transition: 0.3s; }
+.mode-btn.active { color: white; }
+.daily-active #mode-pill { transform: translateX(0); }
+.unlim-active #mode-pill { transform: translateX(calc(100% + 4px)); }
 
-/* --- GAME TILES & NEON SWIRL --- */
+/* --- NEON SWIRL TILES --- */
 .tile {
     position: relative;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.7);
     border-radius: 18px;
     display: flex; align-items: center; justify-content: center;
     min-height: 110px; padding: 12px;
     text-align: center; font-weight: 800; font-size: 13px;
     text-transform: uppercase; z-index: 1;
-    overflow: visible; /* Required for the neon swirl to show outside */
 }
 
-/* Base Neon Border Animation */
 .tile::before {
     content: ''; position: absolute; inset: -2px;
     border-radius: 20px; z-index: -1;
-    padding: 2px; /* Border thickness */
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
     mask-composite: exclude;
-    opacity: 0.8;
 }
 
-/* Correct Swirl (Cyan) */
+/* Yellow Swirl (Correct) */
 .tile.match-exact::before {
-    background: conic-gradient(from var(--angle), transparent 60%, var(--cyan));
+    background: conic-gradient(from var(--angle), transparent 60%, var(--correct));
     animation: rotateSwirl 2s linear infinite;
 }
+.tile.match-exact { color: var(--correct); text-shadow: 0 0 10px rgba(253, 224, 71, 0.4); }
 
-/* Incorrect Swirl (Red) */
+/* Red Swirl (Incorrect) */
 .tile.match-none::before {
-    background: conic-gradient(from var(--angle), transparent 60%, var(--red));
+    background: conic-gradient(from var(--angle), transparent 60%, var(--wrong));
     animation: rotateSwirl 2s linear infinite;
 }
+.tile.match-none { color: rgba(255,255,255,0.4); }
 
-@property --angle {
-    syntax: '<angle>';
-    initial-value: 0deg;
-    inherits: false;
+@property --angle { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+@keyframes rotateSwirl { to { --angle: 360deg; } }
+
+/* --- END GAME MODAL --- */
+.modal-box {
+    background: rgba(10, 10, 10, 0.95) !important;
+    box-shadow: 0 0 60px rgba(0,0,0,0.8);
+}
+.modal-stat-box {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255,255,255,0.08) !important;
+    border-radius: 12px;
+    padding: 10px; display: flex; flex-direction: column; align-items: center;
 }
 
-@keyframes rotateSwirl {
-    to { --angle: 360deg; }
-}
-
-.tile.match-exact { color: var(--cyan); text-shadow: 0 0 10px rgba(34, 211, 238, 0.3); }
-.tile.match-none { color: rgba(255, 255, 255, 0.4); }
-
-/* --- TOGGLE LOGIC --- */
-.daily-active #mode-pill { transform: translateX(0); }
-.unlim-active #mode-pill { transform: translateX(calc(100% + 4px)); }
-.mode-btn { color: rgba(255, 255, 255, 0.2); transition: 0.3s; }
-.mode-btn.active { color: white; }
-
-/* --- ANIMATIONS --- */
-.flip-in {
-    opacity: 0; transform: translateY(15px);
-    animation: revealTile 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-}
-@keyframes revealTile { to { opacity: 1; transform: translateY(0); } }
-
-/* --- UTILITIES --- */
+/* --- UTILS --- */
 .hide-scroll::-webkit-scrollbar { display: none; }
 #dropdown::-webkit-scrollbar { width: 5px; }
-#dropdown::-webkit-scrollbar-thumb { background: var(--cyan); border-radius: 10px; }
+#dropdown::-webkit-scrollbar-thumb { background: var(--correct); border-radius: 10px; }
+.flip-in { opacity: 0; transform: translateY(10px); animation: reveal 0.4s ease forwards; }
+@keyframes reveal { to { opacity: 1; transform: translateY(0); } }
