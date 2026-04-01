@@ -1,8 +1,8 @@
-/* --- 1. GLOBAL & RESET --- */
+/* --- 1. THE "NO SHADOW" RESET --- */
 * { 
     box-sizing: border-box; 
     margin: 0; padding: 0; 
-    outline: none !important; 
+    outline: none !important; /* Kills the ring in the top row */
     box-shadow: none !important; 
 }
 
@@ -14,109 +14,93 @@
 body {
     background-color: #020617;
     font-family: 'Manrope', sans-serif;
-    color: white !important;
+    color: white;
+    min-height: 100vh;
 }
 
 #bg-layer {
     position: fixed; inset: 0; z-index: 0;
-    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('mha.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('mha.jpg');
     background-size: cover;
     background-position: center;
 }
 
-/* --- 2. THE WIN/LOSS CARD (FORCED WHITE TEXT) --- */
-#end-modal {
-    background: #000000 !important; /* Solid black background */
-    border: 2px solid rgba(255, 255, 255, 0.2) !important;
-    border-radius: 30px !important;
-    padding: 30px !important;
-    color: #ffffff !important; /* Force overall text white */
+/* --- 2. SEARCH & DROPDOWN --- */
+.glass-ui {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(30px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-#end-title { 
-    font-family: 'Bebas Neue', cursive !important;
-    font-size: 3.5rem !important;
-    margin-bottom: 10px !important;
-    /* Color is set dynamically by JS (Yellow/Red) */
+#dropdown {
+    position: absolute; top: 100%; left: 0; width: 100%; z-index: 999;
+    background: #0f172a; /* Solid dark for visibility */
+    border-radius: 12px;
 }
 
-#end-subtitle { 
-    color: #ffffff !important; 
-    font-weight: 800 !important;
-    opacity: 0.9 !important;
-    margin-bottom: 20px !important;
-}
-
-/* --- 3. STAT BOXES (HIGH CONTRAST) --- */
-#modal-profile {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    gap: 10px !important;
-}
-
-.modal-stat-box {
-    background: #1a1a1a !important; /* Dark grey box */
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    border-radius: 12px !important;
-    width: 110px !important;
-    padding: 12px 5px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-}
-
-.modal-stat-label {
-    color: #94a3b8 !important; /* Bright Slate for labels */
-    font-size: 9px !important;
-    font-weight: 900 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 1px !important;
-    margin-bottom: 4px !important;
-}
-
-.modal-stat-value {
-    color: #ffffff !important; /* PURE WHITE DATA */
-    font-size: 12px !important;
-    font-weight: 800 !important;
-    text-transform: uppercase !important;
-    text-align: center !important;
-}
-
-/* --- 4. BUTTON FIX --- */
-#btn-replay {
-    background: var(--correct) !important;
-    color: #000000 !important; /* Keep button text black for contrast */
-    font-weight: 900 !important;
-    border-radius: 15px !important;
-    margin-top: 20px !important;
-    padding: 15px !important;
-    border: none !important;
-    cursor: pointer !important;
-}
-
-/* --- 5. GAME TILES --- */
+/* --- 3. NEON TILES --- */
 .tile {
     position: relative;
-    background: rgba(0, 0, 0, 0.85) !important;
+    background: rgba(0, 0, 0, 0.8);
     border-radius: 12px;
     display: flex; align-items: center; justify-content: center;
-    min-height: 95px; font-weight: 800; font-size: 11px;
-    color: #ffffff !important;
-    text-transform: uppercase;
+    min-height: 90px; text-align: center; 
+    font-weight: 800; font-size: 10px; text-transform: uppercase;
 }
-
-.tile.match-exact { color: var(--correct) !important; }
-.tile.match-none { color: rgba(255, 255, 255, 0.3) !important; }
-
-/* Neons */
 .tile::before {
     content: ''; position: absolute; inset: -2px; border-radius: 14px; z-index: -1;
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask-composite: exclude;
 }
-.tile.match-exact::before { background: conic-gradient(from var(--angle), transparent 60%, var(--correct)); animation: rot 2s linear infinite; }
-.tile.match-none::before { background: conic-gradient(from var(--angle), transparent 60%, var(--wrong)); animation: rot 2s linear infinite; }
+.tile.match-exact::before { background: conic-gradient(from var(--angle), transparent 60%, var(--correct)); animation: rotate 2s linear infinite; }
+.tile.match-exact { color: var(--correct); }
+.tile.match-none::before { background: conic-gradient(from var(--angle), transparent 60%, var(--wrong)); animation: rotate 2s linear infinite; }
+.tile.match-none { color: rgba(255, 255, 255, 0.2); }
 
 @property --angle { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
-@keyframes rot { to { --angle: 360deg; } }
+@keyframes rotate { to { --angle: 360deg; } }
+
+/* --- 4. THE CARD FIX (HIGH CONTRAST) --- */
+#end-modal {
+    background: #000000 !important; /* Solid black base */
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 50px rgba(0,0,0,1);
+    color: white !important;
+}
+
+#modal-profile {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.modal-stat-box {
+    background: #1a1a1a !important; /* Dark solid boxes for white text */
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 8px;
+    width: 105px;
+    padding: 10px 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-stat-label {
+    color: #64748b !important; /* Slate blue-grey for labels */
+    font-size: 8px !important;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.modal-stat-value {
+    color: #ffffff !important; /* Pure white text */
+    font-size: 11px !important;
+    font-weight: 700;
+    text-align: center;
+}
+
+#end-title { color: var(--correct); font-family: 'Bebas Neue'; font-size: 3rem; }
+#end-subtitle { color: rgba(255,255,255,0.7); font-weight: bold; }
