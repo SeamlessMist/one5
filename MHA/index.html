@@ -19,54 +19,83 @@
         
         <div class="w-full max-w-[750px] flex flex-col gap-4">
             
-            <div class="glass-ui flex items-center justify-between p-2 rounded-full h-[68px] px-6 shadow-2xl">
-                <a href="../index.html" class="nav-btn-glass">
-                    <span class="material-symbols-outlined">home</span>
-                    <span class="hidden md:inline ml-2">Home</span>
-                </a>
-
-                <div class="relative flex items-center bg-black/20 rounded-full h-[48px] w-[220px] p-1 mode-switcher daily-active">
-                    <div id="mode-pill" class="absolute top-1 bottom-1 w-[calc(50%-4px)] bg-white/10 rounded-full transition-all duration-300"></div>
-                    <button id="btn-daily" class="relative z-10 flex-1 h-full flex items-center justify-center mode-btn active">
-                        <span class="text-[10px] font-black uppercase tracking-widest">Daily</span>
-                    </button>
-                    <button id="btn-unlimited" class="relative z-10 flex-1 h-full flex items-center justify-center mode-btn">
-                        <span class="text-[10px] font-black uppercase tracking-widest">Unlimited</span>
+            <!-- NAV BAR -->
+            <div class="glass-ui flex items-center justify-between p-2 rounded-full h-[68px] px-5 shadow-2xl">
+                
+                <!-- Left: Home + Arc List -->
+                <div class="flex items-center gap-2">
+                    <a href="../index.html" class="nav-btn-glass">
+                        <span class="material-symbols-outlined" style="font-size:18px;">home</span>
+                        <span class="hidden md:inline">Home</span>
+                    </a>
+                    <button id="btn-arclist" title="View Arc Order">
+                        <span class="material-symbols-outlined" style="font-size:18px;">format_list_numbered</span>
+                        <span class="hidden md:inline">Arc List</span>
                     </button>
                 </div>
 
-                <div class="flex items-center gap-3 pl-6 border-l border-white/10">
-                    <span class="text-[10px] uppercase font-black text-white/40">Guesses:</span>
-                    <span id="guess-counter" class="text-2xl font-bold text-yellow-400 bebas">10</span>
+                <!-- Center: Mode Toggle -->
+                <div class="relative flex items-center bg-black/20 rounded-full h-[44px] w-[200px] p-1 mode-switcher">
+                    <div id="mode-pill" class="absolute top-1 bottom-1 w-[calc(50%-4px)] bg-white/10 rounded-full transition-all duration-300 left-1"></div>
+                    <button id="btn-daily" class="mode-btn active">Daily</button>
+                    <button id="btn-unlimited" class="mode-btn">Unlimited</button>
+                </div>
+
+                <!-- Right: Guess Counter -->
+                <div class="flex items-center gap-2 pl-4 border-l border-white/10">
+                    <span class="text-[9px] uppercase font-black text-white/40 hidden sm:block">Left</span>
+                    <span id="guess-counter" class="text-2xl font-bold text-yellow-400 bebas leading-none">10</span>
                 </div>
             </div>
 
+            <!-- SEARCH BAR -->
             <div class="relative w-full z-50">
-                <div class="glass-ui flex items-center rounded-2xl h-[64px] px-6 shadow-2xl">
-                    <span class="material-symbols-outlined text-2xl text-white/30 mr-4">search</span>
-                    <input id="search-input" class="w-full bg-transparent border-none outline-none focus:ring-0 text-white text-lg font-bold placeholder:text-white/20 uppercase" placeholder="Search a Hero or Villain..." type="text" autocomplete="off"/>
+                <div class="glass-ui flex items-center rounded-2xl h-[60px] px-6">
+                    <span class="material-symbols-outlined text-xl text-white/30 mr-4">search</span>
+                    <input 
+                        id="search-input" 
+                        class="w-full bg-transparent border-none outline-none text-white text-base font-bold placeholder:text-white/20 uppercase" 
+                        placeholder="Search a Hero or Villain..." 
+                        type="text" 
+                        autocomplete="off"
+                    />
                 </div>
-                
-                <div id="dropdown" class="absolute top-[calc(100%+8px)] left-0 w-full glass-dropdown rounded-2xl hidden max-h-[350px] overflow-y-auto shadow-2xl"></div>
+                <div id="dropdown" class="hidden"></div>
             </div>
         </div>
 
-        <div class="w-full mt-12 overflow-x-auto pb-10 hide-scroll">
-            <div id="game-board" class="min-w-[1050px] flex flex-col gap-4 items-center">
-                <div class="w-full grid grid-cols-7 gap-3 mb-2 px-2 text-center text-white/40 text-[10px] font-black uppercase tracking-[0.25em]">
-                    <div>Character</div><div>Gender</div><div>Quirk Type</div><div>Calling</div>
-                    <div>Affiliation</div><div>Height</div><div>Debut</div>
+        <!-- GAME BOARD -->
+        <div class="w-full mt-10 overflow-x-auto hide-scroll pb-10">
+            <div id="game-board" class="min-w-[900px] flex flex-col gap-3 items-center">
+                <div class="w-full grid grid-cols-7 gap-2 mb-1 px-2 text-center text-white/40 text-[10px] font-black uppercase tracking-[0.2em]">
+                    <div>Character</div>
+                    <div>Gender</div>
+                    <div>Quirk Type</div>
+                    <div>Calling</div>
+                    <div>Affiliation</div>
+                    <div>Height</div>
+                    <div>Debut</div>
                 </div>
             </div>
         </div>
     </main>
 
-    <div id="end-overlay" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/90 backdrop-blur-2xl opacity-0 transition-opacity duration-500">
-        <div class="glass-ui modal-box rounded-[40px] p-10 max-w-md w-full text-center border border-white/10" id="end-modal">
-            <h2 id="end-title" class="bebas text-5xl mb-4 italic tracking-tight"></h2>
-            <div id="modal-profile" class="grid grid-cols-3 gap-2 my-6"></div>
-            <p id="end-subtitle" class="text-white/60 font-bold mb-8"></p>
-            <button id="btn-replay" class="w-full py-4 rounded-2xl bg-yellow-400 text-black font-black uppercase tracking-widest hover:scale-105 transition-transform shadow-lg shadow-yellow-400/20">Next Round</button>
+    <!-- END OVERLAY -->
+    <div id="end-overlay" class="fixed inset-0 z-[100] hidden items-center justify-center opacity-0 transition-opacity duration-500">
+        <div class="modal-box text-center" id="end-modal">
+            <h2 id="end-title" class="bebas"></h2>
+            <p id="end-subtitle"></p>
+            <div id="modal-profile"></div>
+            <button id="btn-replay">Next Round</button>
+        </div>
+    </div>
+
+    <!-- ARC LIST MODAL -->
+    <div id="arc-overlay">
+        <div class="arc-modal">
+            <h2 class="bebas">Arc Chronology</h2>
+            <div class="arc-list" id="arc-list-content"></div>
+            <button class="arc-close" id="btn-arc-close">Close</button>
         </div>
     </div>
 
