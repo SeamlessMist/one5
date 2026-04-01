@@ -96,17 +96,52 @@ body {
 @property --angle { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
 @keyframes rotateSwirl { to { --angle: 360deg; } }
 
-/* --- END GAME MODAL --- */
+/* --- MODAL TEXT FIX --- */
 .modal-box {
-    background: rgba(10, 10, 10, 0.95) !important;
-    box-shadow: 0 0 60px rgba(0,0,0,0.8);
+    background: rgba(0, 0, 0, 0.8) !important; /* Darker base for the modal */
+    backdrop-filter: blur(40px);
+    color: white !important;
 }
+
+#modal-profile {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    gap: 8px;
+    margin-top: 20px;
+}
+
 .modal-stat-box {
-    background: rgba(255, 255, 255, 0.03) !important;
-    border: 1px solid rgba(255,255,255,0.08) !important;
+    background: rgba(0, 0, 0, 0.4) !important; /* Dark tint behind the text */
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
     border-radius: 12px;
-    padding: 10px; display: flex; flex-direction: column; align-items: center;
+    padding: 8px 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 55px;
 }
+
+.modal-stat-label {
+    color: rgba(255, 255, 255, 0.5) !important; /* Dimmer white for labels */
+    font-size: 8px !important;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.modal-stat-value {
+    color: #ffffff !important; /* Pure white for the actual data */
+    font-size: 11px !important;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    word-break: break-word;
+}
+
+#end-subtitle {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
 
 /* --- UTILS --- */
 .hide-scroll::-webkit-scrollbar { display: none; }
