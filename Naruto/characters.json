@@ -148,7 +148,7 @@
     ],
     "ninjutsuSpecialty": "Ninjutsu",
     "kekkeiGenkai": "None",
-    "ninjaRank": "Jounin",
+    "ninjaRank": "jonin",
     "height": "177",
     "debut": "Prologue - Land of Waves"
   },
@@ -525,7 +525,7 @@
     ],
     "ninjutsuSpecialty": "Ninjutsu",
     "kekkeiGenkai": "Sharingan",
-    "ninjaRank": "Special Jounin",
+    "ninjaRank": "jonin",
     "height": "170",
     "debut": "Tenchi Bridge"
   },
@@ -543,7 +543,7 @@
     ],
     "ninjutsuSpecialty": "Genjutsu",
     "kekkeiGenkai": "Sharingan",
-    "ninjaRank": "Jounin",
+    "ninjaRank": "jonin",
     "height": "178",
     "debut": "Itachi Pursuit Mission"
   },
@@ -641,7 +641,7 @@
     ],
     "ninjutsuSpecialty": "Ninjutsu",
     "kekkeiGenkai": "Sharingan",
-    "ninjaRank": "Jounin",
+    "ninjaRank": "jonin",
     "height": "181",
     "debut": "Itachi Pursuit Mission"
   },
@@ -1269,7 +1269,7 @@
     ],
     "ninjutsuSpecialty": "Ninjutsu",
     "kekkeiGenkai": "None",
-    "ninjaRank": "Jounin",
+    "ninjaRank": "jonin",
     "height": "170",
     "debut": "Akatsuki Supression"
   },
@@ -1537,7 +1537,7 @@
     ],
     "ninjutsuSpecialty": "Ninjutsu",
     "kekkeiGenkai": "None",
-    "ninjaRank": "Special Jonin",
+    "ninjaRank": "jonin",
     "height": "167",
     "debut": "Chūnin Exams"
   },
@@ -1699,9 +1699,9 @@
     ],
     "ninjutsuSpecialty": "Ninjutsu",
     "kekkeiGenkai": "None",
-    "ninjaRank": "Jounin",
+    "ninjaRank": "jonin",
     "height": "N/A",
-    "debut": "Prologue - Land of Waves"
+    "debut": "Pain's Assault"
   },
   {
     "name": "Ao",
