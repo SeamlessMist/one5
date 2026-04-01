@@ -4,7 +4,6 @@ let mode = 'daily';
 let guesses = 0;
 const MAX_GUESSES = 10;
 let filteredNames = [];
-let currentFocus = -1;
 
 // --- MHA SPECIFIC ARC ORDER ---
 const arcOrder = [
@@ -31,13 +30,13 @@ const arcOrder = [
     "Dark Hero Arc", 
     "Star and Stripe Arc", 
     "U.A. Traitor Arc", 
-    "You’re Next Movie", 
+    "You're Next Movie", 
     "Final War Arc", 
     "Epilogue Arc"
 ];
 
 // --- AUDIO ASSETS ---
-const winSound = new Audio('allmight_win.mp3'); // Suggested: "I am here!"
+const winSound = new Audio('allmight_win.mp3');
 const loseSound = new Audio('shigaraki_lose.mp3'); 
 let audioUnlocked = false;
 
@@ -57,12 +56,12 @@ function playLaugh(isWin) {
     sound.play().catch(e => console.warn("Audio blocked or file missing."));
 }
 
+// --- INIT ---
 window.onload = async () => {
     try {
         const res = await fetch('characters.json');
         if (!res.ok) throw new Error("JSON missing");
         characters = await res.json();
-        
         initUI();
         setMode('daily');
     } catch (e) {
@@ -76,43 +75,53 @@ function initUI() {
     document.getElementById('btn-unlimited').onclick = () => setMode('unlimited');
     document.getElementById('btn-replay').onclick = () => resetGame();
     setupSearch();
+    setupArcModal();
 }
 
+// --- MODE SWITCHER ---
 function setMode(newMode) {
     mode = newMode;
-    const toggleContainer = document.getElementById('btn-daily').parentElement;
+    const pill = document.getElementById('mode-pill');
     const dBtn = document.getElementById('btn-daily');
     const uBtn = document.getElementById('btn-unlimited');
 
     if (mode === 'daily') {
-        toggleContainer.classList.add('daily-active');
-        toggleContainer.classList.remove('unlim-active');
+        pill.style.left = '4px';
+        pill.style.right = 'auto';
         dBtn.classList.add('active');
         uBtn.classList.remove('active');
     } else {
-        toggleContainer.classList.add('unlim-active');
-        toggleContainer.classList.remove('daily-active');
+        pill.style.left = 'calc(50%)';
+        pill.style.right = '4px';
         uBtn.classList.add('active');
         dBtn.classList.remove('active');
     }
     resetGame();
 }
 
+// --- RESET ---
 function resetGame() {
     guesses = 0;
     updateCounter();
-    // Headers updated for MHA Fields
+
     document.getElementById('game-board').innerHTML = `
-        <div class="w-full grid grid-cols-7 gap-2 mb-2 px-2 text-center text-white/50 text-[10px] font-bold uppercase tracking-wider">
-            <div>Hero</div><div>Gender</div><div>Quirk Type</div><div>Calling</div>
-            <div>Affiliation</div><div>Height</div><div>Debut</div>
+        <div class="w-full grid grid-cols-7 gap-2 mb-1 px-2 text-center text-white/40 text-[10px] font-black uppercase tracking-[0.2em]">
+            <div>Character</div>
+            <div>Gender</div>
+            <div>Quirk Type</div>
+            <div>Calling</div>
+            <div>Affiliation</div>
+            <div>Height</div>
+            <div>Debut</div>
         </div>`;
     
-    document.getElementById('end-overlay').classList.add('hidden');
-    document.getElementById('end-overlay').classList.remove('flex', 'opacity-100');
+    const overlay = document.getElementById('end-overlay');
+    overlay.classList.add('hidden');
+    overlay.classList.remove('flex', 'opacity-100');
     
-    document.getElementById('search-input').disabled = false;
-    document.getElementById('search-input').value = '';
+    const input = document.getElementById('search-input');
+    input.disabled = false;
+    input.value = '';
     
     filteredNames = characters.map(c => c.name);
     
@@ -129,6 +138,7 @@ function updateCounter() {
     document.getElementById('guess-counter').innerText = Math.max(0, MAX_GUESSES - guesses);
 }
 
+// --- SEARCH & DROPDOWN ---
 function setupSearch() {
     const input = document.getElementById('search-input');
     const dropdown = document.getElementById('dropdown');
@@ -145,9 +155,10 @@ function setupSearch() {
                 const char = characters.find(c => c.name === name);
                 const div = document.createElement('div');
                 div.className = 'dropdown-item';
-                div.style.cssText = "display: flex; align-items: center; gap: 12px; padding: 10px 20px; border-bottom: 1px solid rgba(0,0,0,0.05); cursor: pointer; color: black; font-weight: 800; text-transform: uppercase;";
-                div.innerHTML = `<img src="${char.imageUrl || 'placeholder.png'}" style="width: 35px; height: 35px; border-radius: 50%; object-fit: cover; border: 1px solid rgba(0,0,0,0.1);"> <span>${char.name}</span>`;
-                
+                div.innerHTML = `
+                    <img src="${char.imageUrl || 'placeholder.png'}" alt="${char.name}" onerror="this.src='placeholder.png'">
+                    <span>${char.name}</span>
+                `;
                 div.onmousedown = (event) => { 
                     event.preventDefault(); 
                     input.value = name; 
@@ -166,8 +177,20 @@ function setupSearch() {
             dropdown.classList.add('hidden');
         }
     });
+
+    input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            const firstItem = dropdown.querySelector('.dropdown-item');
+            if (firstItem) {
+                input.value = firstItem.querySelector('span').textContent;
+                dropdown.classList.add('hidden');
+                executeGuess();
+            }
+        }
+    });
 }
 
+// --- GUESS EXECUTION ---
 function executeGuess() {
     const input = document.getElementById('search-input');
     const guessName = input.value.trim();
@@ -191,41 +214,43 @@ function executeGuess() {
     }
 }
 
+// --- BUILD GUESS ROW ---
 function buildRow(g) {
     const board = document.getElementById('game-board');
     const row = document.createElement('div');
-    row.className = 'w-full grid grid-cols-7 gap-2 mb-2 px-2'; // 7 columns for MHA
+    row.className = 'w-full grid grid-cols-7 gap-2 px-2';
     
     const isT = g.name === targetChar.name;
+
     const tilesHTML = [
-        // Image Tile
-        `<div class="tile ${isT ? 'match-exact' : 'match-none'} flip-in" style="padding: 0; overflow: hidden;">
-            <img src="${g.imageUrl || 'placeholder.png'}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 11px;" title="${g.name}">
+        // Image tile
+        `<div class="tile img-tile ${isT ? 'match-exact' : 'match-none'} flip-in">
+            <img src="${g.imageUrl || 'placeholder.png'}" alt="${g.name}" title="${g.name}" onerror="this.src='placeholder.png'">
          </div>`,
-        // MHA Property Mapping
-        getTileHTML(g.Gender, g.Gender === targetChar.Gender ? 'match-exact' : 'match-none'),
+        getTileHTML(g.Gender,        g.Gender === targetChar.Gender ? 'match-exact' : 'match-none'),
         getTileHTML(g["Quirk Type"], g["Quirk Type"] === targetChar["Quirk Type"] ? 'match-exact' : 'match-none'),
-        getTileHTML(g.Calling, g.Calling === targetChar.Calling ? 'match-exact' : 'match-none'),
-        getTileHTML(g.Affiliation, g.Affiliation === targetChar.Affiliation ? 'match-exact' : 'match-none'),
-        // Arrow Logic for Height
+        getTileHTML(g.Calling,       g.Calling === targetChar.Calling ? 'match-exact' : 'match-none'),
+        getTileHTML(g.Affiliation,   g.Affiliation === targetChar.Affiliation ? 'match-exact' : 'match-none'),
         getTileHTML(g.Height + 'cm', compStat(g.Height, targetChar.Height)),
-        // Arrow Logic for Debut
-        getTileHTML(g.Debut, compArc(g.Debut, targetChar.Debut))
+        getTileHTML(g.Debut,         compArc(g.Debut, targetChar.Debut))
     ].join('');
 
     row.innerHTML = tilesHTML;
-    board.insertBefore(row, board.children[1]); 
+    // Insert after header row
+    board.insertBefore(row, board.children[1]);
 
-    row.querySelectorAll('.flip-in').forEach((t, i) => t.style.animationDelay = `${i * 0.05}s`);
+    row.querySelectorAll('.flip-in').forEach((t, i) => {
+        t.style.animationDelay = `${i * 0.06}s`;
+    });
 }
 
 function getTileHTML(val, type) {
-    const baseClass = type.split(' ')[0]; 
+    const cssClass = type.includes('▲') || type.includes('▼') ? 'match-none' : type;
     const arrow = type.includes('▲') ? ' ▲' : type.includes('▼') ? ' ▼' : '';
-    return `<div class="tile ${baseClass} flip-in">${val}${arrow}</div>`;
+    return `<div class="tile ${cssClass} flip-in">${val}${arrow}</div>`;
 }
 
-// --- LOGIC HELPERS ---
+// --- COMPARISON HELPERS ---
 function compStat(g, t) { 
     if (g === t) return 'match-exact'; 
     return g < t ? 'match-none ▲' : 'match-none ▼'; 
@@ -233,7 +258,6 @@ function compStat(g, t) {
 
 function compArc(g, t) {
     if (g === t) return 'match-exact';
-    // If guessed arc index is lower than target arc index, target is LATER (Up Arrow)
     return arcOrder.indexOf(g) < arcOrder.indexOf(t) ? 'match-none ▲' : 'match-none ▼';
 }
 
@@ -241,35 +265,79 @@ function compArc(g, t) {
 function triggerEnd(win) {
     playLaugh(win);
     
-    document.getElementById('end-title').innerText = win ? "GO BEYOND! PLUS ULTRA!" : "DEFEATED BY VILLAINS!";
-    document.getElementById('end-title').style.color = win ? "#22d3ee" : "#ef4444";
-    document.getElementById('end-subtitle').innerText = win ? `You recognized ${targetChar.name}.` : `The Hero was ${targetChar.name}.`;
+    const title = document.getElementById('end-title');
+    const subtitle = document.getElementById('end-subtitle');
 
+    title.innerText = win ? "GO BEYOND! PLUS ULTRA!" : "DEFEATED BY VILLAINS!";
+    title.style.color = win ? "#fde047" : "#ef4444";
+    subtitle.innerText = win
+        ? `You recognised ${targetChar.name} in ${guesses} guess${guesses !== 1 ? 'es' : ''}.`
+        : `The answer was ${targetChar.name}.`;
+
+    // Character image
     let modalImg = document.getElementById('end-modal-img');
     if (!modalImg) {
         modalImg = document.createElement('img');
         modalImg.id = 'end-modal-img';
-        modalImg.style.cssText = "width: 140px; height: 140px; border-radius: 20px; object-fit: cover; margin: 0 auto 15px; border: 4px solid white; display: block; box-shadow: 0 10px 25px rgba(0,0,0,0.2);";
-        document.getElementById('end-title').after(modalImg);
+        document.getElementById('end-title').insertAdjacentElement('beforebegin', modalImg);
     }
-    modalImg.src = targetChar.imageUrl;
+    modalImg.src = targetChar.imageUrl || 'placeholder.png';
 
+    // Stats grid
     const profileContainer = document.getElementById('modal-profile');
     const stats = [
-        { l: 'Gender', v: targetChar.Gender }, { l: 'Quirk', v: targetChar["Quirk Type"] },
-        { l: 'Calling', v: targetChar.Calling }, { l: 'Group', v: targetChar.Affiliation },
-        { l: 'Height', v: targetChar.Height + 'cm' }, { l: 'Debut', v: targetChar.Debut }
+        { l: 'Gender',      v: targetChar.Gender },
+        { l: 'Quirk',       v: targetChar["Quirk Type"] },
+        { l: 'Calling',     v: targetChar.Calling },
+        { l: 'Group',       v: targetChar.Affiliation },
+        { l: 'Height',      v: targetChar.Height + 'cm' },
+        { l: 'Debut',       v: targetChar.Debut }
     ];
 
     profileContainer.innerHTML = stats.map(s => `
-        <div class="modal-stat-box" style="background: rgba(0,0,0,0.05); border-radius: 10px; padding: 8px; display: flex; flex-direction: column; align-items: center; border: 1px solid rgba(0,0,0,0.1);">
-            <span style="font-size: 8px; font-weight: 800; color: rgba(0,0,0,0.5); text-transform: uppercase; margin-bottom: 2px;">${s.l}</span>
-            <span style="font-size: 11px; font-weight: 700; color: #000; text-transform: uppercase;">${s.v}</span>
+        <div class="modal-stat-box">
+            <span class="modal-stat-label">${s.l}</span>
+            <span class="modal-stat-value">${s.v}</span>
         </div>
     `).join('');
 
     const overlay = document.getElementById('end-overlay');
     overlay.classList.remove('hidden');
     overlay.classList.add('flex');
-    setTimeout(() => { overlay.classList.add('opacity-100'); }, 50);
+    setTimeout(() => overlay.classList.add('opacity-100'), 50);
+}
+
+// --- ARC LIST MODAL ---
+function setupArcModal() {
+    const btn = document.getElementById('btn-arclist');
+    const overlay = document.getElementById('arc-overlay');
+    const closeBtn = document.getElementById('btn-arc-close');
+    const listEl = document.getElementById('arc-list-content');
+
+    // Populate arc list
+    arcOrder.forEach((arc, i) => {
+        const item = document.createElement('div');
+        item.className = 'arc-item';
+        item.innerHTML = `
+            <span class="arc-num">${i + 1}</span>
+            <span class="arc-name">${arc}</span>
+        `;
+        listEl.appendChild(item);
+    });
+
+    btn.onclick = () => {
+        overlay.style.display = 'flex';
+        requestAnimationFrame(() => overlay.classList.add('open'));
+    };
+
+    closeBtn.onclick = closeArcModal;
+    overlay.addEventListener('mousedown', (e) => {
+        if (e.target === overlay) closeArcModal();
+    });
+}
+
+function closeArcModal() {
+    const overlay = document.getElementById('arc-overlay');
+    overlay.classList.remove('open');
+    setTimeout(() => { overlay.style.display = 'none'; }, 300);
 }
