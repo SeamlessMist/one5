@@ -2,7 +2,8 @@
   {
     "id": "db6ecbe3-f01b-416e-8534-a7e27c09a302",
     "name": "Izuku Midoriya (Deku)",
-    "imageUrl": "",
+    "wiki_name": "Izuku Midoriya",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/2/2b/Izuku_Midoriya_Costume_Databook.png/revision/latest/scale-to-width-down/268?cb=20250409215213",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -13,7 +14,8 @@
   {
     "id": "21bd3d29-5076-40a2-bd60-6123991921d9",
     "name": "Katsuki Bakugo (Great Explosion Murder God Dynamight)",
-    "imageUrl": "",
+    "wiki_name": "Katsuki Bakugo",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/b/b3/Katsuki_Bakugo_Winter_Costume_2_%28Anime%29.png/revision/latest/scale-to-width-down/268?cb=20250602032029",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -24,7 +26,8 @@
   {
     "id": "ac4ea736-7d9f-49cd-9d9b-9cb42921a3a5",
     "name": "Shoto Todoroki (Shoto)",
-    "imageUrl": "",
+    "wiki_name": "Shoto Todoroki",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/d/d8/Shoto_Todoroki_Action_5.png/revision/latest/scale-to-width-down/268?cb=20250602031513",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -35,7 +38,8 @@
   {
     "id": "216d9ed7-2246-4c58-9328-b48fe880af1c",
     "name": "Ochaco Uraraka (Uravity)",
-    "imageUrl": "",
+    "wiki_name": "Ochaco Uraraka",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/f/f8/Ochaco_Uraraka_Action_5.png/revision/latest/scale-to-width-down/267?cb=20250602031334",
     "Gender": "Female",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -46,7 +50,8 @@
   {
     "id": "8a2be9b1-6313-42e4-8ae8-3f45c41afbfd",
     "name": "Tenya Ida (Ingenium)",
-    "imageUrl": "",
+    "wiki_name": "Tenya Ida",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/b/b8/Tenya_Ida_Action_5.png/revision/latest/scale-to-width-down/268?cb=20250602032320",
     "Gender": "Male",
     "Quirk Type": "Mutant",
     "Calling": "Hero",
@@ -57,7 +62,8 @@
   {
     "id": "fb06667f-4e7b-4605-a092-df18b4d37e75",
     "name": "Toshinori Yagi (All Might)",
-    "imageUrl": "",
+    "wiki_name": "Toshinori Yagi",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/c/cd/Toshinori_Yagi_Golden_Age_Hero_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/267?cb=20250602032423",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -68,7 +74,8 @@
   {
     "id": "ec2b1a51-a4ce-4d99-b483-d16b0992e71f",
     "name": "Tenko Shimura (Tomura Shigaraki)",
-    "imageUrl": "",
+    "wiki_name": "Tomura Shigaraki",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/2/25/Final_War_Tomura_Shigaraki.png/revision/latest/scale-to-width-down/268?cb=20251225225936",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Villian",
@@ -79,7 +86,8 @@
   {
     "id": "2b7b2101-9eeb-40b9-b6e5-b7fe9039e005",
     "name": "Enji Todoroki (Endeavor)",
-    "imageUrl": "",
+    "wiki_name": "Enji Todoroki",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/d/d4/Enji_Todoroki_S7_Visual.png/revision/latest/scale-to-width-down/268?cb=20240615231526",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -90,7 +98,8 @@
   {
     "id": "220e1ea3-0adf-4b28-af5f-f1f3b297a5fd",
     "name": "Keigo Takami (Hawks)",
-    "imageUrl": "",
+    "wiki_name": "Keigo Takami",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/6/6b/Post-War_Keigo_Takami_Hero_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/268?cb=20240615231746",
     "Gender": "Male",
     "Quirk Type": "Mutant",
     "Calling": "Hero",
@@ -101,7 +110,8 @@
   {
     "id": "0c899977-73f6-4c87-86aa-63e878a462c9",
     "name": "Tsuyu Asui (Froppy)",
-    "imageUrl": "",
+    "wiki_name": "Tsuyu Asui",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/a/a9/Tsuyu_Asui_Action_4.png/revision/latest/scale-to-width-down/268?cb=20250602031715",
     "Gender": "Female",
     "Quirk Type": "Mutant",
     "Calling": "Hero",
@@ -112,7 +122,8 @@
   {
     "id": "b5d096dd-07f9-45f3-be46-888967a6a22f",
     "name": "Eijiro Kirishima (Red Riot)",
-    "imageUrl": "",
+    "wiki_name": "Eijiro Kirishima",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/3/31/Eijiro_Kirishima_Action_5.png/revision/latest/scale-to-width-down/268?cb=20250602032140",
     "Gender": "Male",
     "Quirk Type": "Transformation",
     "Calling": "Hero",
@@ -123,7 +134,8 @@
   {
     "id": "d1c4d512-785b-4edb-b44e-caec4feedae8",
     "name": "Momo Yaoyorozu (Creati)",
-    "imageUrl": "",
+    "wiki_name": "Momo Yaoyorozu",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/8/8f/Momo_Yaoyorozu_Action_2.png/revision/latest/scale-to-width-down/268?cb=20250602031925",
     "Gender": "Female",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -134,7 +146,8 @@
   {
     "id": "8728c759-5ec3-44de-8792-e7ba4a1502f7",
     "name": "Fumikage Tokoyami (Tsukuyomi)",
-    "imageUrl": "",
+    "wiki_name": "Fumikage Tokoyami",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/3/39/Fumikage_Tokoyami_Action_4.png/revision/latest/scale-to-width-down/268?cb=20240615222003",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -145,7 +158,8 @@
   {
     "id": "53611c59-3615-49f8-95b5-9ad6dbd47cca",
     "name": "Himiko Toga",
-    "imageUrl": "",
+    "wiki_name": "Himiko Toga",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/e/e0/Himiko_Toga_Anime_Action_5.png/revision/latest/scale-to-width-down/268?cb=20240615230138",
     "Gender": "Female",
     "Quirk Type": "Transformation",
     "Calling": "Villian",
@@ -156,7 +170,8 @@
   {
     "id": "1b42cbd0-26a1-47bf-8705-7e77d60a65d1",
     "name": "Touya Todoroki (Dabi)",
-    "imageUrl": "",
+    "wiki_name": "Dabi",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/d/d9/Post-War_Dabi_Anime_Action.png/revision/latest/scale-to-width-down/268?cb=20240615215314",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Villian",
@@ -167,7 +182,8 @@
   {
     "id": "b4713d40-1da8-4ad5-90d2-bc8ef4043f84",
     "name": "Shota Aizawa (Eraser Head)",
-    "imageUrl": "",
+    "wiki_name": "Shota Aizawa",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/7/77/Post-War_Shota_Aizawa_Hero_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/268?cb=20240616012102",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -178,7 +194,8 @@
   {
     "id": "adf1a7ab-895d-4174-baa1-79452aea601f",
     "name": "Chizome Akaguro (Stain)",
-    "imageUrl": "",
+    "wiki_name": "Chizome Akaguro",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/c/c2/Stain_New_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/267?cb=20250505184505",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Villian",
@@ -189,7 +206,8 @@
   {
     "id": "82b61af3-4cc3-43ad-97d9-e4408d931bbc",
     "name": "Kai Chisaki (Overhaul)",
-    "imageUrl": "",
+    "wiki_name": "Kai Chisaki",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/4/4d/Kai_Chisaki_Anime_Action.png/revision/latest/scale-to-width-down/268?cb=20240616012228",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Villian",
@@ -200,7 +218,8 @@
   {
     "id": "5268b49c-dd70-48ec-9861-f090d4deafc4",
     "name": "Mirio Togata (Lemillion)",
-    "imageUrl": "",
+    "wiki_name": "Mirio Togata",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/2/2e/Mirio_Togata_Action_2.png/revision/latest/scale-to-width-down/268?cb=20240525123552",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -211,7 +230,8 @@
   {
     "id": "0c33ffb3-14fb-4d7e-b73b-aceea17e7db3",
     "name": "Eri",
-    "imageUrl": "",
+    "wiki_name": "Eri",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/6/61/Eri_Anime_Fullbody_Casual.png/revision/latest/scale-to-width-down/268?cb=20200904064620",
     "Gender": "Female",
     "Quirk Type": "Emitter",
     "Calling": "Civilian",
@@ -222,7 +242,8 @@
   {
     "id": "fbf987ac-5b0f-4356-a09f-20df13be051d",
     "name": "Tamaki Amajiki (Suneater)",
-    "imageUrl": "",
+    "wiki_name": "Tamaki Amajiki",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/7/76/Tamaki_Amajiki_Action_2.png/revision/latest/scale-to-width-down/268?cb=20240525123553",
     "Gender": "Male",
     "Quirk Type": "Transformation",
     "Calling": "Hero",
@@ -233,7 +254,8 @@
   {
     "id": "fccdd83f-1dc8-4a74-835f-4204ee3576d3",
     "name": "Nejire Hado (Nejire Chan)",
-    "imageUrl": "",
+    "wiki_name": "Nejire Hado",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/2/28/Nejire_Hado_Post-War_%28Anime%29.png/revision/latest/scale-to-width-down/268?cb=20240525123551",
     "Gender": "Female",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -244,7 +266,8 @@
   {
     "id": "5a62bfef-5cf2-4acf-8f6e-582cc52c8895",
     "name": "Jin Bubaigawara (Twice)",
-    "imageUrl": "",
+    "wiki_name": "Jin Bubaigawara",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/6/6f/Twice_Anime_Action.png/revision/latest/scale-to-width-down/268?cb=20240615230921",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Villian",
@@ -255,7 +278,8 @@
   {
     "id": "fc78d622-3565-4c5f-bbc5-60e8e4769af0",
     "name": "Atsuhiro Sako (Mr. Compress)",
-    "imageUrl": "",
+    "wiki_name": "Atsuhiro Sako",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/5/5d/Mr._Compress_Anime_Action.png/revision/latest/scale-to-width-down/267?cb=20240615231007",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Villian",
@@ -266,7 +290,8 @@
   {
     "id": "40f381c8-213f-44bb-8451-dd091a5e6bf5",
     "name": "Shuichi Iguchi (Spinner)",
-    "imageUrl": "",
+    "wiki_name": "Shuichi Iguchi",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/b/b9/Spinner_Anime_Action.png/revision/latest/scale-to-width-down/268?cb=20240615231308",
     "Gender": "Male",
     "Quirk Type": "Mutant",
     "Calling": "Villian",
@@ -277,7 +302,8 @@
   {
     "id": "8f99e0d5-2a68-457f-bbbc-317eea1c5060",
     "name": "Kyoka Jiro (Earphone Jack)",
-    "imageUrl": "",
+    "wiki_name": "Kyoka Jiro",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/2/2b/Kyoka_Jiro_Action_4.png/revision/latest/scale-to-width-down/267?cb=20240615223202",
     "Gender": "Female",
     "Quirk Type": "Mutant",
     "Calling": "Hero",
@@ -288,7 +314,8 @@
   {
     "id": "06ed37cf-9d84-4b83-aa13-3b9963934f8b",
     "name": "Denki Kaminari (Chargebolt)",
-    "imageUrl": "",
+    "wiki_name": "Denki Kaminari",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/d/d0/Denki_Kaminari_Action_5.png/revision/latest/scale-to-width-down/268?cb=20240615222129",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -299,7 +326,8 @@
   {
     "id": "3cc4aeab-3187-4439-9e77-cd90f5c17494",
     "name": "Mina Ashido (Pinky)",
-    "imageUrl": "",
+    "wiki_name": "Mina Ashido",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/d/de/Mina_Ashido_Action_2.png/revision/latest/scale-to-width-down/267?cb=20240615223425",
     "Gender": "Female",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -310,7 +338,8 @@
   {
     "id": "0b581f2c-ba17-4893-86ab-ff1db0dbb285",
     "name": "Minoru Mineta (Grape Juice)",
-    "imageUrl": "",
+    "wiki_name": "Minoru Mineta",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/a/a6/Minoru_Mineta_Action_3.png/revision/latest/scale-to-width-down/268?cb=20250602032233",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -321,7 +350,8 @@
   {
     "id": "3c7405fe-1378-4994-94d8-d66aa75e91f0",
     "name": "Hitoshi Shinso",
-    "imageUrl": "",
+    "wiki_name": "Hitoshi Shinso",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/1/17/Hitoshi_Shinso%27s_Hero_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/268?cb=20240525123552",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -332,7 +362,8 @@
   {
     "id": "512117d3-e3ea-4845-b2a7-8f2e5e77d4d8",
     "name": "Mei Hatsume",
-    "imageUrl": "",
+    "wiki_name": "Mei Hatsume",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/d/d0/Mei_Hatsume_Workshop_%28Anime%29.png/revision/latest/scale-to-width-down/267?cb=20240802173802",
     "Gender": "Female",
     "Quirk Type": "Mutant",
     "Calling": "Civilian",
@@ -343,7 +374,8 @@
   {
     "id": "c4c380f5-7fcb-4fa3-a407-39995e4e4b08",
     "name": "Rumi Usagiyama (Mirko)",
-    "imageUrl": "",
+    "wiki_name": "Rumi Usagiyama",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/6/6b/Post-War_Rumi_Usagiyama_Hero_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/268?cb=20240615232231",
     "Gender": "Female",
     "Quirk Type": "Mutant",
     "Calling": "Hero",
@@ -354,7 +386,8 @@
   {
     "id": "c9554f37-5315-4b35-8b31-47196adb4296",
     "name": "Nana Shimura",
-    "imageUrl": "",
+    "wiki_name": "Nana Shimura",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/5/51/Nana_Shimura_%28Anime%29.png/revision/latest/scale-to-width-down/268?cb=20240616013412",
     "Gender": "Female",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -365,7 +398,8 @@
   {
     "id": "cd9f7978-577b-4eb2-89ee-5b2ce25ecf11",
     "name": "Nine",
-    "imageUrl": "",
+    "wiki_name": "Nine",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/3/38/Nine_Full_Body_Profile.png/revision/latest/scale-to-width-down/267?cb=20191002145900",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Villian",
@@ -376,7 +410,8 @@
   {
     "id": "38c2717f-985d-43ca-bf88-a22745ad2030",
     "name": "Rody Soul",
-    "imageUrl": "",
+    "wiki_name": "Rody Soul",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/3/36/Rody_Soul_Full_Body_Profile.png/revision/latest/scale-to-width-down/268?cb=20211108053901",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Civilian",
@@ -387,7 +422,8 @@
   {
     "id": "83b1d2ae-83eb-47ac-85fb-ad32347576f3",
     "name": "Cathleen Bate (Star and Stripe)",
-    "imageUrl": "",
+    "wiki_name": "Cathleen Bate",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/d/d6/Star_and_Stripe_Hero_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/268?cb=20240427123805",
     "Gender": "Female",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -398,7 +434,8 @@
   {
     "id": "0a687e00-4726-4a5e-8d80-282742637294",
     "name": "Mashirao Ojiro (Tailman)",
-    "imageUrl": "",
+    "wiki_name": "Mashirao Ojiro",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/2/24/Mashirao_Ojiro_Hero_Costume_3_Action.png/revision/latest/scale-to-width-down/268?cb=20240615224429",
     "Gender": "Male",
     "Quirk Type": "Mutant",
     "Calling": "Hero",
@@ -409,7 +446,8 @@
   {
     "id": "b6c5c208-2250-408c-98b4-2c306590ae3c",
     "name": "Mezo Shoji (Tentacole)",
-    "imageUrl": "",
+    "wiki_name": "Mezo Shoji",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/4/48/Mezo_Shoji_Action_3.png/revision/latest/scale-to-width-down/268?cb=20240615223851",
     "Gender": "Male",
     "Quirk Type": "Mutant",
     "Calling": "Hero",
@@ -420,7 +458,8 @@
   {
     "id": "e0757c0a-9873-4a66-92b6-c13f109905c0",
     "name": "Rikido Sato (Sugarman)",
-    "imageUrl": "",
+    "wiki_name": "Rikido Sato",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/2/27/Rikido_Sato_Action_3.png/revision/latest/scale-to-width-down/268?cb=20240615225102",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -431,7 +470,8 @@
   {
     "id": "440ee235-cb04-48d5-a7b4-f5f5c550a218",
     "name": "Koji Koda (Anima)",
-    "imageUrl": "",
+    "wiki_name": "Koji Koda",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/2/27/Koji_Koda_Action_3.png/revision/latest/scale-to-width-down/267?cb=20240615225055",
     "Gender": "Male",
     "Quirk Type": "Mutant",
     "Calling": "Hero",
@@ -442,7 +482,8 @@
   {
     "id": "4b7717f9-6223-4269-b75f-1fc61744bcbe",
     "name": "Hanta Sero (Cellophane)",
-    "imageUrl": "",
+    "wiki_name": "Hanta Sero",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/2/25/Hanta_Sero_Action_3.png/revision/latest/scale-to-width-down/268?cb=20240615224622",
     "Gender": "Male",
     "Quirk Type": "Mutant",
     "Calling": "Hero",
@@ -453,7 +494,8 @@
   {
     "id": "aaae5000-cf6c-488c-8193-5446a254c2bf",
     "name": "Toru Hagakure (Invisible Girl)",
-    "imageUrl": "",
+    "wiki_name": "Toru Hagakure",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/c/c2/Toru_Hagakure_Action_2.png/revision/latest/scale-to-width-down/268?cb=20240615225042",
     "Gender": "Female",
     "Quirk Type": "Mutant",
     "Calling": "Hero",
@@ -464,7 +506,8 @@
   {
     "id": "f6d32a5b-913d-4ddd-8a74-81cf13334fa4",
     "name": "Yuga Aoyama (Can't Stop Twinkling)",
-    "imageUrl": "",
+    "wiki_name": "Yuga Aoyama",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/6/6f/Yuga_Aoyama_Action_2.png/revision/latest/scale-to-width-down/267?cb=20201219091605",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -475,7 +518,8 @@
   {
     "id": "46bcf556-9a3d-46bd-a4f4-75928972575f",
     "name": "Itsuka Kendo (Battle Fist)",
-    "imageUrl": "",
+    "wiki_name": "Itsuka Kendo",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/0/0d/Itsuka_Kendo_Anime_Hero_Costume.png/revision/latest/scale-to-width-down/268?cb=20240515054246",
     "Gender": "Female",
     "Quirk Type": "Transformation",
     "Calling": "Hero",
@@ -486,7 +530,8 @@
   {
     "id": "e0f6d3c3-d3e2-4562-8156-eebfeaa67d7a",
     "name": "Neito Monoma (Phantom Thief)",
-    "imageUrl": "",
+    "wiki_name": "Neito Monoma",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/5/57/Neito_Monoma_Hero_Costume_Action.png/revision/latest/scale-to-width-down/268?cb=20240615122324",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -497,7 +542,8 @@
   {
     "id": "4c52c56c-1f9d-423e-9cdf-9f36903b4801",
     "name": "Tetsutetsu Tetsutetsu (Real Steel)",
-    "imageUrl": "",
+    "wiki_name": "Tetsutetsu Tetsutetsu",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/e/e3/Tetsutetsu_Tetsutetsu_Anime_Hero_Costume.png/revision/latest/scale-to-width-down/268?cb=20240515054225",
     "Gender": "Male",
     "Quirk Type": "Transformation",
     "Calling": "Hero",
@@ -508,7 +554,8 @@
   {
     "id": "c022fb92-6874-4445-aa25-0c862ae1a576",
     "name": "Ibara Shiozaki (Vine)",
-    "imageUrl": "",
+    "wiki_name": "Ibara Shiozaki",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/9/91/Ibara_Shiozaki_Hero_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/211?cb=20210201032807",
     "Gender": "Female",
     "Quirk Type": "Mutant",
     "Calling": "Hero",
@@ -519,7 +566,8 @@
   {
     "id": "9efe1e04-a6f2-42d5-8556-4e2612f45d67",
     "name": "Juzo Honenuki (Mudman)",
-    "imageUrl": "",
+    "wiki_name": "Juzo Honenuki",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/8/80/Juzo_Honenuki_Hero_Costume_Anime.png/revision/latest/scale-to-width-down/268?cb=20210506002058",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -530,7 +578,8 @@
   {
     "id": "4e3d1520-0752-4a4a-b3c7-254005224857",
     "name": "Setsuna Tokage (Lizardy)",
-    "imageUrl": "",
+    "wiki_name": "Setsuna Tokage",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/a/a5/Setsuna_Tokage_Hero_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/268?cb=20210506004242",
     "Gender": "Female",
     "Quirk Type": "Mutant",
     "Calling": "Hero",
@@ -541,7 +590,8 @@
   {
     "id": "b151f650-97e9-42ac-848f-a0b28908fc5e",
     "name": "Hizashi Yamada (Present Mic)",
-    "imageUrl": "",
+    "wiki_name": "Hizashi Yamada",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/6/64/Hizashi_Yamada_Hero_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/268?cb=20190520065131",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -552,7 +602,8 @@
   {
     "id": "b9ca6ade-650a-4830-af15-94b549c6adc7",
     "name": "Nemuri Kayama (Midnight)",
-    "imageUrl": "",
+    "wiki_name": "Nemuri Kayama",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/d/d5/Nemuri_Kayama_Anime_Action.png/revision/latest/scale-to-width-down/267?cb=20220808034301",
     "Gender": "Female",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -563,7 +614,8 @@
   {
     "id": "54ac2bd1-8bae-4d10-bd21-3022ad11e913",
     "name": "Chiyo Shuzenji (Recovery Girl)",
-    "imageUrl": "",
+    "wiki_name": "Chiyo Shuzenji",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/6/65/Chiyo_Shuzenji_Work_Uniform_%28Anime%29.png/revision/latest/scale-to-width-down/268?cb=20251115174955",
     "Gender": "Female",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -574,7 +626,8 @@
   {
     "id": "5330d5c2-e002-4d39-8590-9292674e0b4d",
     "name": "Nezu",
-    "imageUrl": "",
+    "wiki_name": "Nezu",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/1/11/Nezu_Principle_Uniform_%28Anime%29.png/revision/latest/scale-to-width-down/267?cb=20251115175113",
     "Gender": "Male",
     "Quirk Type": "Mutant",
     "Calling": "Hero",
@@ -585,7 +638,8 @@
   {
     "id": "c3225fef-1ef6-4abd-8245-dfdf6ea5b0c9",
     "name": "Ken Ishiyama (Cementoss)",
-    "imageUrl": "",
+    "wiki_name": "Ken Ishiyama",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/0/06/Ken_Ishiyama_Hero_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/268?cb=20251115175505",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -596,7 +650,8 @@
   {
     "id": "70aba0a2-321f-4dae-9902-7eb42ad83e7d",
     "name": "Soranahiko (Gran Torino)",
-    "imageUrl": "",
+    "wiki_name": "Gran Torino",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/4/4e/Sorahiko_Torino_Hero_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/268?cb=20251115180227",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -607,7 +662,8 @@
   {
     "id": "1618fd35-3a1d-4f9e-8628-aac71a0c521a",
     "name": "Tsunagu Hakamada (Best Jeanist)",
-    "imageUrl": "",
+    "wiki_name": "Tsunagu Hakamada",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/d/d4/Tsunagu_Hakamada_Third_Hero_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/268?cb=20240615231937",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -618,7 +674,8 @@
   {
     "id": "ba04741f-3390-4069-9cf9-d70760403af3",
     "name": "Yu Takeyama (Mt. Lady)",
-    "imageUrl": "",
+    "wiki_name": "Yu Takeyama",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/9/98/Yu_Takeyama_Anime_Action.png/revision/latest/scale-to-width-down/267?cb=20240615232532",
     "Gender": "Female",
     "Quirk Type": "Transformation",
     "Calling": "Hero",
@@ -629,7 +686,8 @@
   {
     "id": "09a24122-0dc5-42f0-9f4a-c2f80a04107e",
     "name": "Shinji Nishiya (Kamui Woods)",
-    "imageUrl": "",
+    "wiki_name": "Shinji Nishiya",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/7/7e/Shinji_Nishiya_Second_Hero_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/173?cb=20251123031340",
     "Gender": "Male",
     "Quirk Type": "Mutant",
     "Calling": "Hero",
@@ -640,7 +698,8 @@
   {
     "id": "a0253dfa-30e6-4ca9-b396-53a2cfce8c93",
     "name": "Shinya Kamihara (Edgeshot)",
-    "imageUrl": "",
+    "wiki_name": "Shinya Kamihara",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/0/09/Shinya_Kamihara_S7_Visual.png/revision/latest/scale-to-width-down/268?cb=20240615232138",
     "Gender": "Male",
     "Quirk Type": "Transformation",
     "Calling": "Hero",
@@ -651,7 +710,8 @@
   {
     "id": "6c9e781a-2964-4748-a5e1-2170d8df49e0",
     "name": "Ryuko Tatsuma (Ryukyu)",
-    "imageUrl": "",
+    "wiki_name": "Ryuko Tatsuma",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/2/20/Ryuko_Tatsuma_Hero_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/268?cb=20211206211456",
     "Gender": "Female",
     "Quirk Type": "Transformation",
     "Calling": "Hero",
@@ -662,7 +722,8 @@
   {
     "id": "f5eb69db-9970-429a-9411-104fca80afe0",
     "name": "Taishiro Toyomitsu (Fat Gum)",
-    "imageUrl": "",
+    "wiki_name": "Taishiro Toyomitsu",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/c/c1/Taishiro_Toyomitsu_Anime_Action.png/revision/latest/scale-to-width-down/268?cb=20251115180655",
     "Gender": "Male",
     "Quirk Type": "Transformation",
     "Calling": "Hero",
@@ -673,7 +734,8 @@
   {
     "id": "10a24fc1-d715-40f0-85e8-bbb2d2a26738",
     "name": "Mirai Sasaki (Sir Nighteye)",
-    "imageUrl": "",
+    "wiki_name": "Mirai Sasaki",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/a/a6/Sir_Nighteye_Anime.png/revision/latest/scale-to-width-down/136?cb=20251115180040",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -684,7 +746,8 @@
   {
     "id": "80401cc9-5d6e-4c74-bbf7-36c3b9d67b84",
     "name": "Kuugo Sakamata (Gang Orca)",
-    "imageUrl": "",
+    "wiki_name": "Kuugo Sakamata",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/7/71/Kugo_Sakamata_Hero_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/268?cb=20251115181417",
     "Gender": "Male",
     "Quirk Type": "Mutant",
     "Calling": "Hero",
@@ -695,7 +758,8 @@
   {
     "id": "2beeff4b-a940-44be-bc8a-18f9d569ebe5",
     "name": "Kurogiri",
-    "imageUrl": "",
+    "wiki_name": "Kurogiri",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/b/b6/Kurogiri_Villain_Costume.png/revision/latest/scale-to-width-down/267?cb=20240515054436",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Villian",
@@ -706,7 +770,8 @@
   {
     "id": "cb76d69a-c416-4d61-bb05-959e4552a2f9",
     "name": "Gigantomachia",
-    "imageUrl": "",
+    "wiki_name": "Gigantomachia",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/f/f8/Gigantomachia_Anime_Profile.png/revision/latest/scale-to-width-down/267?cb=20250505184705",
     "Gender": "Male",
     "Quirk Type": "Mutant",
     "Calling": "Villian",
@@ -717,7 +782,8 @@
   {
     "id": "cb1d1156-f202-4607-ba83-ba38b047b3c7",
     "name": "Goto Imasuji (Muscular)",
-    "imageUrl": "",
+    "wiki_name": "Goto Imasuji",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/0/0f/Goto_Imasuji_Villain_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/268?cb=20180212134717",
     "Gender": "Male",
     "Quirk Type": "Transformation",
     "Calling": "Villian",
@@ -728,7 +794,8 @@
   {
     "id": "fdb325de-27ed-4da3-a563-5ad6f9b4e70d",
     "name": "Kyudai Garaki (Dr. Eggman)",
-    "imageUrl": "",
+    "wiki_name": "Kyudai Garaki",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/a/a1/Kyudai_Garaki_%28Anime%29.png/revision/latest/scale-to-width-down/268?cb=20251027000954",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Villian",
@@ -739,7 +806,8 @@
   {
     "id": "5da8dca1-13c4-4b05-9039-a0890cbeca54",
     "name": "Rikiya Yotsubashi (Re-Destro)",
-    "imageUrl": "",
+    "wiki_name": "Rikiya Yotsubashi",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/5/58/Rikiya_Yotsubashi_Anime.png/revision/latest/scale-to-width-down/180?cb=20240329175419",
     "Gender": "Male",
     "Quirk Type": "Transformation",
     "Calling": "Villian",
@@ -750,7 +818,8 @@
   {
     "id": "3700b604-63f7-4cb6-a98a-9036e5e49e8b",
     "name": "Tomoyasu Chikazoku (Skeptic)",
-    "imageUrl": "",
+    "wiki_name": "Tomoyasu Chikazoku",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/e/ea/Tomoyasu_Chikazoku_Anime.png/revision/latest/scale-to-width-down/183?cb=20240329175642",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Villian",
@@ -761,7 +830,8 @@
   {
     "id": "294e5f0e-5af3-4219-8f18-98ee9bb5916f",
     "name": "Koku Hanabata (Trumpet)",
-    "imageUrl": "",
+    "wiki_name": "Koku Hanabata",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/b/b6/Koku_Hanabata_Anime.png/revision/latest/scale-to-width-down/220?cb=20210703085331",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Villian",
@@ -772,7 +842,8 @@
   {
     "id": "ca1d2149-3c74-4827-ab12-842720565c18",
     "name": "Chitose Kizuki (Curious)",
-    "imageUrl": "",
+    "wiki_name": "Chitose Kizuki",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/b/b1/Chitose_Kizuki_Anime.png/revision/latest/scale-to-width-down/174?cb=20210703085344",
     "Gender": "Female",
     "Quirk Type": "Emitter",
     "Calling": "Villian",
@@ -783,7 +854,8 @@
   {
     "id": "28f64e86-7dec-46d3-a2f8-9e5a13aec181",
     "name": "Geten",
-    "imageUrl": "",
+    "wiki_name": "Geten",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/d/d2/Geten_Anime.png/revision/latest/scale-to-width-down/195?cb=20210703085357",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Villian",
@@ -794,7 +866,8 @@
   {
     "id": "da7e9536-01e2-436e-84f8-8a5ab103055f",
     "name": "Hari Kurono (Chronostasis)",
-    "imageUrl": "",
+    "wiki_name": "Hari Kurono",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/b/bc/Chronostasis_Anime_Profile.png/revision/latest/scale-to-width-down/268?cb=20191102041150",
     "Gender": "Male",
     "Quirk Type": "Mutant",
     "Calling": "Villian",
@@ -805,7 +878,8 @@
   {
     "id": "4acb154c-1145-4f3c-8aed-e6d88badd01b",
     "name": "Joi Irinaka (Mimic)",
-    "imageUrl": "",
+    "wiki_name": "Joi Irinaka",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/9/95/Mimic_Profile_Anime.png/revision/latest/scale-to-width-down/268?cb=20220202171600",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Villian",
@@ -816,7 +890,8 @@
   {
     "id": "296e6b7f-35af-4d2c-900e-7a58df760330",
     "name": "Shino Sosaki (Mandalay)",
-    "imageUrl": "",
+    "wiki_name": "Shino Sosaki",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/6/61/Shino_Sosaki_Hero_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/267?cb=20251115181531",
     "Gender": "Female",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -827,7 +902,8 @@
   {
     "id": "ce8471b0-8442-4c49-b4c5-768f24275fdf",
     "name": "Ryuko Tsuchikawa (Pixie-Bob)",
-    "imageUrl": "",
+    "wiki_name": "Ryuko Tsuchikawa",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/8/82/Ryuko_Tsuchikawa_Hero_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/268?cb=20251115181647",
     "Gender": "Female",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -838,7 +914,8 @@
   {
     "id": "5e5ab25e-d6da-4395-abcb-834a6065c16c",
     "name": "Tomoko Shiretoko (Ragdoll)",
-    "imageUrl": "",
+    "wiki_name": "Tomoko Shiretoko",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/5/52/Post-War_Tomoko_Shiretoko_%28Anime%29.png/revision/latest/scale-to-width-down/268?cb=20251120044408",
     "Gender": "Female",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -849,7 +926,8 @@
   {
     "id": "8b2153e2-34dc-457d-a341-621e86bb2bb5",
     "name": "Yawara Chawara (Tiger)",
-    "imageUrl": "",
+    "wiki_name": "Yawara Chatora",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/0/0d/Yawara_Chatora_Hero_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/268?cb=20251115182002",
     "Gender": "Male",
     "Quirk Type": "Mutant",
     "Calling": "Hero",
@@ -860,7 +938,8 @@
   {
     "id": "1f517b7d-f0c0-4ff3-b24f-4316bd88775c",
     "name": "Kouta Izumi",
-    "imageUrl": "",
+    "wiki_name": "Kota Izumi",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/4/4a/Kota_Izumi_anime_profile.png/revision/latest/scale-to-width-down/155?cb=20251115184124",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Civilian",
@@ -871,7 +950,8 @@
   {
     "id": "a59ef58b-3730-43f0-91b9-c1bae09c8109",
     "name": "Inasa Yoarashi (Gale Force)",
-    "imageUrl": "",
+    "wiki_name": "Inasa Yoarashi",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/3/3b/Inasa_Yoarashi_Anime_Hero_Costume.png/revision/latest/scale-to-width-down/268?cb=20251115182800",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -882,7 +962,8 @@
   {
     "id": "37c8547d-2c4d-4331-93d1-e392f2fc4a2e",
     "name": "Danjuro Tobita (Gentle Criminal)",
-    "imageUrl": "",
+    "wiki_name": "Danjuro Tobita",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/a/a4/Danjuro_Tobita_S7_Profile.png/revision/latest/scale-to-width-down/183?cb=20241117050310",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Villian",
@@ -893,7 +974,8 @@
   {
     "id": "4cc422fe-e298-4a7a-bb02-a873aa9d1d38",
     "name": "Manami Aiba (La Brava)",
-    "imageUrl": "",
+    "wiki_name": "Manami Aiba",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/3/34/Manami_Aiba_S7_Profile.png/revision/latest/scale-to-width-down/268?cb=20241117050309",
     "Gender": "Female",
     "Quirk Type": "Emitter",
     "Calling": "Villian",
@@ -904,7 +986,8 @@
   {
     "id": "4e6ac661-5b64-4404-9df6-81208c778d10",
     "name": "Yosetsu Awase (Welder)",
-    "imageUrl": "",
+    "wiki_name": "Yosetsu Awase",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/b/b4/Yosetsu_Awase_Hero_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/268?cb=20210506003000",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -915,7 +998,8 @@
   {
     "id": "5df5820f-ac79-4238-bc83-e112e580e43e",
     "name": "Sen Kaibara (Spiral)",
-    "imageUrl": "",
+    "wiki_name": "Sen Kaibara",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/6/67/Sen_Kaibara_Hero_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/268?cb=20210506002421",
     "Gender": "Male",
     "Quirk Type": "Transformation",
     "Calling": "Hero",
@@ -926,7 +1010,8 @@
   {
     "id": "8139110e-a742-4c1f-b23f-2314991a69e5",
     "name": "Shihai Kuroiro (Vantablack)",
-    "imageUrl": "",
+    "wiki_name": "Shihai Kuroiro",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/2/21/Shihai_Kuroiro_Hero_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/147?cb=20210201014743",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -937,7 +1022,8 @@
   {
     "id": "751354eb-5eab-4ad7-9e49-3e6b5a43f6d8",
     "name": "Nirengeki Shoda (Mines)",
-    "imageUrl": "",
+    "wiki_name": "Nirengeki Shoda",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/9/91/Nirengeki_Shoda_Hero_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/268?cb=20210506002239",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -948,7 +1034,8 @@
   {
     "id": "addf04bb-647e-486b-82ca-0fa757e1f856",
     "name": "Pony Tsunotori (Rocketti)",
-    "imageUrl": "",
+    "wiki_name": "Pony Tsunotori",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/e/e3/Pony_Tsunotori_Hero_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/267?cb=20210506003711",
     "Gender": "Female",
     "Quirk Type": "Mutant",
     "Calling": "Hero",
@@ -959,7 +1046,8 @@
   {
     "id": "d951c9ad-b5db-43d4-ad08-26ce4bb8f6b4",
     "name": "Kosei Tsuburaba (Solid Air)",
-    "imageUrl": "",
+    "wiki_name": "Kosei Tsuburaba",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/0/0d/Kosei_Tsuburaba_Hero_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/267?cb=20210506004408",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -970,7 +1058,8 @@
   {
     "id": "86a39381-a2ba-4b15-b4ab-c1b0669d6187",
     "name": "Kojiro Bondo (Plamo)",
-    "imageUrl": "",
+    "wiki_name": "Kojiro Bondo",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/6/64/Kojiro_Bondo_Hero_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/268?cb=20210506003053",
     "Gender": "Male",
     "Quirk Type": "Mutant",
     "Calling": "Hero",
@@ -981,7 +1070,8 @@
   {
     "id": "68861be1-182b-4e75-85fa-915a15e230af",
     "name": "Manga Fukidashi (Comicman)",
-    "imageUrl": "",
+    "wiki_name": "Manga Fukidashi",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/7/76/Manga_Fukidashi_Hero_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/268?cb=20210506004835",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -992,7 +1082,8 @@
   {
     "id": "53d9e78f-93cb-4454-b829-0a151f361949",
     "name": "Hiryu Rin (Dragon Shroud)",
-    "imageUrl": "",
+    "wiki_name": "Hiryu Rin",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/9/90/Hiryu_Rin_Hero_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/268?cb=20210506004652",
     "Gender": "Male",
     "Quirk Type": "Transformation",
     "Calling": "Hero",
@@ -1003,7 +1094,8 @@
   {
     "id": "db36187b-b16b-418e-85a9-d30dbc156a4d",
     "name": "Yui Kodai (Rule)",
-    "imageUrl": "",
+    "wiki_name": "Yui Kodai",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/0/0d/Yui_Kodai_Hero_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/267?cb=20210506002113",
     "Gender": "Female",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -1014,7 +1106,8 @@
   {
     "id": "75118d20-d752-4ff3-a845-053b501f48b2",
     "name": "Kinoko Komori (Shemage)",
-    "imageUrl": "",
+    "wiki_name": "Kinoko Komori",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/a/ae/Kinoko_Komori_Hero_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/268?cb=20210201020824",
     "Gender": "Female",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -1025,7 +1118,8 @@
   {
     "id": "8b7887bc-36ca-4fde-aea7-aa58b57d5540",
     "name": "Kendo Rappa",
-    "imageUrl": "",
+    "wiki_name": "Kendo Rappa",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/c/cc/Kendo_Rappa_Anime_Profile.png/revision/latest?cb=20191102050737",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Villian",
@@ -1036,7 +1130,8 @@
   {
     "id": "1966f3c0-c691-4d0b-a465-7875df7e5a76",
     "name": "Rikiya Katsukame",
-    "imageUrl": "",
+    "wiki_name": "Rikiya Katsukame",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/9/90/Rikiya_Katsukame_Anime_Profile.png/revision/latest/scale-to-width-down/268?cb=20191102043821",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Villian",
@@ -1047,7 +1142,8 @@
   {
     "id": "cbfd101a-9d5e-49e2-a5f2-369472ffd715",
     "name": "Deidoro Sakaki",
-    "imageUrl": "",
+    "wiki_name": "Deidoro Sakaki",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/f/fc/Deidoro_Sakaki_Anime_Profile.png/revision/latest?cb=20191102050952",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Villian",
@@ -1058,7 +1154,8 @@
   {
     "id": "06cfcf4f-df30-4db5-b221-42bdb035d22a",
     "name": "Hekiji Tengai",
-    "imageUrl": "",
+    "wiki_name": "Hekiji Tengai",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/b/b3/Hekiji_Tengai_Anime_Profile.png/revision/latest?cb=20191102050802",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Villian",
@@ -1069,7 +1166,8 @@
   {
     "id": "023d633a-bd69-4d46-80d7-e6e5c42cdc26",
     "name": "Wolfram",
-    "imageUrl": "",
+    "wiki_name": "Wolfram",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/7/7e/Wolfram_Profile.png/revision/latest/scale-to-width-down/267?cb=20200131112247",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Villian",
@@ -1080,7 +1178,8 @@
   {
     "id": "a7d03a01-40eb-43d3-9b4e-24cb67d75b4c",
     "name": "Flect Turn",
-    "imageUrl": "",
+    "wiki_name": "Flect Turn",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/b/bf/Flect_Turn_Full_Body_Profile.png/revision/latest/scale-to-width-down/267?cb=20210616013802",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Villian",
@@ -1091,7 +1190,8 @@
   {
     "id": "ba1d8b18-e743-41a4-ace5-33c5bfa668b9",
     "name": "Beros",
-    "imageUrl": "",
+    "wiki_name": "Beros",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/c/cb/Beros_Fullbody_Profile.png/revision/latest/scale-to-width-down/267?cb=20211108054214",
     "Gender": "Female",
     "Quirk Type": "Transformation",
     "Calling": "Villian",
@@ -1102,7 +1202,8 @@
   {
     "id": "3704af0e-966f-4475-9bc1-e0bb2c5aac99",
     "name": "Sidero",
-    "imageUrl": "",
+    "wiki_name": "Sidero",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/8/89/Sidero_Fullbody_Profile.png/revision/latest/scale-to-width-down/268?cb=20211108054516",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Villian",
@@ -1113,7 +1214,8 @@
   {
     "id": "7939d9b3-f68d-48c8-b454-3d778630e388",
     "name": "Ken Takagi (Rock Lock)",
-    "imageUrl": "",
+    "wiki_name": "Ken Takagi",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/d/da/Ken_Takagi_Hero_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/268?cb=20220319084111",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -1124,7 +1226,8 @@
   {
     "id": "2efb4799-20bc-4fb8-b6ce-6d450a625b69",
     "name": "Wash",
-    "imageUrl": "",
+    "wiki_name": "Wash",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/2/2f/Wash_Hero_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/268?cb=20251020030909",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -1135,7 +1238,8 @@
   {
     "id": "fa4b6908-4476-4da7-aa0f-ad26eb045b9a",
     "name": "Crust",
-    "imageUrl": "",
+    "wiki_name": "Crust",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/d/dd/Crust_Hero_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/268?cb=20251020032247",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -1146,7 +1250,8 @@
   {
     "id": "5c246d75-4c3c-4a25-8d0a-10b8fc1323ca",
     "name": "Masaki Mizushima (Manual)",
-    "imageUrl": "",
+    "wiki_name": "Masaki Mizushima",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/1/19/Masaki_Mizushima_Hero_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/267?cb=20220323215041",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -1157,7 +1262,8 @@
   {
     "id": "27a44839-3798-4608-90ca-d1da5930e82b",
     "name": "Gunhead",
-    "imageUrl": "",
+    "wiki_name": "Gunhead",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/e/e9/Gunhead_Hero_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/268?cb=20251115182150",
     "Gender": "Male",
     "Quirk Type": "Mutant",
     "Calling": "Hero",
@@ -1168,7 +1274,8 @@
   {
     "id": "1634999e-3108-4276-a68c-0a773329cc59",
     "name": "Fourth Kind",
-    "imageUrl": "",
+    "wiki_name": "Fourth Kind",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/0/0b/Fourth_Kind_Hero_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/268?cb=20251115182112",
     "Gender": "Male",
     "Quirk Type": "Mutant",
     "Calling": "Hero",
@@ -1179,7 +1286,8 @@
   {
     "id": "15c8ed4b-b118-44a1-a9e8-c12df3155f5e",
     "name": "Death Arms",
-    "imageUrl": "",
+    "wiki_name": "Death Arms",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/0/0a/Death_Arms_Hero_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/268?cb=20251115175752",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -1190,7 +1298,8 @@
   {
     "id": "7a609d19-5a34-453c-845e-c8660061cdbc",
     "name": "All For One",
-    "imageUrl": "",
+    "wiki_name": "All For One",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/a/ae/Post-War_All_For_One_Action.png/revision/latest/scale-to-width-down/268?cb=20240615225342",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Villian",
@@ -1201,7 +1310,8 @@
   {
     "id": "3c1ada56-7bb8-480c-92d5-cd8ec515c73e",
     "name": "Kagero Okuta (Giran)",
-    "imageUrl": "",
+    "wiki_name": "Kagero Okuta",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/5/5a/Giran_art.png/revision/latest/scale-to-width-down/268?cb=20191005160014",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Villian",
@@ -1212,7 +1322,8 @@
   {
     "id": "c5b080ff-6780-442f-b5c8-760c200c3573",
     "name": "Sekijiro Kan (Vlad King)",
-    "imageUrl": "",
+    "wiki_name": "Sekijiro Kan",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/3/3c/Sekijiro_Kan_Hero_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/267?cb=20251115174848",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -1223,7 +1334,8 @@
   {
     "id": "23a3ded7-6364-4a55-8345-2bf2b784bb7e",
     "name": "Snipe",
-    "imageUrl": "",
+    "wiki_name": "Snipe",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/f/f1/Snipe_Hero_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/268?cb=20251115175230",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -1234,7 +1346,8 @@
   {
     "id": "b949074a-1619-4376-b17f-cf99a03adedd",
     "name": "Ectoplasm",
-    "imageUrl": "",
+    "wiki_name": "Ectoplasm",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/1/15/Ectoplasm_Hero_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/267?cb=20251115174632",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -1245,7 +1358,8 @@
   {
     "id": "70f1339a-d251-4eda-9010-496583bbdb93",
     "name": "Anan Kurose (Thirteen)",
-    "imageUrl": "",
+    "wiki_name": "Thirteen",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/0/06/Thirteen_Hero_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/268?cb=20251115175412",
     "Gender": "Female",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -1256,7 +1370,8 @@
   {
     "id": "4d26534d-cf61-4f08-96e6-38de1994dd5d",
     "name": "Higari Maijima (Power Loader)",
-    "imageUrl": "",
+    "wiki_name": "Higari Maijima",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/d/d6/Higari_Maijima_Hero_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/268?cb=20251006233055",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -1267,7 +1382,8 @@
   {
     "id": "7847e4cb-b1c2-4f7a-bf45-f762525b0b31",
     "name": "Ryo Inui (Hound Dog)",
-    "imageUrl": "",
+    "wiki_name": "Ryo Inui",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/0/06/Ryo_Inui_Hero_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/268?cb=20251020013517",
     "Gender": "Male",
     "Quirk Type": "Mutant",
     "Calling": "Hero",
@@ -1278,7 +1394,8 @@
   {
     "id": "26182082-aeea-413d-9e82-d0b7f4363117",
     "name": "Lunch Rush",
-    "imageUrl": "",
+    "wiki_name": "Lunch Rush",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/b/b5/Lunch_Rush_Work_Uniform_%28Anime%29.png/revision/latest/scale-to-width-down/268?cb=20190829075915",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -1289,7 +1406,8 @@
   {
     "id": "9217752f-c91d-4f0d-a319-45f773deffcc",
     "name": "Inko Midoriya",
-    "imageUrl": "",
+    "wiki_name": "Inko Midoriya",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/6/61/Inko_Midoriya_Anime_Profile.png/revision/latest/scale-to-width-down/268?cb=20251115183730",
     "Gender": "Female",
     "Quirk Type": "Emitter",
     "Calling": "Civilian",
@@ -1300,7 +1418,8 @@
   {
     "id": "d6f4290f-f231-4a8b-9e19-d3be22dcb8b6",
     "name": "Mitsuki Bakugo",
-    "imageUrl": "",
+    "wiki_name": "Mitsuki Bakugo",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/b/b7/Mitsuki_Bakugo.png/revision/latest/scale-to-width-down/268?cb=20251004061042",
     "Gender": "Female",
     "Quirk Type": "Emitter",
     "Calling": "Civilian",
@@ -1311,7 +1430,8 @@
   {
     "id": "2d427406-9ce3-4f21-b705-1ded876222fd",
     "name": "Masaru Bakugo",
-    "imageUrl": "",
+    "wiki_name": "Masaru Bakugo",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/8/84/Masaru_Bakugo_anime.png/revision/latest/scale-to-width-down/268?cb=20251004061422",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Civilian",
@@ -1322,7 +1442,8 @@
   {
     "id": "9241d39b-19d8-4b72-b38a-a32add8e9990",
     "name": "Rei Todoroki",
-    "imageUrl": "",
+    "wiki_name": "Rei Todoroki",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/a/ac/Rei%27s_current_appearance_%28Anime%29.png/revision/latest/scale-to-width-down/268?cb=20241124034822",
     "Gender": "Female",
     "Quirk Type": "Emitter",
     "Calling": "Civilian",
@@ -1333,7 +1454,8 @@
   {
     "id": "3a265748-985a-47c8-aabb-ee449d4c19df",
     "name": "Fuyumi Todoroki",
-    "imageUrl": "",
+    "wiki_name": "Fuyumi Todoroki",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/0/0c/Fuyumi_Todoroki_Anime_Profile.png/revision/latest/scale-to-width-down/268?cb=20251115183932",
     "Gender": "Female",
     "Quirk Type": "Emitter",
     "Calling": "Civilian",
@@ -1344,7 +1466,8 @@
   {
     "id": "d6436236-f5fe-410d-99e7-3e34f2c8080d",
     "name": "Natsuo Todoroki",
-    "imageUrl": "",
+    "wiki_name": "Natsuo Todoroki",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/d/dc/Natsuo_Todoroki_Anime_Profile.png/revision/latest/scale-to-width-down/268?cb=20251115184018",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Civilian",
@@ -1355,7 +1478,8 @@
   {
     "id": "1a964d50-2c78-4a6c-9ab5-c7543cb1c024",
     "name": "David Shield",
-    "imageUrl": "",
+    "wiki_name": "David Shield",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/c/c6/David_Shield_Profile.png/revision/latest/scale-to-width-down/268?cb=20191115213316",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Civilian",
@@ -1366,7 +1490,8 @@
   {
     "id": "24573d93-f24c-4604-92ca-f312f1aa58e7",
     "name": "Melissa Shield",
-    "imageUrl": "",
+    "wiki_name": "Melissa Shield",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/7/7a/Melissa_Shield_Profile.png/revision/latest/scale-to-width-down/268?cb=20191226143425",
     "Gender": "Female",
     "Quirk Type": "Unknown",
     "Calling": "Civilian",
@@ -1377,7 +1502,8 @@
   {
     "id": "791479de-e110-4f84-b062-b56ae27fe5e6",
     "name": "USJ Nomu",
-    "imageUrl": "",
+    "wiki_name": "Nomu",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/7/75/Hosu_Nomu.png/revision/latest/scale-to-width-down/268?cb=20250706181951",
     "Gender": "Male",
     "Quirk Type": "Mutant",
     "Calling": "Villian",
@@ -1388,7 +1514,8 @@
   {
     "id": "d8745054-7cb5-41dd-bbe2-b5d855c2185d",
     "name": "Yoroi Musha",
-    "imageUrl": "",
+    "wiki_name": "Yoroi Musha",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/1/1e/Yoroi_Musha_Hero_Costume_%28Anime%29.png/revision/latest/scale-to-width-down/268?cb=20251020032605",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -1399,7 +1526,8 @@
   {
     "id": "dd056982-8c82-4a43-a60e-4ca8736005d0",
     "name": "Enma Kannagi (Majestic)",
-    "imageUrl": "",
+    "wiki_name": "Majestic",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/d/d9/Majestic_%28Anime%29.png/revision/latest/scale-to-width-down/268?cb=20251101061245",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -1410,7 +1538,8 @@
   {
     "id": "b445dbab-6e42-4117-aae5-93bf753995f8",
     "name": "Native",
-    "imageUrl": "",
+    "wiki_name": "Native",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/b/b3/Native_Anime_Portrait.png/revision/latest/scale-to-width-down/268?cb=20180615010007",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Hero",
@@ -1421,7 +1550,8 @@
   {
     "id": "44a6d2b9-b5e4-4d22-81fb-a6978ba641d2",
     "name": "Dark Might",
-    "imageUrl": "",
+    "wiki_name": "Dark Might",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/7/79/Dark_Might_Profile.png/revision/latest/scale-to-width-down/178?cb=20240528155520",
     "Gender": "Male",
     "Quirk Type": "Emitter",
     "Calling": "Villian",
@@ -1432,7 +1562,8 @@
   {
     "id": "7594a7fb-bf52-45b2-97f1-93bd44bff1b9",
     "name": "Anna Scervino",
-    "imageUrl": "",
+    "wiki_name": "Anna Scervino",
+    "imageUrl": "https://static.wikia.nocookie.net/bokunoheroacademia/images/0/07/Anna_Scervino_Profile.png/revision/latest/scale-to-width-down/228?cb=20240530205702",
     "Gender": "Female",
     "Quirk Type": "Emitter",
     "Calling": "Civilian",
