@@ -2,7 +2,7 @@
 * { 
     box-sizing: border-box; 
     margin: 0; padding: 0; 
-    outline: none !important; /* Kills the white shadow/ring on top row */
+    outline: none !important;
     box-shadow: none !important; 
 }
 
@@ -10,6 +10,16 @@
     --correct: #fde047;
     --wrong: #ef4444;
     --glass: rgba(255, 255, 255, 0.05);
+}
+
+/* Hide scrollbars globally but keep scroll functionality */
+html, body {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
 }
 
 body {
@@ -29,12 +39,55 @@ body {
     background-position: center;
 }
 
-/* --- 2. NAVIGATION & SEARCH (No Shifting) --- */
+/* --- 2. NAVIGATION & SEARCH --- */
 .glass-ui {
     background: var(--glass);
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
     border: 1px solid rgba(255,255,255,0.1);
+}
+
+.nav-btn-glass {
+    display: flex;
+    align-items: center;
+    color: rgba(255,255,255,0.6);
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.05);
+    transition: all 0.2s ease;
+    gap: 6px;
+}
+.nav-btn-glass:hover {
+    background: rgba(255,255,255,0.12);
+    color: white;
+}
+
+/* Arc List button */
+#btn-arclist {
+    display: flex;
+    align-items: center;
+    color: rgba(255,255,255,0.6);
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.05);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    gap: 6px;
+}
+#btn-arclist:hover {
+    background: rgba(255,255,255,0.12);
+    color: white;
 }
 
 #search-input {
@@ -43,22 +96,53 @@ body {
     color: white !important;
 }
 
+/* --- DROPDOWN --- */
 #dropdown {
-    position: absolute; /* Floating prevents shifting */
-    top: 100%; left: 0; width: 100%;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    width: 100%;
     z-index: 999;
-    background: rgba(10, 10, 15, 0.98);
+    background: rgba(8, 8, 14, 0.97);
     backdrop-filter: blur(50px);
-    border-radius: 15px;
-    max-height: 300px;
+    -webkit-backdrop-filter: blur(50px);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px;
+    max-height: 320px;
     overflow-y: auto;
+    /* Hide scrollbar */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
+#dropdown::-webkit-scrollbar { display: none; }
 
 .dropdown-item {
-    color: white !important;
-    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 18px;
     border-bottom: 1px solid rgba(255,255,255,0.05);
     cursor: pointer;
+    transition: background 0.15s ease;
+}
+.dropdown-item:last-child { border-bottom: none; }
+.dropdown-item:hover { background: rgba(255,255,255,0.07); }
+
+.dropdown-item img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255,255,255,0.15);
+    flex-shrink: 0;
+}
+
+.dropdown-item span {
+    color: white;
+    font-weight: 800;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 /* --- 3. NEON TILES --- */
@@ -67,15 +151,34 @@ body {
     background: rgba(0, 0, 0, 0.7);
     border-radius: 12px;
     display: flex; align-items: center; justify-content: center;
-    min-height: 90px; padding: 5px;
+    min-height: 72px;
+    padding: 6px;
     text-align: center; font-weight: 800; font-size: 10px;
     text-transform: uppercase; z-index: 1;
+    line-height: 1.3;
+    word-break: break-word;
+}
+
+/* Image tile: same height as others, no overflow issues */
+.tile.img-tile {
+    padding: 0;
+    overflow: hidden;
+    min-height: 72px;
+    height: 72px;
+}
+.tile.img-tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 11px;
+    display: block;
 }
 
 .tile::before {
     content: ''; position: absolute; inset: -2px; border-radius: 14px; z-index: -1;
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask-composite: exclude;
+    -webkit-mask-composite: xor;
 }
 
 .tile.match-exact::before {
@@ -88,53 +191,226 @@ body {
     background: conic-gradient(from var(--angle), transparent 60%, var(--wrong));
     animation: rotate 2s linear infinite;
 }
-.tile.match-none { color: rgba(255,255,255,0.3); }
+.tile.match-none { color: rgba(255,255,255,0.35); }
+
+/* Flip-in animation */
+@keyframes flipIn {
+    0%   { transform: rotateX(-90deg) scale(0.95); opacity: 0; }
+    60%  { transform: rotateX(8deg) scale(1.02); opacity: 1; }
+    100% { transform: rotateX(0deg) scale(1); opacity: 1; }
+}
+.flip-in {
+    animation: flipIn 0.4s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
 
 @property --angle { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
 @keyframes rotate { to { --angle: 360deg; } }
 
-/* --- 4. THE WIN/LOSS CARD (Fixed Layout) --- */
+/* Hide game board scrollbar */
+.hide-scroll {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.hide-scroll::-webkit-scrollbar { display: none; }
+
+/* --- 4. END CARD --- */
+#end-overlay {
+    background: rgba(0,0,0,0.88);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+}
+
 .modal-box {
-    background: #0a0a0c !important; /* Dark solid background for text contrast */
-    border: 2px solid rgba(255, 255, 255, 0.1);
+    background: rgba(10, 10, 18, 0.98) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
     color: white !important;
-    max-width: 600px !important;
-    width: 90%;
-    padding: 30px !important;
-    border-radius: 30px;
+    max-width: 480px !important;
+    width: 92%;
+    padding: 36px 32px !important;
+    border-radius: 28px;
+}
+
+#end-modal-img {
+    display: block;
+    width: 120px;
+    height: 120px;
+    border-radius: 16px;
+    object-fit: cover;
+    margin: 0 auto 20px;
+    border: 3px solid rgba(255,255,255,0.2);
+}
+
+#end-title {
+    font-size: 2.6rem;
+    line-height: 1.1;
+    margin-bottom: 6px;
+    letter-spacing: 0.02em;
+}
+
+#end-subtitle {
+    color: rgba(255,255,255,0.55);
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
 #modal-profile {
-    display: flex;
-    flex-wrap: wrap; /* Allows items to jump to next line instead of squishing */
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 8px;
-    margin-top: 20px;
+    margin: 0 0 24px 0;
 }
 
 .modal-stat-box {
-    background: rgba(255, 255, 255, 0.05) !important;
+    background: rgba(255, 255, 255, 0.06) !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    border-radius: 10px;
-    width: 100px; /* Fixed width prevents size jumping */
-    height: 60px;
+    border-radius: 12px;
+    padding: 10px 6px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 4px;
+    min-height: 56px;
 }
 
 .modal-stat-label {
     color: rgba(255, 255, 255, 0.4) !important;
-    font-size: 7px !important;
+    font-size: 8px !important;
     font-weight: 900;
     text-transform: uppercase;
+    letter-spacing: 0.12em;
 }
 
 .modal-stat-value {
     color: #ffffff !important;
-    font-size: 10px !important;
+    font-size: 11px !important;
     font-weight: 700;
     text-align: center;
-    word-break: break-all;
+    word-break: break-word;
+    line-height: 1.3;
 }
+
+#btn-replay {
+    width: 100%;
+    padding: 14px;
+    border-radius: 14px;
+    background: #fde047;
+    color: #000;
+    font-weight: 900;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    cursor: pointer;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+    border: none;
+}
+#btn-replay:hover { transform: scale(1.03); opacity: 0.92; }
+
+/* --- 5. ARC LIST MODAL --- */
+#arc-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+#arc-overlay.open {
+    display: flex;
+    opacity: 1;
+}
+
+.arc-modal {
+    background: rgba(10, 10, 18, 0.98);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 24px;
+    padding: 32px 28px;
+    max-width: 420px;
+    width: 92%;
+    max-height: 80vh;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.arc-modal::-webkit-scrollbar { display: none; }
+
+.arc-modal h2 {
+    font-size: 2rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 20px;
+    color: #fde047;
+}
+
+.arc-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.arc-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+}
+
+.arc-num {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.25);
+    min-width: 24px;
+    text-align: right;
+}
+
+.arc-name {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: rgba(255,255,255,0.8);
+}
+
+.arc-close {
+    display: block;
+    margin: 22px auto 0;
+    padding: 12px 32px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: white;
+    font-weight: 900;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+.arc-close:hover { background: rgba(255,255,255,0.14); }
+
+/* Mode switcher */
+.mode-switcher { position: relative; }
+.mode-btn {
+    color: rgba(255,255,255,0.4);
+    font-size: 10px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    transition: color 0.2s;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex: 1;
+    height: 100%;
+}
+.mode-btn.active { color: white; }
