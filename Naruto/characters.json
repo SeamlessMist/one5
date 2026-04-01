@@ -1,0 +1,2158 @@
+[
+  {
+    "name": "Naruto Uzumaki",
+    "image": "https://static.wikia.nocookie.net/naruto/images/d/d6/Naruto_Part_I.png/revision/latest/scale-to-width-down/300?cb=20251228135525",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Wind",
+      "Earth",
+      "Water",
+      "Fire",
+      "Lightning"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Kage",
+    "height": "180",
+    "debut": "Prologue - Land of Waves"
+  },
+  {
+    "name": "Sasuke Uchiha",
+    "image": "https://static.wikia.nocookie.net/naruto/images/2/21/Sasuke_Part_1.png/revision/latest/scale-to-width-down/300?cb=20170716092103",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Fire",
+      "Lightning",
+      "Unique"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "Sharingan",
+    "ninjaRank": "Genin",
+    "height": "182",
+    "debut": "Prologue - Land of Waves"
+  },
+  {
+    "name": "Sakura Haruno",
+    "image": "https://static.wikia.nocookie.net/naruto/images/6/64/Sakura_Part_1.png/revision/latest/scale-to-width-down/300?cb=20170726101444",
+    "gender": "Female",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Earth",
+      "Water",
+      "Fire"
+    ],
+    "ninjutsuSpecialty": "Healing Jutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Chunin",
+    "height": "161",
+    "debut": "Prologue - Land of Waves"
+  },
+  {
+    "name": "Kakashi Hatake",
+    "image": "https://static.wikia.nocookie.net/naruto/images/2/27/Kakashi_Hatake.png/revision/latest/scale-to-width-down/300?cb=20251019002845",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Lightning",
+      "Earth",
+      "Water",
+      "Fire",
+      "Wind"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "Sharingan",
+    "ninjaRank": "Kage",
+    "height": "181",
+    "debut": "Prologue - Land of Waves"
+  },
+  {
+    "name": "Sai",
+    "image": "https://static.wikia.nocookie.net/naruto/images/0/07/Sai_Infobox.png/revision/latest/scale-to-width-down/300?cb=20180314110836",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Unique"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Chunin",
+    "height": "172",
+    "debut": "Tenchi Bridge"
+  },
+  {
+    "name": "Yamato",
+    "image": "https://static.wikia.nocookie.net/naruto/images/f/f7/Yamato_newshot.png/revision/latest/scale-to-width-down/300?cb=20180920062234",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Water",
+      "Earth",
+      "Fire",
+      "Wind"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "Wood Release",
+    "ninjaRank": "Jonin",
+    "height": "178",
+    "debut": "Tenchi Bridge"
+  },
+  {
+    "name": "Iruka Umino",
+    "image": "https://static.wikia.nocookie.net/naruto/images/b/bc/Iruka.png/revision/latest/scale-to-width-down/300?cb=20161013212102",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Water",
+      "Fire"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Chunin",
+    "height": "178",
+    "debut": "Prologue - Land of Waves"
+  },
+  {
+    "name": "Konohamaru Sarutobi",
+    "image": "https://static.wikia.nocookie.net/naruto/images/8/89/Konohamaru_p1.png/revision/latest/scale-to-width-down/300?cb=20150122131608",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Fire",
+      "Wind"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Jounin",
+    "height": "177",
+    "debut": "Prologue - Land of Waves"
+  },
+  {
+    "name": "Shikamaru Nara",
+    "image": "https://static.wikia.nocookie.net/naruto/images/4/44/Shikamaru_Part_I.png/revision/latest/scale-to-width-down/300?cb=20170419112314",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Fire",
+      "Unique"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Chunin",
+    "height": "170",
+    "debut": "Chūnin Exams"
+  },
+  {
+    "name": "Ino Yamanaka",
+    "image": "https://static.wikia.nocookie.net/naruto/images/d/dd/Ino.png/revision/latest/scale-to-width-down/300?cb=20170622102745",
+    "gender": "Female",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Fire",
+      "Water",
+      "Unique"
+    ],
+    "ninjutsuSpecialty": "Genjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Chunin",
+    "height": "162",
+    "debut": "Chūnin Exams"
+  },
+  {
+    "name": "Choji Akimichi",
+    "image": "https://static.wikia.nocookie.net/naruto/images/7/7d/Ch%C5%8Dji_Akimichi.png/revision/latest/scale-to-width-down/300?cb=20200426204415",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Fire",
+      "Unique"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Chunin",
+    "height": "192",
+    "debut": "Chūnin Exams"
+  },
+  {
+    "name": "Hinata Hyuga",
+    "image": "https://static.wikia.nocookie.net/naruto/images/9/97/Hinata.png/revision/latest/scale-to-width-down/300?cb=20141010104729",
+    "gender": "Female",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Fire",
+      "Lightning"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "Byakugan",
+    "ninjaRank": "Chunin",
+    "height": "163",
+    "debut": "Chūnin Exams"
+  },
+  {
+    "name": "Kiba Inuzuka",
+    "image": "https://static.wikia.nocookie.net/naruto/images/0/03/Kiba.png/revision/latest/scale-to-width-down/300?cb=20180124105049",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Water",
+      "Fire",
+      "Lightning"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Chunin",
+    "height": "173",
+    "debut": "Chūnin Exams"
+  },
+  {
+    "name": "Shino Aburame",
+    "image": "https://static.wikia.nocookie.net/naruto/images/9/9c/Shino.png/revision/latest/scale-to-width-down/300?cb=20160924021327",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Earth",
+      "Fire"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Chunin",
+    "height": "175",
+    "debut": "Chūnin Exams"
+  },
+  {
+    "name": "Rock Lee",
+    "image": "https://static.wikia.nocookie.net/naruto/images/9/97/Rock_Lee_Part_I.png/revision/latest/scale-to-width-down/300?cb=20181229065526",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Unique"
+    ],
+    "ninjutsuSpecialty": "Taijutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Jonin",
+    "height": "172",
+    "debut": "Chūnin Exams"
+  },
+  {
+    "name": "Neji Hyuga",
+    "image": "https://static.wikia.nocookie.net/naruto/images/7/7e/Neji_Part_I.png/revision/latest/scale-to-width-down/300?cb=20160118081119",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Fire",
+      "Water"
+    ],
+    "ninjutsuSpecialty": "Taijutsu",
+    "kekkeiGenkai": "Byakugan",
+    "ninjaRank": "Jonin",
+    "height": "172",
+    "debut": "Chūnin Exams"
+  },
+  {
+    "name": "Tenten",
+    "image": "https://static.wikia.nocookie.net/naruto/images/d/da/Tenten_Part_1.png/revision/latest/scale-to-width-down/300?cb=20180510203032",
+    "gender": "Female",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Fire",
+      "Unique"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Chunin",
+    "height": "166",
+    "debut": "Chūnin Exams"
+  },
+  {
+    "name": "Might Guy",
+    "image": "https://static.wikia.nocookie.net/naruto/images/3/31/Might_Guy.png/revision/latest/scale-to-width-down/300?cb=20150401084456",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Unique"
+    ],
+    "ninjutsuSpecialty": "Taijutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Jonin",
+    "height": "184",
+    "debut": "Chūnin Exams"
+  },
+  {
+    "name": "Kurenai Yuhi",
+    "image": "https://static.wikia.nocookie.net/naruto/images/6/67/Kurenai_Part_I.png/revision/latest/scale-to-width-down/300?cb=20150207094753",
+    "gender": "Female",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Fire",
+      "Water"
+    ],
+    "ninjutsuSpecialty": "Genjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Jonin",
+    "height": "169",
+    "debut": "Chūnin Exams"
+  },
+  {
+    "name": "Asuma Sarutobi",
+    "image": "https://static.wikia.nocookie.net/naruto/images/7/7c/Asuma.png/revision/latest/scale-to-width-down/300?cb=20150822043018",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Fire",
+      "Wind"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Jonin",
+    "height": "190",
+    "debut": "Chūnin Exams"
+  },
+  {
+    "name": "Hashirama Senju",
+    "image": "https://static.wikia.nocookie.net/naruto/images/7/7e/Hashirama_Senju.png/revision/latest/scale-to-width-down/300?cb=20160124040430",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Earth",
+      "Water",
+      "Fire",
+      "Wind",
+      "Lightning"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "Wood Release",
+    "ninjaRank": "Kage",
+    "height": "185",
+    "debut": "Search For Tsunade"
+  },
+  {
+    "name": "Tobirama Senju",
+    "image": "https://static.wikia.nocookie.net/naruto/images/b/be/Tobirama_Senju.png/revision/latest/scale-to-width-down/300?cb=20160115192559",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Water",
+      "Fire",
+      "Earth",
+      "Lightning",
+      "Unique"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Kage",
+    "height": "182",
+    "debut": "Search For Tsunade"
+  },
+  {
+    "name": "Hiruzen Sarutobi",
+    "image": "https://static.wikia.nocookie.net/naruto/images/e/e4/Hiruzen_Sarutobi.png/revision/latest/scale-to-width-down/300?cb=20160125204719",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Fire",
+      "Wind",
+      "Lightning",
+      "Water",
+      "Earth"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Kage",
+    "height": "163",
+    "debut": "Prologue - Land of Waves"
+  },
+  {
+    "name": "Minato Namikaze",
+    "image": "https://static.wikia.nocookie.net/naruto/images/7/71/Minato_Namikaze.png/revision/latest/scale-to-width-down/300?cb=20160125175116",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Wind",
+      "Fire",
+      "Lightning",
+      "Unique"
+    ],
+    "ninjutsuSpecialty": "Sealing Jutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Kage",
+    "height": "179",
+    "debut": "Prologue - Land of Waves"
+  },
+  {
+    "name": "Tsunade",
+    "image": "https://static.wikia.nocookie.net/naruto/images/b/b3/Tsunade_infobox2.png/revision/latest/scale-to-width-down/300?cb=20230315211457",
+    "gender": "Female",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Water",
+      "Earth",
+      "Unique"
+    ],
+    "ninjutsuSpecialty": "Healing Jutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Kage",
+    "height": "163",
+    "debut": "Search For Tsunade"
+  },
+  {
+    "name": "Jiraiya",
+    "image": "https://static.wikia.nocookie.net/naruto/images/2/21/Profile_Jiraiya.PNG/revision/latest/scale-to-width-down/300?cb=20160115173538",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Fire",
+      "Earth",
+      "Wind",
+      "Unique"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Jonin",
+    "height": "191",
+    "debut": "Search For Tsunade"
+  },
+  {
+    "name": "Orochimaru",
+    "image": "https://static.wikia.nocookie.net/naruto/images/1/14/Orochimaru_Infobox.png/revision/latest/scale-to-width-down/300?cb=20150925223113",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Sound Village",
+    "chakraNature": [
+      "Fire",
+      "Wind",
+      "Lightning",
+      "Earth",
+      "Water"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "S Rank",
+    "height": "179",
+    "debut": "Chūnin Exams"
+  },
+  {
+    "name": "Danzo Shimura",
+    "image": "https://static.wikia.nocookie.net/naruto/images/1/17/Danz%C5%8D.png/revision/latest/scale-to-width-down/300?cb=20171028185149",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Wind",
+      "Fire"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "Sharingan",
+    "ninjaRank": "Special Jounin",
+    "height": "170",
+    "debut": "Tenchi Bridge"
+  },
+  {
+    "name": "Shisui Uchiha",
+    "image": "https://static.wikia.nocookie.net/naruto/images/4/4c/Shisui_Uchiha.png/revision/latest/scale-to-width-down/300?cb=20140418091747",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Fire",
+      "Wind"
+    ],
+    "ninjutsuSpecialty": "Genjutsu",
+    "kekkeiGenkai": "Sharingan",
+    "ninjaRank": "Jounin",
+    "height": "178",
+    "debut": "Itachi Pursuit Mission"
+  },
+  {
+    "name": "Madara Uchiha",
+    "image": "https://static.wikia.nocookie.net/naruto/images/f/fd/Madara.png/revision/latest/scale-to-width-down/300?cb=20160115141947",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Akatsuki",
+    "chakraNature": [
+      "Fire",
+      "Lightning",
+      "Wind",
+      "Earth",
+      "Water"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "Sharingan",
+    "ninjaRank": "S Rank",
+    "height": "179",
+    "debut": "Five Kage Summit"
+  },
+  {
+    "name": "Izuna Uchiha",
+    "image": "https://static.wikia.nocookie.net/naruto/images/8/83/Izuna_Uchiha.png/revision/latest/scale-to-width-down/300?cb=20170818214808",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Fire",
+      "Lightning"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "Sharingan",
+    "ninjaRank": "Unknown",
+    "height": "173",
+    "debut": "Fourth Sinobi War: Confrontation"
+  },
+  {
+    "name": "Obito Uchiha",
+    "image": "https://static.wikia.nocookie.net/naruto/images/4/4a/Obito_Uchiha.png/revision/latest/scale-to-width-down/300?cb=20220223045744",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Akatsuki",
+    "chakraNature": [
+      "Fire",
+      "Earth",
+      "Water",
+      "Lightning",
+      "Wind"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "Sharingan",
+    "ninjaRank": "S Rank",
+    "height": "175",
+    "debut": "Prologue - Land of Waves"
+  },
+  {
+    "name": "Itachi Uchiha",
+    "image": "https://static.wikia.nocookie.net/naruto/images/b/bb/Itachi.png/revision/latest/scale-to-width-down/300?cb=20260212213556",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Akatsuki",
+    "chakraNature": [
+      "Fire",
+      "Wind",
+      "Water",
+      "Unique"
+    ],
+    "ninjutsuSpecialty": "Genjutsu",
+    "kekkeiGenkai": "Sharingan",
+    "ninjaRank": "S Rank",
+    "height": "175",
+    "debut": "Search For Tsunade"
+  },
+  {
+    "name": "Fugaku Uchiha",
+    "image": "https://static.wikia.nocookie.net/naruto/images/f/f2/Fugaku.png/revision/latest/scale-to-width-down/300?cb=20180502064054",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Fire",
+      "Lightning"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "Sharingan",
+    "ninjaRank": "Jounin",
+    "height": "181",
+    "debut": "Itachi Pursuit Mission"
+  },
+  {
+    "name": "Mikoto Uchiha",
+    "image": "https://static.wikia.nocookie.net/naruto/images/8/8e/Mikoto_Uchiha.png/revision/latest/scale-to-width-down/300?cb=20150130135950",
+    "gender": "Female",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Fire"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "Sharingan",
+    "ninjaRank": "Unknown",
+    "height": "167",
+    "debut": "Itachi Pursuit Mission"
+  },
+  {
+    "name": "Nagato",
+    "image": "https://static.wikia.nocookie.net/naruto/images/4/46/Nagato.png/revision/latest/scale-to-width-down/300?cb=20150821081644",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Amegakure",
+    "affiliation": "Akatsuki",
+    "chakraNature": [
+      "Wind",
+      "Water",
+      "Lightning",
+      "Earth",
+      "Fire",
+      "Unique"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "Rinnegan",
+    "ninjaRank": "S-Rank Missing-nin",
+    "height": "175",
+    "debut": "Tale Of Jiraiya the Gallant"
+  },
+  {
+    "name": "Konan",
+    "image": "https://static.wikia.nocookie.net/naruto/images/5/58/Konan_Infobox.png/revision/latest/scale-to-width-down/300?cb=20220206081756",
+    "gender": "Female",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Amegakure",
+    "affiliation": "Akatsuki",
+    "chakraNature": [
+      "Wind",
+      "Water"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "S-Rank Missing-nin",
+    "height": "169",
+    "debut": "Tale Of Jiraiya the Gallant"
+  },
+  {
+    "name": "Yahiko",
+    "image": "https://static.wikia.nocookie.net/naruto/images/7/76/Yahiko.png/revision/latest/scale-to-width-down/300?cb=20230317232940",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Amegakure",
+    "affiliation": "Akatsuki",
+    "chakraNature": [
+      "Wind",
+      "Water"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Unknown",
+    "height": "171",
+    "debut": "Tale Of Jiraiya the Gallant"
+  },
+  {
+    "name": "Kisame Hoshigaki",
+    "image": "https://static.wikia.nocookie.net/naruto/images/2/25/Kisame.png/revision/latest/scale-to-width-down/300?cb=20220205140601",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Kirigakure",
+    "affiliation": "Akatsuki",
+    "chakraNature": [
+      "Water",
+      "Earth",
+      "Fire"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "S-Rank Missing-nin",
+    "height": "195",
+    "debut": "Search For Tsunade"
+  },
+  {
+    "name": "Deidara",
+    "image": "https://static.wikia.nocookie.net/naruto/images/0/06/Deidara.png/revision/latest/scale-to-width-down/300?cb=20240604182145",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Iwagakure",
+    "affiliation": "Akatsuki",
+    "chakraNature": [
+      "Earth",
+      "Lightning"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "Explosion Release",
+    "ninjaRank": "S-Rank Missing-nin",
+    "height": "166",
+    "debut": "Kazekage Rescue Mission"
+  },
+  {
+    "name": "Sasori",
+    "image": "https://static.wikia.nocookie.net/naruto/images/f/f7/Sasori.png/revision/latest/scale-to-width-down/300?cb=20170127174522",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Sunagakure",
+    "affiliation": "Akatsuki",
+    "chakraNature": [
+      "Fire",
+      "Earth"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "S-Rank Missing-nin",
+    "height": "164",
+    "debut": "Kazekage Rescue Mission"
+  },
+  {
+    "name": "Hidan",
+    "image": "https://static.wikia.nocookie.net/naruto/images/e/e3/Hidan.png/revision/latest/scale-to-width-down/300?cb=20210911225839",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Yugakure",
+    "affiliation": "Akatsuki",
+    "chakraNature": [
+      "Unique"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "S-Rank Missing-nin",
+    "height": "177",
+    "debut": "Akatsuki Supression"
+  },
+  {
+    "name": "Kakuzu",
+    "image": "https://static.wikia.nocookie.net/naruto/images/5/57/Kakuzu.png/revision/latest/scale-to-width-down/300?cb=20160115192126",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Takigakure",
+    "affiliation": "Akatsuki",
+    "chakraNature": [
+      "Fire",
+      "Wind",
+      "Lightning",
+      "Water",
+      "Earth"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "S-Rank Missing-nin",
+    "height": "185",
+    "debut": "Akatsuki Supression"
+  },
+  {
+    "name": "Zetsu",
+    "image": "",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "N/A",
+    "affiliation": "Akatsuki",
+    "chakraNature": [
+      "Earth",
+      "Water"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Unknown",
+    "height": "185",
+    "debut": "Search For Tsunade"
+  },
+  {
+    "name": "Black Zetsu",
+    "image": "https://static.wikia.nocookie.net/naruto/images/e/e9/Black_Zetsu.png/revision/latest/scale-to-width-down/300?cb=20220215005248",
+    "gender": "N/A",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "N/A",
+    "affiliation": "Kaguya Otsutsuki",
+    "chakraNature": [
+      "Unique"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Unknown",
+    "height": "N/A",
+    "debut": "Search For Tsunade"
+  },
+  {
+    "name": "Gaara",
+    "image": "https://static.wikia.nocookie.net/naruto/images/2/20/Gaara_in_Part_I.png/revision/latest/scale-to-width-down/300?cb=20221010023824",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Sunagakure",
+    "affiliation": "Sand Village",
+    "chakraNature": [
+      "Earth",
+      "Lightning",
+      "Wind",
+      "Water",
+      "Fire"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Kage",
+    "height": "166",
+    "debut": "Chūnin Exams"
+  },
+  {
+    "name": "Temari",
+    "image": "https://static.wikia.nocookie.net/naruto/images/b/bb/Temari_newshot.png/revision/latest/scale-to-width-down/300?cb=20180131102406",
+    "gender": "Female",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Sunagakure",
+    "affiliation": "Sand Village",
+    "chakraNature": [
+      "Wind"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Jonin",
+    "height": "165",
+    "debut": "Chūnin Exams"
+  },
+  {
+    "name": "Kankuro",
+    "image": "https://static.wikia.nocookie.net/naruto/images/7/7d/Kankur%C5%8D1.png/revision/latest/scale-to-width-down/300?cb=20150125171209",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Sunagakure",
+    "affiliation": "Sand Village",
+    "chakraNature": [
+      "Earth",
+      "Fire"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Jonin",
+    "height": "177",
+    "debut": "Chūnin Exams"
+  },
+  {
+    "name": "Rasa",
+    "image": "https://static.wikia.nocookie.net/naruto/images/2/24/Yondaime_Kazekage.png/revision/latest/scale-to-width-down/300?cb=20210806012316",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Sunagakure",
+    "affiliation": "Sand Village",
+    "chakraNature": [
+      "Wind",
+      "Fire",
+      "Lightning"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "Gold Dust",
+    "ninjaRank": "Kage",
+    "height": "179",
+    "debut": "Kazekage Rescue Mission"
+  },
+  {
+    "name": "Chiyo",
+    "image": "https://static.wikia.nocookie.net/naruto/images/7/73/Chiyo.png/revision/latest/scale-to-width-down/300?cb=20160113171702",
+    "gender": "Female",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Sunagakure",
+    "affiliation": "Sand Village",
+    "chakraNature": [
+      "Earth",
+      "Fire",
+      "Wind"
+    ],
+    "ninjutsuSpecialty": "Healing Jutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Jonin",
+    "height": "150",
+    "debut": "Kazekage Rescue Mission"
+  },
+  {
+    "name": "Zabuza Momochi",
+    "image": "https://static.wikia.nocookie.net/naruto/images/3/37/Zabuza_Momochi.png/revision/latest/scale-to-width-down/300?cb=20240922021336",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Kirigakure",
+    "affiliation": "Cloud Village",
+    "chakraNature": [
+      "Water",
+      "Wind"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "S-Rank Missing-nin",
+    "height": "183",
+    "debut": "Prologue - Land of Waves"
+  },
+  {
+    "name": "Haku",
+    "image": "https://static.wikia.nocookie.net/naruto/images/9/90/Haku.png/revision/latest/scale-to-width-down/300?cb=20240918032028",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Kirigakure",
+    "affiliation": "Cloud Village",
+    "chakraNature": [
+      "Water",
+      "Wind"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "Ice Release",
+    "ninjaRank": "N/A",
+    "height": "155",
+    "debut": "Prologue - Land of Waves"
+  },
+  {
+    "name": "Mei Terumi",
+    "image": "https://static.wikia.nocookie.net/naruto/images/6/6f/Mei.png/revision/latest/scale-to-width-down/300?cb=20170927110950",
+    "gender": "Female",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Kirigakure",
+    "affiliation": "Cloud Village",
+    "chakraNature": [
+      "Fire",
+      "Earth",
+      "Water"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "Lava Release / Boil Release",
+    "ninjaRank": "Kage",
+    "height": "174",
+    "debut": "Five Kage Summit"
+  },
+  {
+    "name": "Yagura",
+    "image": "https://static.wikia.nocookie.net/naruto/images/e/e0/Yagura.png/revision/latest/scale-to-width-down/300?cb=20220206065510",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Kirigakure",
+    "affiliation": "Cloud Village",
+    "chakraNature": [
+      "Water",
+      "Fire",
+      "Earth"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Kage",
+    "height": "155",
+    "debut": "Akatsuki Supression"
+  },
+  {
+    "name": "Killer B",
+    "image": "https://static.wikia.nocookie.net/naruto/images/6/63/Killer_B.png/revision/latest/scale-to-width-down/300?cb=20180425141557",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Kumogakure",
+    "affiliation": "Cloud Village",
+    "chakraNature": [
+      "Lightning",
+      "Wind",
+      "Water",
+      "Earth",
+      "Fire"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Jonin",
+    "height": "192",
+    "debut": "Pain's Assault"
+  },
+  {
+    "name": "A (Fourth Raikage)",
+    "image": "https://static.wikia.nocookie.net/naruto/images/4/4c/Fourth_Raikage_2.png/revision/latest/scale-to-width-down/300?cb=20180901014100",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Kumogakure",
+    "affiliation": "Cloud Village",
+    "chakraNature": [
+      "Lightning",
+      "Earth",
+      "Water"
+    ],
+    "ninjutsuSpecialty": "Taijutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Kage",
+    "height": "198",
+    "debut": "Five Kage Summit"
+  },
+  {
+    "name": "Darui",
+    "image": "https://static.wikia.nocookie.net/naruto/images/4/45/Darui.png/revision/latest/scale-to-width-down/300?cb=20170913102716",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Kumogakure",
+    "affiliation": "Cloud Village",
+    "chakraNature": [
+      "Lightning",
+      "Water",
+      "Wind"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "Storm Release",
+    "ninjaRank": "Jonin",
+    "height": "185",
+    "debut": "Five Kage Summit"
+  },
+  {
+    "name": "C",
+    "image": "https://static.wikia.nocookie.net/naruto/images/7/7a/Shee.png/revision/latest/scale-to-width-down/300?cb=20160124060948",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Kumogakure",
+    "affiliation": "Cloud Village",
+    "chakraNature": [
+      "Lightning"
+    ],
+    "ninjutsuSpecialty": "Genjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Jonin",
+    "height": "175",
+    "debut": "Five Kage Summit"
+  },
+  {
+    "name": "Onoki",
+    "image": "https://static.wikia.nocookie.net/naruto/images/6/67/%C5%8Cnoki.png/revision/latest/scale-to-width-down/300?cb=20181203071043",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Iwagakure",
+    "affiliation": "Stone Village",
+    "chakraNature": [
+      "Earth",
+      "Fire",
+      "Wind"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "Dust Release",
+    "ninjaRank": "Kage",
+    "height": "139",
+    "debut": "Five Kage Summit"
+  },
+  {
+    "name": "Kurotsuchi",
+    "image": "https://static.wikia.nocookie.net/naruto/images/2/29/Kurotsuchi_Part_II.png/revision/latest/scale-to-width-down/300?cb=20170913104850",
+    "gender": "Female",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Iwagakure",
+    "affiliation": "Stone Village",
+    "chakraNature": [
+      "Fire",
+      "Water",
+      "Earth"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "Lava Release",
+    "ninjaRank": "Jonin",
+    "height": "165",
+    "debut": "Five Kage Summit"
+  },
+  {
+    "name": "Mu",
+    "image": "https://static.wikia.nocookie.net/naruto/images/d/d5/M%C5%AB.png/revision/latest/scale-to-width-down/300?cb=20150602045412",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Iwagakure",
+    "affiliation": "Stone Village",
+    "chakraNature": [
+      "Earth",
+      "Wind",
+      "Fire"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "Dust Release",
+    "ninjaRank": "Kage",
+    "height": "175",
+    "debut": "Fourth Sinobi War: Confrontation"
+  },
+  {
+    "name": "Kabuto Yakushi",
+    "image": "https://static.wikia.nocookie.net/naruto/images/c/c9/Kabuto_Part_1.png/revision/latest/scale-to-width-down/300?cb=20170906101523",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Sound Village",
+    "chakraNature": [
+      "Water",
+      "Earth",
+      "Lightning",
+      "Fire",
+      "Wind"
+    ],
+    "ninjutsuSpecialty": "Healing Jutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "S-Rank Missing-nin",
+    "height": "176",
+    "debut": "Chūnin Exams"
+  },
+  {
+    "name": "Hanzo",
+    "image": "https://static.wikia.nocookie.net/naruto/images/7/7a/Hanz%C5%8D.png/revision/latest/scale-to-width-down/300?cb=20220211073236",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Amegakure",
+    "affiliation": "Amegakure",
+    "chakraNature": [
+      "Wind",
+      "Fire",
+      "Water"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "S Rank",
+    "height": "186",
+    "debut": "Tale Of Jiraiya the Gallant"
+  },
+  {
+    "name": "Kaguya Otsutsuki",
+    "image": "https://static.wikia.nocookie.net/naruto/images/6/6c/Kaguya_%C5%8Ctsutsuki.png/revision/latest/scale-to-width-down/300?cb=20180824113908",
+    "gender": "Female",
+    "species": "Alien",
+    "isNinja": "No",
+    "origin": "N/A",
+    "affiliation": "Otsutsuki Clan",
+    "chakraNature": [
+      "Fire",
+      "Wind",
+      "Lightning",
+      "Water",
+      "Earth",
+      "Unique"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "Rinne Sharingan",
+    "ninjaRank": "Unknown",
+    "height": "170",
+    "debut": "Kaguya Ōtsutsuki Strikes"
+  },
+  {
+    "name": "Hagoromo Otsutsuki",
+    "image": "https://static.wikia.nocookie.net/naruto/images/6/62/Hagoromo.png/revision/latest/scale-to-width-down/300?cb=20220323114624",
+    "gender": "Male",
+    "species": "Alien",
+    "isNinja": "No",
+    "origin": "N/A",
+    "affiliation": "Otsutsuki Clan",
+    "chakraNature": [
+      "Fire",
+      "Wind",
+      "Lightning",
+      "Water",
+      "Earth",
+      "Unique"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "Rinnegan / Sharingan",
+    "ninjaRank": "Unknown",
+    "height": "182",
+    "debut": "Battle of Ten Tails"
+  },
+  {
+    "name": "Hamura Otsutsuki",
+    "image": "https://static.wikia.nocookie.net/naruto/images/e/e8/Hamura.png/revision/latest/scale-to-width-down/300?cb=20170924134057",
+    "gender": "Male",
+    "species": "Alien",
+    "isNinja": "No",
+    "origin": "N/A",
+    "affiliation": "Otsutsuki Clan",
+    "chakraNature": [
+      "Fire",
+      "Wind",
+      "Lightning",
+      "Water",
+      "Earth",
+      "Unique"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "Byakugan / Tenseigan",
+    "ninjaRank": "Unknown",
+    "height": "179",
+    "debut": "Battle of Ten Tails"
+  },
+  {
+    "name": "Yugito Nii",
+    "image": "https://static.wikia.nocookie.net/naruto/images/2/2f/Yugito.png/revision/latest/scale-to-width-down/300?cb=20220205121239",
+    "gender": "Female",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Kumogakure",
+    "affiliation": "Cloud Village",
+    "chakraNature": [
+      "Fire",
+      "Lightning"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Jounin",
+    "height": "170",
+    "debut": "Akatsuki Supression"
+  },
+  {
+    "name": "Roshi",
+    "image": "https://static.wikia.nocookie.net/naruto/images/c/c9/Roshi.png/revision/latest/scale-to-width-down/300?cb=20140811230523",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Iwagakure",
+    "affiliation": "Stone Village",
+    "chakraNature": [
+      "Fire",
+      "Earth"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "Lava Release",
+    "ninjaRank": "Jonin",
+    "height": "175",
+    "debut": "Fourth Sinobi War: Confrontation"
+  },
+  {
+    "name": "Han",
+    "image": "https://static.wikia.nocookie.net/naruto/images/3/3c/Han.png/revision/latest/scale-to-width-down/300?cb=20220205121445",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Iwagakure",
+    "affiliation": "Stone Village",
+    "chakraNature": [
+      "Earth",
+      "Wind",
+      "Fire"
+    ],
+    "ninjutsuSpecialty": "Taijutsu",
+    "kekkeiGenkai": "Steam Release",
+    "ninjaRank": "Jonin",
+    "height": "198",
+    "debut": "Fourth Sinobi War: Confrontation"
+  },
+  {
+    "name": "Utakata",
+    "image": "https://static.wikia.nocookie.net/naruto/images/2/27/Utakata.png/revision/latest/scale-to-width-down/300?cb=20160223174142",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Kirigakure",
+    "affiliation": "Cloud Village",
+    "chakraNature": [
+      "Water",
+      "Wind"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "S Rank",
+    "height": "177",
+    "debut": "Akatsuki Supression"
+  },
+  {
+    "name": "Torune Aburame",
+    "image": "https://static.wikia.nocookie.net/naruto/images/3/35/Torune_Anime.png/revision/latest/scale-to-width-down/300?cb=20150209195934",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Earth",
+      "Fire"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "ANBU",
+    "height": "175",
+    "debut": "Tenchi Bridge"
+  },
+  {
+    "name": "Kimimaro",
+    "image": "https://static.wikia.nocookie.net/naruto/images/c/c8/Kimimaro_infobox.png/revision/latest/scale-to-width-down/300?cb=20210929024649",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Otogakure",
+    "affiliation": "Sound Village",
+    "chakraNature": [
+      "Earth",
+      "Fire"
+    ],
+    "ninjutsuSpecialty": "Taijutsu",
+    "kekkeiGenkai": "Shikotsumyaku",
+    "ninjaRank": "S Rank",
+    "height": "166",
+    "debut": "Sasuke Recovery Mission"
+  },
+  {
+    "name": "Jirobo",
+    "image": "https://static.wikia.nocookie.net/naruto/images/4/45/Jirobo_newshot.png/revision/latest/scale-to-width-down/300?cb=20151217182803",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Otogakure",
+    "affiliation": "Sound Village",
+    "chakraNature": [
+      "Earth",
+      "Fire"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Unknown",
+    "height": "181",
+    "debut": "Sasuke Recovery Mission"
+  },
+  {
+    "name": "Kidomaru",
+    "image": "https://static.wikia.nocookie.net/naruto/images/e/e8/Kid%C5%8Dmaru.png/revision/latest/scale-to-width-down/300?cb=20240902034037",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Otogakure",
+    "affiliation": "Sound Village",
+    "chakraNature": [
+      "Earth",
+      "Lightning"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Unknown",
+    "height": "175",
+    "debut": "Sasuke Recovery Mission"
+  },
+  {
+    "name": "Fuu",
+    "image": "https://static.wikia.nocookie.net/naruto/images/f/f6/Fu.png/revision/latest/scale-to-width-down/300?cb=20220205122040",
+    "gender": "Female",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Takigakure",
+    "affiliation": "Takigakure",
+    "chakraNature": [
+      "Wind"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Chunin",
+    "height": "162",
+    "debut": "Fourth Sinobi War: Confrontation"
+  },
+  {
+    "name": "Tayuya",
+    "image": "https://static.wikia.nocookie.net/naruto/images/7/78/Tayuya_Shot.png/revision/latest/scale-to-width-down/300?cb=20151216000321",
+    "gender": "Female",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Otogakure",
+    "affiliation": "Sound Village",
+    "chakraNature": [
+      "Wind",
+      "Unique"
+    ],
+    "ninjutsuSpecialty": "Genjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Unknown",
+    "height": "163",
+    "debut": "Sasuke Recovery Mission"
+  },
+  {
+    "name": "Sakon",
+    "image": "https://static.wikia.nocookie.net/naruto/images/2/2e/Sakon_and_Ukon.png/revision/latest/scale-to-width-down/300?cb=20210726001946",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Otogakure",
+    "affiliation": "Sound Village",
+    "chakraNature": [
+      "Fire",
+      "Water"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Unknown",
+    "height": "167",
+    "debut": "Sasuke Recovery Mission"
+  },
+  {
+    "name": "Ukon",
+    "image": "https://static.wikia.nocookie.net/naruto/images/2/2e/Sakon_and_Ukon.png/revision/latest/scale-to-width-down/300?cb=20210726001946",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Otogakure",
+    "affiliation": "Sound Village",
+    "chakraNature": [
+      "Fire",
+      "Water"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Unknown",
+    "height": "167",
+    "debut": "Sasuke Recovery Mission"
+  },
+  {
+    "name": "Homura Mitokado",
+    "image": "https://static.wikia.nocookie.net/naruto/images/1/1b/Homura_Mitokado.png/revision/latest/scale-to-width-down/300?cb=20160115174641",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Fire"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Jonin",
+    "height": "168",
+    "debut": "Prologue - Land of Waves"
+  },
+  {
+    "name": "Koharu Utatane",
+    "image": "https://static.wikia.nocookie.net/naruto/images/9/9f/Koharu_Utatane.png/revision/latest/scale-to-width-down/300?cb=20150129220149",
+    "gender": "Female",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Fire"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Jonin",
+    "height": "160",
+    "debut": "Prologue - Land of Waves"
+  },
+  {
+    "name": "Ebisu",
+    "image": "https://static.wikia.nocookie.net/naruto/images/7/77/Ebisu.png/revision/latest/scale-to-width-down/300?cb=20160626182251",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Fire",
+      "Lightning"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Jonin",
+    "height": "176",
+    "debut": "Chūnin Exams"
+  },
+  {
+    "name": "Anko Mitarashi",
+    "image": "https://static.wikia.nocookie.net/naruto/images/b/bd/Anko_Part_I.png/revision/latest/scale-to-width-down/300?cb=20170412103610",
+    "gender": "Female",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Water",
+      "Fire"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Special Jonin",
+    "height": "167",
+    "debut": "Chūnin Exams"
+  },
+  {
+    "name": "Genma Shiranui",
+    "image": "https://static.wikia.nocookie.net/naruto/images/9/90/Genma_Shiranui.png/revision/latest/scale-to-width-down/300?cb=20160122112630",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Fire",
+      "Lightning"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Jonin",
+    "height": "181",
+    "debut": "Chūnin Exams"
+  },
+  {
+    "name": "Raido Namiashi",
+    "image": "https://static.wikia.nocookie.net/naruto/images/d/d1/Raid%C5%8D_Namiashi_mugshot.png/revision/latest/scale-to-width-down/300?cb=20160115134651",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Fire",
+      "Water"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Jonin",
+    "height": "184",
+    "debut": "Chūnin Exams"
+  },
+  {
+    "name": "Aoba Yamashiro",
+    "image": "https://static.wikia.nocookie.net/naruto/images/4/42/Aoba.png/revision/latest/scale-to-width-down/300?cb=20160122113145",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Fire",
+      "Lightning"
+    ],
+    "ninjutsuSpecialty": "Genjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Jonin",
+    "height": "183",
+    "debut": "Chūnin Exams"
+  },
+  {
+    "name": "Ibiki Morino",
+    "image": "https://static.wikia.nocookie.net/naruto/images/4/4b/Ibiki_Part_I.png/revision/latest/scale-to-width-down/300?cb=20220218113218",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Fire",
+      "Water"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Jonin",
+    "height": "188",
+    "debut": "Chūnin Exams"
+  },
+  {
+    "name": "Kotetsu Hagane",
+    "image": "https://static.wikia.nocookie.net/naruto/images/8/81/Kotetsu_Hagane.png/revision/latest/scale-to-width-down/300?cb=20160115135316",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Fire"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Chunin",
+    "height": "175",
+    "debut": "Chūnin Exams"
+  },
+  {
+    "name": "Izumo Kamizuki",
+    "image": "https://static.wikia.nocookie.net/naruto/images/5/5d/Izumo_Kamizuki.png/revision/latest/scale-to-width-down/300?cb=20140111135444",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Water",
+      "Fire"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Chunin",
+    "height": "179",
+    "debut": "Chūnin Exams"
+  },
+  {
+    "name": "Kushina Uzumaki",
+    "image": "https://static.wikia.nocookie.net/naruto/images/d/db/Kushina.png/revision/latest/scale-to-width-down/300?cb=20150719165408",
+    "gender": "Female",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Uzushiogakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Wind",
+      "Water",
+      "Fire"
+    ],
+    "ninjutsuSpecialty": "Sealing Jutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Jonin",
+    "height": "165",
+    "debut": "Pain's Assault"
+  },
+  {
+    "name": "Mito Uzumaki",
+    "image": "https://static.wikia.nocookie.net/naruto/images/6/69/Mito.png/revision/latest/scale-to-width-down/300?cb=20220205120451",
+    "gender": "Female",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Uzushiogakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Wind",
+      "Water"
+    ],
+    "ninjutsuSpecialty": "Sealing Jutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Unknown",
+    "height": "N/A",
+    "debut": "Fourth Shinobi World War: Confrontation"
+  },
+  {
+    "name": "Sakumo Hatake",
+    "image": "https://static.wikia.nocookie.net/naruto/images/3/3f/Sakumo_Hatake.png/revision/latest/scale-to-width-down/300?cb=20150504191510",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Lightning",
+      "Fire"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Jounin",
+    "height": "N/A",
+    "debut": "Prologue - Land of Waves"
+  },
+  {
+    "name": "Ao",
+    "image": "https://static.wikia.nocookie.net/naruto/images/7/72/Ao.png/revision/latest/scale-to-width-down/300?cb=20171014133718",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Kirigakure",
+    "affiliation": "Cloud Village",
+    "chakraNature": [
+      "Water",
+      "Fire"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "Byakugan",
+    "ninjaRank": "Jonin",
+    "height": "198",
+    "debut": "Five Kage Summit"
+  },
+  {
+    "name": "Chojuro",
+    "image": "https://static.wikia.nocookie.net/naruto/images/d/d8/Chojuro_2.png/revision/latest/scale-to-width-down/300?cb=20170913102939",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Kirigakure",
+    "affiliation": "Cloud Village",
+    "chakraNature": [
+      "Water"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Kage",
+    "height": "170",
+    "debut": "Five Kage Summit"
+  },
+  {
+    "name": "Karin",
+    "image": "https://static.wikia.nocookie.net/naruto/images/7/72/Karin3.png/revision/latest/scale-to-width-down/300?cb=20170906102126",
+    "gender": "Female",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Otogakure",
+    "affiliation": "Taka",
+    "chakraNature": [
+      "Unique"
+    ],
+    "ninjutsuSpecialty": "Healing Jutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Unknown",
+    "height": "166",
+    "debut": "Itachi Pursuit Mission"
+  },
+  {
+    "name": "Suigetsu Hozuki",
+    "image": "https://static.wikia.nocookie.net/naruto/images/3/3e/Suigetsu_H%C5%8Dzuki.png/revision/latest/scale-to-width-down/300?cb=20171012002428",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Kirigakure",
+    "affiliation": "Taka",
+    "chakraNature": [
+      "Water"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Unknown",
+    "height": "177",
+    "debut": "Itachi Pursuit Mission"
+  },
+  {
+    "name": "Jugo",
+    "image": "https://static.wikia.nocookie.net/naruto/images/4/42/Jugo.png/revision/latest/scale-to-width-down/300?cb=20150616195401",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "N/A",
+    "affiliation": "Taka",
+    "chakraNature": [
+      "Earth",
+      "Fire"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "Sage Transformation",
+    "ninjaRank": "Unknown",
+    "height": "202",
+    "debut": "Itachi Pursuit Mission"
+  },
+  {
+    "name": "Guren",
+    "image": "https://static.wikia.nocookie.net/naruto/images/9/90/Guren.png/revision/latest/scale-to-width-down/300?cb=20160425181202",
+    "gender": "Female",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Otogakure",
+    "affiliation": "Sound Village",
+    "chakraNature": [
+      "Water",
+      "Fire"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "Crystal Release",
+    "ninjaRank": "N/A",
+    "height": "169",
+    "debut": "Akatsuki Supression"
+  },
+  {
+    "name": "Pakura",
+    "image": "https://static.wikia.nocookie.net/naruto/images/7/71/ParukaAnime.png/revision/latest/scale-to-width-down/300?cb=20160227001530",
+    "gender": "Female",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Sunagakure",
+    "affiliation": "Sand Village",
+    "chakraNature": [
+      "Fire",
+      "Wind"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "Scorch Release",
+    "ninjaRank": "Jonin",
+    "height": "169",
+    "debut": "Fourth Sinobi War: Confrontation"
+  },
+  {
+    "name": "Fuguki Suikazan",
+    "image": "https://static.wikia.nocookie.net/naruto/images/a/a7/Fuguki.png/revision/latest/scale-to-width-down/300?cb=20140928060440",
+    "gender": "Male",
+    "species": "Human",
+    "isNinja": "Yes",
+    "origin": "Kirigakure",
+    "affiliation": "Cloud Village",
+    "chakraNature": [
+      "Water",
+      "Fire"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Jonin",
+    "height": "196",
+    "debut": "Fourth Sinobi War: Confrontation"
+  },
+  {
+    "name": "Shukaku",
+    "image": "https://static.wikia.nocookie.net/naruto/images/9/99/Shukaku.png/revision/latest/scale-to-width-down/300?cb=20140916210030",
+    "gender": "Male",
+    "species": "Tailed Beast",
+    "isNinja": "No",
+    "origin": "Sunagakure",
+    "affiliation": "Sand Village",
+    "chakraNature": [
+      "Wind",
+      "Unique"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Unknown",
+    "height": "N/A",
+    "debut": "Chūnin Exams"
+  },
+  {
+    "name": "Matatabi",
+    "image": "https://static.wikia.nocookie.net/naruto/images/a/a7/Matatabi.png/revision/latest/scale-to-width-down/300?cb=20140818015320",
+    "gender": "Female",
+    "species": "Tailed Beast",
+    "isNinja": "No",
+    "origin": "Kumogakure",
+    "affiliation": "Cloud Village",
+    "chakraNature": [
+      "Fire",
+      "Unique"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Unknown",
+    "height": "N/A",
+    "debut": "Akatsuki Supression"
+  },
+  {
+    "name": "Isobu",
+    "image": "https://static.wikia.nocookie.net/naruto/images/d/df/Isobu.png/revision/latest/scale-to-width-down/300?cb=20130913110358",
+    "gender": "Male",
+    "species": "Tailed Beast",
+    "isNinja": "No",
+    "origin": "Kirigakure",
+    "affiliation": "Cloud Village",
+    "chakraNature": [
+      "Water",
+      "Unique"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Unknown",
+    "height": "N/A",
+    "debut": "Akatsuki Supression"
+  },
+  {
+    "name": "Son Goku",
+    "image": "https://static.wikia.nocookie.net/naruto/images/5/5e/Son_Goku.png/revision/latest/scale-to-width-down/300?cb=20140817220446",
+    "gender": "Male",
+    "species": "Tailed Beast",
+    "isNinja": "No",
+    "origin": "Iwagakure",
+    "affiliation": "Stone Village",
+    "chakraNature": [
+      "Fire",
+      "Earth",
+      "Unique"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "Lava Release",
+    "ninjaRank": "Unknown",
+    "height": "N/A",
+    "debut": "Fourth Shinobi World War: Confrontation"
+  },
+  {
+    "name": "Kokuo",
+    "image": "https://static.wikia.nocookie.net/naruto/images/a/a3/Kokuo.png/revision/latest/scale-to-width-down/300?cb=20140817215510",
+    "gender": "Female",
+    "species": "Tailed Beast",
+    "isNinja": "No",
+    "origin": "Iwagakure",
+    "affiliation": "Stone Village",
+    "chakraNature": [
+      "Fire",
+      "Water",
+      "Unique"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "Steam Release",
+    "ninjaRank": "Unknown",
+    "height": "N/A",
+    "debut": "Fourth Shinobi World War: Confrontation"
+  },
+  {
+    "name": "Saiken",
+    "image": "https://static.wikia.nocookie.net/naruto/images/5/58/Saiken.png/revision/latest/scale-to-width-down/300?cb=20140211075946",
+    "gender": "Male",
+    "species": "Tailed Beast",
+    "isNinja": "No",
+    "origin": "Kirigakure",
+    "affiliation": "Cloud Village",
+    "chakraNature": [
+      "Water",
+      "Unique"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Unknown",
+    "height": "N/A",
+    "debut": "Fourth Shinobi World War: Confrontation"
+  },
+  {
+    "name": "Chomei",
+    "image": "https://static.wikia.nocookie.net/naruto/images/7/78/Chomei.png/revision/latest/scale-to-width-down/300?cb=20130913103927",
+    "gender": "Female",
+    "species": "Tailed Beast",
+    "isNinja": "No",
+    "origin": "Takigakure",
+    "affiliation": "Takigakure",
+    "chakraNature": [
+      "Wind",
+      "Unique"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Unknown",
+    "height": "N/A",
+    "debut": "Fourth Shinobi World War: Confrontation"
+  },
+  {
+    "name": "Gyuki",
+    "image": "https://static.wikia.nocookie.net/naruto/images/d/d7/Gyuki.png/revision/latest/scale-to-width-down/300?cb=20140817221249",
+    "gender": "Male",
+    "species": "Tailed Beast",
+    "isNinja": "No",
+    "origin": "Kumogakure",
+    "affiliation": "Cloud Village",
+    "chakraNature": [
+      "Lightning",
+      "Water",
+      "Unique"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Unknown",
+    "height": "N/A",
+    "debut": "Pain's Assault"
+  },
+  {
+    "name": "Kurama",
+    "image": "https://static.wikia.nocookie.net/naruto/images/7/7b/Kurama2.png/revision/latest/scale-to-width-down/300?cb=20140818171718",
+    "gender": "Male",
+    "species": "Tailed Beast",
+    "isNinja": "No",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Fire",
+      "Wind",
+      "Lightning",
+      "Water",
+      "Earth",
+      "Unique"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Unknown",
+    "height": "N/A",
+    "debut": "Prologue - Land of Waves"
+  },
+  {
+    "name": "Gamabunta",
+    "image": "https://static.wikia.nocookie.net/naruto/images/f/f6/Gamabunta2.png/revision/latest/scale-to-width-down/300?cb=20150131220923",
+    "gender": "Male",
+    "species": "Summon",
+    "isNinja": "No",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Water",
+      "Fire"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Unknown",
+    "height": "N/A",
+    "debut": "Chūnin Exams"
+  },
+  {
+    "name": "Gamakichi",
+    "image": "https://static.wikia.nocookie.net/naruto/images/e/e1/Gamakichi.PNG/revision/latest/scale-to-width-down/300?cb=20240928214248",
+    "gender": "Male",
+    "species": "Summon",
+    "isNinja": "No",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Wind"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Unknown",
+    "height": "N/A",
+    "debut": "Chūnin Exams"
+  },
+  {
+    "name": "Katsuyu",
+    "image": "https://static.wikia.nocookie.net/naruto/images/5/59/Katsuyu_Summoned.png/revision/latest/scale-to-width-down/300?cb=20150131221131",
+    "gender": "Female",
+    "species": "Summon",
+    "isNinja": "No",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Water",
+      "Unique"
+    ],
+    "ninjutsuSpecialty": "Healing Jutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Unknown",
+    "height": "N/A",
+    "debut": "Search For Tsunade"
+  },
+  {
+    "name": "Manda",
+    "image": "https://static.wikia.nocookie.net/naruto/images/e/e0/Manda_Summoned.png/revision/latest/scale-to-width-down/300?cb=20150131221107",
+    "gender": "Male",
+    "species": "Summon",
+    "isNinja": "No",
+    "origin": "Otogakure",
+    "affiliation": "Sound Village",
+    "chakraNature": [
+      "Fire",
+      "Earth"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Unknown",
+    "height": "N/A",
+    "debut": "Sasuke Recovery Mission"
+  },
+  {
+    "name": "Aoda",
+    "image": "https://static.wikia.nocookie.net/naruto/images/9/99/Aoda.png/revision/latest/scale-to-width-down/300?cb=20251110103924",
+    "gender": "Male",
+    "species": "Summon",
+    "isNinja": "No",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Earth",
+      "Water"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Unknown",
+    "height": "N/A",
+    "debut": "Fourth Sinobi War: Climax"
+  },
+  {
+    "name": "Enma",
+    "image": "https://static.wikia.nocookie.net/naruto/images/a/aa/Enma.png/revision/latest/scale-to-width-down/300?cb=20160131185005",
+    "gender": "Male",
+    "species": "Summon",
+    "isNinja": "No",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Earth",
+      "Fire"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Unknown",
+    "height": "N/A",
+    "debut": "Konoha Crush"
+  },
+  {
+    "name": "Pakkun",
+    "image": "https://static.wikia.nocookie.net/naruto/images/b/bc/Pakkun.png/revision/latest/scale-to-width-down/300?cb=20240902033238",
+    "gender": "Male",
+    "species": "Summon",
+    "isNinja": "No",
+    "origin": "Konohagakure",
+    "affiliation": "Leaf Village",
+    "chakraNature": [
+      "Unique"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Unknown",
+    "height": "N/A",
+    "debut": "Chūnin Exams"
+  },
+  {
+    "name": "Ibuse",
+    "image": "https://static.wikia.nocookie.net/naruto/images/0/0d/Hanzo_and_The_Salamander.PNG/revision/latest/scale-to-width-down/300?cb=20210924004433",
+    "gender": "Male",
+    "species": "Summon",
+    "isNinja": "No",
+    "origin": "Amegakure",
+    "affiliation": "Amegakure",
+    "chakraNature": [
+      "Wind",
+      "Water"
+    ],
+    "ninjutsuSpecialty": "Ninjutsu",
+    "kekkeiGenkai": "None",
+    "ninjaRank": "Unknown",
+    "height": "N/A",
+    "debut": "Tale Of Jiraiya the Gallant"
+  }
+]
