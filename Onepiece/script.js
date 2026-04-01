@@ -5,6 +5,7 @@ let guesses = 0;
 const MAX_GUESSES = 10;
 let filteredNames = [];
 
+// --- ONE PIECE ARC ORDER ---
 const arcOrder = [
     "Romance Dawn", "Orange Town", "Syrup Village", "Baratie", "Arlong Park", "Loguetown",
     "Reverse Mountain", "Whiskey Peak", "Little Garden", "Drum Island", "Alabasta",
@@ -13,14 +14,20 @@ const arcOrder = [
     "Punk Hazard", "Dressrosa", "Zou", "Whole Cake Island", "Reverie", "Wano Country", "Egghead"
 ];
 
+// --- AUDIO ---
 const winSound = new Audio('luffy.mp3');
 const loseSound = new Audio('doffy.mp3');
 
+// --- INIT ---
 window.onload = async () => {
-    const res = await fetch('characters.json');
-    characters = await res.json();
-    initUI();
-    setMode('daily');
+    try {
+        const res = await fetch('characters.json');
+        characters = await res.json();
+        initUI();
+        setMode('daily');
+    } catch (e) {
+        console.error("JSON Error:", e);
+    }
 };
 
 function initUI() {
@@ -49,13 +56,19 @@ function setMode(newMode) {
 function resetGame() {
     guesses = 0;
     updateCounter();
+    // Headers for 11 columns
     document.getElementById('game-board').innerHTML = `
         <div class="w-full grid grid-cols-11 gap-2 mb-1 px-2 text-center text-white/40 text-[9px] font-black uppercase tracking-[0.1em]">
             <div>Char</div><div>Gender</div><div>Species</div><div>Role</div><div>Group</div>
             <div>Fruit</div><div>Haki</div><div>Height</div><div>Bounty</div><div>Origin</div><div>Debut</div>
         </div>`;
-    document.getElementById('end-overlay').classList.add('hidden');
+    
+    const overlay = document.getElementById('end-overlay');
+    overlay.classList.add('hidden');
+    overlay.classList.remove('flex', 'opacity-100');
+    
     document.getElementById('search-input').disabled = false;
+    document.getElementById('search-input').value = '';
     filteredNames = characters.map(c => c.name);
     
     if (mode === 'daily') {
@@ -93,14 +106,21 @@ function executeGuess() {
     const input = document.getElementById('search-input');
     const char = characters.find(c => c.name === input.value);
     if (!char || !filteredNames.includes(char.name)) return;
+
     input.value = '';
     document.getElementById('dropdown').classList.add('hidden');
     filteredNames = filteredNames.filter(n => n !== char.name);
     guesses++;
     updateCounter();
     buildRow(char);
-    if (char.name === targetChar.name) setTimeout(() => triggerEnd(true), 1200);
-    else if (guesses >= MAX_GUESSES) setTimeout(() => triggerEnd(false), 1200);
+
+    if (char.name === targetChar.name) {
+        input.disabled = true;
+        setTimeout(() => triggerEnd(true), 1200);
+    } else if (guesses >= MAX_GUESSES) {
+        input.disabled = true;
+        setTimeout(() => triggerEnd(false), 1200);
+    }
 }
 
 function buildRow(g) {
@@ -127,11 +147,11 @@ function buildRow(g) {
     row.querySelectorAll('.flip-in').forEach((t, i) => t.style.animationDelay = `${i * 0.05}s`);
 }
 
-// --- LOGIC ---
+// --- LOGIC HELPERS ---
 function compHaki(g, t) {
     const matchesAll = g.length === t.length && g.every(h => t.includes(h));
     if (matchesAll) return 'match-exact';
-    if (g.some(h => t.includes(h))) return 'match-partial'; // Blue Glow
+    if (g.some(h => t.includes(h))) return 'match-partial'; 
     return 'match-none';
 }
 
@@ -161,12 +181,18 @@ function getTileHTML(val, type) {
     return `<div class="tile ${type.split(' ')[0]} flip-in">${val}${arrow}</div>`;
 }
 
+// --- END GAME MODAL ---
 function triggerEnd(win) {
     const sound = win ? winSound : loseSound;
-    sound.play();
-    document.getElementById('end-title').innerText = win ? "KING OF THE PIRATES!" : "WALK THE PLANK!";
-    document.getElementById('end-title').style.color = win ? "#fde047" : "#ef4444";
-    document.getElementById('end-subtitle').innerText = `You identified ${targetChar.name}.`;
+    sound.currentTime = 0;
+    sound.play().catch(() => {});
+
+    const title = document.getElementById('end-title');
+    const subtitle = document.getElementById('end-subtitle');
+
+    title.innerText = win ? "KING OF THE PIRATES!" : "WALK THE PLANK!";
+    title.style.color = win ? "#fde047" : "#ef4444";
+    subtitle.innerText = win ? `You identified ${targetChar.name} in ${guesses} guesses.` : `The character was ${targetChar.name}.`;
     
     let modalImg = document.getElementById('end-modal-img');
     if (!modalImg) {
@@ -186,13 +212,17 @@ function triggerEnd(win) {
     ];
     profile.innerHTML = stats.map(s => `<div class="modal-stat-box"><span class="modal-stat-label">${s.l}</span><span class="modal-stat-value">${s.v}</span></div>`).join('');
 
-    document.getElementById('end-overlay').classList.remove('hidden');
-    document.getElementById('end-overlay').classList.add('flex');
+    const overlay = document.getElementById('end-overlay');
+    overlay.classList.remove('hidden');
+    overlay.classList.add('flex');
+    // This timeout triggers the opacity transition so the card actually appears
+    setTimeout(() => overlay.classList.add('opacity-100'), 50);
 }
 
 function setupArcModal() {
     const overlay = document.getElementById('arc-overlay');
     const listEl = document.getElementById('arc-list-content');
+    listEl.innerHTML = '';
     arcOrder.forEach((arc, i) => {
         const item = document.createElement('div');
         item.className = 'arc-item';
