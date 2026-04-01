@@ -1,4 +1,4 @@
-/* --- FUNDAMENTALS --- */
+/* --- 1. CORE CONFIG --- */
 :root {
     --correct: #fde047; /* Yellow */
     --wrong: #ef4444;   /* Red */
@@ -6,7 +6,8 @@
     --glass-border: rgba(255, 255, 255, 0.12);
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; outline: none !important; } /* Removed all outlines/shadows */
+
 body {
     background-color: #020617;
     font-family: 'Manrope', sans-serif;
@@ -17,16 +18,16 @@ body {
 
 .bebas { font-family: 'Bebas Neue', cursive; }
 
-/* --- BACKGROUND --- */
+/* --- 2. BACKGROUND --- */
 #bg-layer {
     position: fixed; inset: 0; z-index: 0;
-    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('mha.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('mha.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
 
-/* --- GLASS UI --- */
+/* --- 3. GLASS UI & NAVIGATION --- */
 .glass-ui {
     background: var(--glass-fill);
     backdrop-filter: blur(30px) saturate(150%);
@@ -34,35 +35,28 @@ body {
     border: 1px solid var(--glass-border);
 }
 
-/* --- NAVIGATION ROW --- */
-.nav-btn-glass { display: flex; align-items: center; color: white; font-weight: 800; font-size: 11px; text-transform: uppercase; transition: 0.3s; }
+.nav-btn-glass { display: flex; align-items: center; color: white; font-weight: 800; font-size: 11px; text-transform: uppercase; text-decoration: none; }
 .nav-btn-glass:hover { color: var(--correct); }
 
-.mode-btn { color: rgba(255,255,255,0.3); transition: 0.3s; }
+.mode-btn { color: rgba(255,255,255,0.3); transition: 0.3s; background: none; border: none; cursor: pointer; }
 .mode-btn.active { color: white; }
 .daily-active #mode-pill { transform: translateX(0); }
 .unlim-active #mode-pill { transform: translateX(calc(100% + 4px)); }
 
-/* --- SEARCH BAR & PULSE --- */
-#search-input:focus {
-    animation: input-pulse 1s ease-out;
+/* --- 4. SEARCH & DROPDOWN (Fixed Shifting) --- */
+#search-input {
+    box-shadow: none !important; /* Removes the white shadow you were seeing */
+    border: none !important;
 }
 
-@keyframes input-pulse {
-    0% { box-shadow: 0 0 0px rgba(255, 255, 255, 0); }
-    50% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.4); }
-    100% { box-shadow: 0 0 0px rgba(255, 255, 255, 0); }
-}
-
-/* --- DROPDOWN (Fixed Shifting) --- */
 #dropdown {
-    position: absolute; /* Floating over content */
+    position: absolute;
     top: calc(100% + 8px);
     left: 0;
     width: 100%;
     z-index: 999;
-    background: rgba(10, 15, 25, 0.95);
-    backdrop-filter: blur(40px);
+    background: rgba(10, 15, 25, 0.98);
+    backdrop-filter: blur(50px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 16px;
     max-height: 350px;
@@ -79,20 +73,26 @@ body {
 }
 .dropdown-item:hover { background: rgba(255,255,255,0.1); }
 
-/* --- NEON SWIRL TILES --- */
+/* --- 5. GAME BOARD & NEON TILES --- */
 .tile {
     position: relative;
-    background: rgba(0, 0, 0, 0.6);
-    border-radius: 18px;
-    display: flex; align-items: center; justify-content: center;
-    min-height: 100px; padding: 10px;
-    text-align: center; font-weight: 800; font-size: 12px;
-    text-transform: uppercase; z-index: 1;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+    padding: 8px;
+    text-align: center;
+    font-weight: 800;
+    font-size: 11px; /* Slightly smaller for 11 columns */
+    text-transform: uppercase;
+    z-index: 1;
 }
 
 .tile::before {
     content: ''; position: absolute; inset: -2px;
-    border-radius: 20px; z-index: -1;
+    border-radius: 18px; z-index: -1;
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask-composite: exclude;
 }
@@ -107,54 +107,60 @@ body {
     background: conic-gradient(from var(--angle), transparent 60%, var(--wrong));
     animation: rotateSwirl 2s linear infinite;
 }
-.tile.match-none { color: rgba(255, 255, 255, 0.4); }
+.tile.match-none { color: rgba(255, 255, 255, 0.3); }
 
 @property --angle { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
 @keyframes rotateSwirl { to { --angle: 360deg; } }
 
-/* --- WIN/LOSS MODAL FIXES --- */
+/* --- 6. WIN/LOSS CARD (The Fix) --- */
 .modal-box {
     background: rgba(5, 5, 10, 0.98) !important;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     color: white !important;
-    box-shadow: 0 0 50px rgba(0,0,0,0.9);
+    padding: 30px !important;
 }
 
 #modal-profile {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 10px;
-    margin-top: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(85px, 1fr)); /* Better wrapping */
+    gap: 8px;
+    margin-top: 20px;
+    width: 100%;
 }
 
 .modal-stat-box {
-    background: rgba(255, 255, 255, 0.05) !important; /* Internal tint */
+    background: rgba(255, 255, 255, 0.08) !important; /* Tint for visibility */
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    border-radius: 12px;
-    padding: 10px 5px;
+    border-radius: 10px;
+    padding: 8px 4px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 60px;
+    justify-content: center;
+    min-height: 55px;
 }
 
 .modal-stat-label {
     color: rgba(255, 255, 255, 0.4) !important;
-    font-size: 8px !important;
+    font-size: 7px !important;
     font-weight: 900;
     text-transform: uppercase;
-    margin-bottom: 4px;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
 }
 
 .modal-stat-value {
     color: #ffffff !important;
-    font-size: 11px !important;
+    font-size: 10px !important;
     font-weight: 700;
     text-align: center;
+    line-height: 1.1;
     word-break: break-word;
 }
 
-/* --- UTILS --- */
+/* --- 7. UTILS --- */
 .hide-scroll::-webkit-scrollbar { display: none; }
-#dropdown::-webkit-scrollbar { width: 5px; }
-#dropdown::-webkit-scrollbar-thumb { background: var(--correct); border-radius: 10px; }
+#dropdown::-webkit-scrollbar { width: 4px; }
+#dropdown::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 10px; }
+.flip-in { opacity: 0; transform: translateY(10px); animation: reveal 0.4s ease forwards; }
+@keyframes reveal { to { opacity: 1; transform: translateY(0); } }
