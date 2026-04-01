@@ -1,1 +1,122 @@
+/* --- GLOBAL --- */
+:root {
+    --mha-cyan: #22d3ee;
+    --mha-red: #f43f5e;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.12);
+}
 
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    background-color: #030712;
+    font-family: 'Manrope', sans-serif;
+    color: white;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.bebas { font-family: 'Bebas Neue', cursive; }
+
+/* --- BACKGROUND --- */
+#bg-layer {
+    position: fixed; inset: 0; z-index: 0;
+    background: radial-gradient(circle at 50% -20%, #1e1b4b 0%, #030712 100%);
+}
+
+.neon-glow {
+    position: fixed; top: 0; left: 50%; transform: translateX(-50%);
+    width: 100%; height: 300px;
+    background: radial-gradient(circle at 50% 0%, rgba(34, 211, 238, 0.15), transparent 70%);
+    z-index: 1; pointer-events: none;
+}
+
+/* --- GLASSMORPHISM --- */
+.glass-ui {
+    background: var(--glass-bg);
+    backdrop-filter: blur(30px) saturate(150%);
+    -webkit-backdrop-filter: blur(30px) saturate(150%);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+}
+
+.glass-dropdown {
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(40px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* --- UI ELEMENTS --- */
+.home-btn {
+    display: flex; align-items: center; gap: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px 20px; border-radius: 100px;
+    font-weight: 800; font-size: 11px; text-transform: uppercase;
+    color: var(--mha-cyan); border: 1px solid var(--mha-cyan);
+    transition: all 0.3s ease;
+}
+.home-btn:hover { background: var(--mha-cyan); color: black; box-shadow: 0 0 20px var(--mha-cyan); }
+
+.guess-pill {
+    display: flex; align-items: center; gap: 12px;
+    background: rgba(0,0,0,0.3); padding: 8px 20px;
+    border-radius: 100px; border: 1px solid rgba(255,255,255,0.1);
+}
+.guess-pill .label { font-size: 10px; font-weight: 800; color: white/40; text-transform: uppercase; }
+.guess-pill .count { font-size: 18px; font-weight: 900; color: var(--mha-cyan); font-family: 'Bebas Neue'; }
+
+/* --- NEON SWIRL TILES --- */
+.tile {
+    position: relative;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    min-height: 100px; padding: 12px;
+    text-align: center; font-weight: 800; font-size: 13px;
+    text-transform: uppercase; z-index: 1;
+}
+
+/* Correct Swirl (Cyan) */
+.tile.match-exact::before {
+    content: ''; position: absolute; inset: -2px;
+    background: conic-gradient(from 0deg, transparent 70%, var(--mha-cyan));
+    border-radius: 18px; z-index: -1;
+    animation: swirl 2s linear infinite;
+}
+
+/* Incorrect Swirl (Red) */
+.tile.match-none::before {
+    content: ''; position: absolute; inset: -2px;
+    background: conic-gradient(from 0deg, transparent 70%, var(--mha-red));
+    border-radius: 18px; z-index: -1;
+    animation: swirl 2s linear infinite;
+}
+
+@keyframes swirl { to { transform: rotate(360deg); } }
+
+/* Masking to keep the swirl on the edge */
+.tile::after {
+    content: ''; position: absolute; inset: 1px;
+    background: rgba(15, 23, 42, 0.9);
+    border-radius: 15px; z-index: -1;
+}
+
+.tile.match-exact { color: var(--mha-cyan); text-shadow: 0 0 10px rgba(34, 211, 238, 0.5); }
+.tile.match-none { color: #94a3b8; }
+
+/* --- SCROLLBARS --- */
+.hide-scroll::-webkit-scrollbar { display: none; }
+#dropdown::-webkit-scrollbar { width: 6px; }
+#dropdown::-webkit-scrollbar-thumb { background: var(--mha-cyan); border-radius: 10px; }
+
+/* --- ANIMATIONS --- */
+.flip-in {
+    opacity: 0; transform: translateY(10px);
+    animation: slideUp 0.4s ease forwards;
+}
+@keyframes slideUp { to { opacity: 1; transform: translateY(0); } }
+
+/* --- MODE PILL --- */
+.daily-active #mode-pill { transform: translateX(0); }
+.unlim-active #mode-pill { transform: translateX(calc(100% + 4px)); }
+.mode-text.active { color: white; }
+.mode-text { color: rgba(255,255,255,0.3); transition: 0.3s; }
