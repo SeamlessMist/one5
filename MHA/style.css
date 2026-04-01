@@ -19,10 +19,15 @@ body {
 
 /* --- BACKGROUND DESIGN --- */
 #bg-layer {
-    position: fixed; inset: 0; z-index: 0;
-    background: radial-gradient(circle at 50% -10%, #0f172a 0%, #020617 100%);
+    position: fixed; 
+    inset: 0; 
+    z-index: 0;
+    /* Use your image here */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('mha.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
-
 .neon-glow-top {
     position: fixed; top: 0; left: 50%; transform: translateX(-50%);
     width: 80%; height: 400px;
