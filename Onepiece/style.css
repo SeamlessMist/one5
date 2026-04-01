@@ -1,12 +1,16 @@
-/* --- 1. RESET & UI BASICS --- */
+/* --- 1. RESET & SHADOW FIX --- */
 * { box-sizing: border-box; margin: 0; padding: 0; outline: none !important; box-shadow: none !important; }
 
 :root {
     --correct: #fde047; /* Yellow */
     --wrong: #ef4444;   /* Red */
-    --partial: #3b82f6; /* Blue for Partial Haki */
+    --partial: #3b82f6; /* Blue for Haki Partial */
     --glass: rgba(255, 255, 255, 0.05);
 }
+
+/* Hide scrollbars */
+html, body { scrollbar-width: none; -ms-overflow-style: none; }
+html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
 
 body {
     background-color: #020617;
@@ -16,15 +20,15 @@ body {
     overflow-x: hidden;
 }
 
+.bebas { font-family: 'Bebas Neue', cursive; }
+
 #bg-layer {
     position: fixed; inset: 0; z-index: 0;
     background: #020617 linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.6)), url('onepiece_bg.jpg');
     background-size: cover; background-position: center;
 }
 
-.bebas { font-family: 'Bebas Neue', cursive; }
-
-/* --- 2. NAVIGATION & DROPDOWN --- */
+/* --- 2. NAVIGATION & SEARCH --- */
 .glass-ui {
     background: var(--glass);
     backdrop-filter: blur(30px);
@@ -32,38 +36,38 @@ body {
     border: 1px solid rgba(255,255,255,0.1);
 }
 
+.nav-btn-glass, #btn-arclist {
+    display: flex; align-items: center; color: rgba(255,255,255,0.6);
+    font-size: 12px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.1em; padding: 8px 14px; border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05);
+    transition: all 0.2s ease; gap: 6px; cursor: pointer; text-decoration: none;
+}
+.nav-btn-glass:hover, #btn-arclist:hover { background: rgba(255,255,255,0.12); color: white; }
+
+#search-input { background: transparent !important; border: none !important; color: white !important; }
+
+/* DROPDOWN */
 #dropdown {
     position: absolute; top: calc(100% + 8px); left: 0; width: 100%; z-index: 999;
     background: rgba(8, 8, 14, 0.98); backdrop-filter: blur(50px);
     border: 1px solid rgba(255,255,255,0.12); border-radius: 18px;
     max-height: 400px; overflow-y: auto; scrollbar-width: none;
 }
+.dropdown-item { display: flex; align-items: center; gap: 15px; padding: 12px 18px; border-bottom: 1px solid rgba(255,255,255,0.05); cursor: pointer; }
+.dropdown-item img { width: 70px; height: 70px; border-radius: 10px; object-fit: cover; object-position: top; border: 1px solid rgba(255,255,255,0.1); }
+.dropdown-item span { font-weight: 800; text-transform: uppercase; font-size: 13px; color: white; }
 
-.dropdown-item {
-    display: flex; align-items: center; gap: 15px; padding: 12px 18px;
-    border-bottom: 1px solid rgba(255,255,255,0.05); cursor: pointer;
-}
-
-.dropdown-item img {
-    width: 70px; height: 70px; border-radius: 10px;
-    object-fit: cover; object-position: top; border: 1px solid rgba(255,255,255,0.1);
-}
-
-.dropdown-item span { font-weight: 800; text-transform: uppercase; font-size: 13px; }
-
-/* --- 3. GAME TILES (11 Column Grid) --- */
+/* --- 3. NEON TILES --- */
 .tile {
-    position: relative; background: rgba(0, 0, 0, 0.75); border-radius: 12px;
+    position: relative; background: rgba(0, 0, 0, 0.7); border-radius: 12px;
     display: flex; align-items: center; justify-content: center;
-    min-height: 120px; padding: 6px; text-align: center;
-    font-weight: 800; font-size: 9px; text-transform: uppercase;
-    z-index: 1; line-height: 1.2; word-break: break-word;
+    min-height: 120px; padding: 6px; text-align: center; font-weight: 800; font-size: 9px;
+    text-transform: uppercase; z-index: 1; line-height: 1.3; word-break: break-word;
 }
-
 .tile.img-tile { padding: 0; overflow: hidden; height: 120px; }
-.tile.img-tile img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.tile.img-tile img { width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 11px; display: block; }
 
-/* Glowing Borders */
 .tile::before {
     content: ''; position: absolute; inset: -2px; border-radius: 14px; z-index: -1;
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -74,30 +78,41 @@ body {
 .tile.match-exact { color: var(--correct); }
 
 .tile.match-none::before { background: conic-gradient(from var(--angle), transparent 60%, var(--wrong)); animation: rotate 2s linear infinite; }
-.tile.match-none { color: rgba(255,255,255,0.3); }
+.tile.match-none { color: rgba(255,255,255,0.35); }
 
-/* NEW: Partial Match Blue Glow */
+/* NEW: Partial Blue Match for One Piece */
 .tile.match-partial::before { background: conic-gradient(from var(--angle), transparent 60%, var(--partial)); animation: rotate 2s linear infinite; }
 .tile.match-partial { color: var(--partial); }
 
 @property --angle { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
 @keyframes rotate { to { --angle: 360deg; } }
 
-@keyframes flipIn {
-    0% { transform: rotateX(-90deg); opacity: 0; }
-    100% { transform: rotateX(0deg); opacity: 1; }
-}
-.flip-in { animation: flipIn 0.5s ease forwards; }
+@keyframes flipIn { 0% { transform: rotateX(-90deg); opacity: 0; } 100% { transform: rotateX(0deg); opacity: 1; } }
+.flip-in { animation: flipIn 0.4s ease both; }
 
 .hide-scroll { scrollbar-width: none; }
 .hide-scroll::-webkit-scrollbar { display: none; }
 
-/* --- 4. MODALS --- */
-#end-overlay { background: rgba(0,0,0,0.9); backdrop-filter: blur(20px); }
-.modal-box { background: #0a0a12; border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 40px; max-width: 500px; width: 90%; }
-#modal-profile { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 20px 0; }
-.modal-stat-box { background: rgba(255,255,255,0.05); border-radius: 10px; padding: 10px; display: flex; flex-direction: column; align-items: center; }
-.modal-stat-label { font-size: 8px; color: rgba(255,255,255,0.4); text-transform: uppercase; font-weight: 900; }
-.modal-stat-value { font-size: 10px; font-weight: 700; text-align: center; }
+/* --- 4. END CARD --- */
+#end-overlay { background: rgba(0,0,0,0.88); backdrop-filter: blur(24px); }
+.modal-box { background: rgba(10, 10, 18, 0.98); border: 1px solid rgba(255, 255, 255, 0.12); color: white; max-width: 520px; width: 92%; padding: 36px 32px; border-radius: 28px; }
+#end-modal-img { display: block; width: 120px; height: 120px; border-radius: 16px; object-fit: cover; object-position: top; margin: 0 auto 20px; border: 3px solid rgba(255,255,255,0.2); }
+#modal-profile { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 0 0 24px 0; }
+.modal-stat-box { background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 10px 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; min-height: 56px; }
+.modal-stat-label { color: rgba(255, 255, 255, 0.4); font-size: 8px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.12em; }
+.modal-stat-value { color: #ffffff; font-size: 10px; font-weight: 700; text-align: center; }
+#btn-replay { width: 100%; padding: 14px; border-radius: 14px; background: #fde047; color: #000; font-weight: 900; font-size: 13px; text-transform: uppercase; border: none; cursor: pointer; }
 
-#btn-replay { width: 100%; padding: 15px; border-radius: 12px; background: #fde047; color: black; font-weight: 900; border: none; cursor: pointer; text-transform: uppercase; }
+/* --- 5. ARC MODAL --- */
+#arc-overlay { position: fixed; inset: 0; z-index: 200; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,0.85); backdrop-filter: blur(20px); opacity: 0; transition: opacity 0.3s; }
+#arc-overlay.open { display: flex; opacity: 1; }
+.arc-modal { background: rgba(10, 10, 18, 0.98); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 32px 28px; max-width: 420px; width: 92%; max-height: 80vh; overflow-y: auto; scrollbar-width: none; }
+.arc-list { display: flex; flex-direction: column; gap: 6px; }
+.arc-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 10px; background: rgba(255,255,255,0.04); }
+.arc-num { font-family: 'Bebas Neue', cursive; font-size: 1.1rem; color: rgba(255,255,255,0.25); min-width: 24px; text-align: right; }
+.arc-name { font-size: 11px; font-weight: 800; text-transform: uppercase; color: rgba(255,255,255,0.8); }
+
+/* Switcher */
+.mode-switcher { position: relative; }
+.mode-btn { color: rgba(255,255,255,0.4); font-size: 10px; font-weight: 900; text-transform: uppercase; cursor: pointer; flex: 1; height: 100%; border: none; background: none; transition: color 0.2s; }
+.mode-btn.active { color: white; }
