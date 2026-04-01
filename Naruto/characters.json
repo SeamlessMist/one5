@@ -1358,24 +1358,6 @@
     "debut": "Sasuke & Sai"
   },
   {
-    "name": "Fuu Yamanaka",
-    "image": "https://static.wikia.nocookie.net/naruto/images/f/f6/Fu.png/revision/latest/scale-to-width-down/300?cb=20220205122040",
-    "gender": "Male",
-    "species": "Human",
-    "isNinja": "Yes",
-    "origin": "Konohagakure",
-    "affiliation": "Konohagakure",
-    "chakraNature": [
-      "🔥",
-      "☯️"
-    ],
-    "ninjutsuSpecialty": "Ninjutsu",
-    "kekkeiGenkai": "None",
-    "ninjaRank": "ANBU",
-    "height": "174 cm",
-    "debut": "Sasuke & Sai"
-  },
-  {
     "name": "Kimimaro",
     "image": "https://static.wikia.nocookie.net/naruto/images/c/c8/Kimimaro_infobox.png/revision/latest/scale-to-width-down/300?cb=20210929024649",
     "gender": "Male",
