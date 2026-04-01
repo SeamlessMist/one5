@@ -18,7 +18,7 @@ body { background-color: #020617; font-family: 'Manrope', sans-serif; color: whi
 #bg-layer {
     position: fixed; inset: 0; z-index: 0;
     /* UPDATE THIS to match your Naruto background image name */
-    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.5)), url('naruto_bg.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.5)), url('naruto.jpg');
     background-size: cover;
     background-position: center;
 }
