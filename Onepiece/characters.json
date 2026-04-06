@@ -3597,23 +3597,6 @@
     "firstArc": "Romance Dawn"
   },
   {
-    "name": "Piiman",
-    "image": "https://static.wikia.nocookie.net/onepiece/images/8/8e/Piiman_Anime_Post_Timeskip_Infobox.png/revision/latest/scale-to-width-down/302?cb=20251026160542",
-    "gender": "Male",
-    "species": "Human",
-    "calling": "Pirate",
-    "affiliation": "Usopp Pirates",
-    "devilFruitType": "None",
-    "haki": [
-      "None"
-    ],
-    "heightFt": "3'11\"",
-    "heightCm": 120,
-    "bounty": "None",
-    "seaOfBirth": "East Blue",
-    "firstArc": "Syrup Village"
-  },
-  {
     "name": "Kaya",
     "image": "https://static.wikia.nocookie.net/onepiece/images/f/f5/Kaya_Manga_Post_Timeskip_Infobox.png/revision/latest/scale-to-width-down/140?cb=20180617114926",
     "gender": "Female",
@@ -3631,40 +3614,6 @@
     "firstArc": "Syrup Village"
   },
   {
-    "name": "Boodle",
-    "image": "https://static.wikia.nocookie.net/onepiece/images/a/a9/Boodle_Anime_Post_Timeskip_Infobox.png/revision/latest/scale-to-width-down/469?cb=20251102161418",
-    "gender": "Male",
-    "species": "Human",
-    "calling": "Mayor",
-    "affiliation": "Unknown",
-    "devilFruitType": "None",
-    "haki": [
-      "None"
-    ],
-    "heightFt": "5'8\"",
-    "heightCm": 172,
-    "bounty": "None",
-    "seaOfBirth": "East Blue",
-    "firstArc": "Orange Town"
-  },
-  {
-    "name": "Sham",
-    "image": "https://static.wikia.nocookie.net/onepiece/images/7/77/Sham_Anime_Infobox.png/revision/latest?cb=20250715224950",
-    "gender": "Female",
-    "species": "Human",
-    "calling": "Pirate",
-    "affiliation": "Black Cat Pirates",
-    "devilFruitType": "None",
-    "haki": [
-      "None"
-    ],
-    "heightFt": "6'7\"",
-    "heightCm": 201,
-    "bounty": "7,000,000",
-    "seaOfBirth": "East Blue",
-    "firstArc": "Syrup Village"
-  },
-  {
     "name": "Merry",
     "image": "https://static.wikia.nocookie.net/onepiece/images/b/ba/Merry_Anime_Post_Timeskip_Infobox.png/revision/latest/scale-to-width-down/147?cb=20251026160814",
     "gender": "Male",
@@ -3677,23 +3626,6 @@
     ],
     "heightFt": "Unknown",
     "heightCm": 0,
-    "bounty": "None",
-    "seaOfBirth": "East Blue",
-    "firstArc": "Syrup Village"
-  },
-  {
-    "name": "Tamanegi",
-    "image": "https://static.wikia.nocookie.net/onepiece/images/c/c3/Tamanegi_Anime_Post_Timeskip_Infobox.png/revision/latest/scale-to-width-down/349?cb=20251026160607",
-    "gender": "Male",
-    "species": "Human",
-    "calling": "Pirate",
-    "affiliation": "Usopp Pirates",
-    "devilFruitType": "None",
-    "haki": [
-      "None"
-    ],
-    "heightFt": "4'1\"",
-    "heightCm": 124,
     "bounty": "None",
     "seaOfBirth": "East Blue",
     "firstArc": "Syrup Village"
