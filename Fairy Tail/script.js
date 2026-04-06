@@ -20,7 +20,17 @@ const loseSound = new Audio('fairytail_lose.mp3');
 window.onload = async () => {
     try {
         const res = await fetch('characters.json');
-        characters = await res.json();
+        let rawData = await res.json();
+        
+        // AUTO-FIX: This forces any spaces or '%20' in the image links to become underscores (_)
+        // It prevents the 404 errors caused by Fandom/Wikia's strict URL rules.
+        characters = rawData.map(char => {
+            if (char.image) {
+                char.image = char.image.replace(/%20/g, '_').replace(/ /g, '_');
+            }
+            return char;
+        });
+
         initUI();
         setMode('daily');
     } catch (e) {
@@ -100,7 +110,7 @@ function setupSearch() {
                 const c = characters.find(char => char.name === name);
                 const div = document.createElement('div');
                 div.className = 'dropdown-item';
-                div.innerHTML = `<img src="${c.image || 'placeholder.png'}"><span>${c.name}</span>`;
+                div.innerHTML = `<img src="${c.image || 'placeholder.png'}" onerror="this.src='placeholder.png'"><span>${c.name}</span>`;
                 div.onmousedown = () => { input.value = name; executeGuess(); };
                 dropdown.appendChild(div);
             });
@@ -136,7 +146,7 @@ function buildRow(g) {
     const isT = g.name === targetChar.name;
 
     row.innerHTML = [
-        `<div class="tile img-tile ${isT ? 'match-exact' : 'match-none'} flip-in"><img src="${g.image || 'placeholder.png'}"></div>`,
+        `<div class="tile img-tile ${isT ? 'match-exact' : 'match-none'} flip-in"><img src="${g.image || 'placeholder.png'}" onerror="this.src='placeholder.png'"></div>`,
         getTileHTML(g.gender, g.gender === targetChar.gender ? 'match-exact' : 'match-none'),
         getTileHTML(g.age, compNum(g.age, targetChar.age)),
         getTileHTML(g.species, g.species === targetChar.species ? 'match-exact' : 'match-none'),
@@ -217,6 +227,8 @@ function triggerEnd(win) {
         document.getElementById('end-title').insertAdjacentElement('beforebegin', modalImg);
     }
     modalImg.src = targetChar.image || 'placeholder.png';
+    // Fallback to placeholder if wikia completely blocks the image in the modal
+    modalImg.onerror = function() { this.src = 'placeholder.png'; };
 
     const profile = document.getElementById('modal-profile');
     const stats = [
