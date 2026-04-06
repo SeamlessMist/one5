@@ -14,9 +14,11 @@
             --op-glow: rgba(249, 115, 22, 0.5);
             --naruto-color: #f59e0b;
             --naruto-glow: rgba(245, 158, 11, 0.5);
-            /* NEW: MHA Colors */
             --mha-color: #22d3ee; 
             --mha-glow: rgba(34, 211, 238, 0.5);
+            /* NEW: Fairy Tail Colors */
+            --ft-color: #ec4899; 
+            --ft-glow: rgba(236, 72, 153, 0.5);
         }
 
         body {
@@ -103,6 +105,7 @@
             gap: 20px;
             flex-wrap: wrap;
             justify-content: center;
+            max-width: 1300px; /* Allows 4 cards in a row on big screens */
         }
 
         .card {
@@ -124,7 +127,8 @@
         /* Staggered Entrance Animations */
         .card:nth-child(1) { animation-delay: 0.15s; }
         .card:nth-child(2) { animation-delay: 0.28s; }
-        .card:nth-child(3) { animation-delay: 0.41s; } /* NEW: Delay for 3rd card */
+        .card:nth-child(3) { animation-delay: 0.41s; } 
+        .card:nth-child(4) { animation-delay: 0.54s; } /* NEW: Delay for 4th card */
 
         .card:hover {
             transform: translateY(-8px) scale(1.02);
@@ -137,10 +141,14 @@
             border-color: var(--naruto-color);
             box-shadow: 0 20px 60px var(--naruto-glow), 0 0 0 1px var(--naruto-color);
         }
-        /* NEW: MHA Hover */
         .card.mha:hover {
             border-color: var(--mha-color);
             box-shadow: 0 20px 60px var(--mha-glow), 0 0 0 1px var(--mha-color);
+        }
+        /* NEW: Fairy Tail Hover */
+        .card.ft:hover {
+            border-color: var(--ft-color);
+            box-shadow: 0 20px 60px var(--ft-glow), 0 0 0 1px var(--ft-color);
         }
 
         .card-bar {
@@ -149,8 +157,9 @@
         }
         .card.op     .card-bar { background: linear-gradient(90deg, #f97316, #fb923c); }
         .card.naruto .card-bar { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
-        /* NEW: MHA Bar */
         .card.mha    .card-bar { background: linear-gradient(90deg, #22d3ee, #818cf8); }
+        /* NEW: Fairy Tail Bar */
+        .card.ft     .card-bar { background: linear-gradient(90deg, #ec4899, #f43f5e); }
 
         .card-body {
             padding: 28px 28px 32px;
@@ -183,8 +192,9 @@
         }
         .card.op     .card-title { color: #fb923c; }
         .card.naruto .card-title { color: #fbbf24; }
-        /* NEW: MHA Title Color */
         .card.mha    .card-title { color: #22d3ee; }
+        /* NEW: Fairy Tail Title Color */
+        .card.ft     .card-title { color: #f472b6; }
 
         .card-desc {
             font-size: 12px;
@@ -209,8 +219,9 @@
         .card:hover .card-btn { opacity: 0.9; }
         .card.op     .card-btn { background: var(--op-color);     color: #fff; }
         .card.naruto .card-btn { background: var(--naruto-color); color: #000; }
-        /* NEW: MHA Button */
         .card.mha    .card-btn { background: var(--mha-color);    color: #000; }
+        /* NEW: Fairy Tail Button */
+        .card.ft     .card-btn { background: var(--ft-color);     color: #fff; }
 
         .card-btn-arrow {
             font-size: 18px;
@@ -224,7 +235,7 @@
             font-weight: 600;
             color: rgba(255,255,255,0.18);
             letter-spacing: 0.1em;
-            animation: fadeUp 0.7s 0.45s ease both;
+            animation: fadeUp 0.7s 0.58s ease both; /* Adjusted timing to wait for 4th card */
         }
 
         @keyframes fadeDown {
@@ -298,6 +309,23 @@
                         <h2 class="card-title">MHA</h2>
                     </div>
                     <p class="card-desc">Guess the Hero or Villain from UA Academy. Daily & unlimited modes.</p>
+                    <div class="card-btn">
+                        <span>Play Now</span>
+                        <span class="card-btn-arrow">→</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- NEW: Fairy Tail Card -->
+            <a href="./FairyTail/" class="card ft">
+                <div class="card-bar"></div>
+                <div class="card-body">
+                    <div class="card-icon">🧚</div>
+                    <div>
+                        <p class="card-label">Universe 04</p>
+                        <h2 class="card-title">FAIRY TAIL</h2>
+                    </div>
+                    <p class="card-desc">Guess the Mage from Earth Land. Daily & unlimited modes.</p>
                     <div class="card-btn">
                         <span>Play Now</span>
                         <span class="card-btn-arrow">→</span>
