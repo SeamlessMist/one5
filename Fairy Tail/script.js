@@ -5,7 +5,7 @@ let guesses = 0;
 const MAX_GUESSES = 10;
 let filteredNames = [];
 
-// --- FAIRY TAIL ARC ORDER (Update this list if your JSON uses different Arc Names!) ---
+// --- FAIRY TAIL ARC ORDER ---
 const arcOrder = [
     "Macao Arc", "Daybreak Arc", "Lullaby Arc", "Galuna Island Arc", "Phantom Lord Arc", "Loke Arc",
     "Tower of Heaven Arc", "Battle of Fairy Tail Arc", "Oración Seis Arc", "Daphne Arc", 
@@ -22,11 +22,17 @@ window.onload = async () => {
         const res = await fetch('characters.json');
         let rawData = await res.json();
         
-        // AUTO-FIX: This forces any spaces or '%20' in the image links to become underscores (_)
-        // It prevents the 404 errors caused by Fandom/Wikia's strict URL rules.
+        // --- THE ULTIMATE WIKIA IMAGE FIX ---
+        // This scans every image URL and removes the "/revision/latest/..." junk.
+        // It forces the browser to load the original high-quality image that never 404s.
         characters = rawData.map(char => {
-            if (char.image) {
-                char.image = char.image.replace(/%20/g, '_').replace(/ /g, '_');
+            if (char.image && char.image.includes('wikia.nocookie.net')) {
+                // Find where the file extension ends (.png, .jpg, etc)
+                const match = char.image.match(/\.(png|jpg|jpeg|gif)/i);
+                if (match) {
+                    // Chops off everything after the extension
+                    char.image = char.image.substring(0, match.index + match[0].length);
+                }
             }
             return char;
         });
@@ -166,15 +172,14 @@ function buildRow(g) {
 
 // --- LOGIC HELPERS ---
 
-// Universal Array Matcher (For Magic, Affiliation, Guild Rank)
 function compArray(g, t) {
     if (!g || !t) return 'match-none';
-    if (!Array.isArray(g)) g = [g];
-    if (!Array.isArray(t)) t = [t];
+    const gArr = Array.isArray(g) ? g : [g];
+    const tArr = Array.isArray(t) ? t : [t];
     
-    const matchesAll = g.length === t.length && g.every(item => t.includes(item));
+    const matchesAll = gArr.length === tArr.length && gArr.every(item => tArr.includes(item));
     if (matchesAll) return 'match-exact';
-    if (g.some(item => t.includes(item))) return 'match-partial'; 
+    if (gArr.some(item => tArr.includes(item))) return 'match-partial'; 
     return 'match-none';
 }
 
@@ -183,13 +188,12 @@ function formatArray(arr) {
     return Array.isArray(arr) ? arr.join('/') : arr; 
 }
 
-// Universal Number Comparer (For Age and Height, handles "Unknown")
 function compNum(g, t) {
     if (g === t) return 'match-exact';
     let gNum = parseFloat(g.toString().replace(/[^0-9.]/g, ''));
     let tNum = parseFloat(t.toString().replace(/[^0-9.]/g, ''));
     
-    if (isNaN(gNum) || isNaN(tNum)) return 'match-none'; // Fallback if "Unknown"
+    if (isNaN(gNum) || isNaN(tNum)) return 'match-none';
     return gNum < tNum ? 'match-none ▲' : 'match-none ▼';
 }
 
@@ -202,8 +206,7 @@ function updateCounter() { document.getElementById('guess-counter').innerText = 
 
 function getTileHTML(val, type) {
     const arrow = type.includes('▲') ? ' ▲' : type.includes('▼') ? ' ▼' : '';
-    // Making text slightly smaller if the string is very long (like multiple magic types)
-    const textSize = val.length > 15 ? 'text-[8px]' : '';
+    const textSize = val.toString().length > 15 ? 'text-[8px]' : '';
     return `<div class="tile ${type.split(' ')[0]} ${textSize} flip-in">${val || 'N/A'}${arrow}</div>`;
 }
 
@@ -227,7 +230,6 @@ function triggerEnd(win) {
         document.getElementById('end-title').insertAdjacentElement('beforebegin', modalImg);
     }
     modalImg.src = targetChar.image || 'placeholder.png';
-    // Fallback to placeholder if wikia completely blocks the image in the modal
     modalImg.onerror = function() { this.src = 'placeholder.png'; };
 
     const profile = document.getElementById('modal-profile');
@@ -238,7 +240,6 @@ function triggerEnd(win) {
         {l:'Magic Class', v:formatArray(targetChar.magicClass)}, {l:'Magic Attr.', v:formatArray(targetChar.magicAttribute)},
         {l:'Height', v:targetChar.height}, {l:'Debut', v:targetChar.debut}
     ];
-    // Changed grid from 3 to 2 for better readability of arrays
     profile.style.gridTemplateColumns = "repeat(2, 1fr)";
     profile.innerHTML = stats.map(s => `<div class="modal-stat-box"><span class="modal-stat-label">${s.l}</span><span class="modal-stat-value">${s.v || 'N/A'}</span></div>`).join('');
 
