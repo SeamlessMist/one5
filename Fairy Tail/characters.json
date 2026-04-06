@@ -1,0 +1,4379 @@
+[
+  {
+    "name": "Natsu Dragneel",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/c/ca/Natsu_X792.png/revision/latest/scale-to-width-down/268?cb=20181111122101",
+    "gender": "Male",
+    "age": "400+",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Fairy Tail"
+    ],
+    "guildRank": [
+      "S-Class Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental",
+      "Slayer"
+    ],
+    "magicName": [
+      "Fire Dragon Slayer Magic"
+    ],
+    "height": "171",
+    "debut": "Macao Arc"
+  },
+  {
+    "name": "Lucy Heartfilia",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/9/9c/Lucy_X792_image.png/revision/latest/scale-to-width-down/268?cb=20190106110751",
+    "gender": "Female",
+    "age": "19",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Fairy Tail"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Holder"
+    ],
+    "magicAttribute": [
+      "Summoning"
+    ],
+    "magicName": [
+      "Celestial Spirit Magic"
+    ],
+    "height": "160",
+    "debut": "Macao Arc"
+  },
+  {
+    "name": "Gray Fullbuster",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/c/c6/Gray_in_Alvarez_Empire_arc.png/revision/latest/scale-to-width-down/268?cb=20190519091455",
+    "gender": "Male",
+    "age": "20",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Fairy Tail"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental",
+      "Slayer"
+    ],
+    "magicName": [
+      "Ice-Make",
+      "Ice Devil Slayer Magic"
+    ],
+    "height": "177",
+    "debut": "Macao Arc"
+  },
+  {
+    "name": "Erza Scarlet",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/c/c3/Erza%27s_picture.png/revision/latest/scale-to-width-down/268?cb=20190929085837",
+    "gender": "Female",
+    "age": "21",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Fairy Tail"
+    ],
+    "guildRank": [
+      "S-Class Mage",
+      "Ten Wizard Saints"
+    ],
+    "magicClass": [
+      "Holder",
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Transformation",
+      "Elemental"
+    ],
+    "magicName": [
+      "Requip: The Knight"
+    ],
+    "height": "169",
+    "debut": "Macao Arc"
+  },
+  {
+    "name": "Happy",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/4/41/Happy_proposal.png/revision/latest/scale-to-width-down/268?cb=20190204191609",
+    "gender": "Male",
+    "age": "6",
+    "species": "Exceed",
+    "origin": "Edolas",
+    "affiliation": [
+      "Fairy Tail"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Aera"
+    ],
+    "height": "Unknown",
+    "debut": "Macao Arc"
+  },
+  {
+    "name": "Wendy Marvell",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/5/5c/Wendy%27s_image.png/revision/latest/scale-to-width-down/268?cb=20150703183824",
+    "gender": "Female",
+    "age": "400+",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Fairy Tail",
+      "Cait Shelter"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental",
+      "Slayer"
+    ],
+    "magicName": [
+      "Sky Dragon Slayer Magic"
+    ],
+    "height": "144",
+    "debut": "Oración Seis Arc"
+  },
+  {
+    "name": "Carla",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/a/a2/Carla.png/revision/latest/scale-to-width-down/267?cb=20150703183120",
+    "gender": "Female",
+    "age": "6",
+    "species": "Exceed",
+    "origin": "Edolas",
+    "affiliation": [
+      "Fairy Tail",
+      "Cait Shelter"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Transformation",
+      "Unique"
+    ],
+    "magicName": [
+      "Aera",
+      "Precognition"
+    ],
+    "height": "Unknown",
+    "debut": "Oración Seis Arc"
+  },
+  {
+    "name": "Gajeel Redfox",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/6/65/Gajeel_proposal.png/revision/latest/scale-to-width-down/268?cb=20190203190655",
+    "gender": "Male",
+    "age": "400+",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Fairy Tail",
+      "Phantom Lord"
+    ],
+    "guildRank": [
+      "S-Class Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental",
+      "Slayer"
+    ],
+    "magicName": [
+      "Iron Dragon Slayer Magic"
+    ],
+    "height": "181",
+    "debut": "Phantom Lord Arc"
+  },
+  {
+    "name": "Juvia Lockser",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/f/ff/Juvia_Lockser_profile.png/revision/latest/scale-to-width-down/268?cb=20140426102005",
+    "gender": "Female",
+    "age": "19",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Fairy Tail",
+      "Phantom Lord"
+    ],
+    "guildRank": [
+      "S-Class Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental"
+    ],
+    "magicName": [
+      "Water Magic"
+    ],
+    "height": "163",
+    "debut": "Phantom Lord Arc"
+  },
+  {
+    "name": "Laxus Dreyar",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/d/db/Laxus_profile_image.png/revision/latest/scale-to-width-down/268?cb=20140614035154",
+    "gender": "Male",
+    "age": "25",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Fairy Tail"
+    ],
+    "guildRank": [
+      "S-Class Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental",
+      "Slayer"
+    ],
+    "magicName": [
+      "Lightning Magic",
+      "Lightning Dragon Slayer Magic"
+    ],
+    "height": "193",
+    "debut": "Phantom Lord Arc"
+  },
+  {
+    "name": "Mirajane Strauss",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/d/d1/Mirajane_proposal.png/revision/latest/scale-to-width-down/268?cb=20130105145713",
+    "gender": "Female",
+    "age": "21",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Fairy Tail"
+    ],
+    "guildRank": [
+      "S-Class Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Transformation"
+    ],
+    "magicName": [
+      "Satan Soul"
+    ],
+    "height": "160",
+    "debut": "Macao Arc"
+  },
+  {
+    "name": "Elfman Strauss",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/a/ad/Elfman_X792.png/revision/latest/scale-to-width-down/268?cb=20181117233645",
+    "gender": "Male",
+    "age": "19",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Fairy Tail"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Transformation"
+    ],
+    "magicName": [
+      "Beast Soul"
+    ],
+    "height": "210",
+    "debut": "Macao Arc"
+  },
+  {
+    "name": "Lisanna Strauss",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/a/a8/Lisanna_X792.png/revision/latest/scale-to-width-down/268?cb=20181117233644",
+    "gender": "Female",
+    "age": "17",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Fairy Tail"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Transformation"
+    ],
+    "magicName": [
+      "Animal Soul"
+    ],
+    "height": "158",
+    "debut": "Macao Arc"
+  },
+  {
+    "name": "Makarov Dreyar",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/7/7a/Makarov_X792_Anime.png/revision/latest/scale-to-width-down/268?cb=20181209133055",
+    "gender": "Male",
+    "age": "100+",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Fairy Tail"
+    ],
+    "guildRank": [
+      "Guild Master",
+      "Ten Wizard Saints"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Giant",
+      "Fairy Law",
+      "Fairy Glitter"
+    ],
+    "height": "112",
+    "debut": "Macao Arc"
+  },
+  {
+    "name": "Gildarts Clive",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/d/d6/Gildarts_in_X792.png/revision/latest/scale-to-width-down/268?cb=20190421091145",
+    "gender": "Male",
+    "age": "45",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Fairy Tail"
+    ],
+    "guildRank": [
+      "Guild Ace",
+      "S-Class Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Absorption"
+    ],
+    "magicName": [
+      "Crush"
+    ],
+    "height": "188",
+    "debut": "Tenrou Island Arc"
+  },
+  {
+    "name": "Cana Alberona",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/8/86/Cana_X792.png/revision/latest/scale-to-width-down/268?cb=20190423071457",
+    "gender": "Female",
+    "age": "23",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Fairy Tail"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Holder"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Card Magic",
+      "Fairy Glitter"
+    ],
+    "height": "174",
+    "debut": "Macao Arc"
+  },
+  {
+    "name": "Levy McGarden",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/3/34/Levy_X792.png/revision/latest/scale-to-width-down/268?cb=20181125092928",
+    "gender": "Female",
+    "age": "19",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Fairy Tail"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Solid Script"
+    ],
+    "height": "151",
+    "debut": "Daybreak Arc"
+  },
+  {
+    "name": "Freed Justine",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/9/9e/Freed_Mugshot.png/revision/latest/scale-to-width-down/268?cb=20130421015755",
+    "gender": "Male",
+    "age": "26",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Fairy Tail"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Dark Écriture",
+      "Rune Magic"
+    ],
+    "height": "180",
+    "debut": "Battle of Fairy Tail Arc"
+  },
+  {
+    "name": "Bickslow",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/8/81/Bickslow_laughing.jpg/revision/latest/scale-to-width-down/268?cb=20120727130632",
+    "gender": "Male",
+    "age": "22",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Fairy Tail"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Figure Eyes",
+      "Seith Magic"
+    ],
+    "height": "195",
+    "debut": "Battle of Fairy Tail Arc"
+  },
+  {
+    "name": "Evergreen",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/1/1c/Evergreen_new.jpg/revision/latest/scale-to-width-down/268?cb=20120725115039",
+    "gender": "Female",
+    "age": "24",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Fairy Tail"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Transformation",
+      "Unique"
+    ],
+    "magicName": [
+      "Stone Eyes",
+      "Fairy Dust"
+    ],
+    "height": "175",
+    "debut": "Battle of Fairy Tail Arc"
+  },
+  {
+    "name": "Mystogan",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/6/62/Mystogan_X793_Profile.png/revision/latest/scale-to-width-down/268?cb=20241117133236",
+    "gender": "Male",
+    "age": "26",
+    "species": "Human",
+    "origin": "Edolas",
+    "affiliation": [
+      "Fairy Tail"
+    ],
+    "guildRank": [
+      "S-Class Mage"
+    ],
+    "magicClass": [
+      "Holder"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Sleep Magic",
+      "Skyscraper"
+    ],
+    "height": "181",
+    "debut": "Lullaby Arc"
+  },
+  {
+    "name": "Loke",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/b/b1/Loke_Profile_Proposal.png/revision/latest/scale-to-width-down/268?cb=20150708134234",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Celestial Spirit",
+    "origin": "Celestial Spirit World",
+    "affiliation": [
+      "Fairy Tail"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental"
+    ],
+    "magicName": [
+      "Regulus"
+    ],
+    "height": "178",
+    "debut": "Loke Arc"
+  },
+  {
+    "name": "Panther Lily",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/2/27/Lily_prop_2.png/revision/latest/scale-to-width-down/268?cb=20120604082343",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Exceed",
+    "origin": "Edolas",
+    "affiliation": [
+      "Fairy Tail"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Aera",
+      "Sword Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Edolas Arc"
+  },
+  {
+    "name": "Jellal Fernandes",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/3/34/Jellal%27s_image.png/revision/latest/scale-to-width-down/268?cb=20190316233016",
+    "gender": "Male",
+    "age": "26",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Crime Sorcière",
+      "Magic Council"
+    ],
+    "guildRank": [
+      "Ten Wizard Saints"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental",
+      "Spatial / Time"
+    ],
+    "magicName": [
+      "Heavenly Body Magic"
+    ],
+    "height": "181",
+    "debut": "Tower of Heaven Arc"
+  },
+  {
+    "name": "Zeref Dragneel",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/f/fa/Zeref_discovers_Irene.png/revision/latest/scale-to-width-down/268?cb=20190616090207",
+    "gender": "Male",
+    "age": "400+",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Alvarez Empire"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Ankhseram Black Magic",
+      "Living Magic"
+    ],
+    "height": "171",
+    "debut": "Galuna Island Arc"
+  },
+  {
+    "name": "Mavis Vermillion",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/e/e6/Mavis%27_image.png/revision/latest/scale-to-width-down/268?cb=20160116082303",
+    "gender": "Female",
+    "age": "100+",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Fairy Tail"
+    ],
+    "guildRank": [
+      "Guild Master"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Fairy Law",
+      "Fairy Glitter",
+      "Fairy Sphere",
+      "Law"
+    ],
+    "height": "143",
+    "debut": "Fairy Tail Zero"
+  },
+  {
+    "name": "Acnologia",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/f/fc/Acnologia%27s_image.png/revision/latest/scale-to-width-down/268?cb=20190407085759",
+    "gender": "Male",
+    "age": "400+",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Independent"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Slayer",
+      "Spatial / Time"
+    ],
+    "magicName": [
+      "Dragon Slayer Magic",
+      "Dragon's Roar"
+    ],
+    "height": "Unknown",
+    "debut": "Tenrou Island Arc"
+  },
+  {
+    "name": "Igneel",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/6/68/Igneel%27s_profile_image.png/revision/latest/scale-to-width-down/268?cb=20151219030715",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Dragon",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Independent"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental",
+      "Slayer"
+    ],
+    "magicName": [
+      "Fire Dragon Slayer Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Tenrou Island Arc"
+  },
+  {
+    "name": "Ultear Milkovich",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/3/30/Old_Ultear.png/revision/latest/scale-to-width-down/267?cb=20140920032042",
+    "gender": "Female",
+    "age": "28",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Crime Sorcière",
+      "Grimoire Heart",
+      "Magic Council"
+    ],
+    "guildRank": [
+      "Magic Council Member"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Spatial / Time"
+    ],
+    "magicName": [
+      "Arc of Time",
+      "Ice-Make"
+    ],
+    "height": "Unknown",
+    "debut": "Oración Seis Arc"
+  },
+  {
+    "name": "Meredy",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/d/da/Meredy_X792_image.png/revision/latest/scale-to-width-down/268?cb=20190922084819",
+    "gender": "Female",
+    "age": "19",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Crime Sorcière",
+      "Grimoire Heart"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Sensory Link",
+      "Maguilty Sense"
+    ],
+    "height": "Unknown",
+    "debut": "Tenrou Island Arc"
+  },
+  {
+    "name": "Sting Eucliffe",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/2/22/Sting_in_Alvarez_Empire_arc.png/revision/latest/scale-to-width-down/268?cb=20190602105821",
+    "gender": "Male",
+    "age": "400+",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Sabertooth"
+    ],
+    "guildRank": [
+      "Guild Master",
+      "S-Class Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental",
+      "Slayer"
+    ],
+    "magicName": [
+      "White Dragon Slayer Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Grand Magic Games Arc"
+  },
+  {
+    "name": "Rogue Cheney",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/9/94/Rogue%27s_profile_image.png/revision/latest/scale-to-width-down/268?cb=20180313155120",
+    "gender": "Male",
+    "age": "400+",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Sabertooth"
+    ],
+    "guildRank": [
+      "S-Class Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental",
+      "Slayer"
+    ],
+    "magicName": [
+      "Shadow Dragon Slayer Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Grand Magic Games Arc"
+  },
+  {
+    "name": "Minerva Orland",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/2/25/Minerva_X792.png/revision/latest/scale-to-width-down/268?cb=20181029105618",
+    "gender": "Female",
+    "age": "21",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Sabertooth",
+      "Succubus Eye"
+    ],
+    "guildRank": [
+      "S-Class Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Spatial / Time"
+    ],
+    "magicName": [
+      "Territory"
+    ],
+    "height": "Unknown",
+    "debut": "Grand Magic Games Arc"
+  },
+  {
+    "name": "Kagura Mikazuchi",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/7/7d/Kagura%27s_profile_image.png/revision/latest/scale-to-width-down/268?cb=20150828152933",
+    "gender": "Female",
+    "age": "21",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Mermaid Heel"
+    ],
+    "guildRank": [
+      "S-Class Mage"
+    ],
+    "magicClass": [
+      "Holder",
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental",
+      "Unique"
+    ],
+    "magicName": [
+      "Gravity Change",
+      "Sword Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Grand Magic Games Arc"
+  },
+  {
+    "name": "Jura Neekis",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/2/26/Jura_Avatar.png/revision/latest/scale-to-width-down/268?cb=20121208100641",
+    "gender": "Male",
+    "age": "44",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Lamia Scale"
+    ],
+    "guildRank": [
+      "Ten Wizard Saints"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental"
+    ],
+    "magicName": [
+      "Iron Rock Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Oración Seis Arc"
+  },
+  {
+    "name": "Lyon Vastia",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/b/bf/Lyon_Prop_1.png/revision/latest/scale-to-width-down/268?cb=20130216192050",
+    "gender": "Male",
+    "age": "22",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Lamia Scale"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental"
+    ],
+    "magicName": [
+      "Ice-Make"
+    ],
+    "height": "Unknown",
+    "debut": "Galuna Island Arc"
+  },
+  {
+    "name": "Sherria Blendy",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/5/59/Sherria_proposal.png/revision/latest/scale-to-width-down/268?cb=20140802122153",
+    "gender": "Female",
+    "age": "17",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Lamia Scale"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental",
+      "Slayer"
+    ],
+    "magicName": [
+      "Sky God Slayer Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Grand Magic Games Arc"
+  },
+  {
+    "name": "Ichiya Vandalay Kotobuki",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/d/d3/Ichiya_image.png/revision/latest/scale-to-width-down/268?cb=20150328093517",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Blue Pegasus"
+    ],
+    "guildRank": [
+      "S-Class Mage"
+    ],
+    "magicClass": [
+      "Holder"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Perfume Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Oración Seis Arc"
+  },
+  {
+    "name": "Eve Tearm",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/3/37/Eve_PT_Profile_Prop_2.png/revision/latest/scale-to-width-down/268?cb=20121117221731",
+    "gender": "Male",
+    "age": "17",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Blue Pegasus"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental"
+    ],
+    "magicName": [
+      "Snow Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Oración Seis Arc"
+  },
+  {
+    "name": "Hibiki Lates",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/3/3f/Hibiki_in_Tartaros_arc.png/revision/latest/scale-to-width-down/268?cb=20161202230457",
+    "gender": "Male",
+    "age": "19",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Blue Pegasus"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Archive"
+    ],
+    "height": "Unknown",
+    "debut": "Oración Seis Arc"
+  },
+  {
+    "name": "Ren Akatsuki",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/5/5d/Ren_Prop.png/revision/latest/scale-to-width-down/268?cb=20121208062242",
+    "gender": "Male",
+    "age": "19",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Blue Pegasus"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental"
+    ],
+    "magicName": [
+      "Air Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Oración Seis Arc"
+  },
+  {
+    "name": "Hades",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/9/9b/Hades_Prop.JPG/revision/latest/scale-to-width-down/268?cb=20111109201753",
+    "gender": "Male",
+    "age": "100+",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Grimoire Heart",
+      "Fairy Tail"
+    ],
+    "guildRank": [
+      "Guild Master"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Amaterasu",
+      "Devil's Eye",
+      "Chain Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Tenrou Island Arc"
+  },
+  {
+    "name": "Zancrow",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/2/2b/Zancrow_in_anime.JPG/revision/latest/scale-to-width-down/268?cb=20111015060007",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Grimoire Heart"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental",
+      "Slayer"
+    ],
+    "magicName": [
+      "Fire God Slayer Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Tenrou Island Arc"
+  },
+  {
+    "name": "Mard Geer Tartaros",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/7/7a/Mard_Geer_image.png/revision/latest/scale-to-width-down/268?cb=20151027213747",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Etherious (Demon)",
+    "origin": "Zeref's Books",
+    "affiliation": [
+      "Tartaros"
+    ],
+    "guildRank": [
+      "Guild Master"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Thorn Curse",
+      "Memento Mori"
+    ],
+    "height": "Unknown",
+    "debut": "Tartaros Arc"
+  },
+  {
+    "name": "Franmalth",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/8/88/Franmalth%27s_profile_image.png/revision/latest/scale-to-width-down/268?cb=20150523095440",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Etherious (Demon)",
+    "origin": "Zeref's Books",
+    "affiliation": [
+      "Tartaros"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Absorption"
+    ],
+    "magicName": [
+      "Hades Curse",
+      "Soul Absorb"
+    ],
+    "height": "Unknown",
+    "debut": "Tartaros Arc"
+  },
+  {
+    "name": "Kyouka",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/3/35/Ky%C3%B4ka%27s_new_image.png/revision/latest/scale-to-width-down/268?cb=20151024085251",
+    "gender": "Female",
+    "age": "Unknown",
+    "species": "Etherious (Demon)",
+    "origin": "Zeref's Books",
+    "affiliation": [
+      "Tartaros"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Curse of Torture",
+      "Sensation Curse"
+    ],
+    "height": "Unknown",
+    "debut": "Tartaros Arc"
+  },
+  {
+    "name": "Silver Fullbuster",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/6/6e/Silver_image.png/revision/latest/scale-to-width-down/268?cb=20160429084937",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Etherious (Demon)",
+    "origin": "Zeref's Books",
+    "affiliation": [
+      "Tartaros"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental",
+      "Slayer"
+    ],
+    "magicName": [
+      "Ice Devil Slayer Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Tartaros Arc"
+  },
+  {
+    "name": "Seilah",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/5/5d/Seilah_proposal.png/revision/latest/scale-to-width-down/268?cb=20150704082245",
+    "gender": "Female",
+    "age": "Unknown",
+    "species": "Etherious (Demon)",
+    "origin": "Zeref's Books",
+    "affiliation": [
+      "Tartaros"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Macro Curse"
+    ],
+    "height": "Unknown",
+    "debut": "Tartaros Arc"
+  },
+  {
+    "name": "Torafuzar",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/1/16/Torafuzar%27s_profile_image.png/revision/latest/scale-to-width-down/268?cb=20150523101335",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Etherious (Demon)",
+    "origin": "Zeref's Books",
+    "affiliation": [
+      "Tartaros"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental"
+    ],
+    "magicName": [
+      "Dark Water Curse"
+    ],
+    "height": "Unknown",
+    "debut": "Tartaros Arc"
+  },
+  {
+    "name": "August",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/3/34/August%27s_profile_image.png/revision/latest/scale-to-width-down/268?cb=20181209133055",
+    "gender": "Male",
+    "age": "100+",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Alvarez Empire"
+    ],
+    "guildRank": [
+      "Spriggan 12"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Absorption"
+    ],
+    "magicName": [
+      "Copy Magic",
+      "Reflector"
+    ],
+    "height": "Unknown",
+    "debut": "Alvarez Empire Arc"
+  },
+  {
+    "name": "Brandish μ",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/1/13/Brandish_Anime.png/revision/latest/scale-to-width-down/268?cb=20181209133059",
+    "gender": "Female",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Alvarez Empire"
+    ],
+    "guildRank": [
+      "Spriggan 12"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Command T"
+    ],
+    "height": "Unknown",
+    "debut": "Alvarez Empire Arc"
+  },
+  {
+    "name": "Dimaria Yesta",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/0/07/Dimaria%27s_image.png/revision/latest/scale-to-width-down/268?cb=20190106111252",
+    "gender": "Female",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Alvarez Empire"
+    ],
+    "guildRank": [
+      "Spriggan 12"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Spatial / Time"
+    ],
+    "magicName": [
+      "Age Seal"
+    ],
+    "height": "Unknown",
+    "debut": "Alvarez Empire Arc"
+  },
+  {
+    "name": "Irene Belserion",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/e/ef/Irene_image.png/revision/latest/scale-to-width-down/268?cb=20190414163021",
+    "gender": "Female",
+    "age": "400+",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Alvarez Empire"
+    ],
+    "guildRank": [
+      "Spriggan 12"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental",
+      "Slayer",
+      "Unique"
+    ],
+    "magicName": [
+      "Enchantment",
+      "Dragon Slayer Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Alvarez Empire Arc"
+  },
+  {
+    "name": "Ajeel Raml",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/e/ed/Ajeel%27s_image.png/revision/latest/scale-to-width-down/268?cb=20190106110051",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Alvarez Empire"
+    ],
+    "guildRank": [
+      "Spriggan 12"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental"
+    ],
+    "magicName": [
+      "Sand Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Alvarez Empire Arc"
+  },
+  {
+    "name": "Invel Yura",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/1/12/Invel%27s_image.png/revision/latest/scale-to-width-down/268?cb=20190209234341",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Alvarez Empire"
+    ],
+    "guildRank": [
+      "Spriggan 12"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental"
+    ],
+    "magicName": [
+      "Ice Magic",
+      "Winter General"
+    ],
+    "height": "Unknown",
+    "debut": "Alvarez Empire Arc"
+  },
+  {
+    "name": "Neinhart",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/b/b9/Neinhart%27s_image.png/revision/latest/scale-to-width-down/268?cb=20190316233016",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Alvarez Empire"
+    ],
+    "guildRank": [
+      "Spriggan 12"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Historia of the Dead"
+    ],
+    "height": "Unknown",
+    "debut": "Alvarez Empire Arc"
+  },
+  {
+    "name": "God Serena",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/8/8f/God_Serena%27s_image.png/revision/latest/scale-to-width-down/268?cb=20190209234345",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Alvarez Empire",
+      "Magic Council"
+    ],
+    "guildRank": [
+      "Spriggan 12",
+      "Ten Wizard Saints"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental",
+      "Slayer"
+    ],
+    "magicName": [
+      "Sea King Dragon Slayer Magic",
+      "Gale Dragon Slayer Magic",
+      "Purgatory Dragon Slayer Magic",
+      "Cavern Dragon Slayer Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Alvarez Empire Arc"
+  },
+  {
+    "name": "Brain",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/d/db/Zero_prop_2.png/revision/latest/scale-to-width-down/268?cb=20120930014208",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Oración Seis"
+    ],
+    "guildRank": [
+      "Guild Master"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Dark Magic",
+      "Organic Link Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Oración Seis Arc"
+  },
+  {
+    "name": "Midnight",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/b/b0/Midnight_X791.png/revision/latest/scale-to-width-down/268?cb=20150622112104",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Oración Seis"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Reflector"
+    ],
+    "height": "Unknown",
+    "debut": "Oración Seis Arc"
+  },
+  {
+    "name": "Cobra",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/0/0c/Cobra_X791_image.png/revision/latest/scale-to-width-down/268?cb=20160426194841",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Oración Seis",
+      "Crime Sorcière"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental",
+      "Slayer"
+    ],
+    "magicName": [
+      "Poison Dragon Slayer Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Oración Seis Arc"
+  },
+  {
+    "name": "Angel",
+    "image": "",
+    "gender": "Female",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Oración Seis"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Holder"
+    ],
+    "magicAttribute": [
+      "Summoning"
+    ],
+    "magicName": [
+      "Angel Magic",
+      "Celestial Spirit Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Oración Seis Arc"
+  },
+  {
+    "name": "Racer",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/1/14/Racer_in_X791.png/revision/latest/scale-to-width-down/268?cb=20150812142910",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Oración Seis"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Spatial / Time"
+    ],
+    "magicName": [
+      "Slowing Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Oración Seis Arc"
+  },
+  {
+    "name": "Nirvana",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/2/2e/Nirvana.JPG/revision/latest/scale-to-width-down/268?cb=20111024185450",
+    "gender": "Unknown",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Oración Seis"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Unknown"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Nirvana"
+    ],
+    "height": "Unknown",
+    "debut": "Oración Seis Arc"
+  },
+  {
+    "name": "Aquarius",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/0/05/Aquarius_prop.png/revision/latest/scale-to-width-down/268?cb=20150304152147",
+    "gender": "Female",
+    "age": "Unknown",
+    "species": "Celestial Spirit",
+    "origin": "Celestial Spirit World",
+    "affiliation": [
+      "Independent"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental"
+    ],
+    "magicName": [
+      "Water Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Macao Arc"
+  },
+  {
+    "name": "Taurus",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/5/54/Mugshot_of_Taurus.png/revision/latest/scale-to-width-down/268?cb=20130604213038",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Celestial Spirit",
+    "origin": "Celestial Spirit World",
+    "affiliation": [
+      "Independent"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Holder"
+    ],
+    "magicAttribute": [
+      "Elemental"
+    ],
+    "magicName": [
+      "Labrys"
+    ],
+    "height": "Unknown",
+    "debut": "Macao Arc"
+  },
+  {
+    "name": "Scorpio",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/e/e4/Scorpio_prof_pic.png/revision/latest/scale-to-width-down/268?cb=20120724142638",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Celestial Spirit",
+    "origin": "Celestial Spirit World",
+    "affiliation": [
+      "Independent"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental"
+    ],
+    "magicName": [
+      "Sand Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Phantom Lord Arc"
+  },
+  {
+    "name": "Sagittarius",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/7/76/Sagittarius_prof.jpg/revision/latest/scale-to-width-down/268?cb=20120320134602",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Celestial Spirit",
+    "origin": "Celestial Spirit World",
+    "affiliation": [
+      "Independent"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Holder"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Marksmanship"
+    ],
+    "height": "Unknown",
+    "debut": "Phantom Lord Arc"
+  },
+  {
+    "name": "Virgo",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/f/fa/Virgo_profile_image.png/revision/latest/scale-to-width-down/268?cb=20181029103155",
+    "gender": "Female",
+    "age": "Unknown",
+    "species": "Celestial Spirit",
+    "origin": "Celestial Spirit World",
+    "affiliation": [
+      "Independent"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental"
+    ],
+    "magicName": [
+      "Earth Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Phantom Lord Arc"
+  },
+  {
+    "name": "Gemini",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/5/5f/Gemi_%26_Mini_proposal.PNG/revision/latest/scale-to-width-down/268?cb=20120225035500",
+    "gender": "Unknown",
+    "age": "Unknown",
+    "species": "Celestial Spirit",
+    "origin": "Celestial Spirit World",
+    "affiliation": [
+      "Independent"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Transformation"
+    ],
+    "magicName": [
+      "Copy Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Tower of Heaven Arc"
+  },
+  {
+    "name": "Leo (Loke)",
+    "image": "",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Celestial Spirit",
+    "origin": "Celestial Spirit World",
+    "affiliation": [
+      "Independent"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental"
+    ],
+    "magicName": [
+      "Regulus"
+    ],
+    "height": "178",
+    "debut": "Loke Arc"
+  },
+  {
+    "name": "Capricorn",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/5/5d/Capricorn_Mugshot.jpg/revision/latest/scale-to-width-down/268?cb=20130923031205",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Celestial Spirit",
+    "origin": "Celestial Spirit World",
+    "affiliation": [
+      "Independent"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Martial Arts Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Tenrou Island Arc"
+  },
+  {
+    "name": "Cancer",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/4/4c/Cancer_secon_prop.jpg/revision/latest/scale-to-width-down/268?cb=20110725132624",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Celestial Spirit",
+    "origin": "Celestial Spirit World",
+    "affiliation": [
+      "Independent"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Holder"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Scissor Blades"
+    ],
+    "height": "Unknown",
+    "debut": "Tower of Heaven Arc"
+  },
+  {
+    "name": "Aries",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/9/90/Aries_Profile_Proposal.png/revision/latest/scale-to-width-down/268?cb=20150708134553",
+    "gender": "Female",
+    "age": "Unknown",
+    "species": "Celestial Spirit",
+    "origin": "Celestial Spirit World",
+    "affiliation": [
+      "Independent"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental"
+    ],
+    "magicName": [
+      "Wool Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Tower of Heaven Arc"
+  },
+  {
+    "name": "Celestial Spirit King",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/3/3b/The_Celestial_Spirit_King.png/revision/latest/scale-to-width-down/268?cb=20150210083115",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Celestial Spirit",
+    "origin": "Celestial Spirit World",
+    "affiliation": [
+      "Independent"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Galaxia Blade",
+      "Meteor Storm"
+    ],
+    "height": "Unknown",
+    "debut": "Tartaros Arc"
+  },
+  {
+    "name": "Jose Porla",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/7/75/Jose_Porla_prof.jpg/revision/latest/scale-to-width-down/268?cb=20120809111256",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Phantom Lord"
+    ],
+    "guildRank": [
+      "Guild Master",
+      "Ten Wizard Saints"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Shade Magic",
+      "Abyss Break"
+    ],
+    "height": "Unknown",
+    "debut": "Phantom Lord Arc"
+  },
+  {
+    "name": "Simon",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/2/2c/Simon_Prof.JPG/revision/latest/scale-to-width-down/268?cb=20120604084224",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Independent"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Dark Moment"
+    ],
+    "height": "Unknown",
+    "debut": "Tower of Heaven Arc"
+  },
+  {
+    "name": "Erza Knightwalker",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/b/be/Erza_Knightwalker_X793_Profile.png/revision/latest/scale-to-width-down/268?cb=20241117134021",
+    "gender": "Female",
+    "age": "21",
+    "species": "Human",
+    "origin": "Edolas",
+    "affiliation": [
+      "Fairy Tail"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Holder"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Spear Magic"
+    ],
+    "height": "169",
+    "debut": "Edolas Arc"
+  },
+  {
+    "name": "Sugarboy",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/e/e8/Sugarboy_X793_Profile.png/revision/latest/scale-to-width-down/268?cb=20241117131515",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Edolas",
+    "affiliation": [
+      "Fairy Tail"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Holder"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Rosa Espada"
+    ],
+    "height": "Unknown",
+    "debut": "Edolas Arc"
+  },
+  {
+    "name": "Precht Gaebolg",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/9/9b/Hades_Prop.JPG/revision/latest/scale-to-width-down/268?cb=20111109201753",
+    "gender": "Male",
+    "age": "100+",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Fairy Tail",
+      "Grimoire Heart"
+    ],
+    "guildRank": [
+      "Guild Master"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Chain Magic",
+      "Amaterasu"
+    ],
+    "height": "Unknown",
+    "debut": "Fairy Tail Zero"
+  },
+  {
+    "name": "Yuri Dreyar",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/8/89/Yuri_Dreyar_proposal_2.png/revision/latest/scale-to-width-down/268?cb=20190108122200",
+    "gender": "Male",
+    "age": "100+",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Fairy Tail"
+    ],
+    "guildRank": [
+      "Guild Master"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental"
+    ],
+    "magicName": [
+      "Lightning Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Fairy Tail Zero"
+  },
+  {
+    "name": "Warrod Sequen",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/8/8e/Warrod_Mugshot.png/revision/latest/scale-to-width-down/268?cb=20150404041258",
+    "gender": "Male",
+    "age": "100+",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Fairy Tail",
+      "Magic Council"
+    ],
+    "guildRank": [
+      "Ten Wizard Saints"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental"
+    ],
+    "magicName": [
+      "Green Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Fairy Tail Zero"
+  },
+  {
+    "name": "Macao Conbolt",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/5/52/X791_Macao.png/revision/latest/scale-to-width-down/268?cb=20120407085019",
+    "gender": "Male",
+    "age": "42",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Fairy Tail"
+    ],
+    "guildRank": [
+      "Guild Master"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental"
+    ],
+    "magicName": [
+      "Purple Flare"
+    ],
+    "height": "182",
+    "debut": "Macao Arc"
+  },
+  {
+    "name": "Bisca Connell",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/1/1a/Bisca_profile_proposal.png/revision/latest/scale-to-width-down/268?cb=20120515181224",
+    "gender": "Female",
+    "age": "22",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Fairy Tail"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Holder"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Gunner Magic"
+    ],
+    "height": "165",
+    "debut": "Phantom Lord Arc"
+  },
+  {
+    "name": "Alzack Connell",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/a/a4/X791_Alzack.PNG/revision/latest/scale-to-width-down/268?cb=20120805100112",
+    "gender": "Male",
+    "age": "22",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Fairy Tail"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Holder"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Gunner Magic"
+    ],
+    "height": "179",
+    "debut": "Phantom Lord Arc"
+  },
+  {
+    "name": "Max Alors",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/d/df/Max_Alors_X792.png/revision/latest/scale-to-width-down/268?cb=20190619035631",
+    "gender": "Male",
+    "age": "23",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Fairy Tail"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental"
+    ],
+    "magicName": [
+      "Sand Magic"
+    ],
+    "height": "172",
+    "debut": "Macao Arc"
+  },
+  {
+    "name": "Warren Rocko",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/c/c5/Warren_X792.png/revision/latest/scale-to-width-down/268?cb=20181117233643",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Fairy Tail"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Telepathy"
+    ],
+    "height": "181",
+    "debut": "Battle of Fairy Tail Arc"
+  },
+  {
+    "name": "Kinana",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/5/50/Kinana_X792.png/revision/latest/scale-to-width-down/268?cb=20181117233644",
+    "gender": "Female",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Fairy Tail"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Snake Magic"
+    ],
+    "height": "168",
+    "debut": "Battle of Fairy Tail Arc"
+  },
+  {
+    "name": "Mest Gryder",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/e/e4/Mest_X792.png/revision/latest/scale-to-width-down/268?cb=20181201234526",
+    "gender": "Male",
+    "age": "21",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Fairy Tail",
+      "Magic Council"
+    ],
+    "guildRank": [
+      "Regular Mage",
+      "Magic Council Member"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Spatial / Time",
+      "Unique"
+    ],
+    "magicName": [
+      "Teleportation Magic",
+      "Memory Control"
+    ],
+    "height": "181",
+    "debut": "Tenrou Island Arc"
+  },
+  {
+    "name": "Yukino Agria",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/5/52/Yukino_X792.png/revision/latest/scale-to-width-down/268?cb=20181029104434",
+    "gender": "Female",
+    "age": "18",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Sabertooth",
+      "Fairy Tail"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Holder"
+    ],
+    "magicAttribute": [
+      "Summoning"
+    ],
+    "magicName": [
+      "Celestial Spirit Magic"
+    ],
+    "height": "157",
+    "debut": "Grand Magic Games Arc"
+  },
+  {
+    "name": "Orga Nanagear",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/b/bb/Orga_profile_image.png/revision/latest/scale-to-width-down/268?cb=20140614034434",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Sabertooth"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental",
+      "Slayer"
+    ],
+    "magicName": [
+      "Lightning God Slayer Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Grand Magic Games Arc"
+  },
+  {
+    "name": "Rufus Lore",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/5/5a/Rufus_Prop.png/revision/latest/scale-to-width-down/268?cb=20121124083746",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Sabertooth"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Memory-Make"
+    ],
+    "height": "Unknown",
+    "debut": "Grand Magic Games Arc"
+  },
+  {
+    "name": "Lector",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/9/95/Lector_anime.PNG/revision/latest/scale-to-width-down/268?cb=20121006041513",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Exceed",
+    "origin": "Edolas",
+    "affiliation": [
+      "Sabertooth"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Aera"
+    ],
+    "height": "Unknown",
+    "debut": "Grand Magic Games Arc"
+  },
+  {
+    "name": "Frosch",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/2/2a/Frosch_anime.png/revision/latest/scale-to-width-down/268?cb=20130311014407",
+    "gender": "Unknown",
+    "age": "Unknown",
+    "species": "Exceed",
+    "origin": "Edolas",
+    "affiliation": [
+      "Sabertooth"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Aera"
+    ],
+    "height": "Unknown",
+    "debut": "Grand Magic Games Arc"
+  },
+  {
+    "name": "Jiemma",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/6/68/Demon_Jiemma%27s_image.png/revision/latest/scale-to-width-down/268?cb=20151128030515",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Sabertooth",
+      "Tartaros"
+    ],
+    "guildRank": [
+      "Guild Master"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental"
+    ],
+    "magicName": [
+      "Roar Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Grand Magic Games Arc"
+  },
+  {
+    "name": "Millianna",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/6/61/GMG_Millianna.png/revision/latest/scale-to-width-down/268?cb=20130316193149",
+    "gender": "Female",
+    "age": "19",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Mermaid Heel"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Holder"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Tube Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Tower of Heaven Arc"
+  },
+  {
+    "name": "Araña Webb",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/9/91/Ara%C3%B1a_Webb%27s_attire.png/revision/latest/scale-to-width-down/268?cb=20130330152525",
+    "gender": "Female",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Mermaid Heel"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Spider Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Grand Magic Games Arc"
+  },
+  {
+    "name": "Beth Vanderwood",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/6/67/Beth_Prop.png/revision/latest/scale-to-width-down/268?cb=20131120061942",
+    "gender": "Female",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Mermaid Heel"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental"
+    ],
+    "magicName": [
+      "Vegetable Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Grand Magic Games Arc"
+  },
+  {
+    "name": "Risley Law",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/f/fe/Risley_proposal.png/revision/latest/scale-to-width-down/268?cb=20130206125944",
+    "gender": "Female",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Mermaid Heel"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Gravity Change"
+    ],
+    "height": "Unknown",
+    "debut": "Grand Magic Games Arc"
+  },
+  {
+    "name": "Sherry Blendy",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/1/14/Sherry_prof_prop.png/revision/latest/scale-to-width-down/268?cb=20120502183119",
+    "gender": "Female",
+    "age": "21",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Lamia Scale"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Doll Attack"
+    ],
+    "height": "Unknown",
+    "debut": "Galuna Island Arc"
+  },
+  {
+    "name": "Yuka Suzuki",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/c/c8/Yuka_X791_Avatar.jpg/revision/latest/scale-to-width-down/268?cb=20120331055027",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Lamia Scale"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Absorption"
+    ],
+    "magicName": [
+      "Wave Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Galuna Island Arc"
+  },
+  {
+    "name": "Toby Horhorta",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/d/d3/GMG_Toby.png/revision/latest/scale-to-width-down/268?cb=20131120222703",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Lamia Scale"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Holder"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Claw Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Galuna Island Arc"
+  },
+  {
+    "name": "Ooba Babasaama",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/9/95/Ooba_Babasaama.png/revision/latest/scale-to-width-down/268?cb=20121027035812",
+    "gender": "Female",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Lamia Scale"
+    ],
+    "guildRank": [
+      "Guild Master"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Spin Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Grand Magic Games Arc"
+  },
+  {
+    "name": "Bacchus Groh",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/4/4a/Bacchus_Mugshot.png/revision/latest/scale-to-width-down/268?cb=20121216091805",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Quatro Cerberus"
+    ],
+    "guildRank": [
+      "S-Class Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental"
+    ],
+    "magicName": [
+      "Palm Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Grand Magic Games Arc"
+  },
+  {
+    "name": "Jenny Realight",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/a/a7/Jenny.png/revision/latest/scale-to-width-down/268?cb=20190818085458",
+    "gender": "Female",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Blue Pegasus"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Transformation"
+    ],
+    "magicName": [
+      "Machine Soul"
+    ],
+    "height": "Unknown",
+    "debut": "Grand Magic Games Arc"
+  },
+  {
+    "name": "Ivan Dreyar",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/d/d9/Ivan.jpg/revision/latest/scale-to-width-down/268?cb=20120724223317",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Raven Tail",
+      "Fairy Tail"
+    ],
+    "guildRank": [
+      "Guild Master"
+    ],
+    "magicClass": [
+      "Holder"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Shikigami Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Grand Magic Games Arc"
+  },
+  {
+    "name": "Flare Corona",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/4/41/Flare_Avatar.png/revision/latest/scale-to-width-down/268?cb=20160320195802",
+    "gender": "Female",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Raven Tail",
+      "Sun Village"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental"
+    ],
+    "magicName": [
+      "Hair Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Grand Magic Games Arc"
+  },
+  {
+    "name": "Kurohebi",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/0/08/Kurohebi_profile.png/revision/latest/scale-to-width-down/268?cb=20121215105302",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Raven Tail"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Absorption"
+    ],
+    "magicName": [
+      "Mimic"
+    ],
+    "height": "Unknown",
+    "debut": "Grand Magic Games Arc"
+  },
+  {
+    "name": "Nullpudding",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/3/34/Nullpudding_prop.png/revision/latest/scale-to-width-down/268?cb=20131120224953",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Raven Tail"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Spike Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Grand Magic Games Arc"
+  },
+  {
+    "name": "Aria",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/2/25/Aria_close-up.png/revision/latest/scale-to-width-down/268?cb=20130531180820",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Phantom Lord"
+    ],
+    "guildRank": [
+      "S-Class Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental"
+    ],
+    "magicName": [
+      "Air Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Phantom Lord Arc"
+  },
+  {
+    "name": "Sol",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/1/1e/Sol_prof.jpg/revision/latest/scale-to-width-down/268?cb=20111216212015",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Phantom Lord"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental"
+    ],
+    "magicName": [
+      "Earth Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Phantom Lord Arc"
+  },
+  {
+    "name": "Totomaru",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/1/1e/Totmaru_Timeskip_profile.PNG/revision/latest/scale-to-width-down/268?cb=20120331032604",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Phantom Lord"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental"
+    ],
+    "magicName": [
+      "Fire Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Phantom Lord Arc"
+  },
+  {
+    "name": "Larcade Dragneel",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/f/f8/Larcade%27s_image.png/revision/latest/scale-to-width-down/268?cb=20190526083042",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Etherious (Demon)",
+    "origin": "Zeref's Books",
+    "affiliation": [
+      "Alvarez Empire"
+    ],
+    "guildRank": [
+      "Spriggan 12"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Pleasure Magic",
+      "Famished Soul",
+      "R.I.P."
+    ],
+    "height": "Unknown",
+    "debut": "Alvarez Empire Arc"
+  },
+  {
+    "name": "Wahl Icht",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/d/d3/Wall%27s_real_body.png/revision/latest/scale-to-width-down/268?cb=20190209234342",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Etherious (Demon)",
+    "origin": "Zeref's Books",
+    "affiliation": [
+      "Alvarez Empire"
+    ],
+    "guildRank": [
+      "Spriggan 12"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Anti-Magic",
+      "Weakness"
+    ],
+    "height": "Unknown",
+    "debut": "Alvarez Empire Arc"
+  },
+  {
+    "name": "Jacob Lessio",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/1/18/Jacob%27s_image.png/revision/latest/scale-to-width-down/268?cb=20190209234346",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Alvarez Empire"
+    ],
+    "guildRank": [
+      "Spriggan 12"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Spatial / Time"
+    ],
+    "magicName": [
+      "Transport Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Alvarez Empire Arc"
+  },
+  {
+    "name": "Bloodman",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/3/3e/Bloodman_image.png/revision/latest/scale-to-width-down/268?cb=20190331122003",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Etherious (Demon)",
+    "origin": "Zeref's Books",
+    "affiliation": [
+      "Alvarez Empire"
+    ],
+    "guildRank": [
+      "Spriggan 12"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Macro Curse",
+      "Nine Demon Gates Curses"
+    ],
+    "height": "Unknown",
+    "debut": "Alvarez Empire Arc"
+  },
+  {
+    "name": "Rahkeid",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/8/8f/Cover_485.png/revision/latest/scale-to-width-down/300?cb=20161126042306",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Alvarez Empire"
+    ],
+    "guildRank": [
+      "Spriggan 12"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental"
+    ],
+    "magicName": [
+      "Poison Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Alvarez Empire Arc"
+  },
+  {
+    "name": "Bradman",
+    "image": "",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Etherious (Demon)",
+    "origin": "Zeref's Books",
+    "affiliation": [
+      "Alvarez Empire"
+    ],
+    "guildRank": [
+      "Spriggan 12"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Anti-Magic Particles"
+    ],
+    "height": "Unknown",
+    "debut": "Alvarez Empire Arc"
+  },
+  {
+    "name": "Deliora",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/c/c8/Deloria.jpg/revision/latest/scale-to-width-down/268?cb=20100715081930",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Etherious (Demon)",
+    "origin": "Zeref's Books",
+    "affiliation": [
+      "Independent"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental"
+    ],
+    "magicName": [
+      "Ice Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Galuna Island Arc"
+  },
+  {
+    "name": "Ur",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/7/78/Ur_Proposed_Prof.jpg/revision/latest/scale-to-width-down/268?cb=20111217101437",
+    "gender": "Female",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Independent"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental"
+    ],
+    "magicName": [
+      "Ice-Make"
+    ],
+    "height": "Unknown",
+    "debut": "Galuna Island Arc"
+  },
+  {
+    "name": "Sorano",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/8/8b/Sorano_in_Alvarez_Empire_arc.png/revision/latest/scale-to-width-down/268?cb=20190526083116",
+    "gender": "Female",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Crime Sorcière",
+      "Oración Seis"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Holder"
+    ],
+    "magicAttribute": [
+      "Summoning"
+    ],
+    "magicName": [
+      "Angel Magic",
+      "Celestial Spirit Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Oración Seis Arc"
+  },
+  {
+    "name": "Macbeth",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/b/b0/Midnight_X791.png/revision/latest/scale-to-width-down/268?cb=20150622112104",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Crime Sorcière",
+      "Oración Seis"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Reflector"
+    ],
+    "height": "Unknown",
+    "debut": "Oración Seis Arc"
+  },
+  {
+    "name": "Sawyer",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/1/14/Racer_in_X791.png/revision/latest/scale-to-width-down/268?cb=20150812142910",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Crime Sorcière",
+      "Oración Seis"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Spatial / Time"
+    ],
+    "magicName": [
+      "Slowing Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Oración Seis Arc"
+  },
+  {
+    "name": "Hoteye",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/f/fa/Hoteye_X791.png/revision/latest/scale-to-width-down/268?cb=20150620092323",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Crime Sorcière",
+      "Oración Seis"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental"
+    ],
+    "magicName": [
+      "World of Liquid Sand"
+    ],
+    "height": "Unknown",
+    "debut": "Oración Seis Arc"
+  },
+  {
+    "name": "Vidaldus Taka",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/c/c9/Vidaldus_Taka_Profile.jpg/revision/latest/scale-to-width-down/268?cb=20111218211636",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Independent"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Holder"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Rock of Succubus"
+    ],
+    "height": "Unknown",
+    "debut": "Tower of Heaven Arc"
+  },
+  {
+    "name": "Ikaruga",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/6/6a/Ikaruga.jpg/revision/latest/scale-to-width-down/268?cb=20100705143453",
+    "gender": "Female",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Independent"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Holder"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Mugetsu-Ryu Sword Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Tower of Heaven Arc"
+  },
+  {
+    "name": "Fukuro",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/7/79/Fukuro.jpg/revision/latest/scale-to-width-down/268?cb=20100705143330",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Independent"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Absorption"
+    ],
+    "magicName": [
+      "Absorption Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Tower of Heaven Arc"
+  },
+  {
+    "name": "Wally Buchanan",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/f/f5/Wally_Prof.png/revision/latest/scale-to-width-down/268?cb=20120402100803",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Independent"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Cube Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Tower of Heaven Arc"
+  },
+  {
+    "name": "Rustyrose",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/1/15/Rustyrose_X791.png/revision/latest/scale-to-width-down/268?cb=20150815133609",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Grimoire Heart"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Arc of Embodiment"
+    ],
+    "height": "Unknown",
+    "debut": "Tenrou Island Arc"
+  },
+  {
+    "name": "Azuma",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/d/db/Azuma_anime.png/revision/latest/scale-to-width-down/268?cb=20111102163455",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Grimoire Heart"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental"
+    ],
+    "magicName": [
+      "Great Tree Arc"
+    ],
+    "height": "Unknown",
+    "debut": "Tenrou Island Arc"
+  },
+  {
+    "name": "Kain Hikaru",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/7/7d/Kain_Hikaru_Anime.JPG/revision/latest/scale-to-width-down/268?cb=20111015061113",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Grimoire Heart"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Holder"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Ushi no Koku Mairi"
+    ],
+    "height": "Unknown",
+    "debut": "Tenrou Island Arc"
+  },
+  {
+    "name": "Laki Olietta",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/2/2b/Laki_X792.png/revision/latest/scale-to-width-down/268?cb=20181117233644",
+    "gender": "Female",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Fairy Tail"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Wood Make"
+    ],
+    "height": "165",
+    "debut": "Phantom Lord Arc"
+  },
+  {
+    "name": "Vijeeter Ecor",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/4/48/Vijeeter_X792.png/revision/latest/scale-to-width-down/268?cb=20190106110352",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Fairy Tail"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Dance Magic"
+    ],
+    "height": "168",
+    "debut": "Phantom Lord Arc"
+  },
+  {
+    "name": "Droy",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/f/f7/X791_Droy_Avatar.png/revision/latest/scale-to-width-down/268?cb=20120725114900",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Fairy Tail"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental"
+    ],
+    "magicName": [
+      "Plant Magic"
+    ],
+    "height": "180",
+    "debut": "Daybreak Arc"
+  },
+  {
+    "name": "Jet",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/3/31/Jet_in_the_year_X971.PNG/revision/latest/scale-to-width-down/268?cb=20120805113752",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Fairy Tail"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "High Speed"
+    ],
+    "height": "178",
+    "debut": "Daybreak Arc"
+  },
+  {
+    "name": "Porlyusica",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/c/c3/Porlyusica_proposal.png/revision/latest/scale-to-width-down/268?cb=20121013110936",
+    "gender": "Female",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Edolas",
+    "affiliation": [
+      "Fairy Tail"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Unknown"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Healing Magic"
+    ],
+    "height": "172",
+    "debut": "Battle of Fairy Tail Arc"
+  },
+  {
+    "name": "Wakaba Mine",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/0/04/Wakaba_in_x791.png/revision/latest/scale-to-width-down/268?cb=20150308111639",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Fairy Tail"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental"
+    ],
+    "magicName": [
+      "Smoke Magic"
+    ],
+    "height": "175",
+    "debut": "Macao Arc"
+  },
+  {
+    "name": "Reedus Jonah",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/2/23/X791_Reedus.PNG/revision/latest/scale-to-width-down/268?cb=20120324051340",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Fairy Tail"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Pict Magic"
+    ],
+    "height": "186",
+    "debut": "Phantom Lord Arc"
+  },
+  {
+    "name": "Romeo Conbolt",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/a/ad/Romeo_X792.png/revision/latest/scale-to-width-down/268?cb=20181117233644",
+    "gender": "Male",
+    "age": "17",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Fairy Tail"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental"
+    ],
+    "magicName": [
+      "Rainbow Fire"
+    ],
+    "height": "148",
+    "debut": "Macao Arc"
+  },
+  {
+    "name": "Nab Lasaro",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/5/5c/Nab_X792.png/revision/latest/scale-to-width-down/268?cb=20181117233643",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Fairy Tail"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Transformation"
+    ],
+    "magicName": [
+      "Animal Possession"
+    ],
+    "height": "195",
+    "debut": "Macao Arc"
+  },
+  {
+    "name": "Ezel",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/b/ba/Ezel%27s_profile_image.png/revision/latest/scale-to-width-down/268?cb=20150523094949",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Etherious (Demon)",
+    "origin": "Zeref's Books",
+    "affiliation": [
+      "Tartaros"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental"
+    ],
+    "magicName": [
+      "Slash Curse"
+    ],
+    "height": "Unknown",
+    "debut": "Tartaros Arc"
+  },
+  {
+    "name": "Jackal",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/e/ee/Image_of_Jackal.png/revision/latest/scale-to-width-down/268?cb=20150615150536",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Etherious (Demon)",
+    "origin": "Zeref's Books",
+    "affiliation": [
+      "Tartaros"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental"
+    ],
+    "magicName": [
+      "Explosion Curse"
+    ],
+    "height": "Unknown",
+    "debut": "Tartaros Arc"
+  },
+  {
+    "name": "Tempester",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/5/5d/Tempester%27s_second_image.png/revision/latest/scale-to-width-down/268?cb=20150704050939",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Etherious (Demon)",
+    "origin": "Zeref's Books",
+    "affiliation": [
+      "Tartaros"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental"
+    ],
+    "magicName": [
+      "Tempest Curse"
+    ],
+    "height": "Unknown",
+    "debut": "Tartaros Arc"
+  },
+  {
+    "name": "Sayla",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/5/5d/Seilah_proposal.png/revision/latest/scale-to-width-down/268?cb=20150704082245",
+    "gender": "Female",
+    "age": "Unknown",
+    "species": "Etherious (Demon)",
+    "origin": "Zeref's Books",
+    "affiliation": [
+      "Tartaros"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Macro Curse"
+    ],
+    "height": "Unknown",
+    "debut": "Tartaros Arc"
+  },
+  {
+    "name": "Mary Hughes",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/2/29/Mary_Hughes_Profile_Picture.JPG/revision/latest/scale-to-width-down/268?cb=20120512103229",
+    "gender": "Female",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Avatar"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Command Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Avatar Arc"
+  },
+  {
+    "name": "Briar",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/2/2b/Briar_profile_image.png/revision/latest/scale-to-width-down/268?cb=20181021092151",
+    "gender": "Female",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Avatar"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Transformation"
+    ],
+    "magicName": [
+      "Doll Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Avatar Arc"
+  },
+  {
+    "name": "Arlock",
+    "image": "",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Avatar"
+    ],
+    "guildRank": [
+      "Guild Master"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Prayer Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Avatar Arc"
+  },
+  {
+    "name": "Gô",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/1/1b/G%C5%8D.gif/revision/latest?cb=20111016071737",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Avatar"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental"
+    ],
+    "magicName": [
+      "Fire Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Avatar Arc"
+  },
+  {
+    "name": "Wolfheim",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/d/da/Wolfheim_image.png/revision/latest/scale-to-width-down/268?cb=20181201234528",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Magic Council"
+    ],
+    "guildRank": [
+      "Ten Wizard Saints"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Transformation"
+    ],
+    "magicName": [
+      "Monster Tamer Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Grand Magic Games Arc"
+  },
+  {
+    "name": "Draculos Hyberion",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/9/9b/Hyberion_image.png/revision/latest/scale-to-width-down/268?cb=20181201234528",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Magic Council"
+    ],
+    "guildRank": [
+      "Ten Wizard Saints"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Vampire Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Grand Magic Games Arc"
+  },
+  {
+    "name": "Cosmos",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/a/a3/Cosmos_profile_1.png/revision/latest/scale-to-width-down/268?cb=20140526105024",
+    "gender": "Female",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Alvarez Empire"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental"
+    ],
+    "magicName": [
+      "Plant Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Grand Magic Games Arc"
+  },
+  {
+    "name": "Kamika",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/1/1c/Kamika_profile_1.png/revision/latest/scale-to-width-down/268?cb=20140526105026",
+    "gender": "Female",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Alvarez Empire"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Holder"
+    ],
+    "magicAttribute": [
+      "Elemental"
+    ],
+    "magicName": [
+      "Paper Blizzard"
+    ],
+    "height": "Unknown",
+    "debut": "Grand Magic Games Arc"
+  },
+  {
+    "name": "Uosuke",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/a/a3/Uosuke_in_anime.png/revision/latest/scale-to-width-down/268?cb=20140503035135",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Alvarez Empire"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Spatial / Time"
+    ],
+    "magicName": [
+      "Terrain Effect Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Grand Magic Games Arc"
+  },
+  {
+    "name": "Touka",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/9/9d/Touka_Profile.png/revision/latest/scale-to-width-down/268?cb=20240929093710",
+    "gender": "Female",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Fairy Tail"
+    ],
+    "guildRank": [
+      "Regular Mage"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "White Mage Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Alvarez Empire Arc"
+  },
+  {
+    "name": "Metalicana",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/1/15/Metalicana%27s_image.png/revision/latest/scale-to-width-down/268?cb=20151226032546",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Dragon",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Independent"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental",
+      "Slayer"
+    ],
+    "magicName": [
+      "Iron Dragon Slayer Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Alvarez Empire Arc"
+  },
+  {
+    "name": "Grandeeney",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/e/ec/Grandeeney%27s_image.png/revision/latest/scale-to-width-down/268?cb=20151226032546",
+    "gender": "Female",
+    "age": "Unknown",
+    "species": "Dragon",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Independent"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental",
+      "Slayer"
+    ],
+    "magicName": [
+      "Sky Dragon Slayer Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Tenrou Island Arc"
+  },
+  {
+    "name": "Weisslogia",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/d/df/Weisslogia_square.png/revision/latest/scale-to-width-down/268?cb=20140816025614",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Dragon",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Independent"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental",
+      "Slayer"
+    ],
+    "magicName": [
+      "White Dragon Slayer Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Grand Magic Games Arc"
+  },
+  {
+    "name": "Skiadrum",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/8/87/Skiadrum_profile_image.png/revision/latest/scale-to-width-down/268?cb=20151219030717",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Dragon",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Independent"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental",
+      "Slayer"
+    ],
+    "magicName": [
+      "Shadow Dragon Slayer Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Grand Magic Games Arc"
+  },
+  {
+    "name": "Atlas Flame",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/2/26/Atlas_Flame_profile_image.png/revision/latest/scale-to-width-down/268?cb=20140726025031",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Dragon",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Independent"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental"
+    ],
+    "magicName": [
+      "Eternal Flame Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Sun Village Arc"
+  },
+  {
+    "name": "Future Rogue",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/0/0b/Future_Rogue_Profile.png/revision/latest/scale-to-width-down/268?cb=20150531070401",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Independent"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental",
+      "Slayer"
+    ],
+    "magicName": [
+      "Shadow Dragon Slayer Magic",
+      "White Shadow Dragon Slayer Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Grand Magic Games Arc"
+  },
+  {
+    "name": "Libra",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/9/9a/Libra_square.png/revision/latest/scale-to-width-down/268?cb=20130112094103",
+    "gender": "Female",
+    "age": "Unknown",
+    "species": "Celestial Spirit",
+    "origin": "Celestial Spirit World",
+    "affiliation": [
+      "Independent"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Spatial / Time"
+    ],
+    "magicName": [
+      "Gravity Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Grand Magic Games Arc"
+  },
+  {
+    "name": "Pisces",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/a/a4/Pisces_summoned.png/revision/latest/scale-to-width-down/268?cb=20130112101701",
+    "gender": "Unknown",
+    "age": "Unknown",
+    "species": "Celestial Spirit",
+    "origin": "Celestial Spirit World",
+    "affiliation": [
+      "Independent"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Elemental"
+    ],
+    "magicName": [
+      "Water Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Grand Magic Games Arc"
+  },
+  {
+    "name": "Ophiuchus",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/7/76/Ophiuchus.png/revision/latest/scale-to-width-down/267?cb=20130112054235",
+    "gender": "Female",
+    "age": "Unknown",
+    "species": "Celestial Spirit",
+    "origin": "Celestial Spirit World",
+    "affiliation": [
+      "Independent"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Snake Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Grand Magic Games Arc"
+  },
+  {
+    "name": "Horologium",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/6/62/Horologium_Avatar.png/revision/latest/scale-to-width-down/268?cb=20120403011146",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Celestial Spirit",
+    "origin": "Celestial Spirit World",
+    "affiliation": [
+      "Independent"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Spatial / Time"
+    ],
+    "magicName": [
+      "Time Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Tower of Heaven Arc"
+  },
+  {
+    "name": "Lyra",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/2/24/FT_Lyra.png/revision/latest/scale-to-width-down/268?cb=20100313101413",
+    "gender": "Female",
+    "age": "Unknown",
+    "species": "Celestial Spirit",
+    "origin": "Celestial Spirit World",
+    "affiliation": [
+      "Independent"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Song Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Macao Arc"
+  },
+  {
+    "name": "Plue",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/d/d3/Plue_profile.jpg/revision/latest/scale-to-width-down/268?cb=20120428103300",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Celestial Spirit",
+    "origin": "Celestial Spirit World",
+    "affiliation": [
+      "Independent"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "None"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Unknown"
+    ],
+    "height": "Unknown",
+    "debut": "Macao Arc"
+  },
+  {
+    "name": "Anna Heartfilia",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/a/ae/Anna.png/revision/latest/scale-to-width-down/267?cb=20190804075846",
+    "gender": "Female",
+    "age": "400+",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Independent"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Holder"
+    ],
+    "magicAttribute": [
+      "Summoning"
+    ],
+    "magicName": [
+      "Celestial Spirit Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Alvarez Empire Arc"
+  },
+  {
+    "name": "Layla Heartfilia",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/3/39/Layla.jpg/revision/latest/scale-to-width-down/268?cb=20111126091547",
+    "gender": "Female",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Independent"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "Holder"
+    ],
+    "magicAttribute": [
+      "Summoning"
+    ],
+    "magicName": [
+      "Celestial Spirit Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Tenrou Island Arc"
+  },
+  {
+    "name": "Jude Heartfilia",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/2/26/Jude_Avatar.jpg/revision/latest/scale-to-width-down/268?cb=20120320125000",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Independent"
+    ],
+    "guildRank": [
+      "None"
+    ],
+    "magicClass": [
+      "None"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "None"
+    ],
+    "height": "Unknown",
+    "debut": "Phantom Lord Arc"
+  },
+  {
+    "name": "Bob",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/8/83/Bob_prof_prop.png/revision/latest/scale-to-width-down/268?cb=20120714122746",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Blue Pegasus"
+    ],
+    "guildRank": [
+      "Guild Master"
+    ],
+    "magicClass": [
+      "Unknown"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Unknown"
+    ],
+    "height": "Unknown",
+    "debut": "Oración Seis Arc"
+  },
+  {
+    "name": "Goldmine",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/8/84/Goldmine_-_Close_up.JPG/revision/latest/scale-to-width-down/268?cb=20111110140003",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Quatro Cerberus"
+    ],
+    "guildRank": [
+      "Guild Master"
+    ],
+    "magicClass": [
+      "Unknown"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Unknown"
+    ],
+    "height": "Unknown",
+    "debut": "Grand Magic Games Arc"
+  },
+  {
+    "name": "Robaul",
+    "image": "https://static.wikia.nocookie.net/fairytail/images/8/84/Caitshelermaster.jpg/revision/latest/scale-to-width-down/268?cb=20111108195554",
+    "gender": "Male",
+    "age": "Unknown",
+    "species": "Human",
+    "origin": "Earth Land",
+    "affiliation": [
+      "Cait Shelter"
+    ],
+    "guildRank": [
+      "Guild Master"
+    ],
+    "magicClass": [
+      "Caster"
+    ],
+    "magicAttribute": [
+      "Unique"
+    ],
+    "magicName": [
+      "Illusion Magic"
+    ],
+    "height": "Unknown",
+    "debut": "Oración Seis Arc"
+  }
+]
