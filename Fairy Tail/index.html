@@ -1,1 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Fairy Tail Dle | Fiore Archives</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="bg-layer"></div>
 
+    <main class="relative z-10 w-full max-w-[1400px] mx-auto px-4 flex flex-col items-center pt-8 pb-24">
+        
+        <div class="w-full max-w-[850px] flex flex-col gap-4">
+            <!-- NAV BAR -->
+            <div class="glass-ui flex items-center justify-between p-2 rounded-full h-[68px] px-5 shadow-2xl">
+                <div class="flex items-center gap-2">
+                    <a href="../index.html" class="nav-btn-glass">
+                        <span class="material-symbols-outlined" style="font-size:18px;">home</span>
+                        <span class="hidden md:inline">Home</span>
+                    </a>
+                    <button id="btn-arclist" title="View Arc Order">
+                        <span class="material-symbols-outlined" style="font-size:18px;">format_list_numbered</span>
+                        <span class="hidden md:inline">Arc List</span>
+                    </button>
+                </div>
+
+                <div class="relative flex items-center bg-black/20 rounded-full h-[44px] w-[200px] p-1 mode-switcher">
+                    <div id="mode-pill" class="absolute top-1 bottom-1 w-[calc(50%-4px)] bg-white/10 rounded-full transition-all duration-300 left-1"></div>
+                    <button id="btn-daily" class="mode-btn active">Daily</button>
+                    <button id="btn-unlimited" class="mode-btn">Unlimited</button>
+                </div>
+
+                <div class="flex items-center gap-2 pl-4 border-l border-white/10">
+                    <span class="text-[9px] uppercase font-black text-white/40 hidden sm:block">Left</span>
+                    <span id="guess-counter" class="text-2xl font-bold text-yellow-400 bebas leading-none">10</span>
+                </div>
+            </div>
+
+            <!-- SEARCH BAR -->
+            <div class="relative w-full z-50">
+                <div class="glass-ui flex items-center rounded-2xl h-[60px] px-6">
+                    <span class="material-symbols-outlined text-xl text-white/30 mr-4">search</span>
+                    <input id="search-input" class="w-full bg-transparent border-none outline-none text-white text-base font-bold placeholder:text-white/20 uppercase" placeholder="Search a Mage..." type="text" autocomplete="off"/>
+                </div>
+                <div id="dropdown" class="hidden"></div>
+            </div>
+        </div>
+
+        <!-- GAME BOARD -->
+        <div class="w-full mt-10 overflow-x-auto hide-scroll pb-10">
+            <div id="game-board" class="min-w-[1300px] flex flex-col gap-3 items-center">
+                <!-- 12 Columns matching your JSON -->
+                <div class="w-full grid grid-cols-12 gap-2 mb-1 px-2 text-center text-white/40 text-[9px] font-black uppercase tracking-[0.1em]">
+                    <div>Character</div>
+                    <div>Gender</div>
+                    <div>Age</div>
+                    <div>Species</div>
+                    <div>Origin</div>
+                    <div>Affiliation</div>
+                    <div>Guild Rank</div>
+                    <div>Magic Class</div>
+                    <div>Magic Attr.</div>
+                    <div>Magic Name</div>
+                    <div>Height</div>
+                    <div>Debut</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- END OVERLAY -->
+    <div id="end-overlay" class="fixed inset-0 z-[100] hidden items-center justify-center opacity-0 transition-opacity duration-500">
+        <div class="modal-box text-center relative" id="end-modal">
+            <!-- Close Button -->
+            <button id="btn-close-modal" class="absolute top-4 right-5 text-white/50 hover:text-white font-black text-xl transition-colors">✕</button>
+            
+            <h2 id="end-title" class="bebas"></h2>
+            <p id="end-subtitle"></p>
+            <div id="modal-profile"></div>
+            <button id="btn-replay">Next Round</button>
+        </div>
+    </div>
+
+    <!-- ARC LIST MODAL -->
+    <div id="arc-overlay">
+        <div class="arc-modal">
+            <h2 class="bebas">Earth Land Chronology</h2>
+            <div class="arc-list" id="arc-list-content"></div>
+            <button class="arc-close" id="btn-arc-close">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
